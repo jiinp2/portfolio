@@ -6,19 +6,13 @@ function Work() {
       <section className="hero">
         <div className="hero-content">
           <h1 className="hero-title">
-            Hi, I'm <span className="highlight">Your Name</span>
+            Hi, I'm <span className="highlight">Jiin</span>
           </h1>
           <p className="hero-subtitle">
             Product Designer crafting beautiful, user-centered experiences
           </p>
           <div className="hero-actions">
             <button className="btn btn-primary">View My Work</button>
-            <button className="btn btn-secondary">Get In Touch</button>
-          </div>
-        </div>
-        <div className="hero-image">
-          <div className="placeholder-image">
-            <span>Your Photo Here</span>
           </div>
         </div>
       </section>

@@ -59,6 +59,24 @@
   background: #007bff;
 }
 
+.resume-btn {
+  background: #000;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 2px solid #000;
+}
+
+.resume-btn:hover {
+  background: white;
+  color: #000;
+  border-color: #000;
+}
+
 @media (max-width: 768px) {
   .header-container {
     padding: 1rem;
@@ -70,5 +88,10 @@
   
   .nav-link {
     font-size: 0.9rem;
+  }
+  
+  .resume-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
   }
 }

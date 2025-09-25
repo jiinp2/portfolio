@@ -29,6 +29,14 @@ function Header() {
           >
             About
           </Link>
+          <a 
+            href="/JiinPark_Resume_Portfolio.pdf" 
+            className="resume-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
+          </a>
         </nav>
       </div>
     </header>
