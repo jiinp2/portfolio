@@ -3,14 +3,15 @@ import './Aside.css'
 function Aside() {
   return (
     <div className="aside">
-      <section className="aside-hero">
-        <h1 className="aside-title">Side Projects & Experiments</h1>
-        <p className="aside-subtitle">
-          Smaller projects, personal experiments, and creative explorations
-        </p>
-      </section>
+      <div className="aside-container">
+        <section className="aside-hero">
+          <h1 className="aside-title">Side Projects & Experiments</h1>
+          <p className="aside-subtitle">
+            Smaller projects, personal experiments, and creative explorations
+          </p>
+        </section>
 
-      <section className="projects-grid">
+        <section className="projects-grid">
         <div className="project-card">
           <div className="project-image">
             <span>Project Image</span>
@@ -64,7 +65,8 @@ function Aside() {
             </div>
           </div>
         </div>
-      </section>
+        </section>
+      </div>
     </div>
   )
 }
