@@ -2,53 +2,63 @@ import './Work.css'
 
 function Work() {
   return (
-    <div className="home">
-      <section className="hero">
-        <div className="hero-content">
-          <h1 className="hero-title">
-            Hi, I'm <span className="highlight">Jiin</span>
-          </h1>
-          <p className="hero-subtitle">
-            Product Designer crafting beautiful, user-centered experiences
-          </p>
-          <div className="hero-actions">
-            <button className="btn btn-primary">View My Work</button>
+    <div className="work">
+      <div className="work-container">
+        {/* Hero Section */}
+        <section className="work-hero">
+          <div className="hero-content">
+            <div className="hero-text">
+              <h1 className="hero-greeting">Hi! 👋</h1>
+              <p className="hero-description">
+                Currently at <strong>Maison</strong> designing + coding a community platform for realtors.
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="featured-projects">
-        <h2 className="section-title">Featured Projects</h2>
-        <div className="projects-grid">
-          <div className="project-card">
-            <div className="project-image">
-              <span>Project Image</span>
+        {/* Project Showcases */}
+        <section className="project-showcases">
+          <div className="project-showcase">
+            <div className="project-info">
+              <div className="project-header">
+                <h2 className="project-title">
+                  Rabbu Portfolio
+                  <span className="lock-icon">🔒</span>
+                </h2>
+                <p className="project-meta">DRIP DESIGN / 2022 - 2023</p>
+                <p className="project-description">
+                  A platform where investors can find and evaluate profitable investment properties.
+                </p>
+              </div>
             </div>
-            <div className="project-content">
-              <h3>Project Title</h3>
-              <p>Brief description of the project and your role in it.</p>
-              <div className="project-tags">
-                <span className="tag">UI/UX</span>
-                <span className="tag">Mobile</span>
+            <div className="project-visual">
+              <div className="project-placeholder">
+                <span className="placeholder-text">Project Mockup</span>
               </div>
             </div>
           </div>
-          
-          <div className="project-card">
-            <div className="project-image">
-              <span>Project Image</span>
+
+          <div className="project-showcase">
+            <div className="project-info">
+              <div className="project-header">
+                <h2 className="project-title">
+                  Investment Analytics
+                  <span className="lock-icon">🔒</span>
+                </h2>
+                <p className="project-meta">FREELANCE / 2023 - 2024</p>
+                <p className="project-description">
+                  Advanced analytics dashboard for real estate investment tracking and performance monitoring.
+                </p>
+              </div>
             </div>
-            <div className="project-content">
-              <h3>Project Title</h3>
-              <p>Brief description of the project and your role in it.</p>
-              <div className="project-tags">
-                <span className="tag">Web Design</span>
-                <span className="tag">Research</span>
+            <div className="project-visual">
+              <div className="project-placeholder">
+                <span className="placeholder-text">Project Mockup</span>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   )
 }

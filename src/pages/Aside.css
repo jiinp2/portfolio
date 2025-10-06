@@ -1,6 +1,7 @@
 .aside {
   min-height: 100vh;
-  padding: 2rem 0;
+  padding: 4rem 0;
+  background: #fafafa;
 }
 
 .aside-container {
@@ -12,21 +13,27 @@
 .aside-hero {
   text-align: center;
   margin-bottom: 4rem;
+  background: white;
+  padding: 4rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .aside-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #2d3748;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
 }
 
 .aside-subtitle {
-  font-size: 1.25rem;
-  color: #718096;
+  font-size: 1.125rem;
+  color: #6b7280;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
+  font-weight: 400;
 }
 
 .projects-grid {
@@ -37,25 +44,27 @@
 
 .project-card {
   background: white;
+  border: 1px solid #e5e7eb;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.15s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #d1d5db;
 }
 
 .project-image {
   height: 200px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #f8f9fa;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #6b7280;
   font-weight: 500;
+  font-size: 0.875rem;
 }
 
 .project-content {
@@ -63,16 +72,18 @@
 }
 
 .project-content h3 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
-  color: #2d3748;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
 }
 
 .project-content p {
-  color: #718096;
+  color: #6b7280;
   line-height: 1.6;
   margin-bottom: 1rem;
+  font-size: 0.875rem;
 }
 
 .project-tags {
@@ -83,12 +94,13 @@
 }
 
 .tag {
-  background: #e2e8f0;
-  color: #4a5568;
+  background: #f1f5f9;
+  color: #475569;
   padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.875rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
   font-weight: 500;
+  border: 1px solid #e2e8f0;
 }
 
 .project-links {
@@ -97,29 +109,37 @@
 }
 
 .project-link {
-  color: #667eea;
+  color: #6366f1;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.875rem;
-  transition: color 0.3s ease;
+  transition: color 0.15s ease;
 }
 
 .project-link:hover {
-  color: #5a67d8;
+  color: #4f46e5;
   text-decoration: underline;
 }
 
 @media (max-width: 768px) {
+  .aside {
+    padding: 2rem 0;
+  }
+  
   .aside-container {
     padding: 0 1rem;
   }
   
+  .aside-hero {
+    padding: 2rem 1rem;
+  }
+  
   .aside-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   
   .aside-subtitle {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
   
   .projects-grid {

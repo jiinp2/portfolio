@@ -1,6 +1,7 @@
 .about {
   min-height: 100vh;
-  padding: 2rem 0;
+  padding: 4rem 0;
+  background: #fafafa;
 }
 
 .about-container {
@@ -10,29 +11,35 @@
 }
 
 .page-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 2rem;
-  color: #333;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
   text-align: center;
+  letter-spacing: -0.01em;
 }
 
 .about-text {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
+  background: white;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .about-text p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #666;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #6b7280;
   margin-bottom: 1.5rem;
 }
 
 .skills-section h2 {
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 600;
   margin-bottom: 2rem;
-  color: #333;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
 }
 
 .skills-grid {
@@ -42,17 +49,25 @@
 }
 
 .skill-category {
-  background: white;
+  background: #fafafa;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  transition: all 0.15s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #d1d5db;
 }
 
 .skill-category h3 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #007bff;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
 }
 
 .skill-category ul {
@@ -62,8 +77,9 @@
 
 .skill-category li {
   padding: 0.5rem 0;
-  color: #666;
-  border-bottom: 1px solid #f0f0f0;
+  color: #6b7280;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #f1f5f9;
 }
 
 .skill-category li:last-child {
@@ -71,12 +87,24 @@
 }
 
 @media (max-width: 768px) {
-  .page-title {
-    font-size: 2.5rem;
+  .about {
+    padding: 2rem 0;
   }
   
   .about-container {
     padding: 0 1rem;
+  }
+  
+  .about-content {
+    padding: 2rem;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .about-text {
+    padding: 2rem;
   }
   
   .skills-grid {
