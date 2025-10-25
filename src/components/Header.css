@@ -35,39 +35,30 @@
   color: #6366f1;
 }
 
-/* Middle - Pill Navigation */
-.pill-nav {
+/* Middle - Navigation Links */
+.nav-links {
   display: flex;
-  background: #f8f9fa;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 4px;
-  gap: 2px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  gap: 2rem;
+  align-items: center;
 }
 
-.pill-nav-link {
+.nav-link {
   color: #6b7280;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.875rem;
-  padding: 8px 16px;
-  border-radius: 8px;
-  transition: all 0.15s ease;
+  transition: color 0.2s ease;
   white-space: nowrap;
   position: relative;
 }
 
-.pill-nav-link:hover {
-  background: rgba(255, 255, 255, 0.8);
+.nav-link:hover {
   color: #374151;
 }
 
-.pill-nav-link.active {
-  background: white;
+.nav-link.active {
   color: #1a1a1a;
   font-weight: 600;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 /* Right - Resume Button */
@@ -105,14 +96,12 @@
     font-size: 1.125rem;
   }
   
-  .pill-nav {
-    padding: 3px;
-    gap: 1px;
+  .nav-links {
+    gap: 1.5rem;
   }
   
-  .pill-nav-link {
+  .nav-link {
     font-size: 0.8125rem;
-    padding: 6px 12px;
   }
   
   .resume-button {
@@ -126,15 +115,12 @@
     padding: 0.5rem 0;
   }
   
-  .pill-nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2px;
+  .nav-links {
+    gap: 1rem;
   }
   
-  .pill-nav-link {
+  .nav-link {
     font-size: 0.75rem;
-    padding: 6px 10px;
   }
   
   .resume-button {

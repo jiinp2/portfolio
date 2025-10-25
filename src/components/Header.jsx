@@ -1,40 +1,15 @@
-import { Link, useLocation } from 'react-router-dom'
 import './Header.css'
 
 function Header() {
-  const location = useLocation()
-
   return (
     <header className="header">
       <div className="header-container">
         {/* Left - Name/Logo */}
         <div className="logo-section">
-          <Link to="/" className="logo">
+          <span className="logo">
             Jiin Park
-          </Link>
+          </span>
         </div>
-
-        {/* Middle - Pill Navigation */}
-        <nav className="pill-nav">
-          <Link 
-            to="/" 
-            className={`pill-nav-link ${location.pathname === '/' ? 'active' : ''}`}
-          >
-            Work
-          </Link>
-          <Link 
-            to="/aside" 
-            className={`pill-nav-link ${location.pathname === '/aside' ? 'active' : ''}`}
-          >
-            Aside
-          </Link>
-          <Link 
-            to="/about" 
-            className={`pill-nav-link ${location.pathname === '/about' ? 'active' : ''}`}
-          >
-            About
-          </Link>
-        </nav>
 
         {/* Right - Resume Button */}
         <div className="resume-section">

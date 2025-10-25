@@ -1,0 +1,48 @@
+/* Scroll Indicator Navigation */
+.scroll-indicators {
+    position: fixed;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.indicator-dots {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.indicator-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid #9ca3af;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+    outline: none;
+}
+
+.indicator-dot:hover {
+    border-color: #6b7280;
+    transform: scale(1.1);
+}
+
+.indicator-dot.active {
+    background: #1a1a1a;
+    border-color: #1a1a1a;
+}
+
+.indicator-dot.active:hover {
+    border-color: #1a1a1a;
+    background: #1a1a1a;
+}
+
+/* Mobile - Hide scroll indicators */
+@media (max-width: 768px) {
+    .scroll-indicators {
+        display: none;
+    }
+}

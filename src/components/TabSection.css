@@ -1,0 +1,64 @@
+/* TAB INTERFACE */
+.tabs-section {
+    margin-bottom: 2.5rem;
+}
+
+.tabs-header {
+    display: flex;
+    gap: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 0.75rem 0;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    margin-right: 2rem;
+    min-height: 44px; /* Touch target size */
+    display: flex;
+    align-items: center;
+}
+
+.tab-button:hover {
+    color: #6b7280;
+}
+
+.tab-button.active {
+    color: #1a1a1a;
+    border-bottom-color: #1a1a1a;
+    font-weight: 600;
+}
+
+.tab-content {
+    min-height: 200px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tabs-section {
+        margin-bottom: 2rem;
+    }
+    
+    .tab-button {
+        padding: 1rem 0;
+        font-size: 0.9rem;
+        margin-right: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-button {
+        padding: 0.75rem 0;
+        font-size: 0.8rem;
+        margin-right: 1rem;
+    }
+}
