@@ -1,10 +1,22 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import CaseStudy from '../components/CaseStudy'
 import ProjectCard from '../components/ProjectCard'
 import TabSection from '../components/TabSection'
 import './Work.css'
 
+// Project data
+const projects = [
+  { name: 'Maison', label: 'Scroll to Maison', date: '2025', category: 'case-studies', slug: 'maison' },
+  { name: 'Rabbu Portfolio', label: 'Scroll to Rabbu Portfolio', date: '2024', category: 'case-studies', slug: 'rabbu-portfolio' },
+  { name: 'Rabbu Marketplace', label: 'Scroll to Rabbu Marketplace', date: '2024', category: 'case-studies', slug: 'rabbu-marketplace' },
+  { name: 'Kobo', label: 'Scroll to Kobo', date: '2023', category: 'archive', slug: 'kobo' },
+  { name: 'Skiin', label: 'Scroll to Skiin', date: '2023', category: 'archive', slug: 'skiin' }
+]
+
 function Work() {
+  const navigate = useNavigate()
+  const { projectSlug } = useParams()
   const [activeTab, setActiveTab] = useState('links')
   const [activeFilter, setActiveFilter] = useState('all')
   const [isCaseStudyOpen, setIsCaseStudyOpen] = useState(false)
@@ -12,6 +24,8 @@ function Work() {
 
   // Open case study
   const openCaseStudy = (projectIndex) => {
+    const project = projects[projectIndex]
+    navigate(`/${project.slug}`)
     setSelectedProject(projectIndex)
     setIsCaseStudyOpen(true)
     document.body.style.overflow = 'hidden' // Prevent background scrolling
@@ -19,19 +33,32 @@ function Work() {
 
   // Close case study
   const closeCaseStudy = () => {
+    navigate('/')
     setIsCaseStudyOpen(false)
     setSelectedProject(null)
     document.body.style.overflow = 'auto' // Restore scrolling
   }
 
-  // Project data
-  const projects = [
-    { name: 'Maison', label: 'Scroll to Maison', date: '2025' },
-    { name: 'Rabbu Portfolio', label: 'Scroll to Rabbu Portfolio', date: '2024' },
-    { name: 'Rabbu Marketplace', label: 'Scroll to Rabbu Marketplace', date: '2024' },
-    { name: 'Kobo', label: 'Scroll to Kobo', date: '2023' },
-    { name: 'Skiin', label: 'Scroll to Skiin', date: '2023' }
-  ]
+  // Check URL parameter and open case study if slug matches
+  useEffect(() => {
+    if (projectSlug) {
+      const projectIndex = projects.findIndex(p => p.slug === projectSlug)
+      if (projectIndex !== -1) {
+        setSelectedProject(projectIndex)
+        setIsCaseStudyOpen(true)
+        document.body.style.overflow = 'hidden'
+      }
+    } else {
+      setIsCaseStudyOpen(false)
+      setSelectedProject(null)
+      document.body.style.overflow = 'auto'
+    }
+  }, [projectSlug])
+
+  // Filter projects based on active filter
+  const filteredProjects = activeFilter === 'all' 
+    ? projects 
+    : projects.filter(project => project.category === activeFilter)
 
   return (
     <div className={`container ${isCaseStudyOpen ? 'case-study-active' : ''}`}>
@@ -216,15 +243,18 @@ function Work() {
           </div>
         </div>
         <div className="case-studies-grid">
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              project={project}
-              index={index}
-              isSelected={selectedProject === index}
-              onClick={openCaseStudy}
-            />
-          ))}
+          {filteredProjects.map((project, index) => {
+            const originalIndex = projects.findIndex(p => p.name === project.name)
+            return (
+              <ProjectCard
+                key={originalIndex}
+                project={project}
+                index={originalIndex}
+                isSelected={selectedProject === originalIndex}
+                onClick={openCaseStudy}
+              />
+            )
+          })}
         </div>
       </main>
 
