@@ -5,9 +5,13 @@ function ProjectCard({ project, index, isSelected, onClick }) {
     <div className="project-card-wrapper" onClick={() => onClick(index)}>
       <div className={`project-card ${isSelected ? 'selected' : ''}`}>
         <div className="project-preview">
-          <div className="preview-placeholder">
-            <span className="preview-icon">📄</span>
-          </div>
+          {project.image ? (
+            <img src={project.image} alt={project.name} className="preview-image" />
+          ) : (
+            <div className="preview-placeholder">
+              <span className="preview-icon">📄</span>
+            </div>
+          )}
         </div>
       </div>
       <div className="project-info">

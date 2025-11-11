@@ -42,6 +42,24 @@
     min-height: 200px;
 }
 
+/* Dark Mode */
+.dark-mode .tabs-header {
+    border-bottom-color: #2a2a2a;
+}
+
+.dark-mode .tab-button {
+    color: #6b7280;
+}
+
+.dark-mode .tab-button:hover {
+    color: #a0a0a0;
+}
+
+.dark-mode .tab-button.active {
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .tabs-section {

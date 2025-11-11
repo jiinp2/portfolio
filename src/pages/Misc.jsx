@@ -5,26 +5,28 @@ import ProjectCard from '../components/ProjectCard'
 import TabSection from '../components/TabSection'
 import './Work.css'
 
-// Project data
+// Project data for Misc page
 const projects = [
-  { name: 'Maison', label: 'Scroll to Maison', date: '2025', category: 'case-studies', slug: 'maison' },
-  { name: 'Rabbu Portfolio', label: 'Scroll to Rabbu Portfolio', date: '2024', category: 'case-studies', slug: 'rabbu-portfolio' },
-  { name: 'Rabbu Marketplace', label: 'Scroll to Rabbu Marketplace', date: '2024', category: 'case-studies', slug: 'rabbu-marketplace' },
-  { name: 'Kobo', label: 'Scroll to Kobo', date: '2023', category: 'archive', slug: 'kobo' },
-  { name: 'Skiin', label: 'Scroll to Skiin', date: '2023', category: 'archive', slug: 'skiin' }
+  { name: 'Pokemon Valentine', label: 'Pokemon Valentine', date: '2025', category: 'all', slug: 'pokemon-valentine', image: '/pokemon_valentine.png', url: 'https://pokemon-valentine.vercel.app/' }
 ]
 
-function Work() {
+function Misc() {
   const navigate = useNavigate()
   const { projectSlug } = useParams()
   const [activeTab, setActiveTab] = useState('links')
   const [activeFilter, setActiveFilter] = useState('all')
   const [isCaseStudyOpen, setIsCaseStudyOpen] = useState(false)
   const [selectedProject, setSelectedProject] = useState(null)
+  const [isDarkMode, setIsDarkMode] = useState(false)
 
   // Open case study
   const openCaseStudy = (projectIndex) => {
     const project = projects[projectIndex]
+    // Open external URL if project has one
+    if (project.url) {
+      window.open(project.url, '_blank', 'noopener,noreferrer')
+      return
+    }
     navigate(`/${project.slug}`)
     setSelectedProject(projectIndex)
     setIsCaseStudyOpen(true)
@@ -33,11 +35,28 @@ function Work() {
 
   // Close case study
   const closeCaseStudy = () => {
-    navigate('/')
+    navigate('/misc')
     setIsCaseStudyOpen(false)
     setSelectedProject(null)
     document.body.style.overflow = 'auto' // Restore scrolling
   }
+
+  // Apply dark mode to body/html with smooth transition
+  useEffect(() => {
+    // Small delay to allow initial render before applying dark mode
+    const timer = setTimeout(() => {
+      setIsDarkMode(true)
+      document.documentElement.classList.add('dark-mode')
+      document.body.classList.add('dark-mode')
+    }, 10)
+    
+    return () => {
+      clearTimeout(timer)
+      setIsDarkMode(false)
+      document.documentElement.classList.remove('dark-mode')
+      document.body.classList.remove('dark-mode')
+    }
+  }, [])
 
   // Check URL parameter and open case study if slug matches
   useEffect(() => {
@@ -61,7 +80,7 @@ function Work() {
     : projects.filter(project => project.category === activeFilter)
 
   return (
-    <div className={`container ${isCaseStudyOpen ? 'case-study-active' : ''}`}>
+    <div className={`container ${isDarkMode ? 'dark-mode' : ''} ${isCaseStudyOpen ? 'case-study-active' : ''}`}>
       {/* Left Column - About Me Section */}
       <aside className="about-section">
         <div className="about-content">
@@ -215,8 +234,8 @@ function Work() {
       <main className="projects-section">
         <div className="work-header">
           <div className="work-title-wrapper">
-            <h2 className="work-title">Work</h2>
-            <Link to="/misc" className="rotate-icon-link">
+            <h2 className="work-title">Misc</h2>
+            <Link to="/" className="rotate-icon-link">
               <span className="rotate-icon">↻</span>
             </Link>
           </div>
@@ -268,4 +287,5 @@ function Work() {
   )
 }
 
-export default Work
+export default Misc
+
