@@ -17,17 +17,30 @@ function RabbuPortfolio({ onClose }) {
 
   // Intersection Observer for tracking active section
   useEffect(() => {
+    const contentElement = document.querySelector('.case-study-content')
+    if (!contentElement) return
+
     const observer = new IntersectionObserver(
       (entries) => {
+        // Find the entry with the highest intersection ratio
+        let maxRatio = 0
+        let activeEntry = null
+
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id)
+          if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
+            maxRatio = entry.intersectionRatio
+            activeEntry = entry
           }
         })
+
+        if (activeEntry) {
+          setActiveSection(activeEntry.target.id)
+        }
       },
       {
+        root: contentElement,
         rootMargin: '-20% 0px -60% 0px',
-        threshold: 0.1
+        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
       }
     )
 
@@ -43,6 +56,7 @@ function RabbuPortfolio({ onClose }) {
   const scrollToSection = (sectionId) => {
     const element = sectionRefs.current[sectionId]
     if (element) {
+      setActiveSection(sectionId)
       element.scrollIntoView({ 
         behavior: 'smooth',
         block: 'start'
@@ -53,21 +67,23 @@ function RabbuPortfolio({ onClose }) {
   return (
     <div className="case-study-overlay">
       <div className="case-study-layout">
-        {/* Main Content Column */}
-        <div className="case-study-content">
-          {/* Sticky Back Button */}
+        {/* Left Column - Back Button */}
+        <div className="case-study-left">
           <button className="back-button sticky" onClick={onClose}>
             ← Back
           </button>
-        
-        {/* Hero Section */}
-        <div className="hero-section">
-          <h1 className="case-study-title">Rabbu Portfolio</h1>
-          <p className="case-study-subtitle">A platform where short-term rental investors can manage their properties and track performance.</p>
-          <div className="hero-image-placeholder">
-            <span>Hero Image Placeholder</span>
-          </div>
         </div>
+        
+        {/* Middle Column - Main Content */}
+        <div className="case-study-content">
+          {/* Hero Section */}
+          <div className="hero-section">
+            <h1 className="case-study-title">Rabbu Portfolio</h1>
+            <p className="case-study-subtitle">A platform where short-term rental investors can manage their properties and track performance.</p>
+            <div className="hero-image-placeholder">
+              <span>Hero Image Placeholder</span>
+            </div>
+          </div>
 
         {/* Project Info Bar */}
         <div className="project-info-bar">
@@ -306,24 +322,26 @@ function RabbuPortfolio({ onClose }) {
           </div>
         </div>
 
-        {/* Table of Contents Column */}
-        <nav className="table-of-contents">
-          <div className="toc-header">
-            <h3>Contents</h3>
-          </div>
-          <ul className="toc-list">
-            {tocSections.map((section) => (
-              <li key={section.id}>
-                <button
-                  className={`toc-item ${activeSection === section.id ? 'active' : ''}`}
-                  onClick={() => scrollToSection(section.id)}
-                >
-                  {section.label}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        {/* Right Column - Table of Contents */}
+        <div className="case-study-right">
+          <nav className="table-of-contents">
+            <div className="toc-header">
+              <h3>Contents</h3>
+            </div>
+            <ul className="toc-list">
+              {tocSections.map((section) => (
+                <li key={section.id}>
+                  <button
+                    className={`toc-item ${activeSection === section.id ? 'active' : ''}`}
+                    onClick={() => scrollToSection(section.id)}
+                  >
+                    {section.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
       </div>
     </div>
   )
