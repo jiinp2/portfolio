@@ -246,18 +246,6 @@ function Misc() {
             >
               All
             </button>
-            <button 
-              className={`filter-button ${activeFilter === 'case-studies' ? 'active' : ''}`}
-              onClick={() => setActiveFilter('case-studies')}
-            >
-              Case Studies
-            </button>
-            <button 
-              className={`filter-button ${activeFilter === 'archive' ? 'active' : ''}`}
-              onClick={() => setActiveFilter('archive')}
-            >
-              Archive
-            </button>
           </div>
         </div>
         <div className="case-studies-grid">
