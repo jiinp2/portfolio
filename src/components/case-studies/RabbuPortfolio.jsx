@@ -1,13 +1,64 @@
+import { useState, useEffect, useRef } from 'react'
 import './RabbuPortfolio.css'
 
 function RabbuPortfolio({ onClose }) {
+  const [activeSection, setActiveSection] = useState('overview')
+  const sectionRefs = useRef({})
+
+  // Table of contents sections
+  const tocSections = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'outcomes', label: 'Outcomes' },
+    { id: 'design-research', label: 'Design Research' },
+    { id: 'design-process', label: 'Design Process' },
+    { id: 'final-design', label: 'Final Design' },
+    { id: 'key-features', label: 'Key Features' }
+  ]
+
+  // Intersection Observer for tracking active section
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        })
+      },
+      {
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0.1
+      }
+    )
+
+    // Observe all sections
+    Object.values(sectionRefs.current).forEach((ref) => {
+      if (ref) observer.observe(ref)
+    })
+
+    return () => observer.disconnect()
+  }, [])
+
+  // Scroll to section function
+  const scrollToSection = (sectionId) => {
+    const element = sectionRefs.current[sectionId]
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+  }
+
   return (
     <div className="case-study-overlay">
-      <div className="case-study-content">
-        {/* Sticky Back Button */}
-        <button className="back-button sticky" onClick={onClose}>
-          ← Back
-        </button>
+      <div className="case-study-layout">
+        {/* Main Content Column */}
+        <div className="case-study-content">
+          {/* Sticky Back Button */}
+          <button className="back-button sticky" onClick={onClose}>
+            ← Back
+          </button>
         
         {/* Hero Section */}
         <div className="hero-section">
@@ -35,7 +86,7 @@ function RabbuPortfolio({ onClose }) {
         </div>
 
         {/* Overview Section */}
-        <section className="case-study-section">
+        <section id="overview" ref={el => sectionRefs.current.overview = el} className="case-study-section">
           <h2>Overview</h2>
           
           <div className="subsection">
@@ -51,7 +102,7 @@ function RabbuPortfolio({ onClose }) {
         </section>
 
         {/* Outcomes Section */}
-        <section className="case-study-section">
+        <section id="outcomes" ref={el => sectionRefs.current.outcomes = el} className="case-study-section">
           <h2>Outcomes</h2>
           <ul className="outcomes-list">
             <li>End-to-end design and launch of Rabbu's Portfolio platform, enhancing the STR management experience.</li>
@@ -60,7 +111,7 @@ function RabbuPortfolio({ onClose }) {
         </section>
 
         {/* Design Research Section */}
-        <section className="case-study-section">
+        <section id="design-research" ref={el => sectionRefs.current['design-research'] = el} className="case-study-section">
           <h2>Design Research</h2>
           
           <div className="subsection">
@@ -127,7 +178,7 @@ function RabbuPortfolio({ onClose }) {
         </section>
 
         {/* Design Process Section */}
-        <section className="case-study-section">
+        <section id="design-process" ref={el => sectionRefs.current['design-process'] = el} className="case-study-section">
           <h2>Design Process</h2>
           
           <div className="subsection">
@@ -145,7 +196,7 @@ function RabbuPortfolio({ onClose }) {
         </section>
 
         {/* Final Design Section */}
-        <section className="case-study-section">
+        <section id="final-design" ref={el => sectionRefs.current['final-design'] = el} className="case-study-section">
           <h2>Final Design</h2>
           
           <div className="subsection">
@@ -205,7 +256,7 @@ function RabbuPortfolio({ onClose }) {
         </section>
 
         {/* Key Features Section */}
-        <section className="case-study-section">
+        <section id="key-features" ref={el => sectionRefs.current['key-features'] = el} className="case-study-section">
           <h2>Key Features</h2>
           
           <div className="key-features">
@@ -247,12 +298,32 @@ function RabbuPortfolio({ onClose }) {
           </div>
         </section>
 
-        {/* Next Project Link */}
-        <div className="next-project">
-          <a href="#" className="next-project-link">
-            Next Project: Rabbu Marketplace →
-          </a>
+          {/* Next Project Link */}
+          <div className="next-project">
+            <a href="#" className="next-project-link">
+              Next Project: Rabbu Marketplace →
+            </a>
+          </div>
         </div>
+
+        {/* Table of Contents Column */}
+        <nav className="table-of-contents">
+          <div className="toc-header">
+            <h3>Contents</h3>
+          </div>
+          <ul className="toc-list">
+            {tocSections.map((section) => (
+              <li key={section.id}>
+                <button
+                  className={`toc-item ${activeSection === section.id ? 'active' : ''}`}
+                  onClick={() => scrollToSection(section.id)}
+                >
+                  {section.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </div>
   )

@@ -5,6 +5,12 @@ function TabSection({ activeTab, onTabChange, children }) {
     <div className="tabs-section">
       <div className="tabs-header">
         <button 
+          className={`tab-button ${activeTab === 'links' ? 'active' : ''}`}
+          onClick={() => onTabChange('links')}
+        >
+          LINKS
+        </button>
+        <button 
           className={`tab-button ${activeTab === 'experience' ? 'active' : ''}`}
           onClick={() => onTabChange('experience')}
         >
