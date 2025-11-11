@@ -231,7 +231,7 @@ function Work() {
               className={`filter-button ${activeFilter === 'case-studies' ? 'active' : ''}`}
               onClick={() => setActiveFilter('case-studies')}
             >
-              Case Studies
+              Selected
             </button>
             <button 
               className={`filter-button ${activeFilter === 'archive' ? 'active' : ''}`}
