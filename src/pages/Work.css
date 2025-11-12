@@ -378,6 +378,10 @@ body.dark-mode {
     color: #6b7280;
 }
 
+.work-title-wrapper:hover .work-title {
+    color: #6b7280;
+}
+
 .work-title-link:hover ~ .rotate-icon-link .rotate-icon {
     color: #16a34a;
     transform: rotate(180deg);
@@ -768,6 +772,10 @@ body.dark-mode {
 }
 
 .dark-mode .work-title-link:hover .work-title {
+    color: #9ca3af;
+}
+
+.dark-mode .work-title-wrapper:hover .work-title {
     color: #9ca3af;
 }
 
