@@ -52,11 +52,14 @@ body.dark-mode {
     padding: 4rem;
     border-right: 1px solid #f0f0f0;
     height: 100vh;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
-                opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-                background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1),
                 border-color 0.6s cubic-bezier(0.4, 0, 0.2, 1),
                 color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.container.case-study-active .about-section {
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Hide About Me section when case study is open */
@@ -71,16 +74,16 @@ body.dark-mode {
 }
 
 .about-section::-webkit-scrollbar-track {
-    background: #f8f9fa;
+    background: transparent;
 }
 
 .about-section::-webkit-scrollbar-thumb {
-    background: #d1d5db;
+    background: #f3f4f6;
     border-radius: 3px;
 }
 
 .about-section::-webkit-scrollbar-thumb:hover {
-    background: #9ca3af;
+    background: #e5e7eb;
 }
 
 .about-content {
@@ -115,7 +118,7 @@ body.dark-mode {
 /* INTRO */
 .main-heading {
     font-size: 2.5rem;
-    font-weight: 600;
+    font-weight: 500;
     color: #1a1a1a;
     margin-bottom: 1rem;
     letter-spacing: -0.02em;
@@ -166,7 +169,7 @@ body.dark-mode {
 }
 
 .experience-category {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .experience-category:last-child {
@@ -175,8 +178,8 @@ body.dark-mode {
 
 .category-heading {
     font-size: 0.8rem;
-    font-weight: 600;
-    color: #6b7280;
+    font-weight: 500;
+    color: #1a1a1a;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-bottom: 1.5rem;
@@ -199,20 +202,21 @@ body.dark-mode {
 .experience-date {
     font-size: 0.85rem;
     color: #6b7280;
-    font-weight: 500;
+    font-weight: 400;
     transition: color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .experience-role {
-    font-size: 0.9rem;
-    color: #374151;
+    font-size: 0.85rem;
+    color: #6b7280;
     font-weight: 400;
     line-height: 1.4;
     transition: color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .experience-role strong {
-    font-weight: 600;
+    font-size: 0.9rem;
+    font-weight: 500;
     color: #1a1a1a;
 }
 
@@ -222,7 +226,7 @@ body.dark-mode {
 }
 
 .skills-category {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .skills-category:last-child {
@@ -254,8 +258,8 @@ body.dark-mode {
 
 /* LINKS SECTION */
 .links-section {
-    margin-top: 2rem;
-    margin-bottom: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .links-list {
@@ -307,16 +311,16 @@ body.dark-mode {
 }
 
 .projects-section::-webkit-scrollbar-track {
-    background: #f8f9fa;
+    background: transparent;
 }
 
 .projects-section::-webkit-scrollbar-thumb {
-    background: #d1d5db;
+    background: #f3f4f6;
     border-radius: 3px;
 }
 
 .projects-section::-webkit-scrollbar-thumb:hover {
-    background: #9ca3af;
+    background: #e5e7eb;
 }
 
 /* Work Header */
@@ -335,7 +339,7 @@ body.dark-mode {
 
 .work-title {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 500;
     color: #1a1a1a;
     letter-spacing: -0.02em;
     line-height: 1.2;
@@ -700,25 +704,25 @@ body.dark-mode {
 }
 
 .dark-mode .about-section::-webkit-scrollbar-track {
-    background: #1a1a1a;
+    background: transparent;
 }
 
 .dark-mode .about-section::-webkit-scrollbar-thumb {
-    background: #3a3a3a;
-}
-
-.dark-mode .about-section::-webkit-scrollbar-thumb:hover {
-    background: #4a4a4a;
-}
-
-.dark-mode .projects-section::-webkit-scrollbar-track {
     background: #1a1a1a;
 }
 
+.dark-mode .about-section::-webkit-scrollbar-thumb:hover {
+    background: #2a2a2a;
+}
+
+.dark-mode .projects-section::-webkit-scrollbar-track {
+    background: transparent;
+}
+
 .dark-mode .projects-section::-webkit-scrollbar-thumb {
-    background: #3a3a3a;
+    background: #1a1a1a;
 }
 
 .dark-mode .projects-section::-webkit-scrollbar-thumb:hover {
-    background: #4a4a4a;
+    background: #2a2a2a;
 }

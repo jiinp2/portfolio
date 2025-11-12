@@ -17,10 +17,17 @@ const projects = [
 function Work() {
   const navigate = useNavigate()
   const { projectSlug } = useParams()
-  const [activeTab, setActiveTab] = useState('links')
+  const [activeTab, setActiveTab] = useState(() => {
+    return localStorage.getItem('activeTab') || 'links'
+  })
   const [activeFilter, setActiveFilter] = useState('all')
   const [isCaseStudyOpen, setIsCaseStudyOpen] = useState(false)
   const [selectedProject, setSelectedProject] = useState(null)
+
+  // Persist tab state to localStorage
+  useEffect(() => {
+    localStorage.setItem('activeTab', activeTab)
+  }, [activeTab])
 
   // Open case study
   const openCaseStudy = (projectIndex) => {
@@ -77,7 +84,7 @@ function Work() {
           {/* ABOUT TEXT */}
           <div className="about-text">
             <p>
-              I'm a product designer with a strong interest in design and development, which led me to joining BrainStation's software development program through Code to Career.
+              I design and build digital products. Right now I'm at Maison creating better ways for real estate professionals to connect and collaborate.
             </p>
           </div>
 
@@ -89,21 +96,21 @@ function Work() {
                   <h3 className="category-heading">WORK</h3>
                   <div className="experience-list">
                     <div className="experience-item">
-                      <span className="experience-date">2025 - Current</span>
+                      <span className="experience-date">Current</span>
                       <div className="experience-role">
                         <strong>Design Engineer</strong><br />
                         Maison
                       </div>
                     </div>
                     <div className="experience-item">
-                      <span className="experience-date">2022 - 2023</span>
+                      <span className="experience-date">2023</span>
                       <div className="experience-role">
                         <strong>Product Designer</strong><br />
                         Drip Design
                       </div>
                     </div>
                     <div className="experience-item">
-                      <span className="experience-date">2021 - 2022</span>
+                      <span className="experience-date">2022</span>
                       <div className="experience-role">
                         <strong>Freelance UI & UX Designer</strong><br />
                         DGDL
@@ -125,28 +132,28 @@ function Work() {
                     <div className="experience-item">
                       <span className="experience-date">2025</span>
                       <div className="experience-role">
-                        <strong>Software Engineering, Diploma</strong><br />
+                        <strong>Software Engineering</strong><br />
                         BrainStation
                       </div>
                     </div>
                     <div className="experience-item">
                       <span className="experience-date">2022</span>
                       <div className="experience-role">
-                        <strong>Design System, Certification</strong><br />
+                        <strong>Design System</strong><br />
                         Memorisely
                       </div>
                     </div>
                     <div className="experience-item">
                       <span className="experience-date">2021</span>
                       <div className="experience-role">
-                        <strong>UI Design, Certification</strong><br />
+                        <strong>UI Design</strong><br />
                         BrainStation
                       </div>
                     </div>
                     <div className="experience-item">
                       <span className="experience-date">2021</span>
                       <div className="experience-role">
-                        <strong>Industrial Design, BDes</strong><br />
+                        <strong>Industrial Design</strong><br />
                         OCADU
                       </div>
                     </div>
@@ -160,10 +167,6 @@ function Work() {
                 <div className="skills-category">
                   <h3 className="category-heading">DESIGN</h3>
                   <div className="skills-content">
-                    <div className="skills-icons">
-                      <span className="skill-icon">🎨</span>
-                      <span className="skill-icon">⚡</span>
-                    </div>
                     <p className="skills-text">Figma, Framer</p>
                   </div>
                 </div>
@@ -171,13 +174,6 @@ function Work() {
                 <div className="skills-category">
                   <h3 className="category-heading">DEV</h3>
                   <div className="skills-content">
-                    <div className="skills-icons">
-                      <span className="skill-icon">🌐</span>
-                      <span className="skill-icon">🎨</span>
-                      <span className="skill-icon">⚡</span>
-                      <span className="skill-icon">🔮</span>
-                      <span className="skill-icon">🟢</span>
-                    </div>
                     <p className="skills-text">HTML, CSS, JavaScript, React, Node.js</p>
                   </div>
                 </div>

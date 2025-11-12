@@ -325,9 +325,6 @@ function RabbuPortfolio({ onClose }) {
         {/* Right Column - Table of Contents */}
         <div className="case-study-right">
           <nav className="table-of-contents">
-            <div className="toc-header">
-              <h3>Contents</h3>
-            </div>
             <ul className="toc-list">
               {tocSections.map((section) => (
                 <li key={section.id}>
