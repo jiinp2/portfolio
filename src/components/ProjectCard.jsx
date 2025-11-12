@@ -5,7 +5,7 @@ function ProjectCard({ project, index, isSelected, onClick }) {
   return (
     <div className="project-card-wrapper" onClick={() => onClick(index)}>
       <div className={`project-card ${isSelected ? 'selected' : ''}`}>
-        <div className="project-preview">
+        <div className="project-preview" data-slug={project.slug}>
           {project.image ? (
             <img src={project.image} alt={project.name} className="preview-image" />
           ) : (

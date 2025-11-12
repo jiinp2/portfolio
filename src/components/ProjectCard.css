@@ -30,8 +30,45 @@
     transition: transform 0.3s ease;
 }
 
+/* Maison logo smaller size */
+.project-preview[data-slug="maison"] .preview-image {
+    max-width: 40%;
+    max-height: 40%;
+}
+
 .project-card-wrapper:hover .preview-image {
     transform: scale(1.05);
+}
+
+/* Pokemon Valentine specific background */
+.project-preview[data-slug="pokemon-valentine"] {
+    background: #FFCFEC;
+}
+
+/* Rabbu cards specific background */
+.project-preview[data-slug="rabbu-portfolio"],
+.project-preview[data-slug="rabbu-marketplace"] {
+    background: #D8CEED;
+}
+
+/* Kobo specific background */
+.project-preview[data-slug="kobo"] {
+    background: #D07056;
+}
+
+/* Skiin specific background */
+.project-preview[data-slug="skiin"] {
+    background: #87C4DF;
+}
+
+/* Maison specific background */
+.project-preview[data-slug="maison"] {
+    background: #1A1F2E;
+}
+
+/* Maison logo color */
+.project-preview[data-slug="maison"] .preview-image {
+    filter: brightness(0) saturate(100%) invert(90%) sepia(5%) saturate(200%) hue-rotate(10deg);
 }
 
 .preview-placeholder {
@@ -137,6 +174,31 @@
 /* Dark Mode */
 .dark-mode .project-preview {
     background: #1a1a1a;
+}
+
+.dark-mode .project-preview[data-slug="pokemon-valentine"] {
+    background: #FFCFEC;
+}
+
+.dark-mode .project-preview[data-slug="rabbu-portfolio"],
+.dark-mode .project-preview[data-slug="rabbu-marketplace"] {
+    background: #E1DAF1;
+}
+
+.dark-mode .project-preview[data-slug="kobo"] {
+    background: #D07056;
+}
+
+.dark-mode .project-preview[data-slug="skiin"] {
+    background: #69B2D3;
+}
+
+.dark-mode .project-preview[data-slug="maison"] {
+    background: #1A1F2E;
+}
+
+.dark-mode .project-preview[data-slug="maison"] .preview-image {
+    filter: brightness(0) saturate(100%) invert(90%) sepia(5%) saturate(200%) hue-rotate(10deg);
 }
 
 .dark-mode .preview-icon {

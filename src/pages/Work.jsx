@@ -8,7 +8,7 @@ import './Work.css'
 
 // Project data
 const projects = [
-  { name: 'Maison', label: 'Scroll to Maison', date: '2025', category: 'case-studies', slug: 'maison' },
+  { name: 'Maison', label: 'Scroll to Maison', date: '2025', category: 'case-studies', slug: 'maison', image: '/home/maison_logo.svg' },
   { name: 'Rabbu Portfolio', label: 'Scroll to Rabbu Portfolio', date: '2024', category: 'case-studies', slug: 'rabbu-portfolio', image: '/home/rabbu_portfolio_thumbnail.png' },
   { name: 'Rabbu Marketplace', label: 'Scroll to Rabbu Marketplace', date: '2024', category: 'case-studies', slug: 'rabbu-marketplace', image: '/home/rabbu_marketplace_thumbnail.png' },
   { name: 'Kobo', label: 'Scroll to Kobo', date: '2023', category: 'archive', slug: 'kobo', image: '/home/kobo_thumbnail.png' },
