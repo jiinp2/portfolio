@@ -33,16 +33,16 @@ function TabSection({ activeTab, onTabChange, children }) {
     <div className="tabs-section">
       <div className="tabs-header" ref={tabsRef}>
         <button 
-          className={`tab-button ${activeTab === 'links' ? 'active' : ''}`}
-          onClick={() => onTabChange('links')}
-        >
-          LINKS
-        </button>
-        <button 
           className={`tab-button ${activeTab === 'experience' ? 'active' : ''}`}
           onClick={() => onTabChange('experience')}
         >
           EXPERIENCE
+        </button>
+        <button 
+          className={`tab-button ${activeTab === 'education' ? 'active' : ''}`}
+          onClick={() => onTabChange('education')}
+        >
+          EDUCATION
         </button>
         <button 
           className={`tab-button ${activeTab === 'skills' ? 'active' : ''}`}

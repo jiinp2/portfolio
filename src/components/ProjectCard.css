@@ -9,19 +9,7 @@
     background: #ffffff;
     border-radius: 12px;
     overflow: hidden;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-                background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-                border-color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.project-card-wrapper:hover .project-card {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.dark-mode .project-card-wrapper:hover .project-card {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 1px solid #e5e7eb;
 }
 
 .project-preview {

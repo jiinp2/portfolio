@@ -50,8 +50,9 @@ body.dark-mode {
     padding: 4rem;
     border-right: 1px solid #f0f0f0;
     height: auto;
-    overflow-y: visible;
+    overflow-y: auto;
     overflow-x: hidden;
+    scrollbar-gutter: stable;
     transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1),
                 border-color 0.6s cubic-bezier(0.4, 0, 0.2, 1),
                 color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -149,6 +150,47 @@ body.dark-mode {
 
 .about-text p:last-child {
     margin-bottom: 0;
+}
+
+/* SOCIAL BUTTONS */
+.social-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+}
+
+.social-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #f3f4f6;
+    color: #4b5563;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    min-height: 44px; /* Touch target size */
+}
+
+.social-button svg {
+    flex-shrink: 0;
+    color: currentColor;
+}
+
+.social-icon-img {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.social-button:hover {
+    background: #e5e7eb;
+    color: #1a1a1a;
 }
 
 /* SECTION HEADINGS */
@@ -301,7 +343,7 @@ body.dark-mode {
     height: 100vh;
     padding: 4rem;
     width: 100%;
-    background: #fafafa;
+    background: #ffffff;
     transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1),
                 color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -525,6 +567,10 @@ body.dark-mode {
         font-size: 0.9rem;
     }
     
+    .social-buttons {
+        margin-bottom: 2rem;
+    }
+    
     /* Tab responsive styles moved to TabSection.css */
     
     .links-section {
@@ -641,13 +687,13 @@ body.dark-mode {
 
 .dark-mode .project-card {
     background: #1a1a1a;
-    border-color: #2a2a2a;
+    border-color: #e5e7eb;
     transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1),
                 border-color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dark-mode .project-card:hover {
-    border-color: #3a3a3a;
+    border-color: #f3f4f6;
 }
 
 .dark-mode .project-title {
@@ -694,6 +740,19 @@ body.dark-mode {
 .dark-mode .link-item:hover {
     color: #ffffff;
     border-bottom-color: #ffffff;
+}
+
+.dark-mode .social-button {
+    background: #1a1a1a;
+    color: #a0a0a0;
+    border: 1px solid #2a2a2a;
+    transition: all 0.2s ease;
+}
+
+.dark-mode .social-button:hover {
+    background: #2a2a2a;
+    color: #ffffff;
+    border-color: #2a2a2a;
 }
 
 .dark-mode .rotate-icon {
