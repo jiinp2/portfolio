@@ -40,6 +40,15 @@
     transform: scale(1.05);
 }
 
+.project-card-wrapper.disabled {
+    cursor: default;
+    opacity: 0.6;
+}
+
+.project-card-wrapper.disabled:hover .preview-image {
+    transform: none;
+}
+
 /* Pokemon Valentine specific background */
 .project-preview[data-slug="pokemon-valentine"] {
     background: #FFCFEC;
@@ -58,7 +67,7 @@
 
 /* Skiin specific background */
 .project-preview[data-slug="skiin"] {
-    background: #87C4DF;
+    background: #9DD1E8;
 }
 
 /* Maison specific background */
@@ -104,6 +113,17 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+.coming-soon-tag {
+    font-size: 0.625rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--text-light);
+    background: #f3f4f6;
+    padding: 0.125rem 0.375rem;
+    border-radius: 9999px;
+    letter-spacing: 0.025em;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .external-link-icon {
@@ -190,7 +210,7 @@
 }
 
 .dark-mode .project-preview[data-slug="skiin"] {
-    background: #69B2D3;
+    background: #9DD1E8;
 }
 
 .dark-mode .project-preview[data-slug="maison"] {
@@ -199,6 +219,11 @@
 
 .dark-mode .project-preview[data-slug="maison"] .preview-image {
     filter: brightness(0) saturate(100%) invert(90%) sepia(5%) saturate(200%) hue-rotate(10deg);
+}
+
+.dark-mode .coming-soon-tag {
+    background: #1a1a1a;
+    color: #a0a0a0;
 }
 
 .dark-mode .preview-icon {

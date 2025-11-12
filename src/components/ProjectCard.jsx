@@ -2,8 +2,12 @@ import { ExternalLink } from 'lucide-react'
 import './ProjectCard.css'
 
 function ProjectCard({ project, index, isSelected, onClick }) {
+  const isMaison = project.slug === 'maison'
   return (
-    <div className="project-card-wrapper" onClick={() => onClick(index)}>
+    <div 
+      className={`project-card-wrapper ${isMaison ? 'disabled' : ''}`} 
+      onClick={isMaison ? undefined : () => onClick(index)}
+    >
       <div className={`project-card ${isSelected ? 'selected' : ''}`}>
         <div className="project-preview" data-slug={project.slug}>
           {project.image ? (
@@ -18,6 +22,9 @@ function ProjectCard({ project, index, isSelected, onClick }) {
       <div className="project-info">
         <h3 className="project-title">
           {project.name}
+          {project.slug === 'maison' && (
+            <span className="coming-soon-tag">WIP</span>
+          )}
           {project.url && (
             <ExternalLink className="external-link-icon" size={14} />
           )}
