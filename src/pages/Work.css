@@ -117,7 +117,7 @@ body.dark-mode {
 
 /* INTRO */
 .main-heading {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 500;
     color: #1a1a1a;
     margin-bottom: 1rem;
@@ -127,7 +127,7 @@ body.dark-mode {
 }
 
 .subheading {
-    font-size: 1.125rem;
+    font-size: 1rem;
     color: #6b7280;
     margin-bottom: 2rem;
     font-weight: 400;

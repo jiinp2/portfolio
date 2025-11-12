@@ -78,13 +78,13 @@ function Work() {
               <img src="/profile.png" alt="Jiin Park" className="profile-image" />
             </div>
             <h1 className="main-heading">Jiin Park</h1>
-            <p className="subheading">Product Designer + Design Engineer</p>
+            <p className="subheading">Product Designer <br /> + Design Engineer</p>
           </div>
           
           {/* ABOUT TEXT */}
           <div className="about-text">
             <p>
-              I design and build digital products. Right now I'm at Maison creating better ways for real estate professionals to connect and collaborate.
+              I design and build digital products. At <strong>Maison</strong>, I help create better ways for real estate professionals to connect and collaborate.
             </p>
           </div>
 
