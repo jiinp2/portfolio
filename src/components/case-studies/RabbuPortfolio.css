@@ -32,7 +32,7 @@
 }
 
 .case-study-content {
-    padding: 4rem 0;
+    padding: 4rem 2.5rem;
     height: 100vh;
     overflow-y: auto;
     scroll-behavior: smooth;
@@ -319,10 +319,15 @@
     top: 2rem;
     height: fit-content;
     width: fit-content;
+    min-width: 200px;
     max-width: 250px;
     padding: 0;
     -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+.toc-list {
+    position: relative;
 }
 
 /* Hide TOC on smaller screens */
@@ -370,6 +375,7 @@
     border: none;
     padding: 0;
     font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
     color: #9ca3af;
     cursor: pointer;
     text-align: left;
@@ -385,19 +391,20 @@
 
 .toc-item.active {
     color: var(--text-color);
-    font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-medium);
 }
 
-.toc-item.active::before {
-    content: '';
+.toc-indicator {
     position: absolute;
     left: -1rem;
-    top: 50%;
-    transform: translateY(-50%);
     width: 3px;
     height: 16px;
     background: #6366f1;
     border-radius: 0 2px 2px 0;
+    transform: translateY(-50%);
+    transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    z-index: 1;
 }
 
 /* Animations */

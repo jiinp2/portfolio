@@ -4,6 +4,9 @@ import './RabbuPortfolio.css'
 function RabbuPortfolio({ onClose }) {
   const [activeSection, setActiveSection] = useState('overview')
   const sectionRefs = useRef({})
+  const tocListRef = useRef(null)
+  const indicatorRef = useRef(null)
+  const [indicatorStyle, setIndicatorStyle] = useState({})
 
   // Table of contents sections
   const tocSections = [
@@ -51,6 +54,31 @@ function RabbuPortfolio({ onClose }) {
 
     return () => observer.disconnect()
   }, [])
+
+  // Update indicator position
+  useEffect(() => {
+    if (!tocListRef.current || !indicatorRef.current) return
+
+    const updateIndicator = () => {
+      const activeButton = tocListRef.current.querySelector(`button[data-section-id="${activeSection}"]`)
+      if (activeButton && indicatorRef.current) {
+        const buttonRect = activeButton.getBoundingClientRect()
+        const navRect = indicatorRef.current.parentElement.getBoundingClientRect()
+        const top = buttonRect.top - navRect.top + buttonRect.height / 2
+        setIndicatorStyle({
+          top: `${top}px`,
+        })
+      }
+    }
+
+    // Initial position
+    updateIndicator()
+
+    // Update on activeSection change
+    const timeoutId = setTimeout(updateIndicator, 0)
+    
+    return () => clearTimeout(timeoutId)
+  }, [activeSection])
 
   // Scroll to section function
   const scrollToSection = (sectionId) => {
@@ -325,10 +353,11 @@ function RabbuPortfolio({ onClose }) {
         {/* Right Column - Table of Contents */}
         <div className="case-study-right flex items-start pt-8">
           <nav className="table-of-contents sticky top-8 h-fit w-fit max-w-64 p-0">
-            <ul className="toc-list list-none p-0 m-0">
+            <ul className="toc-list list-none p-0 m-0" ref={tocListRef}>
               {tocSections.map((section) => (
                 <li key={section.id} className="mb-3">
                   <button
+                    data-section-id={section.id}
                     className={`toc-item bg-none border-none p-0 text-sm cursor-pointer text-left w-full transition-colors relative block ${activeSection === section.id ? 'active text-default font-semibold' : 'text-gray-400'}`}
                     onClick={() => scrollToSection(section.id)}
                   >
@@ -337,6 +366,7 @@ function RabbuPortfolio({ onClose }) {
                 </li>
               ))}
             </ul>
+            <div className="toc-indicator" ref={indicatorRef} style={indicatorStyle} />
           </nav>
         </div>
       </div>
