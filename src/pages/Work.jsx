@@ -76,7 +76,7 @@ function Work() {
           {/* INTRO */}
           <div className="profile-section">
             <div className="profile-photo">
-              <img src="/jiin_profile.png" alt="Jiin Park" className="profile-image" />
+              <img src="/home/jiin_profile.png" alt="Jiin Park" className="profile-image" />
             </div>
             <h1 className="main-heading">Jiin Park</h1>
             <p className="subheading">Product Designer <br /> + Design Engineer</p>
@@ -106,7 +106,7 @@ function Work() {
               target="_blank" 
               rel="noopener noreferrer"
             >
-              <img src="/linkedin.png" alt="LinkedIn" className="social-icon-img" />
+              <img src="/home/linkedin.png" alt="LinkedIn" className="social-icon-img" />
               LinkedIn
             </a>
             <a 
@@ -115,7 +115,7 @@ function Work() {
               target="_blank" 
               rel="noopener noreferrer"
             >
-              <img src="/github.png" alt="GitHub" className="social-icon-img" />
+              <img src="/home/github.png" alt="GitHub" className="social-icon-img" />
               GitHub
             </a>
           </div>
