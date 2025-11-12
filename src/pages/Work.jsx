@@ -9,17 +9,18 @@ import './Work.css'
 // Project data
 const projects = [
   { name: 'Maison', label: 'Scroll to Maison', date: '2025', category: 'case-studies', slug: 'maison' },
-  { name: 'Rabbu Portfolio', label: 'Scroll to Rabbu Portfolio', date: '2024', category: 'case-studies', slug: 'rabbu-portfolio' },
-  { name: 'Rabbu Marketplace', label: 'Scroll to Rabbu Marketplace', date: '2024', category: 'case-studies', slug: 'rabbu-marketplace' },
-  { name: 'Kobo', label: 'Scroll to Kobo', date: '2023', category: 'archive', slug: 'kobo' },
-  { name: 'Skiin', label: 'Scroll to Skiin', date: '2023', category: 'archive', slug: 'skiin' }
+  { name: 'Rabbu Portfolio', label: 'Scroll to Rabbu Portfolio', date: '2024', category: 'case-studies', slug: 'rabbu-portfolio', image: '/home/rabbu_portfolio_thumbnail.png' },
+  { name: 'Rabbu Marketplace', label: 'Scroll to Rabbu Marketplace', date: '2024', category: 'case-studies', slug: 'rabbu-marketplace', image: '/home/rabbu_marketplace_thumbnail.png' },
+  { name: 'Kobo', label: 'Scroll to Kobo', date: '2023', category: 'archive', slug: 'kobo', image: '/home/kobo_thumbnail.png' },
+  { name: 'Skiin', label: 'Scroll to Skiin', date: '2023', category: 'archive', slug: 'skiin', image: '/home/skiin_thumbnail.png' }
 ]
 
 function Work() {
   const navigate = useNavigate()
   const { projectSlug } = useParams()
   const [activeTab, setActiveTab] = useState(() => {
-    return localStorage.getItem('activeTab') || 'experience'
+    const savedTab = localStorage.getItem('activeTab')
+    return (savedTab === 'skills' ? 'experience' : savedTab) || 'experience'
   })
   const [activeFilter, setActiveFilter] = useState('all')
   const [isCaseStudyOpen, setIsCaseStudyOpen] = useState(false)
@@ -127,24 +128,17 @@ function Work() {
                 <div className="experience-category">
                   <div className="experience-list">
                     <div className="experience-item">
-                      <span className="experience-date">Current</span>
+                      <span className="experience-date">2025</span>
                       <div className="experience-role">
                         <strong>Design Engineer</strong><br />
                         Maison
                       </div>
                     </div>
                     <div className="experience-item">
-                      <span className="experience-date">2023</span>
+                      <span className="experience-date">2022/23</span>
                       <div className="experience-role">
                         <strong>Product Designer</strong><br />
                         Drip Design
-                      </div>
-                    </div>
-                    <div className="experience-item">
-                      <span className="experience-date">2022</span>
-                      <div className="experience-role">
-                        <strong>Freelance UI & UX Designer</strong><br />
-                        DGDL
                       </div>
                     </div>
                     <div className="experience-item">
@@ -191,24 +185,6 @@ function Work() {
                         OCADU
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {activeTab === 'skills' && (
-              <div className="skills-section">
-                <div className="skills-category">
-                  <h3 className="category-heading">DESIGN</h3>
-                  <div className="skills-content">
-                    <p className="skills-text">Figma, Framer</p>
-                  </div>
-                </div>
-
-                <div className="skills-category">
-                  <h3 className="category-heading">DEV</h3>
-                  <div className="skills-content">
-                    <p className="skills-text">HTML, CSS, JavaScript, React, Node.js</p>
                   </div>
                 </div>
               </div>

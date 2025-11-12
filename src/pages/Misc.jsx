@@ -15,7 +15,8 @@ function Misc() {
   const navigate = useNavigate()
   const { projectSlug } = useParams()
   const [activeTab, setActiveTab] = useState(() => {
-    return localStorage.getItem('activeTab') || 'experience'
+    const savedTab = localStorage.getItem('activeTab')
+    return (savedTab === 'skills' ? 'experience' : savedTab) || 'experience'
   })
   const [activeFilter, setActiveFilter] = useState('all')
   const [isCaseStudyOpen, setIsCaseStudyOpen] = useState(false)
@@ -146,24 +147,17 @@ function Misc() {
                 <div className="experience-category">
                   <div className="experience-list">
                     <div className="experience-item">
-                      <span className="experience-date">Current</span>
+                      <span className="experience-date">2025</span>
                       <div className="experience-role">
                         <strong>Design Engineer</strong><br />
                         Maison
                       </div>
                     </div>
                     <div className="experience-item">
-                      <span className="experience-date">2023</span>
+                      <span className="experience-date">2022/23</span>
                       <div className="experience-role">
                         <strong>Product Designer</strong><br />
                         Drip Design
-                      </div>
-                    </div>
-                    <div className="experience-item">
-                      <span className="experience-date">2022</span>
-                      <div className="experience-role">
-                        <strong>Freelance UI & UX Designer</strong><br />
-                        DGDL
                       </div>
                     </div>
                     <div className="experience-item">
@@ -210,24 +204,6 @@ function Misc() {
                         OCADU
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {activeTab === 'skills' && (
-              <div className="skills-section">
-                <div className="skills-category">
-                  <h3 className="category-heading">DESIGN</h3>
-                  <div className="skills-content">
-                    <p className="skills-text">Figma, Framer</p>
-                  </div>
-                </div>
-
-                <div className="skills-category">
-                  <h3 className="category-heading">DEV</h3>
-                  <div className="skills-content">
-                    <p className="skills-text">HTML, CSS, JavaScript, React, Node.js</p>
                   </div>
                 </div>
               </div>

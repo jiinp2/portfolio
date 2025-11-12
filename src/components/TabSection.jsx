@@ -44,12 +44,6 @@ function TabSection({ activeTab, onTabChange, children }) {
         >
           EDUCATION
         </button>
-        <button 
-          className={`tab-button ${activeTab === 'skills' ? 'active' : ''}`}
-          onClick={() => onTabChange('skills')}
-        >
-          SKILLS
-        </button>
         <div className="tab-indicator" ref={indicatorRef} style={indicatorStyle} />
       </div>
 

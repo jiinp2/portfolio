@@ -50,6 +50,7 @@
 }
 
 html {
+  font-size: 16px; /* Fixed base size, no viewport scaling */
   scroll-behavior: smooth;
 }
 
@@ -83,12 +84,12 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-color);
 }
 
-h1 { font-size: var(--font-size-3xl); }
-h2 { font-size: var(--font-size-2xl); }
-h3 { font-size: var(--font-size-xl); }
-h4 { font-size: var(--font-size-lg); }
-h5 { font-size: var(--font-size-base); }
-h6 { font-size: var(--font-size-sm); }
+h1 { font-size: var(--font-size-2xl); }
+h2 { font-size: var(--font-size-xl); }
+h3 { font-size: var(--font-size-lg); }
+h4 { font-size: var(--font-size-base); }
+h5 { font-size: var(--font-size-sm); }
+h6 { font-size: var(--font-size-xs); }
 
 /* Paragraphs */
 p {

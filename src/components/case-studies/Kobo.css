@@ -65,7 +65,7 @@
 .back-button {
     background: none;
     border: none;
-    font-size: 1rem;
+    font-size: var(--font-size-lg);
     color: #1a1a1a;
     cursor: pointer;
     padding: 0.5rem 0;
@@ -89,20 +89,21 @@
 }
 
 .case-study-title {
-    font-size: 4rem;
-    font-weight: 700;
-    color: #1a1a1a;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-color);
     margin-bottom: 1.5rem;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
+    letter-spacing: var(--letter-spacing-tight);
+    line-height: var(--line-height-tight);
 }
 
 .case-study-subtitle {
-    font-size: 1.5rem;
-    color: #6b7280;
-    font-weight: 400;
+    font-size: var(--font-size-lg);
+    color: var(--text-light);
+    font-weight: var(--font-weight-normal);
     margin-bottom: 3rem;
     max-width: 800px;
+    line-height: var(--line-height-relaxed);
 }
 
 .hero-image-placeholder {
@@ -114,7 +115,7 @@
     align-items: center;
     justify-content: center;
     color: #9ca3af;
-    font-size: 1.125rem;
+    font-size: var(--font-size-xl);
     font-weight: 500;
     border: 2px dashed #d1d5db;
 }
@@ -132,18 +133,18 @@
 }
 
 .info-item h3 {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #6b7280;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-light);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: var(--letter-spacing-wide);
     margin-bottom: 0.5rem;
 }
 
 .info-item p {
-    font-size: 1rem;
-    color: #1a1a1a;
-    font-weight: 500;
+    font-size: var(--font-size-lg);
+    color: var(--text-color);
+    font-weight: var(--font-weight-medium);
     margin: 0;
 }
 
@@ -153,11 +154,12 @@
 }
 
 .case-study-section h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #1a1a1a;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-color);
     margin-bottom: 2rem;
-    letter-spacing: -0.02em;
+    letter-spacing: var(--letter-spacing-tight);
+    line-height: var(--line-height-tight);
 }
 
 .subsection {
@@ -165,14 +167,16 @@
 }
 
 .subsection h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #1a1a1a;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-color);
     margin-bottom: 1rem;
+    letter-spacing: var(--letter-spacing-tight);
+    line-height: var(--line-height-tight);
 }
 
 .subsection h4 {
-    font-size: 1.25rem;
+    font-size: var(--font-size-2xl);
     font-weight: 600;
     color: #1a1a1a;
     margin-bottom: 1rem;
@@ -180,9 +184,9 @@
 }
 
 .subsection p {
-    font-size: 1.125rem;
-    line-height: 1.7;
-    color: #4b5563;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+    color: var(--text-muted);
     margin-bottom: 1.5rem;
 }
 
@@ -197,7 +201,7 @@
     padding: 1rem 0;
     position: relative;
     padding-left: 2rem;
-    font-size: 1.125rem;
+    font-size: var(--font-size-xl);
     line-height: 1.6;
     color: #4b5563;
     border-bottom: 1px solid #f3f4f6;
@@ -213,7 +217,7 @@
     left: 0;
     color: #10b981;
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: var(--font-size-2xl);
 }
 
 /* Takeaways List */
@@ -227,7 +231,7 @@
     padding: 0.75rem 0;
     position: relative;
     padding-left: 1.75rem;
-    font-size: 1rem;
+    font-size: var(--font-size-lg);
     line-height: 1.6;
     color: #4b5563;
 }
@@ -238,7 +242,7 @@
     left: 0;
     color: #6366f1;
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: var(--font-size-2xl);
 }
 
 /* Review Categories */
@@ -257,7 +261,7 @@
 }
 
 .review-category h4 {
-    font-size: 1.125rem;
+    font-size: var(--font-size-xl);
     font-weight: 600;
     color: #1a1a1a;
     margin-bottom: 1rem;
@@ -273,7 +277,7 @@
     padding: 0.5rem 0;
     position: relative;
     padding-left: 1.5rem;
-    font-size: 1rem;
+    font-size: var(--font-size-lg);
     line-height: 1.6;
     color: #4b5563;
 }
@@ -317,12 +321,12 @@
 
 .image-placeholder.large {
     height: 300px;
-    font-size: 1.125rem;
+    font-size: var(--font-size-xl);
 }
 
 .image-placeholder:not(.large) {
     height: 200px;
-    font-size: 1rem;
+    font-size: var(--font-size-lg);
 }
 
 /* Table of Contents Navigation */
@@ -359,7 +363,7 @@
 }
 
 .toc-header h3 {
-    font-size: 0.875rem;
+    font-size: var(--font-size-base);
     font-weight: 600;
     color: #6b7280;
     text-transform: uppercase;
@@ -381,7 +385,7 @@
     background: none;
     border: none;
     padding: 0;
-    font-size: 0.875rem;
+    font-size: var(--font-size-base);
     color: #9ca3af;
     cursor: pointer;
     text-align: left;
@@ -431,7 +435,7 @@
     }
     
     .case-study-title {
-        font-size: 3rem;
+        font-size: var(--font-size-2xl);
     }
     
     .project-info-bar {
@@ -458,11 +462,11 @@
     }
     
     .case-study-title {
-        font-size: 2.5rem;
+        font-size: var(--font-size-2xl);
     }
     
     .case-study-subtitle {
-        font-size: 1.25rem;
+        font-size: var(--font-size-lg);
     }
     
     .hero-image-placeholder {
@@ -476,11 +480,11 @@
     }
     
     .case-study-section h2 {
-        font-size: 2rem;
+        font-size: var(--font-size-xl);
     }
     
     .subsection h3 {
-        font-size: 1.25rem;
+        font-size: var(--font-size-lg);
     }
     
     .review-categories {
@@ -503,16 +507,16 @@
     }
     
     .case-study-title {
-        font-size: 2rem;
+        font-size: var(--font-size-2xl);
     }
     
     .case-study-subtitle {
-        font-size: 1.125rem;
+        font-size: var(--font-size-lg);
     }
     
     .hero-image-placeholder {
         height: 250px;
-        font-size: 1rem;
+        font-size: var(--font-size-lg);
     }
     
     .project-info-bar {
@@ -520,15 +524,15 @@
     }
     
     .case-study-section h2 {
-        font-size: 1.75rem;
+        font-size: var(--font-size-xl);
     }
     
     .subsection h3 {
-        font-size: 1.125rem;
+        font-size: var(--font-size-lg);
     }
     
     .subsection p {
-        font-size: 1rem;
+        font-size: var(--font-size-base);
     }
     
     .review-category {
