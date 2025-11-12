@@ -216,7 +216,9 @@ function Misc() {
       <main className="projects-section">
         <div className="work-header">
           <div className="work-title-wrapper">
-            <h2 className="work-title">Misc</h2>
+            <Link to="/" className="work-title-link">
+              <h2 className="work-title">Misc</h2>
+            </Link>
             <Link to="/" className="rotate-icon-link">
               <span className="rotate-icon">↻</span>
             </Link>

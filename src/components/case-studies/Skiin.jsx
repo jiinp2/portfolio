@@ -66,13 +66,12 @@ function Skiin({ onClose }) {
       }
     }
 
-    // Initial position
+    // Use requestAnimationFrame for smoother updates
+    const rafId = requestAnimationFrame(() => {
     updateIndicator()
-
-    // Update on activeSection change
-    const timeoutId = setTimeout(updateIndicator, 0)
+    })
     
-    return () => clearTimeout(timeoutId)
+    return () => cancelAnimationFrame(rafId)
   }, [activeSection])
 
   // Scroll to section function

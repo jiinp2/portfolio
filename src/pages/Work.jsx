@@ -197,7 +197,9 @@ function Work() {
       <main className="projects-section">
         <div className="work-header">
           <div className="work-title-wrapper">
-            <h2 className="work-title">Work</h2>
+            <Link to="/misc" className="work-title-link">
+              <h2 className="work-title">Work</h2>
+            </Link>
             <Link to="/misc" className="rotate-icon-link">
               <span className="rotate-icon">↻</span>
             </Link>

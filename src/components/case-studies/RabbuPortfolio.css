@@ -131,6 +131,7 @@
 
 .subsection p {
     /* Utility classes handle typography */
+    max-width: 650px;
 }
 
 /* Outcomes List */
@@ -140,6 +141,7 @@
 
 .outcomes-list li {
     /* Utility classes handle: py-4, relative, pl-8, text-lg, leading-relaxed, text-muted, border-b, border-gray-100 */
+    max-width: 650px;
 }
 
 .outcomes-list li:last-child {
@@ -291,6 +293,7 @@
     line-height: var(--line-height-relaxed);
     color: var(--text-muted);
     margin: 0;
+    max-width: 650px;
 }
 
 /* Next Project */
@@ -399,10 +402,10 @@
     left: -1rem;
     width: 3px;
     height: 16px;
-    background: #6366f1;
+    background: #22c55e;
     border-radius: 0 2px 2px 0;
     transform: translateY(-50%);
-    transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: top 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     pointer-events: none;
     z-index: 1;
 }
