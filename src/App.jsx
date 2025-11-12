@@ -1,24 +1,19 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Header from './components/Header'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Work from './pages/Work'
-import Aside from './pages/Aside'
-import About from './pages/About'
+import Misc from './pages/Misc'
 import './App.css'
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div className="App">
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<Work />} />
-            <Route path="/aside" element={<Aside />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
-        </main>
+        <Routes>
+          <Route path="/" element={<Work />} />
+          <Route path="/misc" element={<Misc />} />
+          <Route path="/:projectSlug" element={<Work />} />
+        </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   )
 }
 
