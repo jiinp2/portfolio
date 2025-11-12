@@ -4,6 +4,9 @@ import './Kobo.css'
 function Kobo({ onClose }) {
   const [activeSection, setActiveSection] = useState('overview')
   const sectionRefs = useRef({})
+  const tocListRef = useRef(null)
+  const indicatorRef = useRef(null)
+  const [indicatorStyle, setIndicatorStyle] = useState({})
 
   // Table of contents sections
   const tocSections = [
@@ -47,6 +50,30 @@ function Kobo({ onClose }) {
 
     return () => observer.disconnect()
   }, [])
+
+  // Update indicator position
+  useEffect(() => {
+    if (!tocListRef.current || !indicatorRef.current) return
+
+    const updateIndicator = () => {
+      const activeButton = tocListRef.current.querySelector(`button[data-section-id="${activeSection}"]`)
+      if (activeButton && indicatorRef.current) {
+        const buttonRect = activeButton.getBoundingClientRect()
+        const navRect = indicatorRef.current.parentElement.getBoundingClientRect()
+        const top = buttonRect.top - navRect.top + buttonRect.height / 2
+        setIndicatorStyle({
+          top: `${top}px`,
+        })
+      }
+    }
+
+    // Use requestAnimationFrame for smoother updates
+    const rafId = requestAnimationFrame(() => {
+    updateIndicator()
+    })
+    
+    return () => cancelAnimationFrame(rafId)
+  }, [activeSection])
 
   // Scroll to section function
   const scrollToSection = (sectionId) => {
@@ -340,10 +367,11 @@ function Kobo({ onClose }) {
         {/* Right Column - Table of Contents */}
         <div className="case-study-right">
           <nav className="table-of-contents">
-            <ul className="toc-list">
+            <ul className="toc-list" ref={tocListRef}>
               {tocSections.map((section) => (
                 <li key={section.id}>
                   <button
+                    data-section-id={section.id}
                     className={`toc-item ${activeSection === section.id ? 'active' : ''}`}
                     onClick={() => scrollToSection(section.id)}
                   >
@@ -352,6 +380,7 @@ function Kobo({ onClose }) {
                 </li>
               ))}
             </ul>
+            <div className="toc-indicator" ref={indicatorRef} style={indicatorStyle} />
           </nav>
         </div>
       </div>

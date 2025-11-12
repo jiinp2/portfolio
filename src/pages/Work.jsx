@@ -130,22 +130,22 @@ function Work() {
                     <div className="experience-item">
                       <span className="experience-date">2025</span>
                       <div className="experience-role">
-                        <strong>Design Engineer</strong><br />
-                        Maison
+                        <div className="experience-role-title">Founding Design Engineer</div>
+                        <div className="experience-role-place">Maison</div>
                       </div>
                     </div>
                     <div className="experience-item">
                       <span className="experience-date">2022/23</span>
                       <div className="experience-role">
-                        <strong>Product Designer</strong><br />
-                        Drip Design
+                        <div className="experience-role-title">Product Designer</div>
+                        <div className="experience-role-place">Drip Design</div>
                       </div>
                     </div>
                     <div className="experience-item">
                       <span className="experience-date">2020</span>
                       <div className="experience-role">
-                        <strong>UI Design & UX Research Intern</strong><br />
-                        Myant
+                        <div className="experience-role-title">UI Design & UX Research Intern</div>
+                        <div className="experience-role-place">Myant</div>
                       </div>
                     </div>
                   </div>
@@ -160,29 +160,29 @@ function Work() {
                     <div className="experience-item">
                       <span className="experience-date">2025</span>
                       <div className="experience-role">
-                        <strong>Software Engineering</strong><br />
-                        BrainStation
+                        <div className="experience-role-title">Software Engineering</div>
+                        <div className="experience-role-place">BrainStation</div>
                       </div>
                     </div>
                     <div className="experience-item">
                       <span className="experience-date">2022</span>
                       <div className="experience-role">
-                        <strong>Design System</strong><br />
-                        Memorisely
+                        <div className="experience-role-title">Design System</div>
+                        <div className="experience-role-place">Memorisely</div>
                       </div>
                     </div>
                     <div className="experience-item">
                       <span className="experience-date">2021</span>
                       <div className="experience-role">
-                        <strong>UI Design</strong><br />
-                        BrainStation
+                        <div className="experience-role-title">UI Design</div>
+                        <div className="experience-role-place">BrainStation</div>
                       </div>
                     </div>
                     <div className="experience-item">
                       <span className="experience-date">2021</span>
                       <div className="experience-role">
-                        <strong>Industrial Design</strong><br />
-                        OCADU
+                        <div className="experience-role-title">Industrial Design</div>
+                        <div className="experience-role-place">OCADU</div>
                       </div>
                     </div>
                   </div>
@@ -197,7 +197,9 @@ function Work() {
       <main className="projects-section">
         <div className="work-header">
           <div className="work-title-wrapper">
-            <h2 className="work-title">Work</h2>
+            <Link to="/misc" className="work-title-link">
+              <h2 className="work-title">Work</h2>
+            </Link>
             <Link to="/misc" className="rotate-icon-link">
               <span className="rotate-icon">↻</span>
             </Link>

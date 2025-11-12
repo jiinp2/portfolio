@@ -36,7 +36,7 @@
 }
 
 .case-study-content {
-    padding: 4rem 0;
+    padding: 4rem 2.5rem;
     height: 100vh;
     overflow-y: auto;
     scroll-behavior: smooth;
@@ -181,6 +181,7 @@
     line-height: var(--line-height-relaxed);
     color: var(--text-muted);
     margin-bottom: 1.5rem;
+    max-width: 650px;
 }
 
 /* External Link */
@@ -211,6 +212,7 @@
     line-height: var(--line-height-relaxed);
     color: var(--text-muted);
     border-bottom: 1px solid #f3f4f6;
+    max-width: 650px;
 }
 
 .outcomes-list li:last-child {
@@ -240,6 +242,7 @@
     font-size: var(--font-size-base);
     line-height: var(--line-height-relaxed);
     color: var(--text-muted);
+    max-width: 650px;
 }
 
 .takeaways-list li::before {
@@ -280,6 +283,7 @@
     top: 2rem;
     height: fit-content;
     width: fit-content;
+    min-width: 200px;
     max-width: 250px;
     padding: 0;
     -ms-overflow-style: none;
@@ -320,6 +324,7 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    position: relative;
 }
 
 .toc-list li {
@@ -331,6 +336,7 @@
     border: none;
     padding: 0;
     font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
     color: var(--text-light);
     cursor: pointer;
     text-align: left;
@@ -346,19 +352,20 @@
 
 .toc-item.active {
     color: var(--text-color);
-    font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-medium);
 }
 
-.toc-item.active::before {
-    content: '';
+.toc-indicator {
     position: absolute;
     left: -1rem;
-    top: 50%;
-    transform: translateY(-50%);
     width: 3px;
     height: 16px;
-    background: #6366f1;
+    background: #22c55e;
     border-radius: 0 2px 2px 0;
+    transform: translateY(-50%);
+    transition: top 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    pointer-events: none;
+    z-index: 1;
 }
 
 /* Animations */
