@@ -21,11 +21,14 @@
     justify-content: center;
     overflow: hidden;
     padding: 2rem;
+    box-sizing: border-box;
 }
 
 .preview-image {
     max-width: 100%;
     max-height: 100%;
+    width: auto;
+    height: auto;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
@@ -156,6 +159,14 @@
         padding: 1.5rem;
     }
     
+    .preview-image {
+        max-width: calc(100% - 3rem);
+        max-height: calc(100% - 3rem);
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+    
     .project-title {
         font-size: var(--font-size-base);
     }
@@ -175,7 +186,22 @@
     }
     
     .project-preview {
-        padding: 1.25rem;
+        padding: 1rem;
+        min-height: 0;
+    }
+    
+    .preview-image {
+        max-width: calc(100% - 2rem);
+        max-height: calc(100% - 2rem);
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+    
+    .project-preview[data-slug="maison"] .preview-image {
+        max-width: 50%;
+        max-height: 50%;
+        width: auto;
     }
     
     .project-title {
