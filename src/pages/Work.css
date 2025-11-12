@@ -685,6 +685,14 @@ body.dark-mode {
     transition: color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.dark-mode .experience-role {
+    color: #d1d5db;
+}
+
+.dark-mode .experience-role strong {
+    color: #ffffff;
+}
+
 .dark-mode .project-card {
     background: #1a1a1a;
     border-color: #e5e7eb;

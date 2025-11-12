@@ -63,6 +63,20 @@
     margin: 0;
     line-height: 1.4;
     transition: color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.external-link-icon {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    color: currentColor;
+    flex-shrink: 0;
+}
+
+.project-card-wrapper:hover .external-link-icon {
+    opacity: 1;
 }
 
 .project-date {
@@ -127,4 +141,8 @@
 .dark-mode .preview-icon {
     color: #a0a0a0;
     opacity: 0.3;
+}
+
+.dark-mode .external-link-icon {
+    color: currentColor;
 }
