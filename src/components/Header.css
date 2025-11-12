@@ -23,11 +23,11 @@
 }
 
 .logo {
-  color: #1a1a1a;
+  color: var(--text-color);
   text-decoration: none;
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-normal);
   transition: color 0.2s ease;
 }
 
@@ -43,10 +43,10 @@
 }
 
 .nav-link {
-  color: #6b7280;
+  color: var(--text-light);
   text-decoration: none;
-  font-weight: 500;
-  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
   transition: color 0.2s ease;
   white-space: nowrap;
   position: relative;
@@ -57,8 +57,8 @@
 }
 
 .nav-link.active {
-  color: #1a1a1a;
-  font-weight: 600;
+  color: var(--text-color);
+  font-weight: var(--font-weight-semibold);
 }
 
 /* Right - Resume Button */
@@ -67,13 +67,13 @@
 }
 
 .resume-button {
-  background: #1a1a1a;
-  color: white;
+  background: var(--text-color);
+  color: var(--white);
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 8px;
-  font-weight: 500;
-  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
   transition: all 0.15s ease;
   border: 1px solid transparent;
 }
@@ -93,7 +93,7 @@
   }
   
   .logo {
-    font-size: 1.125rem;
+    font-size: var(--font-size-xl);
   }
   
   .nav-links {
@@ -101,12 +101,12 @@
   }
   
   .nav-link {
-    font-size: 0.8125rem;
+    font-size: var(--font-size-sm);
   }
   
   .resume-button {
     padding: 6px 12px;
-    font-size: 0.8125rem;
+    font-size: var(--font-size-sm);
   }
 }
 
@@ -120,11 +120,11 @@
   }
   
   .nav-link {
-    font-size: 0.75rem;
+    font-size: var(--font-size-xs);
   }
   
   .resume-button {
     padding: 6px 10px;
-    font-size: 0.75rem;
+    font-size: var(--font-size-xs);
   }
 }

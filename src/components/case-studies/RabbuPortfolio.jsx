@@ -68,8 +68,8 @@ function RabbuPortfolio({ onClose }) {
     <div className="case-study-overlay">
       <div className="case-study-layout">
         {/* Left Column - Back Button */}
-        <div className="case-study-left">
-          <button className="back-button sticky" onClick={onClose}>
+        <div className="case-study-left flex items-start pt-8">
+          <button className="back-button sticky cursor-pointer" onClick={onClose}>
             ← Back
           </button>
         </div>
@@ -77,194 +77,194 @@ function RabbuPortfolio({ onClose }) {
         {/* Middle Column - Main Content */}
         <div className="case-study-content">
           {/* Hero Section */}
-          <div className="hero-section">
-            <h1 className="case-study-title">Rabbu Portfolio</h1>
-            <p className="case-study-subtitle">A platform where short-term rental investors can manage their properties and track performance.</p>
-            <div className="hero-image-placeholder">
+          <div className="hero-section mb-8 text-left">
+            <h1 className="case-study-title text-2xl font-semibold tracking-tight text-default mb-6">Rabbu Portfolio</h1>
+            <p className="case-study-subtitle text-lg text-light font-normal mb-12 max-w-4xl leading-relaxed">A platform where short-term rental investors can manage their properties and track performance.</p>
+            <div className="hero-image-placeholder w-full flex items-center justify-center text-xl font-medium">
               <span>Hero Image Placeholder</span>
             </div>
           </div>
 
         {/* Project Info Bar */}
-        <div className="project-info-bar">
+        <div className="project-info-bar grid grid-cols-3 gap-8 mb-8 p-8">
           <div className="info-item">
-            <h3>Team</h3>
-            <p>Rabbu (3 PMs), Drip Design (2 Designers)</p>
+            <h3 className="text-sm font-semibold text-light uppercase tracking-wide mb-2">Team</h3>
+            <p className="text-lg text-default font-medium m-0">Rabbu (3 PMs), Drip Design (2 Designers)</p>
           </div>
           <div className="info-item">
-            <h3>Role</h3>
-            <p>Design Research, UI & UX Design</p>
+            <h3 className="text-sm font-semibold text-light uppercase tracking-wide mb-2">Role</h3>
+            <p className="text-lg text-default font-medium m-0">Design Research, UI & UX Design</p>
           </div>
           <div className="info-item">
-            <h3>Timeline</h3>
-            <p>Mar 2022 - Feb 2023</p>
+            <h3 className="text-sm font-semibold text-light uppercase tracking-wide mb-2">Timeline</h3>
+            <p className="text-lg text-default font-medium m-0">Mar 2022 - Feb 2023</p>
           </div>
         </div>
 
         {/* Overview Section */}
-        <section id="overview" ref={el => sectionRefs.current.overview = el} className="case-study-section">
-          <h2>Overview</h2>
+        <section id="overview" ref={el => sectionRefs.current.overview = el} className="case-study-section mb-12">
+          <h2 className="text-2xl font-semibold text-default mb-8 tracking-tight leading-tight">Overview</h2>
           
-          <div className="subsection">
-            <h3>Introduction</h3>
-            <p>Rabbu approached Drip Design to help design their short-term rental (STR) platform by incorporating tools they had previously launched as well as newer features that will help short-term rental investors find and manage property investments.</p>
-            <p>This case study follows the work for Rabbu Portfolio and Rabbu Marketplace can be found here.</p>
+          <div className="subsection mb-6">
+            <h3 className="text-xl font-semibold text-default mb-4 tracking-tight leading-tight">Introduction</h3>
+            <p className="text-lg leading-relaxed text-muted mb-6">Rabbu approached Drip Design to help design their short-term rental (STR) platform by incorporating tools they had previously launched as well as newer features that will help short-term rental investors find and manage property investments.</p>
+            <p className="text-lg leading-relaxed text-muted mb-6">This case study follows the work for Rabbu Portfolio and Rabbu Marketplace can be found here.</p>
           </div>
 
-          <div className="subsection">
-            <h3>What is Rabbu Portfolio?</h3>
-            <p>Is a part of Rabbu's STR platform where users can manage their property investments from performance evaluation, rental activity, and statements.</p>
+          <div className="subsection mb-6">
+            <h3 className="text-xl font-semibold text-default mb-4 tracking-tight leading-tight">What is Rabbu Portfolio?</h3>
+            <p className="text-lg leading-relaxed text-muted mb-6">Is a part of Rabbu's STR platform where users can manage their property investments from performance evaluation, rental activity, and statements.</p>
           </div>
         </section>
 
         {/* Outcomes Section */}
-        <section id="outcomes" ref={el => sectionRefs.current.outcomes = el} className="case-study-section">
-          <h2>Outcomes</h2>
-          <ul className="outcomes-list">
-            <li>End-to-end design and launch of Rabbu's Portfolio platform, enhancing the STR management experience.</li>
-            <li>Revitalized the user interface for cohesion with Rabbu Marketplace.</li>
+        <section id="outcomes" ref={el => sectionRefs.current.outcomes = el} className="case-study-section mb-12">
+          <h2 className="text-2xl font-semibold text-default mb-8 tracking-tight leading-tight">Outcomes</h2>
+          <ul className="outcomes-list list-none p-0 m-0">
+            <li className="py-4 relative pl-8 text-lg leading-relaxed text-muted border-b border-gray-100">End-to-end design and launch of Rabbu's Portfolio platform, enhancing the STR management experience.</li>
+            <li className="py-4 relative pl-8 text-lg leading-relaxed text-muted border-b-0">Revitalized the user interface for cohesion with Rabbu Marketplace.</li>
           </ul>
         </section>
 
         {/* Design Research Section */}
-        <section id="design-research" ref={el => sectionRefs.current['design-research'] = el} className="case-study-section">
-          <h2>Design Research</h2>
+        <section id="design-research" ref={el => sectionRefs.current['design-research'] = el} className="case-study-section mb-12">
+          <h2 className="text-2xl font-semibold text-default mb-8 tracking-tight leading-tight">Design Research</h2>
           
-          <div className="subsection">
-            <h3>Early Stage Hypothetical User Journeys</h3>
-            <p>Utilizing hypothetical user journeys provided by Rabbu, we aimed to define user needs and desired outcomes.</p>
-            <p>Our goal would be to transition from idealized user journeys to more realistic and user-tested versions through future iterations.</p>
+          <div className="subsection mb-6">
+            <h3 className="text-xl font-semibold text-default mb-4 tracking-tight leading-tight">Early Stage Hypothetical User Journeys</h3>
+            <p className="text-lg leading-relaxed text-muted mb-6">Utilizing hypothetical user journeys provided by Rabbu, we aimed to define user needs and desired outcomes.</p>
+            <p className="text-lg leading-relaxed text-muted mb-6">Our goal would be to transition from idealized user journeys to more realistic and user-tested versions through future iterations.</p>
           </div>
 
-          <div className="subsection">
-            <h3>New User Journey</h3>
-            <p>This journey outlines the process of a new Rabbu Portfolio user, from initial discovery to successful property management.</p>
+          <div className="subsection mb-6">
+            <h3 className="text-xl font-semibold text-default mb-4 tracking-tight leading-tight">New User Journey</h3>
+            <p className="text-lg leading-relaxed text-muted mb-8">This journey outlines the process of a new Rabbu Portfolio user, from initial discovery to successful property management.</p>
             
-            <div className="journey-cards">
-              <div className="journey-card">
-                <div className="journey-number">1</div>
-                <h4>Discovery</h4>
-                <p>Investors looking for an online platform to manage their first investment discovers Rabbu Portfolio.</p>
+            <div className="journey-cards grid grid-cols-4 gap-6 mt-8">
+              <div className="journey-card bg-white border border-gray-200 rounded-xl p-8 relative transition">
+                <div className="journey-number absolute -top-3 left-8 bg-indigo-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm">1</div>
+                <h4 className="text-xl font-semibold text-default mb-4 mt-2 tracking-tight leading-tight">Discovery</h4>
+                <p className="text-lg leading-relaxed text-light m-0">Investors looking for an online platform to manage their first investment discovers Rabbu Portfolio.</p>
               </div>
-              <div className="journey-card">
-                <div className="journey-number">2</div>
-                <h4>Expert Consultation</h4>
-                <p>The investor is provided a walkthrough by a Rabbu expert, who demonstrates the platform's efficient property management system.</p>
+              <div className="journey-card bg-white border border-gray-200 rounded-xl p-8 relative transition">
+                <div className="journey-number absolute -top-3 left-8 bg-indigo-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm">2</div>
+                <h4 className="text-xl font-semibold text-default mb-4 mt-2 tracking-tight leading-tight">Expert Consultation</h4>
+                <p className="text-lg leading-relaxed text-light m-0">The investor is provided a walkthrough by a Rabbu expert, who demonstrates the platform's efficient property management system.</p>
               </div>
-              <div className="journey-card">
-                <div className="journey-number">3</div>
-                <h4>Seamless Onboarding</h4>
-                <p>The investor signs a property management contract with Rabbu, officially onboarding their property to the platform.</p>
+              <div className="journey-card bg-white border border-gray-200 rounded-xl p-8 relative transition">
+                <div className="journey-number absolute -top-3 left-8 bg-indigo-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm">3</div>
+                <h4 className="text-xl font-semibold text-default mb-4 mt-2 tracking-tight leading-tight">Seamless Onboarding</h4>
+                <p className="text-lg leading-relaxed text-light m-0">The investor signs a property management contract with Rabbu, officially onboarding their property to the platform.</p>
               </div>
-              <div className="journey-card">
-                <div className="journey-number">4</div>
-                <h4>Portfolio Management</h4>
-                <p>The investor monitors their performance and financials, leading to their first successful investment.</p>
+              <div className="journey-card bg-white border border-gray-200 rounded-xl p-8 relative transition">
+                <div className="journey-number absolute -top-3 left-8 bg-indigo-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm">4</div>
+                <h4 className="text-xl font-semibold text-default mb-4 mt-2 tracking-tight leading-tight">Portfolio Management</h4>
+                <p className="text-lg leading-relaxed text-light m-0">The investor monitors their performance and financials, leading to their first successful investment.</p>
               </div>
             </div>
           </div>
 
-          <div className="subsection">
-            <h3>Experienced User Journey</h3>
-            <p>This journey outlines the process of how an experienced user who finds success with utilizing Portfolio decides to search and onboard additional properties they have found on Rabbu Marketplace.</p>
+          <div className="subsection mb-6">
+            <h3 className="text-xl font-semibold text-default mb-4 tracking-tight leading-tight">Experienced User Journey</h3>
+            <p className="text-lg leading-relaxed text-muted mb-8">This journey outlines the process of how an experienced user who finds success with utilizing Portfolio decides to search and onboard additional properties they have found on Rabbu Marketplace.</p>
             
-            <div className="journey-cards">
-              <div className="journey-card">
-                <div className="journey-number">1</div>
-                <h4>Strategic Expansion</h4>
-                <p>The investor is aware of Rabbu Marketplace, a platform where they can search for properties to expand their short-term rental portfolio.</p>
+            <div className="journey-cards grid grid-cols-4 gap-6 mt-8">
+              <div className="journey-card bg-white border border-gray-200 rounded-xl p-8 relative transition">
+                <div className="journey-number absolute -top-3 left-8 bg-indigo-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm">1</div>
+                <h4 className="text-xl font-semibold text-default mb-4 mt-2 tracking-tight leading-tight">Strategic Expansion</h4>
+                <p className="text-lg leading-relaxed text-light m-0">The investor is aware of Rabbu Marketplace, a platform where they can search for properties to expand their short-term rental portfolio.</p>
               </div>
-              <div className="journey-card">
-                <div className="journey-number">2</div>
-                <h4>Market Analysis</h4>
-                <p>They deep-dive into potential properties. Utilizing Marketplace tools to assess investment viability.</p>
+              <div className="journey-card bg-white border border-gray-200 rounded-xl p-8 relative transition">
+                <div className="journey-number absolute -top-3 left-8 bg-indigo-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm">2</div>
+                <h4 className="text-xl font-semibold text-default mb-4 mt-2 tracking-tight leading-tight">Market Analysis</h4>
+                <p className="text-lg leading-relaxed text-light m-0">They deep-dive into potential properties. Utilizing Marketplace tools to assess investment viability.</p>
               </div>
-              <div className="journey-card">
-                <div className="journey-number">3</div>
-                <h4>Informed Investments</h4>
-                <p>After thorough analysis and consultation with Rabbu experts, the investor selects an additional property to invest in.</p>
+              <div className="journey-card bg-white border border-gray-200 rounded-xl p-8 relative transition">
+                <div className="journey-number absolute -top-3 left-8 bg-indigo-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm">3</div>
+                <h4 className="text-xl font-semibold text-default mb-4 mt-2 tracking-tight leading-tight">Informed Investments</h4>
+                <p className="text-lg leading-relaxed text-light m-0">After thorough analysis and consultation with Rabbu experts, the investor selects an additional property to invest in.</p>
               </div>
-              <div className="journey-card">
-                <div className="journey-number">4</div>
-                <h4>Scalable Management</h4>
-                <p>The investor manages their short-term rentals all-in-one place, easing operations across multiple properties.</p>
+              <div className="journey-card bg-white border border-gray-200 rounded-xl p-8 relative transition">
+                <div className="journey-number absolute -top-3 left-8 bg-indigo-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm">4</div>
+                <h4 className="text-xl font-semibold text-default mb-4 mt-2 tracking-tight leading-tight">Scalable Management</h4>
+                <p className="text-lg leading-relaxed text-light m-0">The investor manages their short-term rentals all-in-one place, easing operations across multiple properties.</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* Design Process Section */}
-        <section id="design-process" ref={el => sectionRefs.current['design-process'] = el} className="case-study-section">
-          <h2>Design Process</h2>
+        <section id="design-process" ref={el => sectionRefs.current['design-process'] = el} className="case-study-section mb-12">
+          <h2 className="text-2xl font-semibold text-default mb-8 tracking-tight leading-tight">Design Process</h2>
           
-          <div className="subsection">
-            <h3>Rabbu One</h3>
-            <p>Rabbu decided to transition to a unified account system facilitated seamless access to both Marketplace and Portfolio, enhancing user interaction across Rabbu services.</p>
+          <div className="subsection mb-6">
+            <h3 className="text-xl font-semibold text-default mb-4 tracking-tight leading-tight">Rabbu One</h3>
+            <p className="text-lg leading-relaxed text-muted mb-6">Rabbu decided to transition to a unified account system facilitated seamless access to both Marketplace and Portfolio, enhancing user interaction across Rabbu services.</p>
           </div>
 
-          <div className="subsection">
-            <h3>Unified Account Matrix</h3>
-            <p>Defining how users will interact with different Rabbu services throughout their journey helped with creating transitions between products.</p>
-            <div className="image-placeholder large">
+          <div className="subsection mb-6">
+            <h3 className="text-xl font-semibold text-default mb-4 tracking-tight leading-tight">Unified Account Matrix</h3>
+            <p className="text-lg leading-relaxed text-muted mb-6">Defining how users will interact with different Rabbu services throughout their journey helped with creating transitions between products.</p>
+            <div className="image-placeholder large bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center text-gray-400 text-xl my-4 h-72">
               <span>Matrix Diagram Placeholder</span>
             </div>
           </div>
         </section>
 
         {/* Final Design Section */}
-        <section id="final-design" ref={el => sectionRefs.current['final-design'] = el} className="case-study-section">
-          <h2>Final Design</h2>
+        <section id="final-design" ref={el => sectionRefs.current['final-design'] = el} className="case-study-section mb-12">
+          <h2 className="text-2xl font-semibold text-default mb-8 tracking-tight leading-tight">Final Design</h2>
           
-          <div className="subsection">
-            <h3>Rabbu Portfolio</h3>
-            <p>The platform is organized into Dashboard, Properties, Calendar, Reviews, Activity, Pricing, and Statements, providing users comprehensive oversight over their investment properties.</p>
+          <div className="subsection mb-6">
+            <h3 className="text-xl font-semibold text-default mb-4 tracking-tight leading-tight">Rabbu Portfolio</h3>
+            <p className="text-lg leading-relaxed text-muted mb-8">The platform is organized into Dashboard, Properties, Calendar, Reviews, Activity, Pricing, and Statements, providing users comprehensive oversight over their investment properties.</p>
             
-            <div className="feature-cards">
-              <div className="feature-card">
-                <div className="feature-image">
-                  <div className="image-placeholder">
+            <div className="feature-cards grid grid-cols-auto-fit gap-8 mt-8">
+              <div className="feature-card bg-white border border-gray-200 rounded-xl overflow-hidden transition">
+                <div className="feature-image h-48 overflow-hidden">
+                  <div className="image-placeholder bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center text-gray-400 text-lg my-4 h-48">
                     <span>Dashboard Image</span>
                   </div>
                 </div>
-                <div className="feature-content">
-                  <h4>Dashboard</h4>
-                  <p>A customizable snapshot of property trends.</p>
+                <div className="feature-content p-6">
+                  <h4 className="text-xl font-semibold text-default mb-3 tracking-tight leading-tight">Dashboard</h4>
+                  <p className="text-lg leading-relaxed text-light m-0">A customizable snapshot of property trends.</p>
                 </div>
               </div>
 
-              <div className="feature-card">
-                <div className="feature-image">
-                  <div className="image-placeholder">
+              <div className="feature-card bg-white border border-gray-200 rounded-xl overflow-hidden transition">
+                <div className="feature-image h-48 overflow-hidden">
+                  <div className="image-placeholder bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center text-gray-400 text-lg my-4 h-48">
                     <span>Properties & Calendar Image</span>
                   </div>
                 </div>
-                <div className="feature-content">
-                  <h4>Properties & Calendar</h4>
-                  <p>Displays property statuses and booking details.</p>
+                <div className="feature-content p-6">
+                  <h4 className="text-xl font-semibold text-default mb-3 tracking-tight leading-tight">Properties & Calendar</h4>
+                  <p className="text-lg leading-relaxed text-light m-0">Displays property statuses and booking details.</p>
                 </div>
               </div>
 
-              <div className="feature-card">
-                <div className="feature-image">
-                  <div className="image-placeholder">
+              <div className="feature-card bg-white border border-gray-200 rounded-xl overflow-hidden transition">
+                <div className="feature-image h-48 overflow-hidden">
+                  <div className="image-placeholder bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center text-gray-400 text-lg my-4 h-48">
                     <span>Reviews & Activity Image</span>
                   </div>
                 </div>
-                <div className="feature-content">
-                  <h4>Reviews & Activity Feed</h4>
-                  <p>Keeps property owners updated on guest feedback and property activities.</p>
+                <div className="feature-content p-6">
+                  <h4 className="text-xl font-semibold text-default mb-3 tracking-tight leading-tight">Reviews & Activity Feed</h4>
+                  <p className="text-lg leading-relaxed text-light m-0">Keeps property owners updated on guest feedback and property activities.</p>
                 </div>
               </div>
 
-              <div className="feature-card">
-                <div className="feature-image">
-                  <div className="image-placeholder">
+              <div className="feature-card bg-white border border-gray-200 rounded-xl overflow-hidden transition">
+                <div className="feature-image h-48 overflow-hidden">
+                  <div className="image-placeholder bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center text-gray-400 text-lg my-4 h-48">
                     <span>Pricing & Statements Image</span>
                   </div>
                 </div>
-                <div className="feature-content">
-                  <h4>Pricing & Statements</h4>
-                  <p>Easy access to property related financial statements.</p>
+                <div className="feature-content p-6">
+                  <h4 className="text-xl font-semibold text-default mb-3 tracking-tight leading-tight">Pricing & Statements</h4>
+                  <p className="text-lg leading-relaxed text-light m-0">Easy access to property related financial statements.</p>
                 </div>
               </div>
             </div>
@@ -272,64 +272,64 @@ function RabbuPortfolio({ onClose }) {
         </section>
 
         {/* Key Features Section */}
-        <section id="key-features" ref={el => sectionRefs.current['key-features'] = el} className="case-study-section">
-          <h2>Key Features</h2>
+        <section id="key-features" ref={el => sectionRefs.current['key-features'] = el} className="case-study-section mb-12">
+          <h2 className="text-2xl font-semibold text-default mb-8 tracking-tight leading-tight">Key Features</h2>
           
-          <div className="key-features">
-            <div className="key-feature">
-              <div className="key-feature-image">
-                <div className="image-placeholder large">
+          <div className="key-features mt-6">
+            <div className="key-feature grid grid-cols-2 gap-12 mb-8 items-center">
+              <div className="key-feature-image w-full">
+                <div className="image-placeholder large bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center text-gray-400 text-xl my-4 h-72">
                   <span>Performance Dashboard Image</span>
                 </div>
               </div>
               <div className="key-feature-content">
-                <h3>Comprehensive Performance Insights</h3>
-                <p>Delivers real-time and customizable insights of financial and operational metrics, empowering investors to make data-driven decisions.</p>
+                <h3 className="text-2xl font-semibold text-default mb-4 tracking-tight leading-tight">Comprehensive Performance Insights</h3>
+                <p className="text-lg leading-relaxed text-muted m-0">Delivers real-time and customizable insights of financial and operational metrics, empowering investors to make data-driven decisions.</p>
               </div>
             </div>
 
-            <div className="key-feature">
-              <div className="key-feature-image">
-                <div className="image-placeholder large">
+            <div className="key-feature grid grid-cols-2 gap-12 mb-8 items-center">
+              <div className="key-feature-image w-full">
+                <div className="image-placeholder large bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center text-gray-400 text-xl my-4 h-72">
                   <span>Property Reservations Image</span>
                 </div>
               </div>
               <div className="key-feature-content">
-                <h3>Streamlined Property Booking Management</h3>
-                <p>Simplifies booking management by displaying bookings across all properties and listing platforms.</p>
+                <h3 className="text-2xl font-semibold text-default mb-4 tracking-tight leading-tight">Streamlined Property Booking Management</h3>
+                <p className="text-lg leading-relaxed text-muted m-0">Simplifies booking management by displaying bookings across all properties and listing platforms.</p>
               </div>
             </div>
 
-            <div className="key-feature">
-              <div className="key-feature-image">
-                <div className="image-placeholder large">
+            <div className="key-feature grid grid-cols-2 gap-12 mb-8 items-center">
+              <div className="key-feature-image w-full">
+                <div className="image-placeholder large bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center text-gray-400 text-xl my-4 h-72">
                   <span>Activity Feed Image</span>
                 </div>
               </div>
               <div className="key-feature-content">
-                <h3>Real-Time Property Activity Tracker</h3>
-                <p>Provides real-time updates to property happenings, elevating guest satisfaction through proactive property management.</p>
+                <h3 className="text-2xl font-semibold text-default mb-4 tracking-tight leading-tight">Real-Time Property Activity Tracker</h3>
+                <p className="text-lg leading-relaxed text-muted m-0">Provides real-time updates to property happenings, elevating guest satisfaction through proactive property management.</p>
               </div>
             </div>
           </div>
         </section>
 
           {/* Next Project Link */}
-          <div className="next-project">
-            <a href="#" className="next-project-link">
+          <div className="next-project mt-12 pt-6 border-t border-gray-200 text-center">
+            <a href="#" className="next-project-link text-xl font-medium text-primary transition-colors">
               Next Project: Rabbu Marketplace →
             </a>
           </div>
         </div>
 
         {/* Right Column - Table of Contents */}
-        <div className="case-study-right">
-          <nav className="table-of-contents">
-            <ul className="toc-list">
+        <div className="case-study-right flex items-start pt-8">
+          <nav className="table-of-contents sticky top-8 h-fit w-fit max-w-64 p-0">
+            <ul className="toc-list list-none p-0 m-0">
               {tocSections.map((section) => (
-                <li key={section.id}>
+                <li key={section.id} className="mb-3">
                   <button
-                    className={`toc-item ${activeSection === section.id ? 'active' : ''}`}
+                    className={`toc-item bg-none border-none p-0 text-sm cursor-pointer text-left w-full transition-colors relative block ${activeSection === section.id ? 'active text-default font-semibold' : 'text-gray-400'}`}
                     onClick={() => scrollToSection(section.id)}
                   >
                     {section.label}

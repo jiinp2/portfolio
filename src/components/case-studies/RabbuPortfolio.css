@@ -23,16 +23,12 @@
 
 /* Left Column - Back Button */
 .case-study-left {
-    display: flex;
-    align-items: flex-start;
-    padding-top: 4rem;
+    /* Utility classes handle: flex, items-start, pt-8 */
 }
 
 /* Right Column - Table of Contents */
 .case-study-right {
-    display: flex;
-    align-items: flex-start;
-    padding-top: 4rem;
+    /* Utility classes handle: flex, items-start, pt-8 */
 }
 
 .case-study-content {
@@ -65,8 +61,8 @@
 .back-button {
     background: none;
     border: none;
-    font-size: 1rem;
-    color: #1a1a1a;
+    font-size: var(--font-size-lg);
+    color: var(--text-color);
     cursor: pointer;
     padding: 0.5rem 0;
     margin-bottom: 2rem;
@@ -75,6 +71,7 @@
     min-height: 44px;
     display: flex;
     align-items: center;
+    font-weight: var(--font-weight-medium);
 }
 
 .back-button:hover {
@@ -84,119 +81,69 @@
 
 /* Hero Section */
 .hero-section {
-    margin-bottom: 4rem;
-    text-align: left;
+    /* Utility classes handle: mb-8, text-left */
 }
 
-.case-study-title {
-    font-size: 4rem;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
+.hero-section .case-study-title {
+    /* Utility classes handle typography - keeping for specificity */
 }
 
 .case-study-subtitle {
-    font-size: 1.5rem;
-    color: #6b7280;
-    font-weight: 400;
-    margin-bottom: 3rem;
-    max-width: 800px;
+    /* Utility classes handle typography */
 }
 
 .hero-image-placeholder {
-    width: 100%;
     height: 400px;
-    background: #f3f4f6;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #9ca3af;
-    font-size: 1.125rem;
-    font-weight: 500;
-    border: 2px dashed #d1d5db;
+    /* Utility classes handle: w-full, flex, items-center, justify-center, text-xl, font-medium, rounded-xl, bg-gray-100, border-2, border-dashed, border-gray-300 */
 }
 
 /* Project Info Bar */
 .project-info-bar {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-bottom: 4rem;
-    padding: 2rem;
     background: #f9fafb;
-    border-radius: 12px;
-    border: 1px solid #e5e7eb;
+    /* Utility classes handle: grid, grid-cols-3, gap-8, mb-8, p-8, rounded-xl, border */
 }
 
 .info-item h3 {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #6b7280;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.5rem;
+    /* Utility classes handle typography */
 }
 
 .info-item p {
-    font-size: 1rem;
-    color: #1a1a1a;
-    font-weight: 500;
-    margin: 0;
+    /* Utility classes handle typography */
 }
 
 /* Sections */
 .case-study-section {
-    margin-bottom: 5rem;
+    /* Utility classes handle: mb-12 */
 }
 
 .case-study-section h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 2rem;
-    letter-spacing: -0.02em;
+    /* Utility classes handle typography */
 }
 
 .subsection {
-    margin-bottom: 3rem;
+    /* Utility classes handle: mb-6 */
 }
 
 .subsection h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #1a1a1a;
-    margin-bottom: 1rem;
+    /* Utility classes handle typography */
 }
 
 .subsection p {
-    font-size: 1.125rem;
-    line-height: 1.7;
-    color: #4b5563;
-    margin-bottom: 1.5rem;
+    /* Utility classes handle typography */
 }
 
 /* Outcomes List */
 .outcomes-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    /* Utility classes handle: list-none, p-0, m-0 */
 }
 
 .outcomes-list li {
-    padding: 1rem 0;
-    position: relative;
-    padding-left: 2rem;
-    font-size: 1.125rem;
-    line-height: 1.6;
-    color: #4b5563;
-    border-bottom: 1px solid #f3f4f6;
+    /* Utility classes handle: py-4, relative, pl-8, text-lg, leading-relaxed, text-muted, border-b, border-gray-100 */
 }
 
 .outcomes-list li:last-child {
-    border-bottom: none;
+    /* Utility classes handle: border-b-0 */
 }
 
 .outcomes-list li::before {
@@ -204,24 +151,17 @@
     position: absolute;
     left: 0;
     color: #10b981;
-    font-weight: bold;
-    font-size: 1.25rem;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-xl);
 }
 
 /* Journey Cards */
 .journey-cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    margin-top: 2rem;
+    /* Utility classes handle: grid, grid-cols-4, gap-6, mt-8 */
 }
 
 .journey-card {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 2rem;
-    position: relative;
+    /* Utility classes handle: bg-white, border, border-gray-200, rounded-xl, p-8, relative, transition */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -231,34 +171,16 @@
 }
 
 .journey-number {
-    position: absolute;
-    top: -12px;
-    left: 2rem;
-    background: #6366f1;
-    color: white;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    font-size: 0.875rem;
+    /* Utility classes handle: absolute, -top-3, left-8, bg-indigo-500, text-white, w-8, h-8, rounded-full, flex, items-center, justify-center, font-semibold, text-sm */
 }
 
 .journey-card h4 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #1a1a1a;
-    margin-bottom: 1rem;
+    /* Utility classes handle typography - keeping mt-2 for spacing */
     margin-top: 0.5rem;
 }
 
 .journey-card p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #6b7280;
-    margin: 0;
+    /* Utility classes handle typography */
 }
 
 /* Image Placeholders */
@@ -276,12 +198,12 @@
 
 .image-placeholder.large {
     height: 300px;
-    font-size: 1.125rem;
+    font-size: var(--font-size-xl);
 }
 
 .image-placeholder:not(.large) {
     height: 200px;
-    font-size: 1rem;
+    font-size: var(--font-size-lg);
 }
 
 /* Feature Cards */
@@ -315,16 +237,18 @@
 }
 
 .feature-content h4 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #1a1a1a;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-color);
     margin-bottom: 0.75rem;
+    letter-spacing: var(--letter-spacing-tight);
+    line-height: var(--line-height-tight);
 }
 
 .feature-content p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #6b7280;
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+    color: var(--text-light);
     margin: 0;
 }
 
@@ -354,16 +278,18 @@
 }
 
 .key-feature-content h3 {
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: #1a1a1a;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-color);
     margin-bottom: 1rem;
+    letter-spacing: var(--letter-spacing-tight);
+    line-height: var(--line-height-tight);
 }
 
 .key-feature-content p {
-    font-size: 1.125rem;
-    line-height: 1.7;
-    color: #4b5563;
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+    color: var(--text-muted);
     margin: 0;
 }
 
@@ -378,8 +304,8 @@
 .next-project-link {
     color: #6366f1;
     text-decoration: none;
-    font-size: 1.125rem;
-    font-weight: 500;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-medium);
     transition: color 0.2s ease;
 }
 
@@ -421,11 +347,11 @@
 }
 
 .toc-header h3 {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #6b7280;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-light);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: var(--letter-spacing-wide);
     margin: 0;
 }
 
@@ -443,7 +369,7 @@
     background: none;
     border: none;
     padding: 0;
-    font-size: 0.875rem;
+    font-size: var(--font-size-sm);
     color: #9ca3af;
     cursor: pointer;
     text-align: left;
@@ -454,12 +380,12 @@
 }
 
 .toc-item:hover {
-    color: #6b7280;
+    color: var(--text-light);
 }
 
 .toc-item.active {
-    color: #1a1a1a;
-    font-weight: 600;
+    color: var(--text-color);
+    font-weight: var(--font-weight-semibold);
 }
 
 .toc-item.active::before {
@@ -489,11 +415,11 @@
 /* Responsive Design */
 @media (max-width: 1023px) and (min-width: 769px) {
     .case-study-content {
-        padding: 3rem;
+        padding: 3rem 0;
     }
     
-    .case-study-title {
-        font-size: 3rem;
+    .hero-section .case-study-title {
+        font-size: var(--font-size-2xl);
     }
     
     .project-info-bar {
@@ -526,12 +452,12 @@
         padding: 2rem 0;
     }
     
-    .case-study-title {
-        font-size: 2.5rem;
+    .hero-section .case-study-title {
+        font-size: var(--font-size-2xl);
     }
     
     .case-study-subtitle {
-        font-size: 1.25rem;
+        font-size: var(--font-size-lg);
     }
     
     .hero-image-placeholder {
@@ -564,11 +490,11 @@
     }
     
     .case-study-section h2 {
-        font-size: 2rem;
+        font-size: var(--font-size-xl);
     }
     
     .subsection h3 {
-        font-size: 1.25rem;
+        font-size: var(--font-size-lg);
     }
     
 }
@@ -582,17 +508,17 @@
         padding: 1.5rem 0;
     }
     
-    .case-study-title {
-        font-size: 2rem;
+    .hero-section .case-study-title {
+        font-size: var(--font-size-2xl);
     }
     
     .case-study-subtitle {
-        font-size: 1.125rem;
+        font-size: var(--font-size-lg);
     }
     
     .hero-image-placeholder {
         height: 250px;
-        font-size: 1rem;
+        font-size: var(--font-size-lg);
     }
     
     .project-info-bar {
@@ -606,7 +532,7 @@
     .journey-number {
         width: 28px;
         height: 28px;
-        font-size: 0.75rem;
+        font-size: var(--font-size-xs);
     }
     
     .feature-card {
@@ -618,15 +544,15 @@
     }
     
     .case-study-section h2 {
-        font-size: 1.75rem;
+        font-size: var(--font-size-xl);
     }
     
     .subsection h3 {
-        font-size: 1.125rem;
+        font-size: var(--font-size-lg);
     }
     
     .subsection p {
-        font-size: 1rem;
+        font-size: var(--font-size-lg);
     }
     
     .journey-cards {
