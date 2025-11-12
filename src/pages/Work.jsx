@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams, Link } from 'react-router-dom'
+import { FileText } from 'lucide-react'
 import CaseStudy from '../components/CaseStudy'
 import ProjectCard from '../components/ProjectCard'
 import TabSection from '../components/TabSection'
@@ -18,7 +19,7 @@ function Work() {
   const navigate = useNavigate()
   const { projectSlug } = useParams()
   const [activeTab, setActiveTab] = useState(() => {
-    return localStorage.getItem('activeTab') || 'links'
+    return localStorage.getItem('activeTab') || 'experience'
   })
   const [activeFilter, setActiveFilter] = useState('all')
   const [isCaseStudyOpen, setIsCaseStudyOpen] = useState(false)
@@ -75,7 +76,7 @@ function Work() {
           {/* INTRO */}
           <div className="profile-section">
             <div className="profile-photo">
-              <img src="/profile.png" alt="Jiin Park" className="profile-image" />
+              <img src="/home/jiin_profile.png" alt="Jiin Park" className="profile-image" />
             </div>
             <h1 className="main-heading">Jiin Park</h1>
             <p className="subheading">Product Designer <br /> + Design Engineer</p>
@@ -88,12 +89,42 @@ function Work() {
             </p>
           </div>
 
+          {/* SOCIAL LINKS */}
+          <div className="social-buttons">
+            <a 
+              href="/JiinPark_Resume_Portfolio.pdf" 
+              className="social-button" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <FileText size={16} />
+              Resume
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/jiinnoh/" 
+              className="social-button" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <img src="/home/linkedin.png" alt="LinkedIn" className="social-icon-img" />
+              LinkedIn
+            </a>
+            <a 
+              href="https://github.com/jiinp2" 
+              className="social-button" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <img src="/home/github.png" alt="GitHub" className="social-icon-img" />
+              GitHub
+            </a>
+          </div>
+
           {/* TAB INTERFACE */}
           <TabSection activeTab={activeTab} onTabChange={setActiveTab}>
             {activeTab === 'experience' && (
               <div className="experience-section">
                 <div className="experience-category">
-                  <h3 className="category-heading">WORK</h3>
                   <div className="experience-list">
                     <div className="experience-item">
                       <span className="experience-date">Current</span>
@@ -125,9 +156,12 @@ function Work() {
                     </div>
                   </div>
                 </div>
+              </div>
+            )}
 
+            {activeTab === 'education' && (
+              <div className="experience-section">
                 <div className="experience-category">
-                  <h3 className="category-heading">EDUCATION</h3>
                   <div className="experience-list">
                     <div className="experience-item">
                       <span className="experience-date">2025</span>
@@ -176,30 +210,6 @@ function Work() {
                   <div className="skills-content">
                     <p className="skills-text">HTML, CSS, JavaScript, React, Node.js</p>
                   </div>
-                </div>
-              </div>
-            )}
-
-            {activeTab === 'links' && (
-              <div className="links-section">
-                <div className="links-list">
-                  <a 
-                    href="/JiinPark_Resume_Portfolio.pdf" 
-                    className="link-item" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    <span className="link-text">Resume</span>
-                    <span className="arrow">↗</span>
-                  </a>
-                  <a href="https://linkedin.com/in/jiinpark" className="link-item" target="_blank" rel="noopener noreferrer">
-                    <span className="link-text">LinkedIn</span>
-                    <span className="arrow">↗</span>
-                  </a>
-                  <a href="https://github.com/jiinp2" className="link-item" target="_blank" rel="noopener noreferrer">
-                    <span className="link-text">Github</span>
-                    <span className="arrow">↗</span>
-                  </a>
                 </div>
               </div>
             )}
