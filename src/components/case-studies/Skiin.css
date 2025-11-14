@@ -13,7 +13,7 @@
 /* Case Study Layout Container */
 .case-study-layout {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr 4fr 1fr;
     gap: 3rem;
     height: 100vh;
     max-width: 1400px;
@@ -96,6 +96,9 @@
     margin-bottom: 1.5rem;
     letter-spacing: var(--letter-spacing-tight);
     line-height: var(--line-height-tight);
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .case-study-subtitle {
@@ -103,7 +106,9 @@
     color: var(--text-light);
     font-weight: var(--font-weight-normal);
     margin-bottom: 3rem;
-    max-width: 800px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
     line-height: var(--line-height-relaxed);
 }
 
@@ -161,6 +166,9 @@
     margin-bottom: 2rem;
     letter-spacing: var(--letter-spacing-tight);
     line-height: var(--line-height-tight);
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .subsection {
@@ -174,6 +182,9 @@
     margin-bottom: 1rem;
     letter-spacing: var(--letter-spacing-tight);
     line-height: var(--line-height-tight);
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .subsection p {
@@ -181,7 +192,9 @@
     line-height: var(--line-height-relaxed);
     color: var(--text-muted);
     margin-bottom: 1.5rem;
-    max-width: 650px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* External Link */
@@ -201,7 +214,8 @@
 .outcomes-list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
+    max-width: 560px;
 }
 
 .outcomes-list li {
@@ -212,7 +226,7 @@
     line-height: var(--line-height-relaxed);
     color: var(--text-muted);
     border-bottom: 1px solid #f3f4f6;
-    max-width: 650px;
+    max-width: 560px;
 }
 
 .outcomes-list li:last-child {
@@ -232,7 +246,8 @@
 .takeaways-list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
+    max-width: 560px;
 }
 
 .takeaways-list li {
@@ -242,7 +257,7 @@
     font-size: var(--font-size-base);
     line-height: var(--line-height-relaxed);
     color: var(--text-muted);
-    max-width: 650px;
+    max-width: 560px;
 }
 
 .takeaways-list li::before {

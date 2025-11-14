@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import StepCard from '../ui/StepCard'
 import './RabbuPortfolio.css'
 
 function RabbuPortfolio({ onClose }) {
@@ -107,8 +108,14 @@ function RabbuPortfolio({ onClose }) {
           <div className="hero-section mb-8 text-left">
             <h1 className="case-study-title text-2xl font-semibold tracking-tight text-default mb-6">Rabbu Portfolio</h1>
             <p className="case-study-subtitle text-lg text-light font-normal mb-12 max-w-4xl leading-relaxed">A platform where short-term rental investors can manage their properties and track performance.</p>
-            <div className="hero-image-placeholder w-full flex items-center justify-center text-xl font-medium">
-              <span>Hero Image Placeholder</span>
+            <div className="hero-image-container w-full">
+              <div className="hero-card">
+                <img 
+                  src="/case_studies/rabbu_portofolio/hero.webp" 
+                  alt="Rabbu Portfolio Hero" 
+                  className="hero-image w-full rounded-xl"
+                />
+              </div>
             </div>
           </div>
 
@@ -116,15 +123,15 @@ function RabbuPortfolio({ onClose }) {
         <div className="project-info-bar grid grid-cols-3 gap-8 mb-8 p-8">
           <div className="info-item">
             <h3 className="text-sm font-semibold text-light uppercase tracking-wide mb-2">Team</h3>
-            <p className="text-lg text-default font-medium m-0">Rabbu (3 PMs), Drip Design (2 Designers)</p>
+            <p className="text-lg leading-relaxed text-muted m-0">Rabbu (3 PMs), Drip Design (2 Designers)</p>
           </div>
           <div className="info-item">
             <h3 className="text-sm font-semibold text-light uppercase tracking-wide mb-2">Role</h3>
-            <p className="text-lg text-default font-medium m-0">Design Research, UI & UX Design</p>
+            <p className="text-lg leading-relaxed text-muted m-0">Design Research, UI & UX Design</p>
           </div>
           <div className="info-item">
             <h3 className="text-sm font-semibold text-light uppercase tracking-wide mb-2">Timeline</h3>
-            <p className="text-lg text-default font-medium m-0">Mar 2022 - Feb 2023</p>
+            <p className="text-lg leading-relaxed text-muted m-0">Mar 2022 - Feb 2023</p>
           </div>
         </div>
 
@@ -147,10 +154,49 @@ function RabbuPortfolio({ onClose }) {
         {/* Outcomes Section */}
         <section id="outcomes" ref={el => sectionRefs.current.outcomes = el} className="case-study-section mb-12">
           <h2 className="text-2xl font-semibold text-default mb-8 tracking-tight leading-tight">Outcomes</h2>
-          <ul className="outcomes-list list-none p-0 m-0">
-            <li className="py-4 relative pl-8 text-lg leading-relaxed text-muted border-b border-gray-100">End-to-end design and launch of Rabbu's Portfolio platform, enhancing the STR management experience.</li>
-            <li className="py-4 relative pl-8 text-lg leading-relaxed text-muted border-b-0">Revitalized the user interface for cohesion with Rabbu Marketplace.</li>
-          </ul>
+          
+          <div className="subsection mb-8">
+            <p className="text-lg leading-relaxed text-muted mb-6">End-to-end design and launch of Rabbu's Portfolio platform, enhancing the STR management experience.</p>
+            <p className="text-lg leading-relaxed text-muted mb-6">Revitalized the user interface for cohesion with Rabbu Marketplace.</p>
+          </div>
+          
+          <div className="outcomes-masonry">
+            <div className="outcome-item outcome-item-full">
+              <div className="outcome-card">
+                <div className="outcome-image-container w-full">
+                  <img 
+                    src="/case_studies/rabbu_portofolio/outcomes_1.webp" 
+                    alt="Rabbu Portfolio Dashboard" 
+                    className="outcome-image w-full rounded-xl"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="outcome-item outcome-item-half">
+              <div className="outcome-card">
+                <div className="outcome-image-container w-full">
+                  <img 
+                    src="/case_studies/rabbu_portofolio/outcomes_2.webp" 
+                    alt="Rabbu Portfolio UI Revitalization" 
+                    className="outcome-image w-full rounded-xl"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="outcome-item outcome-item-half">
+              <div className="outcome-card">
+                <div className="outcome-image-container w-full">
+                  <img 
+                    src="/case_studies/rabbu_portofolio/outcomes_3.webp" 
+                    alt="Rabbu Portfolio Feature" 
+                    className="outcome-image w-full rounded-xl"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Design Research Section */}
@@ -167,27 +213,27 @@ function RabbuPortfolio({ onClose }) {
             <h3 className="text-xl font-semibold text-default mb-4 tracking-tight leading-tight">New User Journey</h3>
             <p className="text-lg leading-relaxed text-muted mb-8">This journey outlines the process of a new Rabbu Portfolio user, from initial discovery to successful property management.</p>
             
-            <div className="journey-cards grid grid-cols-4 gap-6 mt-8">
-              <div className="journey-card bg-white border border-gray-200 rounded-xl p-8 relative transition">
-                <div className="journey-number absolute -top-3 left-8 bg-indigo-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm">1</div>
-                <h4 className="text-xl font-semibold text-default mb-4 mt-2 tracking-tight leading-tight">Discovery</h4>
-                <p className="text-lg leading-relaxed text-light m-0">Investors looking for an online platform to manage their first investment discovers Rabbu Portfolio.</p>
-              </div>
-              <div className="journey-card bg-white border border-gray-200 rounded-xl p-8 relative transition">
-                <div className="journey-number absolute -top-3 left-8 bg-indigo-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm">2</div>
-                <h4 className="text-xl font-semibold text-default mb-4 mt-2 tracking-tight leading-tight">Expert Consultation</h4>
-                <p className="text-lg leading-relaxed text-light m-0">The investor is provided a walkthrough by a Rabbu expert, who demonstrates the platform's efficient property management system.</p>
-              </div>
-              <div className="journey-card bg-white border border-gray-200 rounded-xl p-8 relative transition">
-                <div className="journey-number absolute -top-3 left-8 bg-indigo-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm">3</div>
-                <h4 className="text-xl font-semibold text-default mb-4 mt-2 tracking-tight leading-tight">Seamless Onboarding</h4>
-                <p className="text-lg leading-relaxed text-light m-0">The investor signs a property management contract with Rabbu, officially onboarding their property to the platform.</p>
-              </div>
-              <div className="journey-card bg-white border border-gray-200 rounded-xl p-8 relative transition">
-                <div className="journey-number absolute -top-3 left-8 bg-indigo-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm">4</div>
-                <h4 className="text-xl font-semibold text-default mb-4 mt-2 tracking-tight leading-tight">Portfolio Management</h4>
-                <p className="text-lg leading-relaxed text-light m-0">The investor monitors their performance and financials, leading to their first successful investment.</p>
-              </div>
+            <div className="step-cards mt-8">
+              <StepCard 
+                number={1}
+                title="Discovery"
+                description="Investors looking for an online platform to manage their first investment discovers Rabbu Portfolio."
+              />
+              <StepCard 
+                number={2}
+                title="Expert Consultation"
+                description="The investor is provided a walkthrough by a Rabbu expert, who demonstrates the platform's efficient property management system."
+              />
+              <StepCard 
+                number={3}
+                title="Seamless Onboarding"
+                description="The investor signs a property management contract with Rabbu, officially onboarding their property to the platform."
+              />
+              <StepCard 
+                number={4}
+                title="Portfolio Management"
+                description="The investor monitors their performance and financials, leading to their first successful investment."
+              />
             </div>
           </div>
 
@@ -195,27 +241,27 @@ function RabbuPortfolio({ onClose }) {
             <h3 className="text-xl font-semibold text-default mb-4 tracking-tight leading-tight">Experienced User Journey</h3>
             <p className="text-lg leading-relaxed text-muted mb-8">This journey outlines the process of how an experienced user who finds success with utilizing Portfolio decides to search and onboard additional properties they have found on Rabbu Marketplace.</p>
             
-            <div className="journey-cards grid grid-cols-4 gap-6 mt-8">
-              <div className="journey-card bg-white border border-gray-200 rounded-xl p-8 relative transition">
-                <div className="journey-number absolute -top-3 left-8 bg-indigo-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm">1</div>
-                <h4 className="text-xl font-semibold text-default mb-4 mt-2 tracking-tight leading-tight">Strategic Expansion</h4>
-                <p className="text-lg leading-relaxed text-light m-0">The investor is aware of Rabbu Marketplace, a platform where they can search for properties to expand their short-term rental portfolio.</p>
-              </div>
-              <div className="journey-card bg-white border border-gray-200 rounded-xl p-8 relative transition">
-                <div className="journey-number absolute -top-3 left-8 bg-indigo-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm">2</div>
-                <h4 className="text-xl font-semibold text-default mb-4 mt-2 tracking-tight leading-tight">Market Analysis</h4>
-                <p className="text-lg leading-relaxed text-light m-0">They deep-dive into potential properties. Utilizing Marketplace tools to assess investment viability.</p>
-              </div>
-              <div className="journey-card bg-white border border-gray-200 rounded-xl p-8 relative transition">
-                <div className="journey-number absolute -top-3 left-8 bg-indigo-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm">3</div>
-                <h4 className="text-xl font-semibold text-default mb-4 mt-2 tracking-tight leading-tight">Informed Investments</h4>
-                <p className="text-lg leading-relaxed text-light m-0">After thorough analysis and consultation with Rabbu experts, the investor selects an additional property to invest in.</p>
-              </div>
-              <div className="journey-card bg-white border border-gray-200 rounded-xl p-8 relative transition">
-                <div className="journey-number absolute -top-3 left-8 bg-indigo-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm">4</div>
-                <h4 className="text-xl font-semibold text-default mb-4 mt-2 tracking-tight leading-tight">Scalable Management</h4>
-                <p className="text-lg leading-relaxed text-light m-0">The investor manages their short-term rentals all-in-one place, easing operations across multiple properties.</p>
-              </div>
+            <div className="step-cards mt-8">
+              <StepCard 
+                number={1}
+                title="Strategic Expansion"
+                description="The investor is aware of Rabbu Marketplace, a platform where they can search for properties to expand their short-term rental portfolio."
+              />
+              <StepCard 
+                number={2}
+                title="Market Analysis"
+                description="They deep-dive into potential properties. Utilizing Marketplace tools to assess investment viability."
+              />
+              <StepCard 
+                number={3}
+                title="Informed Investments"
+                description="After thorough analysis and consultation with Rabbu experts, the investor selects an additional property to invest in."
+              />
+              <StepCard 
+                number={4}
+                title="Scalable Management"
+                description="The investor manages their short-term rentals all-in-one place, easing operations across multiple properties."
+              />
             </div>
           </div>
         </section>
