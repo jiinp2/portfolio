@@ -137,24 +137,11 @@
     /* Utility classes handle typography */
 }
 
-.info-item p {
-    /* Utility classes handle typography */
-}
-
-/* Sections */
-.case-study-section {
-    /* Utility classes handle: mb-12 */
-}
-
 .case-study-section h2 {
     /* Utility classes handle typography */
     max-width: 560px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.subsection {
-    /* Utility classes handle: mb-6 */
 }
 
 .subsection h3 {
@@ -181,10 +168,6 @@
 .outcomes-list li {
     /* Utility classes handle: py-4, relative, pl-8, text-lg, leading-relaxed, text-muted, border-b, border-gray-100 */
     max-width: 560px;
-}
-
-.outcomes-list li:last-child {
-    /* Utility classes handle: border-b-0 */
 }
 
 .outcomes-list li::before {
