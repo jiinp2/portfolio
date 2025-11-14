@@ -25,3 +25,7 @@ dist-ssr
 
 # Cursor Rules
 .cursorrules
+
+# Test pages
+src/pages/InfoCardTest.jsx
+src/pages/InfoCardTest.css

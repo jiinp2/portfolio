@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import StepCard from '../ui/StepCard'
+import InfoCard from '../ui/InfoCard'
 import './RabbuPortfolio.css'
 
 function RabbuPortfolio({ onClose }) {
@@ -213,23 +213,23 @@ function RabbuPortfolio({ onClose }) {
             <h3 className="text-xl font-semibold text-default mb-4 tracking-tight leading-tight">New User Journey</h3>
             <p className="text-lg leading-relaxed text-muted mb-8">This journey outlines the process of a new Rabbu Portfolio user, from initial discovery to successful property management.</p>
             
-            <div className="step-cards mt-8">
-              <StepCard 
+            <div className="info-cards mt-8">
+              <InfoCard 
                 number={1}
                 title="Discovery"
                 description="Investors looking for an online platform to manage their first investment discovers Rabbu Portfolio."
               />
-              <StepCard 
+              <InfoCard 
                 number={2}
                 title="Expert Consultation"
                 description="The investor is provided a walkthrough by a Rabbu expert, who demonstrates the platform's efficient property management system."
               />
-              <StepCard 
+              <InfoCard 
                 number={3}
                 title="Seamless Onboarding"
                 description="The investor signs a property management contract with Rabbu, officially onboarding their property to the platform."
               />
-              <StepCard 
+              <InfoCard 
                 number={4}
                 title="Portfolio Management"
                 description="The investor monitors their performance and financials, leading to their first successful investment."
@@ -241,23 +241,23 @@ function RabbuPortfolio({ onClose }) {
             <h3 className="text-xl font-semibold text-default mb-4 tracking-tight leading-tight">Experienced User Journey</h3>
             <p className="text-lg leading-relaxed text-muted mb-8">This journey outlines the process of how an experienced user who finds success with utilizing Portfolio decides to search and onboard additional properties they have found on Rabbu Marketplace.</p>
             
-            <div className="step-cards mt-8">
-              <StepCard 
+            <div className="info-cards mt-8">
+              <InfoCard 
                 number={1}
                 title="Strategic Expansion"
                 description="The investor is aware of Rabbu Marketplace, a platform where they can search for properties to expand their short-term rental portfolio."
               />
-              <StepCard 
+              <InfoCard 
                 number={2}
                 title="Market Analysis"
                 description="They deep-dive into potential properties. Utilizing Marketplace tools to assess investment viability."
               />
-              <StepCard 
+              <InfoCard 
                 number={3}
                 title="Informed Investments"
                 description="After thorough analysis and consultation with Rabbu experts, the investor selects an additional property to invest in."
               />
-              <StepCard 
+              <InfoCard 
                 number={4}
                 title="Scalable Management"
                 description="The investor manages their short-term rentals all-in-one place, easing operations across multiple properties."

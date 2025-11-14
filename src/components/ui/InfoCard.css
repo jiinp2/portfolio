@@ -1,5 +1,5 @@
-/* Step Card - Explicit styles to ensure they apply */
-.step-card {
+/* Info Card - Explicit styles to ensure they apply */
+.info-card {
     position: relative !important;
     background-color: #ffffff !important;
     border: 1px solid #e5e7eb !important;
@@ -8,24 +8,34 @@
     box-sizing: border-box !important;
 }
 
-.step-number {
+.info-indicator {
     position: static;
     top: auto;
     left: auto;
     margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-number {
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
     background-color: #6366f1;
     color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 0.875rem;
     font-weight: 600;
 }
 
-.step-card-title {
+.info-icon {
+    width: 2rem;
+    height: 2rem;
+    color: #1a1a1a;
+    font-size: 1.25rem;
+}
+
+.info-card-title {
     font-size: 0.875rem !important;
     font-weight: 600 !important;
     color: #1a1a1a !important;
@@ -36,7 +46,7 @@
     display: block !important;
 }
 
-.step-card-description {
+.info-card-description {
     font-size: 0.8125rem !important;
     line-height: 1.5 !important;
     color: #6b7280 !important;
@@ -44,8 +54,8 @@
     display: block !important;
 }
 
-/* Step Cards Container */
-.step-cards {
+/* Info Cards Container */
+.info-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
@@ -54,32 +64,39 @@
 
 /* Responsive Design */
 @media (max-width: 1023px) and (min-width: 769px) {
-    .step-cards {
+    .info-cards {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
 }
 
 @media (max-width: 768px) {
-    .step-cards {
+    .info-cards {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
     }
 }
 
 @media (max-width: 480px) {
-    .step-card {
+    .info-card {
         padding: 1.25rem;
     }
     
-    .step-number {
+    .info-number {
         width: 1.75rem;
         height: 1.75rem;
         font-size: 0.75rem;
     }
     
-    .step-cards {
+    .info-icon {
+        width: 1.75rem;
+        height: 1.75rem;
+        font-size: 1.125rem;
+    }
+    
+    .info-cards {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
 }
+
