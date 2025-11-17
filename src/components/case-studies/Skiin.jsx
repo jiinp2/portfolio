@@ -102,8 +102,14 @@ function Skiin({ onClose }) {
           <div className="hero-section">
             <h1 className="case-study-title">Skiin</h1>
             <p className="case-study-subtitle">Innovating wellness through real-time tracking and sensory textiles.</p>
-            <div className="hero-image-placeholder">
-              <span>Hero Image Placeholder</span>
+            <div className="hero-image-container w-full">
+              <div className="hero-card">
+                <img 
+                  src="/case_studies/skiin/hero.avif" 
+                  alt="Skiin Hero" 
+                  className="hero-image w-full rounded-xl"
+                />
+              </div>
             </div>
           </div>
 
@@ -136,7 +142,7 @@ function Skiin({ onClose }) {
               <h3>What Is Skiin?</h3>
               <p>Skiin consists of bio-sensing garments that work in tandem with a mobile application, offering users real-time insights into their wellness. Sensors collect and track health data over time, which can be shared with a user's circle of care.</p>
               <p>
-                <a href="#" className="external-link" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.myanthealth.com/" className="external-link" target="_blank" rel="noopener noreferrer">
                   Product Page ↗
                 </a>
               </p>
@@ -186,48 +192,72 @@ function Skiin({ onClose }) {
             <div className="subsection">
               <h3>Communication Features</h3>
               <p>Enhancing remote connection through Skiin's in-app messaging and video calling.</p>
-              <div className="image-placeholder large">
-                <span>Communication Features Screens</span>
+              <div className="image-container w-full mt-4">
+                <img 
+                  src="/case_studies/skiin/1.avif" 
+                  alt="Communication Features Screens" 
+                  className="w-full rounded-xl"
+                />
               </div>
             </div>
 
             <div className="subsection">
               <h3>Staying in the Loop</h3>
               <p>Within group chats, each member has a status bar that provides a quick view on their current health.</p>
-              <div className="image-placeholder large">
-                <span>Status Bar Screens</span>
+              <div className="image-container w-full mt-4">
+                <img 
+                  src="/case_studies/skiin/2.webp" 
+                  alt="Status Bar Screens" 
+                  className="w-full rounded-xl"
+                />
               </div>
             </div>
 
             <div className="subsection">
               <h3>In-Depth Updates</h3>
               <p>The status bar can be expanded to view user location and more detailed metrics over time.</p>
-              <div className="image-placeholder large">
-                <span>In-Depth Updates Screens</span>
+              <div className="image-container w-full mt-4">
+                <img 
+                  src="/case_studies/skiin/3.avif" 
+                  alt="In-Depth Updates Screens" 
+                  className="w-full rounded-xl"
+                />
               </div>
             </div>
 
             <div className="subsection">
               <h3>Mood Logging</h3>
               <p>Enhancing remote connection through Skiin's in-app messaging and video calling.</p>
-              <div className="image-placeholder large">
-                <span>Mood Logging Screens</span>
+              <div className="image-container w-full mt-4">
+                <img 
+                  src="/case_studies/skiin/4.webp" 
+                  alt="Mood Logging Screens" 
+                  className="w-full rounded-xl"
+                />
               </div>
             </div>
 
             <div className="subsection">
               <h3>Mood Logging Flow</h3>
               <p>Users can select their mood on a scale of 1-5, add the date, include a note on what they did that day, and tag factors that influenced their mood.</p>
-              <div className="image-placeholder large">
-                <span>Mood Logging Flow</span>
+              <div className="image-container w-full mt-4">
+                <img 
+                  src="/case_studies/skiin/5.webp" 
+                  alt="Mood Logging Flow" 
+                  className="w-full rounded-xl"
+                />
               </div>
             </div>
 
             <div className="subsection">
               <h3>Patterns Over Time</h3>
               <p>By viewing mood logs on a daily, weekly, or monthly basis, users can identify reoccurring patterns and understand how they are affected by their daily activities.</p>
-              <div className="image-placeholder large">
-                <span>Patterns Over Time Screens</span>
+              <div className="image-container w-full mt-4">
+                <img 
+                  src="/case_studies/skiin/6.webp" 
+                  alt="Patterns Over Time Screens" 
+                  className="w-full rounded-xl"
+                />
               </div>
             </div>
           </section>
