@@ -214,26 +214,34 @@ function Skiin({ onClose }) {
             </div>
 
             <div className="subsection">
-              <h3>In-Depth Updates</h3>
-              <p>The status bar can be expanded to view user location and more detailed metrics over time.</p>
-              <div className="image-container w-full mt-4">
-                <img 
-                  src="/case_studies/skiin/3.avif" 
-                  alt="In-Depth Updates Screens" 
-                  className="w-full rounded-xl"
-                />
+              <div className="key-feature grid grid-cols-2 gap-12 mb-8 items-center">
+                <div className="key-feature-content">
+                  <h3>In-Depth Updates</h3>
+                  <p>The status bar can be expanded to view user location and more detailed metrics over time.</p>
+                </div>
+                <div className="key-feature-image w-full">
+                  <img 
+                    src="/case_studies/skiin/3.avif" 
+                    alt="In-Depth Updates Screens" 
+                    className="w-full rounded-xl"
+                  />
+                </div>
               </div>
             </div>
 
             <div className="subsection">
-              <h3>Mood Logging</h3>
-              <p>Enhancing remote connection through Skiin's in-app messaging and video calling.</p>
-              <div className="image-container w-full mt-4">
-                <img 
-                  src="/case_studies/skiin/4.webp" 
-                  alt="Mood Logging Screens" 
-                  className="w-full rounded-xl"
-                />
+              <div className="key-feature grid grid-cols-2 gap-12 mb-8 items-center">
+                <div className="key-feature-image w-full">
+                  <img 
+                    src="/case_studies/skiin/4.webp" 
+                    alt="Mood Logging Screens" 
+                    className="w-full rounded-xl"
+                  />
+                </div>
+                <div className="key-feature-content">
+                  <h3>Mood Logging</h3>
+                  <p>Enhancing remote connection through Skiin's in-app messaging and video calling.</p>
+                </div>
               </div>
             </div>
 
