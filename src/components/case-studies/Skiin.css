@@ -70,17 +70,25 @@
     cursor: pointer;
     padding: 0.5rem 0;
     margin-bottom: 2rem;
-    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 0.2s ease;
     min-height: 44px;
     display: flex;
     align-items: center;
     font-weight: var(--font-weight-medium);
+    gap: 0.25rem;
 }
 
 .back-button:hover {
-    color: var(--primary-color);
-    transform: translateX(-6px);
+    color: #6b7280;
+}
+
+.back-arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.back-button:hover .back-arrow {
+    transform: translateX(-4px);
 }
 
 /* Hero Section */
@@ -118,7 +126,7 @@
 }
 
 .hero-card {
-    background: #9DD1E8;
+    background: var(--skiin-accent);
     border-radius: 12px;
     padding: 1.5rem;
     width: 100%;
@@ -231,8 +239,9 @@
 
 .outcomes-list li {
     padding: 1rem 0;
-    position: relative;
-    padding-left: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
     font-size: var(--font-size-base);
     line-height: var(--line-height-relaxed);
     color: var(--text-muted);
@@ -244,9 +253,11 @@
     border-bottom: none;
 }
 
-.outcomes-list li::before {
-    content: "✓";
-    position: absolute;
+.outcome-icon {
+    color: #10b981;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
     left: 0;
     color: #10b981;
     font-weight: var(--font-weight-bold);
@@ -415,7 +426,7 @@
     left: -1rem;
     width: 3px;
     height: 16px;
-    background: #9DD1E8;
+    background: var(--skiin-accent);
     border-radius: 0 2px 2px 0;
     transform: translateY(-50%);
     transition: top 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);

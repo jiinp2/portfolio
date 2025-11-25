@@ -406,17 +406,24 @@ body.dark-mode {
 }
 
 .rotate-icon {
-    font-size: var(--font-size-3xl);
     color: #22c55e;
     display: inline-flex;
     align-items: center;
     line-height: 1;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .rotate-icon-link:hover .rotate-icon {
     color: #16a34a;
-    transform: rotate(180deg);
+    transform: scaleX(-1);
+}
+
+.rotate-icon-reverse {
+    transform: scaleX(-1);
+}
+
+.rotate-icon-link:hover .rotate-icon-reverse {
+    transform: scaleX(1);
 }
 
 /* Work Filters */
@@ -781,12 +788,22 @@ body.dark-mode {
 
 .dark-mode .work-title-link:hover ~ .rotate-icon-link .rotate-icon {
     color: #4ade80;
-    transform: rotate(180deg);
+    transform: scaleX(-1);
+}
+
+.dark-mode .work-title-link:hover ~ .rotate-icon-link .rotate-icon-reverse {
+    color: #4ade80;
+    transform: scaleX(1);
 }
 
 .dark-mode .rotate-icon-link:hover .rotate-icon {
     color: #4ade80;
-    transform: rotate(180deg);
+    transform: scaleX(-1);
+}
+
+.dark-mode .rotate-icon-link:hover .rotate-icon-reverse {
+    color: #4ade80;
+    transform: scaleX(1);
 }
 
 .dark-mode .about-section::-webkit-scrollbar-track {

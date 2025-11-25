@@ -98,7 +98,7 @@ function RabbuPortfolio({ onClose }) {
         {/* Left Column - Back Button */}
         <div className="case-study-left flex items-start pt-8">
           <button className="back-button sticky cursor-pointer" onClick={onClose}>
-            ← Back
+            <span className="back-arrow">←</span> Back
           </button>
         </div>
         

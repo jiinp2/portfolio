@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams, Link } from 'react-router-dom'
-import { FileText } from 'lucide-react'
+import { FileText, ArrowLeftRight } from 'lucide-react'
 import CaseStudy from '../components/CaseStudy'
 import ProjectCard from '../components/ProjectCard'
 import TabSection from '../components/TabSection'
@@ -199,7 +199,7 @@ function Work() {
               <h2 className="work-title">Work</h2>
             </Link>
             <Link to="/misc" className="rotate-icon-link">
-              <span className="rotate-icon">↻</span>
+              <ArrowLeftRight className="rotate-icon" size={20} />
             </Link>
           </div>
           <div className="work-filters">

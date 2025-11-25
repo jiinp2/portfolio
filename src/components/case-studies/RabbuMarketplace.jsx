@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { Check, X } from 'lucide-react'
 import './RabbuMarketplace.css'
 
 function RabbuMarketplace({ onClose }) {
@@ -95,7 +96,7 @@ function RabbuMarketplace({ onClose }) {
         {/* Left Column - Back Button */}
         <div className="case-study-left">
           <button className="back-button sticky" onClick={onClose}>
-            ← Back
+            <span className="back-arrow">←</span> Back
           </button>
         </div>
         
@@ -139,8 +140,8 @@ function RabbuMarketplace({ onClose }) {
             <div className="subsection">
               <h3>Outcomes</h3>
               <ul className="outcomes-list">
-                <li>Creation of a holistic platform of tools for assessing and acquiring successful short-term rentals.</li>
-                <li>MVP launched in October 2022, within one month the platform had 33,000+ unique users who ran estimates, and 2,000+ accounts were created. The project delivered a unified platform of tools for property acquisition and management.</li>
+                <li><Check className="outcome-icon" size={20} />Creation of a holistic platform of tools for assessing and acquiring successful short-term rentals.</li>
+                <li><Check className="outcome-icon" size={20} />MVP launched in October 2022, within one month the platform had 33,000+ unique users who ran estimates, and 2,000+ accounts were created. The project delivered a unified platform of tools for property acquisition and management.</li>
               </ul>
             </div>
           </section>
@@ -239,19 +240,19 @@ function RabbuMarketplace({ onClose }) {
                   <div className="comparison-column">
                     <h5>Free Trial</h5>
                     <ul className="comparison-list">
-                      <li className="pro">Yields higher activation rates, attracting actively searching users.</li>
-                      <li className="pro">Achieves higher conversion from free to paid due to urgency.</li>
-                      <li className="con">Demands more marketing outreach, reducing resource efficiency.</li>
+                      <li className="pro"><Check className="comparison-icon pro-icon" size={18} />Yields higher activation rates, attracting actively searching users.</li>
+                      <li className="pro"><Check className="comparison-icon pro-icon" size={18} />Achieves higher conversion from free to paid due to urgency.</li>
+                      <li className="con"><X className="comparison-icon con-icon" size={18} />Demands more marketing outreach, reducing resource efficiency.</li>
                     </ul>
                   </div>
                   <div className="comparison-column">
                     <h5>Freemium</h5>
                     <ul className="comparison-list">
-                      <li className="pro">Allows self-paced conversion, gradually highlighting premium features.</li>
-                      <li className="pro">Results in a higher volume of free accounts.</li>
-                      <li className="pro">Improves resource efficiency by reducing the need for aggressive marketing campaigns.</li>
-                      <li className="con">May lead to lower activation rates without immediate pressure to explore all features.</li>
-                      <li className="con">Improves resource efficiency but can reduce direct revenue increase.</li>
+                      <li className="pro"><Check className="comparison-icon pro-icon" size={18} />Allows self-paced conversion, gradually highlighting premium features.</li>
+                      <li className="pro"><Check className="comparison-icon pro-icon" size={18} />Results in a higher volume of free accounts.</li>
+                      <li className="pro"><Check className="comparison-icon pro-icon" size={18} />Improves resource efficiency by reducing the need for aggressive marketing campaigns.</li>
+                      <li className="con"><X className="comparison-icon con-icon" size={18} />May lead to lower activation rates without immediate pressure to explore all features.</li>
+                      <li className="con"><X className="comparison-icon con-icon" size={18} />Improves resource efficiency but can reduce direct revenue increase.</li>
                     </ul>
                   </div>
                 </div>

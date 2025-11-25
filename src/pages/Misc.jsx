@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams, Link } from 'react-router-dom'
-import { FileText } from 'lucide-react'
+import { FileText, ArrowLeftRight } from 'lucide-react'
 import CaseStudy from '../components/CaseStudy'
 import ProjectCard from '../components/ProjectCard'
 import TabSection from '../components/TabSection'
@@ -8,7 +8,7 @@ import './Work.css'
 
 // Project data for Misc page
 const projects = [
-  { name: 'Pokemon Valentine', label: 'Pokemon Valentine', date: '2025', category: 'all', slug: 'pokemon-valentine', image: '/pokemon_valentine.png', url: 'https://pokemon-valentine.vercel.app/' }
+  { name: 'Pokemon Valentine', label: 'Pokemon Valentine', date: '2025', category: 'all', slug: 'pokemon-valentine', image: '/misc/pokemon_valentine.png', url: 'https://pokemon-valentine.vercel.app/' }
 ]
 
 function Misc() {
@@ -220,7 +220,7 @@ function Misc() {
               <h2 className="work-title">Misc</h2>
             </Link>
             <Link to="/" className="rotate-icon-link">
-              <span className="rotate-icon">↻</span>
+              <ArrowLeftRight className="rotate-icon rotate-icon-reverse" size={20} />
             </Link>
           </div>
           <div className="work-filters">

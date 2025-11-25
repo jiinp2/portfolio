@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { Check, X } from 'lucide-react'
 import './Kobo.css'
 
 function Kobo({ onClose }) {
@@ -93,7 +94,7 @@ function Kobo({ onClose }) {
         {/* Left Column - Back Button */}
         <div className="case-study-left">
           <button className="back-button sticky" onClick={onClose}>
-            ← Back
+            <span className="back-arrow">←</span> Back
           </button>
         </div>
         
@@ -103,8 +104,14 @@ function Kobo({ onClose }) {
           <div className="hero-section">
             <h1 className="case-study-title">Kobo</h1>
             <p className="case-study-subtitle">A redesign of the user interface and user flow of the popular eBook and audiobook app.</p>
-            <div className="hero-image-placeholder">
-              <span>Hero Image Placeholder</span>
+            <div className="hero-image-container w-full">
+              <div className="hero-card">
+                <img 
+                  src="/case_studies/kobo/kobo-hero.avif" 
+                  alt="Kobo Hero" 
+                  className="hero-image w-full rounded-xl"
+                />
+              </div>
             </div>
           </div>
 
@@ -146,9 +153,14 @@ function Kobo({ onClose }) {
             <div className="subsection">
               <h3>Outcomes</h3>
               <ul className="outcomes-list">
-                <li>A redesigned onboarding process to better showcase the app's key features, setting clear expectations.</li>
-                <li>Reorganizing the tab bar and redesigning the hierarchy helps users navigate the app more efficiently, while an updated visual style offers a more modern look.</li>
+                <li><Check className="outcome-icon" size={20} />A redesigned onboarding process to better showcase the app's key features, setting clear expectations.</li>
+                <li><Check className="outcome-icon" size={20} />Reorganizing the tab bar and redesigning the hierarchy helps users navigate the app more efficiently, while an updated visual style offers a more modern look.</li>
               </ul>
+              <img 
+                src="/case_studies/kobo/kobo-1.webp" 
+                alt="Kobo Outcomes" 
+                className="w-full rounded-xl"
+              />
             </div>
           </section>
 
@@ -159,55 +171,21 @@ function Kobo({ onClose }) {
             <div className="subsection">
               <h3>Competitor Analysis</h3>
               <p>A competitor analysis was conducted to better understand the e-book and audiobook market and gather insights into user expectations in terms of features and flows.</p>
-              <div className="competitor-grid">
-                <div className="competitor-item">
-                  <div className="image-placeholder">
-                    <span>Kindle</span>
-                  </div>
-                </div>
-                <div className="competitor-item">
-                  <div className="image-placeholder">
-                    <span>Audible</span>
-                  </div>
-                </div>
-                <div className="competitor-item">
-                  <div className="image-placeholder">
-                    <span>Apple Books</span>
-                  </div>
-                </div>
-                <div className="competitor-item">
-                  <div className="image-placeholder">
-                    <span>Google Play</span>
-                  </div>
-                </div>
-              </div>
+              <img 
+                src="/case_studies/kobo/kobo-2.webp" 
+                alt="Competitor Analysis" 
+                className="w-full rounded-xl"
+              />
             </div>
 
             <div className="subsection">
               <h3>Additional Apps</h3>
               <p>Additional platforms were studied to gain insights into how content is organized when there is large number of content to choose from. For example, apps like Spotify were examined to see how users manage access to two different types of content (music and podcasts).</p>
-              <div className="competitor-grid">
-                <div className="competitor-item">
-                  <div className="image-placeholder">
-                    <span>Goodreads</span>
-                  </div>
-                </div>
-                <div className="competitor-item">
-                  <div className="image-placeholder">
-                    <span>Wattpad</span>
-                  </div>
-                </div>
-                <div className="competitor-item">
-                  <div className="image-placeholder">
-                    <span>Libby</span>
-                  </div>
-                </div>
-                <div className="competitor-item">
-                  <div className="image-placeholder">
-                    <span>Spotify</span>
-                  </div>
-                </div>
-              </div>
+              <img 
+                src="/case_studies/kobo/kobo-3.webp" 
+                alt="Additional Apps" 
+                className="w-full rounded-xl"
+              />
             </div>
 
             <div className="subsection">
@@ -222,6 +200,11 @@ function Kobo({ onClose }) {
                 <li>Offer personalization during onboarding to tailor content for users.</li>
                 <li>Ensure consistency with features shown online and make different subscription tiers visible.</li>
               </ul>
+              <img 
+                src="/case_studies/kobo/kobo-4.webp" 
+                alt="Key Takeaways" 
+                className="w-full rounded-xl"
+              />
             </div>
 
             <div className="subsection">
@@ -231,6 +214,11 @@ function Kobo({ onClose }) {
                 <li>Could combine e-books and audiobooks into one library for simpler navigation.</li>
                 <li>Can increase customization options to include progress tracking and other relevant features.</li>
               </ul>
+              <img 
+                src="/case_studies/kobo/kobo-5.webp" 
+                alt="Navigation Key Takeaways" 
+                className="w-full rounded-xl"
+              />
             </div>
 
             <div className="subsection">
@@ -241,22 +229,22 @@ function Kobo({ onClose }) {
                 <div className="review-category">
                   <h4>Confusing Aspects</h4>
                   <ul className="review-list">
-                    <li>The application is difficult to navigate</li>
-                    <li>Misunderstandings of how books can be purchased</li>
+                    <li><X className="review-icon" size={18} />The application is difficult to navigate</li>
+                    <li><X className="review-icon" size={18} />Misunderstandings of how books can be purchased</li>
                   </ul>
                 </div>
                 <div className="review-category">
                   <h4>Lacks User-Friendliness</h4>
                   <ul className="review-list">
-                    <li>Accessing various features are not very intuitive</li>
-                    <li>Frustrations from unresponsiveness</li>
+                    <li><X className="review-icon" size={18} />Accessing various features are not very intuitive</li>
+                    <li><X className="review-icon" size={18} />Frustrations from unresponsiveness</li>
                   </ul>
                 </div>
                 <div className="review-category">
                   <h4>Missing Features</h4>
                   <ul className="review-list">
-                    <li>Unable to search books based on author or certain genres</li>
-                    <li>Book recommendations that are relevant to the user</li>
+                    <li><X className="review-icon" size={18} />Unable to search books based on author or certain genres</li>
+                    <li><X className="review-icon" size={18} />Book recommendations that are relevant to the user</li>
                   </ul>
                 </div>
               </div>
@@ -270,33 +258,41 @@ function Kobo({ onClose }) {
             <div className="subsection">
               <h3>Information Architecture</h3>
               <p>Planning the information architecture visually allowed me to map out where to move or combine different features and as a reference for prioritizing redesigns within the project's scope. The goal was to make it easier for users to find what they are looking for by improving the app's navigation and organization.</p>
-              <div className="image-placeholder large">
-                <span>Information Architecture Diagram</span>
-              </div>
+              <img 
+                src="/case_studies/kobo/kobo-6.webp" 
+                alt="Information Architecture Diagram" 
+                className="w-full rounded-xl"
+              />
             </div>
 
             <div className="subsection">
               <h3>Early Wireframes</h3>
               <p>Early ideations were explored through sketches and mid-fidelity wireframes of key screens. These helped to iterate on navigation and interactions, and refine the information architecture.</p>
-              <div className="image-placeholder large">
-                <span>Early Wireframes</span>
-              </div>
+              <img 
+                src="/case_studies/kobo/kobo-7.webp" 
+                alt="Early Wireframes" 
+                className="w-full rounded-xl"
+              />
             </div>
 
             <div className="subsection">
               <h3>Moodboard</h3>
               <p>This moodboard was created with the goal of using imagery that evokes a nostalgic and warm feeling of a local bookshop inspired by copy on Kobo's website stating, 'Your favourite local bookshop.'</p>
-              <div className="image-placeholder large">
-                <span>Moodboard</span>
-              </div>
+              <img 
+                src="/case_studies/kobo/kobo-8.webp" 
+                alt="Moodboard" 
+                className="w-full rounded-xl"
+              />
             </div>
 
             <div className="subsection">
               <h3>Style Guide</h3>
               <p>This style guide introduces an updated color palette that revitalizes Kobo's current visual language.</p>
-              <div className="image-placeholder large">
-                <span>Style Guide</span>
-              </div>
+              <img 
+                src="/case_studies/kobo/kobo-9.webp" 
+                alt="Style Guide" 
+                className="w-full rounded-xl"
+              />
             </div>
           </section>
 
@@ -306,59 +302,109 @@ function Kobo({ onClose }) {
             
             <div className="subsection">
               <h3>Kobo Redesign</h3>
-              <h4>Introducing Key Features</h4>
-              <p>The redesigned onboarding process introduces users to personalization possibilities and the breadth of content available. This ensures users are immediately aware of the app's capabilities, setting the stage for a tailored and engaging experience from the start.</p>
-              <div className="image-placeholder large">
-                <span>Onboarding Screens</span>
+              <div className="subsection-horizontal">
+                <div className="subsection-content">
+                  <h4>Introducing Key Features</h4>
+                  <p>The redesigned onboarding process introduces users to personalization possibilities and the breadth of content available. This ensures users are immediately aware of the app's capabilities, setting the stage for a tailored and engaging experience from the start.</p>
+                </div>
+                <div className="subsection-image">
+                  <img 
+                    src="/case_studies/kobo/kobo-10.webp" 
+                    alt="Onboarding Screens" 
+                    className="w-full rounded-xl"
+                  />
+                </div>
               </div>
             </div>
 
             <div className="subsection">
-              <h4>Subscriptions & User Preferences</h4>
-              <p>The different subscription plans are outlined upfront. Users can choose their preferred genres, enabling the tailored recommendations.</p>
-              <div className="image-placeholder large">
-                <span>Subscriptions & Preferences Screens</span>
+              <div className="subsection-horizontal subsection-horizontal-reverse">
+                <div className="subsection-content">
+                  <h4>Subscriptions & User Preferences</h4>
+                  <p>The different subscription plans are outlined upfront. Users can choose their preferred genres, enabling the tailored recommendations.</p>
+                </div>
+                <div className="subsection-image">
+                  <img 
+                    src="/case_studies/kobo/kobo-11.webp" 
+                    alt="Subscriptions & Preferences Screens" 
+                    className="w-full rounded-xl"
+                  />
+                </div>
               </div>
             </div>
 
             <div className="subsection">
               <h4>Redesigned Tab Bar & Home Screen Customization</h4>
               <p>The tab bar has been redesigned for improved navigation efficiency. Users can also reorganize their Home Screen according to their usage patterns.</p>
-              <div className="image-placeholder large">
-                <span>Tab Bar & Home Screen Customization</span>
+              <img 
+                src="/case_studies/kobo/kobo-12.webp" 
+                alt="Tab Bar & Home Screen Customization" 
+                className="w-full rounded-xl"
+              />
+            </div>
+
+            <div className="subsection">
+              <div className="subsection-horizontal">
+                <div className="subsection-content">
+                  <h4>Combined eBook & Audiobook Library</h4>
+                  <p>Users can now effortlessly switch between their eBooks, audiobooks, and collections in a unified library interface. Simplifying navigation and reducing the cognitive load, making it easier for users to manage and access their content.</p>
+                </div>
+                <div className="subsection-image">
+                  <img 
+                    src="/case_studies/kobo/kobo-13.webp" 
+                    alt="Combined Library Screens" 
+                    className="w-full rounded-xl"
+                  />
+                </div>
               </div>
             </div>
 
             <div className="subsection">
-              <h4>Combined eBook & Audiobook Library</h4>
-              <p>Users can now effortlessly switch between their eBooks, audiobooks, and collections in a unified library interface. Simplifying navigation and reducing the cognitive load, making it easier for users to manage and access their content.</p>
-              <div className="image-placeholder large">
-                <span>Combined Library Screens</span>
+              <div className="subsection-horizontal subsection-horizontal-reverse">
+                <div className="subsection-content">
+                  <h4>Easier to Find & Choose Books</h4>
+                  <p>A new grid view showcases book covers, enabling users to visually sift through titles more easily. Accompanied by personalized book lists, this design enhances discoverability and ensures users can find books that cater to their tastes with minimal effort.</p>
+                </div>
+                <div className="subsection-image">
+                  <img 
+                    src="/case_studies/kobo/kobo-14.webp" 
+                    alt="Discover Screens" 
+                    className="w-full rounded-xl"
+                  />
+                </div>
               </div>
             </div>
 
             <div className="subsection">
-              <h4>Easier to Find & Choose Books</h4>
-              <p>A new grid view showcases book covers, enabling users to visually sift through titles more easily. Accompanied by personalized book lists, this design enhances discoverability and ensures users can find books that cater to their tastes with minimal effort.</p>
-              <div className="image-placeholder large">
-                <span>Discover Screens</span>
+              <div className="subsection-horizontal">
+                <div className="subsection-content">
+                  <h4>Context At-A-Glance</h4>
+                  <p>Key information about books is displayed above the fold, including a clear indication that books cannot be directly purchased in the app. This transparency eliminates confusion and helps set accurate expectations for the purchasing process.</p>
+                </div>
+                <div className="subsection-image">
+                  <img 
+                    src="/case_studies/kobo/kobo-15.webp" 
+                    alt="Book Detail Screens" 
+                    className="w-full rounded-xl"
+                  />
+                </div>
               </div>
             </div>
 
             <div className="subsection">
-              <h4>Context At-A-Glance</h4>
-              <p>Key information about books is displayed above the fold, including a clear indication that books cannot be directly purchased in the app. This transparency eliminates confusion and helps set accurate expectations for the purchasing process.</p>
-              <div className="image-placeholder large">
-                <span>Book Detail Screens</span>
-              </div>
-            </div>
-
-            <div className="subsection">
-              <h4>Search & Profile</h4>
-              <p>An updated search that allows users to search titles and authors.</p>
-              <p>The profile design is a quick concept where users can follow each other, view the books they are currently reading, share goals and awards, and more.</p>
-              <div className="image-placeholder large">
-                <span>Search & Profile Screens</span>
+              <div className="subsection-horizontal subsection-horizontal-reverse">
+                <div className="subsection-content">
+                  <h4>Search & Profile</h4>
+                  <p>An updated search that allows users to search titles and authors.</p>
+                  <p>The profile design is a quick concept where users can follow each other, view the books they are currently reading, share goals and awards, and more.</p>
+                </div>
+                <div className="subsection-image">
+                  <img 
+                    src="/case_studies/kobo/kobo-16.webp" 
+                    alt="Search & Profile Screens" 
+                    className="w-full rounded-xl"
+                  />
+                </div>
               </div>
             </div>
           </section>

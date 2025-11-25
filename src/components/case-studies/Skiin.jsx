@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { Check } from 'lucide-react'
 import './Skiin.css'
 
 function Skiin({ onClose }) {
@@ -92,7 +93,7 @@ function Skiin({ onClose }) {
         {/* Left Column - Back Button */}
         <div className="case-study-left">
           <button className="back-button sticky" onClick={onClose}>
-            ← Back
+            <span className="back-arrow">←</span> Back
           </button>
         </div>
         
@@ -156,7 +157,7 @@ function Skiin({ onClose }) {
             <div className="subsection">
               <h3>Outcomes</h3>
               <ul className="outcomes-list">
-                <li>Designed the user flow and high-fidelity wireframes for Skiin's communication features and mood logging feature.</li>
+                <li><Check className="outcome-icon" size={20} />Designed the user flow and high-fidelity wireframes for Skiin's communication features and mood logging feature.</li>
               </ul>
             </div>
           </section>
