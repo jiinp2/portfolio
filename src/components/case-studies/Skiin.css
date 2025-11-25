@@ -13,8 +13,8 @@
 /* Case Study Layout Container */
 .case-study-layout {
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 1fr 5fr 1fr;
+    gap: 2rem;
     height: 100vh;
     max-width: 1400px;
     margin: 0 auto;
@@ -32,11 +32,12 @@
 .case-study-right {
     display: flex;
     align-items: flex-start;
+    justify-content: flex-end;
     padding-top: 4rem;
 }
 
 .case-study-content {
-    padding: 4rem 2.5rem;
+    padding: 4rem 1.5rem;
     height: 100vh;
     overflow-y: auto;
     scroll-behavior: smooth;
@@ -191,7 +192,7 @@
 }
 
 .subsection {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 .subsection h3 {
@@ -210,7 +211,7 @@
     font-size: var(--font-size-base);
     line-height: var(--line-height-relaxed);
     color: var(--text-muted);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
     max-width: 560px;
     margin-left: auto;
     margin-right: auto;
@@ -349,8 +350,6 @@
     top: 2rem;
     height: fit-content;
     width: fit-content;
-    min-width: 200px;
-    max-width: 250px;
     padding: 0;
     -ms-overflow-style: none;
     scrollbar-width: none;
