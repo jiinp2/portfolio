@@ -191,7 +191,7 @@
 }
 
 .outcome-card {
-  background: #f4f2ff;
+  background: #f3f4f6;
   border-radius: 12px;
   padding: 1.5rem;
   width: 100%;
@@ -207,8 +207,9 @@
 .outcome-image {
   width: 100%;
   height: auto;
+  max-height: 480px;
+  object-fit: contain;
   border-radius: 12px;
-  object-fit: cover;
   display: block;
 }
 
@@ -306,6 +307,13 @@
 
 .key-feature-image {
   width: 100%;
+}
+
+.key-feature-image img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: contain;
 }
 
 .key-feature-content h3 {
