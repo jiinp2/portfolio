@@ -126,7 +126,7 @@
   margin-top: 2rem;
 }
 
-.hero-card {
+.skiin-case-study .hero-card {
   background: var(--skiin-accent);
   border-radius: 12px;
   padding: 1.5rem;
@@ -282,9 +282,11 @@
   content: "•";
   position: absolute;
   left: 0;
-  color: #6366f1;
+  top: 0.75rem;
+  color: var(--text-muted);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-xl);
+  line-height: var(--line-height-relaxed);
 }
 
 /* Image Placeholders */
@@ -422,7 +424,7 @@
   font-weight: var(--font-weight-medium);
 }
 
-.toc-indicator {
+.skiin-case-study .toc-indicator {
   position: absolute;
   left: -1rem;
   width: 3px;
@@ -480,7 +482,7 @@
     font-size: var(--font-size-lg);
   }
 
-  .hero-card {
+  .skiin-case-study .hero-card {
     padding: 1rem;
   }
 
@@ -520,7 +522,7 @@
     font-size: var(--font-size-lg);
   }
 
-  .hero-card {
+  .skiin-case-study .hero-card {
     padding: 0.75rem;
   }
 

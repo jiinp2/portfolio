@@ -60,22 +60,22 @@
 /* Rabbu cards specific background */
 .project-preview[data-slug="rabbu-portfolio"],
 .project-preview[data-slug="rabbu-marketplace"] {
-    background: #D8CEED;
+    background: var(--rabbu-accent);
 }
 
 /* Kobo specific background */
 .project-preview[data-slug="kobo"] {
-    background: #D07056;
+    background: var(--kobo-accent);
 }
 
 /* Skiin specific background */
 .project-preview[data-slug="skiin"] {
-    background: #9DD1E8;
+    background: var(--skiin-accent);
 }
 
 /* Maison specific background */
 .project-preview[data-slug="maison"] {
-    background: #1A1F2E;
+    background: var(--maison-accent);
 }
 
 /* Maison logo color */
@@ -228,19 +228,19 @@
 
 .dark-mode .project-preview[data-slug="rabbu-portfolio"],
 .dark-mode .project-preview[data-slug="rabbu-marketplace"] {
-    background: #E1DAF1;
+    background: var(--rabbu-accent);
 }
 
 .dark-mode .project-preview[data-slug="kobo"] {
-    background: #D07056;
+    background: var(--kobo-accent);
 }
 
 .dark-mode .project-preview[data-slug="skiin"] {
-    background: #9DD1E8;
+    background: var(--skiin-accent);
 }
 
 .dark-mode .project-preview[data-slug="maison"] {
-    background: #1A1F2E;
+    background: var(--maison-accent);
 }
 
 .dark-mode .project-preview[data-slug="maison"] .preview-image {

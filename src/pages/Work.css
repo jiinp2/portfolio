@@ -92,6 +92,13 @@ body.dark-mode {
     justify-content: center;
     margin-bottom: 1.5rem;
     overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profile-photo:hover {
+    transform: scale(1.02);
 }
 
 .profile-image {
@@ -385,6 +392,16 @@ body.dark-mode {
 .work-title-link:hover ~ .rotate-icon-link .rotate-icon {
     color: #16a34a;
     transform: rotate(180deg);
+}
+
+.about-section:has(.profile-photo:hover) ~ .projects-section .work-title-wrapper .rotate-icon-link .rotate-icon {
+    color: #16a34a;
+    transform: scaleX(-1);
+}
+
+.about-section:has(.profile-photo:hover) ~ .projects-section .work-title-wrapper .rotate-icon-link .rotate-icon-reverse {
+    color: #16a34a;
+    transform: scaleX(1);
 }
 
 .work-title {
@@ -789,6 +806,16 @@ body.dark-mode {
 .dark-mode .work-title-link:hover ~ .rotate-icon-link .rotate-icon {
     color: #4ade80;
     transform: scaleX(-1);
+}
+
+.dark-mode .about-section:has(.profile-photo:hover) ~ .projects-section .work-title-wrapper .rotate-icon-link .rotate-icon {
+    color: #4ade80;
+    transform: scaleX(-1);
+}
+
+.dark-mode .about-section:has(.profile-photo:hover) ~ .projects-section .work-title-wrapper .rotate-icon-link .rotate-icon-reverse {
+    color: #4ade80;
+    transform: scaleX(1);
 }
 
 .dark-mode .work-title-link:hover ~ .rotate-icon-link .rotate-icon-reverse {

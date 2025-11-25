@@ -91,7 +91,7 @@ function RabbuMarketplace({ onClose }) {
   }
 
   return (
-    <div className="case-study-overlay">
+    <div className="case-study-overlay rabbu-marketplace-case-study">
       <div className="case-study-layout">
         {/* Left Column - Back Button */}
         <div className="case-study-left">

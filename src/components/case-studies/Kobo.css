@@ -139,7 +139,7 @@
   margin-top: 2rem;
 }
 
-.case-study-overlay .hero-card {
+.kobo-case-study .hero-card {
   width: 100%;
   background: var(--kobo-accent);
   border-radius: 12px;
@@ -330,13 +330,15 @@
   max-width: 560px;
 }
 
-.case-study-overlay .takeaways-list li::before {
+.kobo-case-study .takeaways-list li::before {
   content: "•";
   position: absolute;
   left: 0;
-  color: var(--kobo-accent);
+  top: 0.75rem;
+  color: var(--text-muted);
   font-weight: bold;
   font-size: var(--font-size-2xl);
+  line-height: 1.6;
 }
 
 /* Review Categories */
@@ -358,7 +360,7 @@
   font-size: var(--font-size-xl);
   font-weight: 600;
   color: #1a1a1a;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
 }
 
 .review-list {
@@ -537,7 +539,7 @@
   font-weight: 500;
 }
 
-.case-study-overlay .toc-indicator {
+.kobo-case-study .toc-indicator {
   position: absolute;
   left: -1rem;
   width: 3px;
@@ -578,7 +580,8 @@
   }
 
   .review-categories {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 
   .competitor-grid {

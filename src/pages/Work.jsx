@@ -74,9 +74,9 @@ function Work() {
         <div className="about-content">
           {/* INTRO */}
           <div className="profile-section">
-            <div className="profile-photo">
+            <Link to="/misc" className="profile-photo">
               <img src="/home/jiin_profile.png" alt="Jiin Park" className="profile-image" />
-            </div>
+            </Link>
             <h1 className="main-heading">Jiin Park</h1>
             <p className="subheading">Product Designer <br /> + Design Engineer</p>
           </div>

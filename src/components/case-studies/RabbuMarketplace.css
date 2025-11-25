@@ -571,12 +571,12 @@
   font-weight: 500;
 }
 
-.toc-indicator {
+.rabbu-marketplace-case-study .toc-indicator {
   position: absolute;
   left: -1rem;
   width: 3px;
   height: 16px;
-  background: #d8ceed;
+  background: var(--rabbu-accent);
   border-radius: 0 2px 2px 0;
   transform: translateY(-50%);
   transition: top 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
