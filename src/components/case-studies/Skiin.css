@@ -286,7 +286,8 @@
   color: var(--text-muted);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-xl);
-  line-height: var(--line-height-relaxed);
+  line-height: 1;
+  transform: translateY(0.1em);
 }
 
 /* Image Placeholders */

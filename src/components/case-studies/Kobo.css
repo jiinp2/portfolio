@@ -338,7 +338,8 @@
   color: var(--text-muted);
   font-weight: bold;
   font-size: var(--font-size-2xl);
-  line-height: 1.6;
+  line-height: 1;
+  transform: translateY(0.1em);
 }
 
 /* Review Categories */

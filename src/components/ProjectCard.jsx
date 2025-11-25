@@ -1,17 +1,21 @@
-import { ExternalLink } from 'lucide-react'
-import './ProjectCard.css'
+import { ExternalLink } from "lucide-react";
+import "./ProjectCard.css";
 
 function ProjectCard({ project, index, isSelected, onClick }) {
-  const isMaison = project.slug === 'maison'
+  const isMaison = project.slug === "maison";
   return (
-    <div 
-      className={`project-card-wrapper ${isMaison ? 'disabled' : ''}`} 
+    <div
+      className={`project-card-wrapper ${isMaison ? "disabled" : ""}`}
       onClick={isMaison ? undefined : () => onClick(index)}
     >
-      <div className={`project-card ${isSelected ? 'selected' : ''}`}>
+      <div className={`project-card ${isSelected ? "selected" : ""}`}>
         <div className="project-preview" data-slug={project.slug}>
           {project.image ? (
-            <img src={project.image} alt={project.name} className="preview-image" />
+            <img
+              src={project.image}
+              alt={project.name}
+              className="preview-image"
+            />
           ) : (
             <div className="preview-placeholder">
               <span className="preview-icon">📄</span>
@@ -20,19 +24,24 @@ function ProjectCard({ project, index, isSelected, onClick }) {
         </div>
       </div>
       <div className="project-info">
-        <h3 className="project-title">
-          {project.name}
-          {project.slug === 'maison' && (
-            <span className="coming-soon-tag">WIP</span>
-          )}
-          {project.url && (
-            <ExternalLink className="external-link-icon" size={14} />
-          )}
-        </h3>
-        <p className="project-date">{project.date}</p>
+        <div className="project-title-wrapper">
+          <h3 className="project-title">
+            {project.name}
+            {project.slug === "maison" && (
+              <span className="coming-soon-tag">WIP</span>
+            )}
+            {project.url && (
+              <ExternalLink className="external-link-icon" size={14} />
+            )}
+          </h3>
+          <p className="project-date">{project.date}</p>
+        </div>
+        {project.description && (
+          <p className="project-description">{project.description}</p>
+        )}
       </div>
     </div>
-  )
+  );
 }
 
-export default ProjectCard
+export default ProjectCard;
