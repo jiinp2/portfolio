@@ -91,7 +91,7 @@ function RabbuMarketplace({ onClose }) {
   }
 
   return (
-    <div className="case-study-overlay rabbu-marketplace-case-study">
+    <div className="case-study-overlay rabbu-market-case-study">
       <div className="case-study-layout">
         {/* Left Column - Back Button */}
         <div className="case-study-left">
@@ -106,8 +106,14 @@ function RabbuMarketplace({ onClose }) {
           <div className="hero-section">
             <h1 className="case-study-title">Rabbu Marketplace</h1>
             <p className="case-study-subtitle">A platform where investors can find and evaluate profitable investment properties.</p>
-            <div className="hero-image-placeholder">
-              <span>Hero Image Placeholder</span>
+            <div className="hero-image-container w-full">
+              <div className="hero-card">
+                <img 
+                  src="/case_studies/rabbu_marketplace/market-hero.webp" 
+                  alt="Rabbu Marketplace Hero" 
+                  className="hero-image w-full rounded-xl"
+                />
+              </div>
             </div>
           </div>
 
@@ -143,6 +149,27 @@ function RabbuMarketplace({ onClose }) {
                 <li><Check className="outcome-icon" size={20} />Creation of a holistic platform of tools for assessing and acquiring successful short-term rentals.</li>
                 <li><Check className="outcome-icon" size={20} />MVP launched in October 2022, within one month the platform had 33,000+ unique users who ran estimates, and 2,000+ accounts were created. The project delivered a unified platform of tools for property acquisition and management.</li>
               </ul>
+              <div className="image-container w-full mt-4">
+                <img 
+                  src="/case_studies/rabbu_marketplace/market-1.webp" 
+                  alt="Rabbu Marketplace Outcomes 1" 
+                  className="w-full rounded-xl"
+                />
+              </div>
+              <div className="image-container w-full mt-4">
+                <img 
+                  src="/case_studies/rabbu_marketplace/market-2.webp" 
+                  alt="Rabbu Marketplace Outcomes 2" 
+                  className="w-full rounded-xl"
+                />
+              </div>
+              <div className="image-container w-full mt-4">
+                <img 
+                  src="/case_studies/rabbu_marketplace/market-3.webp" 
+                  alt="Rabbu Marketplace Outcomes 3" 
+                  className="w-full rounded-xl"
+                />
+              </div>
             </div>
           </section>
 
@@ -160,24 +187,32 @@ function RabbuMarketplace({ onClose }) {
               <p>We benchmarked relevant and competing platforms to understand user expectations in functionality and common interaction patterns.</p>
               <div className="competitor-grid">
                 <div className="competitor-item">
-                  <div className="image-placeholder">
-                    <span>Airbnb</span>
-                  </div>
+                  <img 
+                    src="/case_studies/rabbu_marketplace/market-4.webp" 
+                    alt="Airbnb" 
+                    className="w-full rounded-xl"
+                  />
                 </div>
                 <div className="competitor-item">
-                  <div className="image-placeholder">
-                    <span>Zillow</span>
-                  </div>
+                  <img 
+                    src="/case_studies/rabbu_marketplace/market-5.webp" 
+                    alt="Zillow" 
+                    className="w-full rounded-xl"
+                  />
                 </div>
                 <div className="competitor-item">
-                  <div className="image-placeholder">
-                    <span>Awning</span>
-                  </div>
+                  <img 
+                    src="/case_studies/rabbu_marketplace/market-6.webp" 
+                    alt="Awning" 
+                    className="w-full rounded-xl"
+                  />
                 </div>
                 <div className="competitor-item">
-                  <div className="image-placeholder">
-                    <span>AirDNA</span>
-                  </div>
+                  <img 
+                    src="/case_studies/rabbu_marketplace/market-7.webp" 
+                    alt="AirDNA" 
+                    className="w-full rounded-xl"
+                  />
                 </div>
               </div>
             </div>
@@ -185,8 +220,12 @@ function RabbuMarketplace({ onClose }) {
             <div className="subsection">
               <h3>Previous Design Analysis</h3>
               <p>We evaluated Rabbu's launched tools to better understand product features to identify improvements when integrating them into a holistic platform.</p>
-              <div className="image-placeholder large">
-                <span>Previous Design Screenshots</span>
+              <div className="image-container w-full mt-4">
+                <img 
+                  src="/case_studies/rabbu_marketplace/market-8.webp" 
+                  alt="Previous Design Analysis" 
+                  className="w-full rounded-xl"
+                />
               </div>
             </div>
           </section>
@@ -290,8 +329,12 @@ function RabbuMarketplace({ onClose }) {
               <h3>Designing for Freemium</h3>
               <p>Adopting the freemium model influenced our designs, we determined that it would be important to communicate the added benefits of subscribing to a premium account and doing so needs to be a seamless process.</p>
               <p>In the example below the user is still able to see the ratings, average daily rate, revenue, etc. for this property but will need to subscribe to see more comparable listings and additional advanced features.</p>
-              <div className="image-placeholder large">
-                <span>Freemium Design Example</span>
+              <div className="image-container w-full mt-4">
+                <img 
+                  src="/case_studies/rabbu_marketplace/market-9.webp" 
+                  alt="Freemium Design Example" 
+                  className="w-full rounded-xl"
+                />
               </div>
             </div>
           </section>
@@ -303,6 +346,13 @@ function RabbuMarketplace({ onClose }) {
             <div className="subsection">
               <h3>Rabbu Marketplace</h3>
               <p>Rabbu Marketplace is composed of three different sections, Revenue Estimates, Market Data, and Properties for Sale.</p>
+              <div className="image-container w-full mt-4">
+                <img 
+                  src="/case_studies/rabbu_marketplace/market-10.webp" 
+                  alt="Rabbu Marketplace" 
+                  className="w-full rounded-xl"
+                />
+              </div>
               
               <div className="feature-cards">
                 <div className="feature-card">
@@ -355,9 +405,11 @@ function RabbuMarketplace({ onClose }) {
                   <p>A tool for investors to determine equity required to acquire a property as well as estimated potential earnings. This calculator can be personalized with custom financial information.</p>
                 </div>
                 <div className="key-feature-image">
-                  <div className="image-placeholder large">
-                    <span>Investment Return Calculator Image</span>
-                  </div>
+                  <img 
+                    src="/case_studies/rabbu_marketplace/market-11.webp" 
+                    alt="Investment Return Calculator" 
+                    className="w-full rounded-xl"
+                  />
                 </div>
               </div>
 
@@ -367,9 +419,11 @@ function RabbuMarketplace({ onClose }) {
                   <p>Investors can efficiently compare properties based on their investment goals such as cash flow vs. long term property appreciation. As well as access to Rabbu's property recommendations.</p>
                 </div>
                 <div className="key-feature-image">
-                  <div className="image-placeholder large">
-                    <span>High-Performance Investments Image</span>
-                  </div>
+                  <img 
+                    src="/case_studies/rabbu_marketplace/market-12.webp" 
+                    alt="Identifying High-Performance Investments" 
+                    className="w-full rounded-xl"
+                  />
                 </div>
               </div>
 
@@ -379,9 +433,11 @@ function RabbuMarketplace({ onClose }) {
                   <p>Investors can browse properties to invest in with underwriting provided by Rabbu.</p>
                 </div>
                 <div className="key-feature-image">
-                  <div className="image-placeholder large">
-                    <span>On-Market Properties Image</span>
-                  </div>
+                  <img 
+                    src="/case_studies/rabbu_marketplace/market-13.webp" 
+                    alt="View On-Market Rental Properties" 
+                    className="w-full rounded-xl"
+                  />
                 </div>
               </div>
             </div>
@@ -394,8 +450,26 @@ function RabbuMarketplace({ onClose }) {
             <div className="subsection">
               <h3>Early Stage Design System</h3>
               <p>Recognizing the need for a cohesive and consistent design approach, this system aims to streamline the design process, ensure consistency across the platform, and facilitate smoother handoffs to the client.</p>
-              <div className="image-placeholder large">
-                <span>Design System Components</span>
+              <div className="image-container w-full mt-4">
+                <img 
+                  src="/case_studies/rabbu_marketplace/market-14.webp" 
+                  alt="Design System Components 1" 
+                  className="w-full rounded-xl"
+                />
+              </div>
+              <div className="image-container w-full mt-4">
+                <img 
+                  src="/case_studies/rabbu_marketplace/market-15.webp" 
+                  alt="Design System Components 2" 
+                  className="w-full rounded-xl"
+                />
+              </div>
+              <div className="image-container w-full mt-4">
+                <img 
+                  src="/case_studies/rabbu_marketplace/market-16.webp" 
+                  alt="Design System Components 3" 
+                  className="w-full rounded-xl"
+                />
               </div>
             </div>
           </section>

@@ -325,6 +325,15 @@
   height: 200px;
 }
 
+.competitor-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  background: #fafafa;
+  padding: 1.5rem;
+}
+
 /* Comparison Section */
 .comparison-section {
   margin-top: 2rem;
@@ -469,8 +478,27 @@
   direction: ltr;
 }
 
+/* Image Container */
+.image-container {
+  background: #fafafa;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: contain;
+  margin: 0;
+}
+
 .key-feature-image {
   width: 100%;
+  background: #fafafa;
+  padding: 1.5rem;
+  border-radius: 12px;
 }
 
 .key-feature-image img {
@@ -478,6 +506,7 @@
   height: auto;
   max-height: 480px;
   object-fit: contain;
+  margin: 0;
 }
 
 .key-feature-content h3 {
