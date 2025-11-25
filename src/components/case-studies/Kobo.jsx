@@ -413,11 +413,14 @@ function Kobo({ onClose }) {
             className="case-study-section"
           >
             <h2>Final Design</h2>
-            <p className="text-lg leading-relaxed text-muted mb-8">
-              The redesigned Kobo app addresses key user pain points through
-              improved navigation, enhanced discoverability, and a more
-              intuitive user experience.
-            </p>
+
+            <div className="subsection">
+              <p>
+                The redesigned Kobo app addresses key user pain points through
+                improved navigation, enhanced discoverability, and a more
+                intuitive user experience.
+              </p>
+            </div>
 
             <div className="subsection">
               <div className="subsection-horizontal">
