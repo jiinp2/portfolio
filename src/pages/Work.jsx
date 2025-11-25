@@ -22,7 +22,7 @@ function Work() {
     const savedTab = localStorage.getItem('activeTab')
     return (savedTab === 'skills' ? 'experience' : savedTab) || 'experience'
   })
-  const [activeFilter, setActiveFilter] = useState('all')
+  const [activeFilter, setActiveFilter] = useState('case-studies')
   const [isCaseStudyOpen, setIsCaseStudyOpen] = useState(false)
   const [selectedProject, setSelectedProject] = useState(null)
 
@@ -65,9 +65,7 @@ function Work() {
   }, [projectSlug])
 
   // Filter projects based on active filter
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter)
+  const filteredProjects = projects.filter(project => project.category === activeFilter)
 
   return (
     <div className={`container ${isCaseStudyOpen ? 'case-study-active' : ''}`}>
@@ -205,12 +203,6 @@ function Work() {
             </Link>
           </div>
           <div className="work-filters">
-            <button 
-              className={`filter-button ${activeFilter === 'all' ? 'active' : ''}`}
-              onClick={() => setActiveFilter('all')}
-            >
-              All
-            </button>
             <button 
               className={`filter-button ${activeFilter === 'case-studies' ? 'active' : ''}`}
               onClick={() => setActiveFilter('case-studies')}
