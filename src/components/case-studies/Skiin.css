@@ -313,6 +313,22 @@
   font-size: var(--font-size-lg);
 }
 
+/* Image Container */
+.image-container {
+  background: #fafafa;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: contain;
+  margin: 0;
+}
+
 /* Key Feature - Side by Side Layout */
 .key-feature {
   display: grid;
@@ -324,6 +340,9 @@
 
 .key-feature-image {
   width: 100%;
+  background: #fafafa;
+  padding: 1.5rem;
+  border-radius: 12px;
 }
 
 .key-feature-image img {
@@ -331,6 +350,7 @@
   height: auto;
   max-height: 480px;
   object-fit: contain;
+  margin: 0;
 }
 
 .key-feature-content h3 {

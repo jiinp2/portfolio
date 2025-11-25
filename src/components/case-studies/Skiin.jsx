@@ -159,6 +159,13 @@ function Skiin({ onClose }) {
               <ul className="outcomes-list">
                 <li><Check className="outcome-icon" size={20} />Designed the user flow and high-fidelity wireframes for Skiin's communication features and mood logging feature.</li>
               </ul>
+              <div className="image-container w-full mt-4">
+                <img 
+                  src="/case_studies/skiin/1.avif" 
+                  alt="Skiin Outcomes" 
+                  className="w-full rounded-xl"
+                />
+              </div>
             </div>
           </section>
 
@@ -195,20 +202,8 @@ function Skiin({ onClose }) {
               <p>Enhancing remote connection through Skiin's in-app messaging and video calling.</p>
               <div className="image-container w-full mt-4">
                 <img 
-                  src="/case_studies/skiin/1.avif" 
-                  alt="Communication Features Screens" 
-                  className="w-full rounded-xl"
-                />
-              </div>
-            </div>
-
-            <div className="subsection">
-              <h3>Staying in the Loop</h3>
-              <p>Within group chats, each member has a status bar that provides a quick view on their current health.</p>
-              <div className="image-container w-full mt-4">
-                <img 
                   src="/case_studies/skiin/2.webp" 
-                  alt="Status Bar Screens" 
+                  alt="Communication Features Screens" 
                   className="w-full rounded-xl"
                 />
               </div>
@@ -217,13 +212,13 @@ function Skiin({ onClose }) {
             <div className="subsection">
               <div className="key-feature grid grid-cols-2 gap-12 mb-8 items-center">
                 <div className="key-feature-content">
-                  <h3>In-Depth Updates</h3>
-                  <p>The status bar can be expanded to view user location and more detailed metrics over time.</p>
+                  <h3>Staying in the Loop</h3>
+                  <p>Within group chats, each member has a status bar that provides a quick view on their current health.</p>
                 </div>
                 <div className="key-feature-image w-full">
                   <img 
                     src="/case_studies/skiin/3.avif" 
-                    alt="In-Depth Updates Screens" 
+                    alt="Status Bar Screens" 
                     className="w-full rounded-xl"
                   />
                 </div>
@@ -235,14 +230,26 @@ function Skiin({ onClose }) {
                 <div className="key-feature-image w-full">
                   <img 
                     src="/case_studies/skiin/4.webp" 
-                    alt="Mood Logging Screens" 
+                    alt="In-Depth Updates Screens" 
                     className="w-full rounded-xl"
                   />
                 </div>
                 <div className="key-feature-content">
-                  <h3>Mood Logging</h3>
-                  <p>Enhancing remote connection through Skiin's in-app messaging and video calling.</p>
+                  <h3>In-Depth Updates</h3>
+                  <p>The status bar can be expanded to view user location and more detailed metrics over time.</p>
                 </div>
+              </div>
+            </div>
+
+            <div className="subsection">
+              <h3>Mood Logging</h3>
+              <p>Enhancing remote connection through Skiin's in-app messaging and video calling.</p>
+              <div className="image-container w-full mt-4">
+                <img 
+                  src="/case_studies/skiin/5.webp" 
+                  alt="Mood Logging Screens" 
+                  className="w-full rounded-xl"
+                />
               </div>
             </div>
 
@@ -251,7 +258,7 @@ function Skiin({ onClose }) {
               <p>Users can select their mood on a scale of 1-5, add the date, include a note on what they did that day, and tag factors that influenced their mood.</p>
               <div className="image-container w-full mt-4">
                 <img 
-                  src="/case_studies/skiin/5.webp" 
+                  src="/case_studies/skiin/6.webp" 
                   alt="Mood Logging Flow" 
                   className="w-full rounded-xl"
                 />
@@ -263,7 +270,7 @@ function Skiin({ onClose }) {
               <p>By viewing mood logs on a daily, weekly, or monthly basis, users can identify reoccurring patterns and understand how they are affected by their daily activities.</p>
               <div className="image-container w-full mt-4">
                 <img 
-                  src="/case_studies/skiin/6.webp" 
+                  src="/case_studies/skiin/7.avif" 
                   alt="Patterns Over Time Screens" 
                   className="w-full rounded-xl"
                 />

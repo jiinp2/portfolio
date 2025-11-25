@@ -435,7 +435,7 @@
   border-radius: 12px;
   margin: 1.5rem 0;
   display: block;
-  background: #f3f4f6;
+  background: #fafafa;
   padding: 1.5rem;
 }
 
@@ -444,12 +444,12 @@
   height: auto;
   border-radius: 12px;
   display: block;
-  background: #f3f4f6;
+  background: #fafafa;
   padding: 1.5rem;
 }
 
 .subsection-image {
-  background: #f3f4f6;
+  background: #fafafa;
   padding: 1.5rem;
   border-radius: 12px;
 }
