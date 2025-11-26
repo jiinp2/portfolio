@@ -237,6 +237,65 @@
   font-weight: var(--font-weight-semibold);
 }
 
+/* Comparison Section */
+.comparison-section {
+  margin-top: 2rem;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.comparison-grid-three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.comparison-column {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.comparison-column h5 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-tight);
+}
+
+.comparison-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comparison-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--text-muted);
+}
+
+.comparison-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--text-muted);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xl);
+  line-height: 1;
+  transform: translateY(0.1em);
+}
+
 /* Table of Contents */
 .table-of-contents {
   position: sticky;
@@ -321,6 +380,20 @@
   .maison-case-study .info-cards,
   .maison-case-study .info-cards-three {
     grid-template-columns: 1fr;
+  }
+
+  .comparison-grid-three {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-column {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .comparison-grid-three {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

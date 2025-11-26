@@ -370,59 +370,62 @@ function Maison({ onClose }) {
           >
             <h2>Design Impact</h2>
 
-            <div className="subsection">
-              <h3>User Experience:</h3>
-              <ul className="takeaways-list">
-                <li>
-                  Created an intuitive platform that feels familiar (leveraging
-                  mental models from Slack/Discord) while addressing
-                  real estate-specific needs
-                </li>
-                <li>
-                  Designed for both power users (brokerages managing large teams)
-                  and casual users (individual professionals networking)
-                </li>
-                <li>
-                  Built a scalable design system that supports rapid feature
-                  development
-                </li>
-              </ul>
-            </div>
-
-            <div className="subsection">
-              <h3>Business Impact:</h3>
-              <ul className="takeaways-list">
-                <li>
-                  Established clear product differentiation in a crowded
-                  communication tools market
-                </li>
-                <li>
-                  Enabled dual go-to-market strategy through thoughtful product
-                  architecture
-                </li>
-                <li>
-                  Created a platform that drives network effects between
-                  individual and enterprise users
-                </li>
-              </ul>
-            </div>
-
-            <div className="subsection">
-              <h3>Product Strategy:</h3>
-              <ul className="takeaways-list">
-                <li>
-                  Validated industry-specific platform approach vs. generic tool
-                  adaptation
-                </li>
-                <li>
-                  Demonstrated value of purpose-built solutions for vertical
-                  markets
-                </li>
-                <li>
-                  Built foundation for expansion into adjacent real estate
-                  professional tools
-                </li>
-              </ul>
+            <div className="comparison-section">
+              <div className="comparison-grid comparison-grid-three">
+                <div className="comparison-column">
+                  <h5>User Experience</h5>
+                  <ul className="comparison-list">
+                    <li>
+                      Created an intuitive platform that feels familiar
+                      (leveraging mental models from Slack/Discord) while
+                      addressing real estate-specific needs
+                    </li>
+                    <li>
+                      Designed for both power users (brokerages managing large
+                      teams) and casual users (individual professionals
+                      networking)
+                    </li>
+                    <li>
+                      Built a scalable design system that supports rapid feature
+                      development
+                    </li>
+                  </ul>
+                </div>
+                <div className="comparison-column">
+                  <h5>Business Impact</h5>
+                  <ul className="comparison-list">
+                    <li>
+                      Established clear product differentiation in a crowded
+                      communication tools market
+                    </li>
+                    <li>
+                      Enabled dual go-to-market strategy through thoughtful
+                      product architecture
+                    </li>
+                    <li>
+                      Created a platform that drives network effects between
+                      individual and enterprise users
+                    </li>
+                  </ul>
+                </div>
+                <div className="comparison-column">
+                  <h5>Product Strategy</h5>
+                  <ul className="comparison-list">
+                    <li>
+                      Validated industry-specific platform approach vs. generic
+                      tool adaptation
+                    </li>
+                    <li>
+                      Demonstrated value of purpose-built solutions for vertical
+                      markets
+                    </li>
+                    <li>
+                      Built foundation for expansion into adjacent real estate
+                      professional tools
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </section>
 
@@ -469,38 +472,6 @@ function Maison({ onClose }) {
                 Designing the information architecture, component system, and user
                 flows with enterprise scale in mind from the start prevented
                 costly redesigns and enabled rapid feature expansion.
-              </p>
-            </div>
-          </section>
-
-          {/* Project Details Section */}
-          <section
-            id="details"
-            ref={(el) => (sectionRefs.current.details = el)}
-            className="case-study-section"
-          >
-            <h2>Project Details</h2>
-
-            <div className="subsection">
-              <p>
-                <strong>Timeline:</strong> 2025 (WIP)
-              </p>
-              <p>
-                <strong>My Role:</strong> Product Designer, Design Engineer
-              </p>
-              <p>
-                <strong>Disciplines:</strong> Product Design, UX Strategy, Brand
-                Identity, Design Systems, Information Architecture
-              </p>
-              <p>
-                <strong>Platform Type:</strong> B2B SaaS
-              </p>
-              <p>
-                <strong>Industry:</strong> Real Estate Technology
-              </p>
-              <p>
-                <strong>Target Audience:</strong> Real estate professionals,
-                brokerages, and teams
               </p>
             </div>
           </section>
