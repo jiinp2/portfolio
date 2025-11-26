@@ -168,9 +168,27 @@
   line-height: var(--line-height-relaxed);
 }
 
-/* Case Study Sections */
+/* ============================================
+   WIDTH CONSTRAINTS - TEXT ONLY
+   ============================================ */
+
+/* Ensure sections and subsections have no width constraints */
 .case-study-section {
+  width: 100%;
+  max-width: none;
   margin-bottom: 4rem;
+}
+
+.subsection {
+  width: 100%;
+  max-width: none;
+  margin-bottom: 2rem;
+}
+
+/* ONLY text elements are constrained to 560px */
+.case-study-section > h2,
+.subsection > h3,
+.subsection > p {
   max-width: 560px;
   margin-left: auto;
   margin-right: auto;
@@ -183,10 +201,6 @@
   margin-bottom: 2rem;
   letter-spacing: var(--letter-spacing-tight);
   line-height: var(--line-height-tight);
-}
-
-.subsection {
-  margin-bottom: 2rem;
 }
 
 .subsection h3 {
@@ -203,6 +217,40 @@
   line-height: var(--line-height-relaxed);
   color: var(--text-muted);
   margin-bottom: 1.5rem;
+}
+
+/* ============================================
+   FULL WIDTH BREAK-OUT FOR NON-TEXT CONTENT
+   ============================================ */
+
+/* Break out of content padding (1.5rem each side = 3rem total) */
+/* Using high specificity to override .w-full utility class */
+/* This MUST be the last rule for image containers to ensure it wins */
+.maison-case-study .case-study-content .image-container.w-full,
+.maison-case-study .case-study-content .image-container,
+.maison-case-study .case-study-content .info-cards,
+.maison-case-study .case-study-section .image-container.w-full,
+.maison-case-study .case-study-section .image-container,
+.maison-case-study .case-study-section > .image-container.w-full,
+.maison-case-study .case-study-section > .image-container,
+.maison-case-study .case-study-section > .info-cards,
+.maison-case-study .subsection .image-container.w-full,
+.maison-case-study .subsection .image-container,
+.maison-case-study .subsection > .image-container.w-full,
+.maison-case-study .subsection > .image-container,
+.maison-case-study .subsection > .info-cards {
+  width: calc(100% + 3rem);
+  max-width: none;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  box-sizing: border-box;
+}
+
+/* Key features and info cards are full width */
+.key-feature,
+.info-cards {
+  width: 100%;
+  max-width: none;
 }
 
 /* Takeaways List */
@@ -421,11 +469,31 @@
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+
+  /* Adjust break-out for reduced padding */
+  .maison-case-study .case-study-content .image-container,
+  .maison-case-study .case-study-content .info-cards,
+  .maison-case-study .subsection > .image-container,
+  .maison-case-study .subsection > .info-cards {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 @media (max-width: 768px) {
   .case-study-content {
     padding: 2rem 0;
+  }
+
+  /* Reset break-out on mobile since padding is removed */
+  .maison-case-study .case-study-content .image-container,
+  .maison-case-study .case-study-content .info-cards,
+  .maison-case-study .subsection > .image-container,
+  .maison-case-study .subsection > .info-cards {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .case-study-section h2 {

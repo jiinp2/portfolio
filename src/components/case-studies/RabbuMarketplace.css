@@ -162,9 +162,32 @@
   margin: 0;
 }
 
-/* Sections */
+/* ============================================
+   WIDTH CONSTRAINTS - TEXT ONLY
+   ============================================ */
+
+/* Ensure sections and subsections have no width constraints */
 .case-study-section {
+  width: 100%;
+  max-width: none;
   margin-bottom: 5rem;
+}
+
+.subsection {
+  width: 100%;
+  max-width: none;
+  margin-bottom: 4rem;
+}
+
+/* ONLY text elements are constrained to 560px */
+.case-study-section > h2,
+.subsection > h3,
+.subsection > h4,
+.subsection > h5,
+.subsection > p {
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .case-study-section h2 {
@@ -174,13 +197,6 @@
   margin-bottom: 2rem;
   letter-spacing: var(--letter-spacing-tight);
   line-height: var(--line-height-tight);
-  max-width: 560px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.subsection {
-  margin-bottom: 4rem;
 }
 
 .subsection h3 {
@@ -190,9 +206,6 @@
   margin-bottom: 1rem;
   letter-spacing: var(--letter-spacing-tight);
   line-height: var(--line-height-tight);
-  max-width: 560px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .subsection h4 {
@@ -201,9 +214,6 @@
   color: #1a1a1a;
   margin-bottom: 1rem;
   margin-top: 2rem;
-  max-width: 560px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .subsection h5 {
@@ -211,9 +221,6 @@
   font-weight: 600;
   color: #1a1a1a;
   margin-bottom: 1rem;
-  max-width: 560px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .subsection p {
@@ -221,9 +228,40 @@
   line-height: var(--line-height-relaxed);
   color: var(--text-muted);
   margin-bottom: 2.5rem;
-  max-width: 560px;
-  margin-left: auto;
-  margin-right: auto;
+}
+
+/* ============================================
+   FULL WIDTH BREAK-OUT FOR NON-TEXT CONTENT
+   ============================================ */
+
+/* Break out of content padding (1.5rem each side = 3rem total) */
+/* Using high specificity to override .w-full utility class */
+/* This MUST be the last rule for image containers to ensure it wins */
+.rabbu-marketplace-case-study .case-study-content .image-container.w-full,
+.rabbu-marketplace-case-study .case-study-content .image-container,
+.rabbu-marketplace-case-study .case-study-content .key-feature-image,
+.rabbu-marketplace-case-study .case-study-section .image-container.w-full,
+.rabbu-marketplace-case-study .case-study-section .image-container,
+.rabbu-marketplace-case-study .case-study-section > .image-container.w-full,
+.rabbu-marketplace-case-study .case-study-section > .image-container,
+.rabbu-marketplace-case-study .case-study-section > .key-feature-image,
+.rabbu-marketplace-case-study .subsection .image-container.w-full,
+.rabbu-marketplace-case-study .subsection .image-container,
+.rabbu-marketplace-case-study .subsection > .image-container.w-full,
+.rabbu-marketplace-case-study .subsection > .image-container,
+.rabbu-marketplace-case-study .subsection > .key-feature-image {
+  width: calc(100% + 3rem);
+  max-width: none;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  box-sizing: border-box;
+}
+
+/* Key features and info cards are full width */
+.key-feature,
+.info-cards {
+  width: 100%;
+  max-width: none;
 }
 
 /* Outcomes List */
@@ -569,6 +607,16 @@
   .case-study-content {
     padding: 4rem 0;
   }
+
+  /* Adjust break-out for reduced padding */
+  .rabbu-marketplace-case-study .case-study-content .image-container,
+  .rabbu-marketplace-case-study .case-study-content .key-feature-image,
+  .rabbu-marketplace-case-study .subsection > .image-container,
+  .rabbu-marketplace-case-study .subsection > .key-feature-image {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .toc-header {
@@ -689,6 +737,16 @@
     padding: 2rem 0;
   }
 
+  /* Reset break-out on mobile since padding is removed */
+  .rabbu-marketplace-case-study .case-study-content .image-container,
+  .rabbu-marketplace-case-study .case-study-content .key-feature-image,
+  .rabbu-marketplace-case-study .subsection > .image-container,
+  .rabbu-marketplace-case-study .subsection > .key-feature-image {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   .case-study-title {
     font-size: var(--font-size-2xl);
   }
@@ -751,6 +809,16 @@
 
   .case-study-content {
     padding: 1.5rem 0;
+  }
+
+  /* Reset break-out on small mobile since padding is removed */
+  .rabbu-marketplace-case-study .case-study-content .image-container,
+  .rabbu-marketplace-case-study .case-study-content .key-feature-image,
+  .rabbu-marketplace-case-study .subsection > .image-container,
+  .rabbu-marketplace-case-study .subsection > .key-feature-image {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .case-study-title {
