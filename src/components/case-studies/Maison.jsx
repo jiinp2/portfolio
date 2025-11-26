@@ -1,4 +1,14 @@
 import { useState, useEffect, useRef } from "react";
+import {
+  MessageSquare,
+  Search,
+  Users,
+  Folder,
+  Building,
+  UserPlus,
+  Settings,
+} from "lucide-react";
+import InfoCard from "../ui/InfoCard";
 import "./Maison.css";
 
 function Maison({ onClose }) {
@@ -14,10 +24,10 @@ function Maison({ onClose }) {
     { id: "challenge", label: "The Challenge" },
     { id: "solution", label: "The Solution" },
     { id: "role", label: "My Role" },
-    { id: "approach", label: "Approach" },
+    { id: "approach", label: "Design Approach" },
     { id: "features", label: "Key Features" },
-    { id: "impact", label: "Impact & Results" },
-    { id: "takeaways", label: "Takeaways" },
+    { id: "impact", label: "Design Impact" },
+    { id: "insights", label: "Key Insights" },
   ];
 
   // Intersection Observer for tracking active section
@@ -106,23 +116,33 @@ function Maison({ onClose }) {
         {/* Middle Column - Main Content */}
         <div className="case-study-content">
           {/* Hero Section */}
-          <div className="hero-section">
-            <h1 className="case-study-title">Maison</h1>
-            <p className="case-study-subtitle">
-              Professional networking and community platform for real estate
-              professionals and brokerages.
+          <div className="hero-section mb-8 text-left">
+            <h1 className="case-study-title text-2xl font-semibold tracking-tight text-default mb-6">
+              Maison
+            </h1>
+            <p className="case-study-subtitle text-lg text-light font-normal mb-12 max-w-4xl leading-relaxed">
+              Building Community Infrastructure for Real Estate Professionals
             </p>
+            <div className="hero-image-container w-full">
+              <div className="hero-card">
+                <img
+                  src="/case_studies/maison/maison-hero.png"
+                  alt="Maison Hero"
+                  className="hero-image w-full rounded-xl"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Project Info Bar */}
           <div className="project-info-bar">
             <div className="info-item">
               <h3>Timeline</h3>
-              <p>Ongoing</p>
+              <p>2025 (WIP)</p>
             </div>
             <div className="info-item">
               <h3>My Role</h3>
-              <p>Product Development, Brand Strategy, Content Strategy</p>
+              <p>Product Designer, Design Engineer</p>
             </div>
             <div className="info-item">
               <h3>Platform Type</h3>
@@ -141,10 +161,10 @@ function Maison({ onClose }) {
             <div className="subsection">
               <p>
                 Maison is a professional networking and community platform
-                designed specifically for the real estate industry. The platform
-                addresses the fragmented communication challenges that real
-                estate professionals face by providing a unified space for
-                networking, collaboration, and community management.
+                designed specifically for the real estate industry. I led the
+                product design and brand development for a platform that unifies
+                fragmented communication tools into a purpose-built solution for
+                real estate professionals and brokerages.
               </p>
             </div>
           </section>
@@ -168,25 +188,32 @@ function Maison({ onClose }) {
                 communication and foster team cohesion.
               </p>
 
-              <div className="subsection">
-                <h3>Key Problems Identified:</h3>
-                <ul className="takeaways-list">
-                  <li>
-                    Fragmented communication across consumer apps not designed
-                    for professional use
-                  </li>
-                  <li>
-                    Difficulty discovering and connecting with industry peers
-                  </li>
-                  <li>
-                    No centralized professional directory for real estate
-                    professionals
-                  </li>
-                  <li>Poor file sharing and organization capabilities</li>
-                  <li>
-                    Lack of dedicated community management tools for brokerages
-                  </li>
-                </ul>
+              <div className="info-cards mt-8">
+                <InfoCard
+                  icon={<MessageSquare size={20} />}
+                  title="Fragmented communication"
+                  description="Across consumer apps not designed for professional use"
+                />
+                <InfoCard
+                  icon={<Search size={20} />}
+                  title="Discovery barriers"
+                  description="Preventing professionals from connecting with industry peers"
+                />
+                <InfoCard
+                  icon={<Users size={20} />}
+                  title="No centralized directory"
+                  description="For real estate professionals"
+                />
+                <InfoCard
+                  icon={<Folder size={20} />}
+                  title="Poor file management"
+                  description="With inadequate sharing and organization capabilities"
+                />
+                <InfoCard
+                  icon={<Building size={20} />}
+                  title="Missing enterprise tools"
+                  description="For brokerage community management"
+                />
               </div>
             </div>
           </section>
@@ -201,32 +228,21 @@ function Maison({ onClose }) {
 
             <div className="subsection">
               <p>
-                Maison provides a dual-focused platform that serves both
-                individual real estate professionals and enterprise brokerages:
+                I designed a dual-focused platform that serves both individual
+                real estate professionals and enterprise brokerages, creating
+                network effects where each audience strengthens the value for the
+                other.
               </p>
 
-              <div className="subsection">
-                <h3>For Individual Professionals:</h3>
-                <ul className="takeaways-list">
-                  <li>Professional networking and peer connections</li>
-                  <li>Visibility in an industry-specific directory</li>
-                  <li>
-                    Purpose-built community features for real estate workflows
-                  </li>
-                </ul>
-              </div>
-
-              <div className="subsection">
-                <h3>For Enterprise Brokerages:</h3>
-                <ul className="takeaways-list">
-                  <li>Internal communication and team management tools</li>
-                  <li>
-                    Private community spaces replacing scattered Facebook groups
-                    and WhatsApp channels
-                  </li>
-                  <li>Streamlined file sharing and collaboration</li>
-                  <li>Team directory and organizational structure</li>
-                </ul>
+              <div className="info-cards mt-8">
+                <InfoCard
+                  title="For Individual Professionals"
+                  description="Professional networking and peer connections, visibility in an industry-specific directory, and purpose-built community features for real estate workflows."
+                />
+                <InfoCard
+                  title="For Enterprise Brokerages"
+                  description="Internal communication and team management tools, private community spaces replacing scattered Facebook groups and WhatsApp channels, streamlined file sharing and collaboration, and team directory and organizational structure."
+                />
               </div>
             </div>
           </section>
@@ -241,77 +257,66 @@ function Maison({ onClose }) {
 
             <div className="subsection">
               <p>
-                As part of the Maison team, I contributed to building the
-                platform and establishing the brand identity:
+                I served as the product designer and design engineer for Maison,
+                working across the full spectrum of product development from
+                initial concept to implementation.
               </p>
 
               <ul className="takeaways-list">
                 <li>
-                  <strong>Product Development:</strong> Helped shape the
-                  platform's features and user experience around real
-                  estate-specific needs
+                  <strong>Product design and UX strategy</strong> for both
+                  individual and enterprise experiences
                 </li>
                 <li>
-                  <strong>Brand Strategy:</strong> Developed positioning that
-                  clearly differentiates Maison in the professional networking
-                  space
+                  <strong>Design system development</strong> and component
+                  architecture
                 </li>
                 <li>
-                  <strong>Content & Messaging:</strong> Crafted website copy and
-                  value propositions for both individual and enterprise
-                  audiences
+                  <strong>Brand identity and visual design</strong>
                 </li>
                 <li>
-                  <strong>Information Architecture:</strong> Designed sitemap
-                  and content strategy for the B2B SaaS website
+                  <strong>Information architecture and user flows</strong>
+                </li>
+                <li>
+                  <strong>Website design and content strategy</strong>
+                </li>
+                <li>
+                  <strong>Cross-functional collaboration</strong> with
+                  engineering and business teams
                 </li>
               </ul>
             </div>
           </section>
 
-          {/* Approach Section */}
+          {/* Design Approach Section */}
           <section
             id="approach"
             ref={(el) => (sectionRefs.current.approach = el)}
             className="case-study-section"
           >
-            <h2>Approach</h2>
+            <h2>Design Approach</h2>
 
-            <div className="subsection">
-              <h3>1. Understanding the Market</h3>
-              <p>
-                Researched the unique communication patterns and pain points of
-                real estate professionals, identifying the gap between generic
-                tools (Slack, Discord) and industry-specific needs.
-              </p>
-            </div>
-
-            <div className="subsection">
-              <h3>2. Dual Product Strategy</h3>
-              <p>
-                Developed a platform that serves both individual professionals
-                seeking networking opportunities and enterprise brokerages
-                needing internal communication solutions—creating a flywheel
-                effect where both audiences strengthen the platform.
-              </p>
-            </div>
-
-            <div className="subsection">
-              <h3>3. Brand Positioning</h3>
-              <p>
-                Positioned Maison as "Slack for workplace + Discord for gamers =
-                Maison for real estate professionals." This clear, relatable
-                positioning immediately communicates the platform's value.
-              </p>
-            </div>
-
-            <div className="subsection">
-              <h3>4. Enterprise Focus</h3>
-              <p>
-                Prioritized enterprise SaaS features to drive business growth
-                while maintaining an approachable platform for individual
-                professionals.
-              </p>
+            <div className="info-cards mt-8">
+              <InfoCard
+                number={1}
+                title="Research & Discovery"
+                description="Conducted user research with real estate professionals to understand their communication patterns, pain points, and workflows. Mapped the fragmented tool landscape to identify opportunities for a unified solution."
+              />
+              <InfoCard
+                number={2}
+                title="Strategic Product Architecture"
+                description="Designed a dual-sided platform strategy that serves both individual professionals and enterprise teams. Created a system where both audiences strengthen the platform's value through network effects."
+              />
+              <InfoCard
+                number={3}
+                title="Brand & Positioning"
+                description="Developed the brand identity and positioning strategy: 'Slack for workplace + Discord for gamers = Maison for real estate professionals.' This clear positioning helped stakeholders and users immediately understand the product vision."
+              />
+              <InfoCard
+                number={4}
+                title="Enterprise-First Design"
+                description="Prioritized enterprise features and workflows while maintaining an approachable experience for individual users. Designed for scalability and team management from the ground up."
+              />
             </div>
           </section>
 
@@ -321,94 +326,181 @@ function Maison({ onClose }) {
             ref={(el) => (sectionRefs.current.features = el)}
             className="case-study-section"
           >
-            <h2>Key Features Developed</h2>
+            <h2>Key Features Designed</h2>
 
-            <div className="subsection">
-              <ul className="takeaways-list">
-                <li>Professional directory and discovery</li>
-                <li>Secure, organized community spaces</li>
-                <li>File sharing and collaboration tools</li>
-                <li>Real estate-specific workflows and integrations</li>
-                <li>Private brokerage team management</li>
-                <li>Industry networking capabilities</li>
-              </ul>
+            <div className="info-cards info-cards-three mt-8">
+              <InfoCard
+                icon={<Users size={20} />}
+                title="Professional Directory"
+                description="Searchable directory with profiles and discovery features"
+              />
+              <InfoCard
+                icon={<MessageSquare size={20} />}
+                title="Community Spaces"
+                description="Secure, organized spaces for teams and interest groups"
+              />
+              <InfoCard
+                icon={<Folder size={20} />}
+                title="File Management"
+                description="Purpose-built sharing and organization for real estate documents"
+              />
+              <InfoCard
+                icon={<Settings size={20} />}
+                title="Industry Workflows"
+                description="Real estate-specific features and integrations"
+              />
+              <InfoCard
+                icon={<Building size={20} />}
+                title="Team Management"
+                description="Brokerage admin tools and organizational hierarchy"
+              />
+              <InfoCard
+                icon={<UserPlus size={20} />}
+                title="Networking Tools"
+                description="Connection requests, messaging, and relationship building"
+              />
             </div>
           </section>
 
-          {/* Impact & Results Section */}
+          {/* Design Impact Section */}
           <section
             id="impact"
             ref={(el) => (sectionRefs.current.impact = el)}
             className="case-study-section"
           >
-            <h2>Impact & Results</h2>
+            <h2>Design Impact</h2>
 
             <div className="subsection">
-              <h3>Product Impact:</h3>
+              <h3>User Experience:</h3>
               <ul className="takeaways-list">
                 <li>
-                  Created a unified communication solution specifically designed
-                  for real estate industry workflows
+                  Created an intuitive platform that feels familiar (leveraging
+                  mental models from Slack/Discord) while addressing
+                  real estate-specific needs
                 </li>
-                <li>Eliminated the need for multiple disconnected platforms</li>
                 <li>
-                  Provided brokerages with dedicated community management
-                  capabilities
+                  Designed for both power users (brokerages managing large teams)
+                  and casual users (individual professionals networking)
+                </li>
+                <li>
+                  Built a scalable design system that supports rapid feature
+                  development
                 </li>
               </ul>
             </div>
 
             <div className="subsection">
-              <h3>Market Position:</h3>
+              <h3>Business Impact:</h3>
               <ul className="takeaways-list">
                 <li>
-                  Established clear differentiation in the professional networking
-                  space
+                  Established clear product differentiation in a crowded
+                  communication tools market
                 </li>
                 <li>
-                  Positioned as the go-to platform for real estate professionals
+                  Enabled dual go-to-market strategy through thoughtful product
+                  architecture
                 </li>
                 <li>
-                  Built a product that addresses both individual and enterprise
-                  needs
+                  Created a platform that drives network effects between
+                  individual and enterprise users
+                </li>
+              </ul>
+            </div>
+
+            <div className="subsection">
+              <h3>Product Strategy:</h3>
+              <ul className="takeaways-list">
+                <li>
+                  Validated industry-specific platform approach vs. generic tool
+                  adaptation
+                </li>
+                <li>
+                  Demonstrated value of purpose-built solutions for vertical
+                  markets
+                </li>
+                <li>
+                  Built foundation for expansion into adjacent real estate
+                  professional tools
                 </li>
               </ul>
             </div>
           </section>
 
-          {/* Takeaways Section */}
+          {/* Key Insights Section */}
           <section
-            id="takeaways"
-            ref={(el) => (sectionRefs.current.takeaways = el)}
+            id="insights"
+            ref={(el) => (sectionRefs.current.insights = el)}
             className="case-study-section"
           >
-            <h2>Takeaways</h2>
+            <h2>Key Insights</h2>
 
             <div className="subsection">
-              <h3>Industry-Specific Solutions Matter</h3>
+              <h3>Design for Vertical Markets</h3>
               <p>
-                Generic communication tools don't address the unique workflows
-                and needs of specialized industries. Building for a specific
-                vertical creates stronger product-market fit.
+                Generic solutions often fall short for specialized industries.
+                Designing with deep understanding of real estate workflows
+                created stronger product-market fit and more intuitive user
+                experiences than adapting horizontal tools.
               </p>
             </div>
 
             <div className="subsection">
-              <h3>Dual Audience Strategy</h3>
+              <h3>Network Effects Through Design</h3>
               <p>
-                Serving both individual professionals and enterprises creates
-                network effects. Professionals want to be where their peers are,
-                and brokerages benefit from their teams being on a platform with
-                broader industry connections.
+                Thoughtful product architecture that serves both individual
+                professionals and enterprises creates powerful network effects.
+                Each user type strengthens the platform's value for the other.
               </p>
             </div>
 
             <div className="subsection">
-              <h3>Clear Positioning is Critical</h3>
+              <h3>Positioning as a Design Tool</h3>
               <p>
-                In a crowded market of communication tools, having a sharp,
-                memorable positioning statement helped Maison stand out and
-                communicate its unique value.
+                Clear, relatable positioning ("Slack + Discord for real estate")
+                helped align stakeholders, guide design decisions, and
+                communicate value to users. Good positioning is a design artifact,
+                not just marketing.
+              </p>
+            </div>
+
+            <div className="subsection">
+              <h3>Scalability from Day One</h3>
+              <p>
+                Designing the information architecture, component system, and user
+                flows with enterprise scale in mind from the start prevented
+                costly redesigns and enabled rapid feature expansion.
+              </p>
+            </div>
+          </section>
+
+          {/* Project Details Section */}
+          <section
+            id="details"
+            ref={(el) => (sectionRefs.current.details = el)}
+            className="case-study-section"
+          >
+            <h2>Project Details</h2>
+
+            <div className="subsection">
+              <p>
+                <strong>Timeline:</strong> 2025 (WIP)
+              </p>
+              <p>
+                <strong>My Role:</strong> Product Designer, Design Engineer
+              </p>
+              <p>
+                <strong>Disciplines:</strong> Product Design, UX Strategy, Brand
+                Identity, Design Systems, Information Architecture
+              </p>
+              <p>
+                <strong>Platform Type:</strong> B2B SaaS
+              </p>
+              <p>
+                <strong>Industry:</strong> Real Estate Technology
+              </p>
+              <p>
+                <strong>Target Audience:</strong> Real estate professionals,
+                brokerages, and teams
               </p>
             </div>
           </section>

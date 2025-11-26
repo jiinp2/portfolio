@@ -121,6 +121,26 @@
   line-height: var(--line-height-relaxed);
 }
 
+.hero-image-container {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.maison-case-study .hero-card {
+  background: var(--maison-accent);
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+}
+
 /* Project Info Bar */
 .project-info-bar {
   display: grid;
@@ -276,6 +296,31 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+/* Info Cards Layout */
+.maison-case-study .info-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.maison-case-study .info-cards-three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .maison-case-study .info-cards-three {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .maison-case-study .info-cards,
+  .maison-case-study .info-cards-three {
+    grid-template-columns: 1fr;
   }
 }
 
