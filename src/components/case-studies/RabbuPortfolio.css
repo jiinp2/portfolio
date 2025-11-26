@@ -213,6 +213,25 @@
   display: block;
 }
 
+/* Image Container */
+.image-container {
+  background: #f3f4f6;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  max-height: 560px;
+  object-fit: contain;
+  margin: 0;
+}
+
 /* Step Cards - Styles moved to StepCard.css component */
 
 /* Image Placeholders */
@@ -295,6 +314,10 @@
   gap: 3rem;
   margin-bottom: 4rem;
   align-items: center;
+}
+
+.key-feature-image-large {
+  grid-template-columns: 1.5fr 1fr;
 }
 
 .key-feature:nth-child(even) {
@@ -604,4 +627,43 @@
   }
 
   /* Step cards responsive styles moved to StepCard.css */
+}
+
+/* Info Card Overrides for Rabbu Portfolio */
+.rabbu-portfolio-case-study .info-number {
+  background-color: var(--rabbu-accent-dark) !important;
+}
+
+.rabbu-portfolio-case-study .info-icon {
+  color: var(--rabbu-accent-dark) !important;
+}
+
+/* Four column layout for info cards */
+.rabbu-portfolio-case-study .info-cards-four {
+  grid-template-columns: repeat(4, 1fr) !important;
+}
+
+@media (max-width: 1024px) {
+  .rabbu-portfolio-case-study .info-cards-four {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .rabbu-portfolio-case-study .info-cards-four {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Outcomes Images Grid */
+.outcomes-images-grid {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .outcomes-images-grid {
+    grid-template-columns: 1fr;
+  }
 }

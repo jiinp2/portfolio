@@ -8,8 +8,8 @@ import './Work.css'
 
 // Project data
 const projects = [
-  { name: 'Maison', label: 'Scroll to Maison', date: '2025', category: 'case-studies', slug: 'maison', image: '/home/maison_logo.svg' },
-  { name: 'Rabbu Portfolio', label: 'Scroll to Rabbu Portfolio', date: '2023', category: 'case-studies', slug: 'rabbu-portfolio', image: '/home/rabbu_portfolio_thumbnail.png', description: 'Property management platform for short-term rental investors.' },
+  { name: 'Maison', label: 'Scroll to Maison', date: '2025', category: 'case-studies', slug: 'maison', image: '/home/maison_logo.svg', description: 'Professional networking and community platform for real estate professionals and brokerages.' },
+  { name: 'Rabbu Portfolio', label: 'Scroll to Rabbu Portfolio', date: '2023', category: 'case-studies', slug: 'rabbu-portfolio', image: '/home/rabbu_portfolio_thumbnail.avif', description: 'Property management platform for short-term rental investors.' },
   { name: 'Rabbu Marketplace', label: 'Scroll to Rabbu Marketplace', date: '2023', category: 'case-studies', slug: 'rabbu-marketplace', image: '/home/rabbu_marketplace_thumbnail.png', description: 'Investment property discovery and evaluation platform.' },
   { name: 'Kobo', label: 'Scroll to Kobo', date: '2021', category: 'archive', slug: 'kobo', image: '/home/kobo_thumbnail.png', description: 'eBook and audiobook app redesign.' },
   { name: 'Skiin', label: 'Scroll to Skiin', date: '2020', category: 'archive', slug: 'skiin', image: '/home/skiin_thumbnail.png', description: 'Wellness tracking through sensory textiles.' }

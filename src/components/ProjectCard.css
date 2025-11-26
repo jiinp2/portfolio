@@ -63,9 +63,31 @@
   background: var(--rabbu-accent);
 }
 
+/* Rabbu Portfolio thumbnail - larger and cropped to show top */
+.project-preview[data-slug="rabbu-portfolio"] {
+  padding-bottom: 0;
+  align-items: flex-start;
+}
+
+.project-preview[data-slug="rabbu-portfolio"] .preview-image {
+  width: 60%;
+  height: 150%;
+  object-fit: cover;
+  object-position: top;
+}
+
 /* Kobo specific background */
 .project-preview[data-slug="kobo"] {
   background: var(--kobo-accent);
+  padding-bottom: 0;
+  align-items: flex-start;
+}
+
+.project-preview[data-slug="kobo"] .preview-image {
+  width: 60%;
+  height: 150%;
+  object-fit: cover;
+  object-position: top;
 }
 
 /* Skiin specific background */
@@ -178,6 +200,40 @@
     padding: 1.5rem;
   }
 
+  .project-preview[data-slug="rabbu-portfolio"] {
+    padding-top: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0;
+    align-items: flex-start;
+  }
+
+  .project-preview[data-slug="rabbu-portfolio"] .preview-image {
+    max-width: calc(100% - 3rem);
+    max-height: none;
+    width: 60%;
+    height: 200%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .project-preview[data-slug="kobo"] {
+    padding-top: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0;
+    align-items: flex-start;
+  }
+
+  .project-preview[data-slug="kobo"] .preview-image {
+    max-width: calc(100% - 3rem);
+    max-height: none;
+    width: 60%;
+    height: 200%;
+    object-fit: cover;
+    object-position: top;
+  }
+
   .preview-image {
     max-width: calc(100% - 3rem);
     max-height: calc(100% - 3rem);
@@ -207,6 +263,40 @@
   .project-preview {
     padding: 1rem;
     min-height: 0;
+  }
+
+  .project-preview[data-slug="rabbu-portfolio"] {
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0;
+    align-items: flex-start;
+  }
+
+  .project-preview[data-slug="rabbu-portfolio"] .preview-image {
+    max-width: calc(100% - 2rem);
+    max-height: none;
+    width: 60%;
+    height: 200%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .project-preview[data-slug="kobo"] {
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0;
+    align-items: flex-start;
+  }
+
+  .project-preview[data-slug="kobo"] .preview-image {
+    max-width: calc(100% - 2rem);
+    max-height: none;
+    width: 60%;
+    height: 200%;
+    object-fit: cover;
+    object-position: top;
   }
 
   .preview-image {

@@ -2,11 +2,14 @@ import RabbuPortfolio from './case-studies/RabbuPortfolio'
 import RabbuMarketplace from './case-studies/RabbuMarketplace'
 import Kobo from './case-studies/Kobo'
 import Skiin from './case-studies/Skiin'
+import Maison from './case-studies/Maison'
 
 function CaseStudy({ project, onClose }) {
   // Route to specific case study component based on project name
   const renderCaseStudy = () => {
     switch (project.name) {
+      case 'Maison':
+        return <Maison onClose={onClose} />
       case 'Rabbu Portfolio':
         return <RabbuPortfolio onClose={onClose} />
       case 'Rabbu Marketplace':

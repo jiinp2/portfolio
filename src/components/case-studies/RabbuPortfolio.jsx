@@ -1,4 +1,10 @@
 import { useState, useEffect, useRef } from "react";
+import {
+  LayoutDashboard,
+  Calendar,
+  MessageSquare,
+  DollarSign,
+} from "lucide-react";
 import InfoCard from "../ui/InfoCard";
 import "./RabbuPortfolio.css";
 
@@ -16,7 +22,6 @@ function RabbuPortfolio({ onClose }) {
     { id: "design-research", label: "Design Research" },
     { id: "design-process", label: "Design Process" },
     { id: "final-design", label: "Final Design" },
-    { id: "key-features", label: "Key Features" },
   ];
 
   // Intersection Observer for tracking active section
@@ -224,19 +229,21 @@ function RabbuPortfolio({ onClose }) {
                 className="w-full rounded-xl"
               />
             </div>
-            <div className="image-container w-full mt-4">
-              <img
-                src="/case_studies/rabbu_portofolio/2.webp"
-                alt="Rabbu Portfolio Outcomes 2"
-                className="w-full rounded-xl"
-              />
-            </div>
-            <div className="image-container w-full mt-4">
-              <img
-                src="/case_studies/rabbu_portofolio/3.webp"
-                alt="Rabbu Portfolio Outcomes 3"
-                className="w-full rounded-xl"
-              />
+            <div className="outcomes-images-grid mt-4">
+              <div className="image-container w-full">
+                <img
+                  src="/case_studies/rabbu_portofolio/2.webp"
+                  alt="Rabbu Portfolio Outcomes 2"
+                  className="w-full rounded-xl"
+                />
+              </div>
+              <div className="image-container w-full">
+                <img
+                  src="/case_studies/rabbu_portofolio/3.webp"
+                  alt="Rabbu Portfolio Outcomes 3"
+                  className="w-full rounded-xl"
+                />
+              </div>
             </div>
           </section>
 
@@ -394,79 +401,35 @@ function RabbuPortfolio({ onClose }) {
                 comprehensive oversight over their investment properties.
               </p>
 
+              <div className="info-cards info-cards-four mb-4">
+                <InfoCard
+                  icon={<LayoutDashboard size={20} />}
+                  title="Dashboard"
+                  description="A customizable snapshot of property trends."
+                />
+                <InfoCard
+                  icon={<Calendar size={20} />}
+                  title="Properties & Calendar"
+                  description="Displays property statuses and booking details."
+                />
+                <InfoCard
+                  icon={<MessageSquare size={20} />}
+                  title="Reviews & Activity Feed"
+                  description="Keeps property owners updated on guest feedback and property activities."
+                />
+                <InfoCard
+                  icon={<DollarSign size={20} />}
+                  title="Pricing & Statements"
+                  description="Easy access to property related financial statements."
+                />
+              </div>
+
               <div className="image-container w-full mt-4">
                 <img
                   src="/case_studies/rabbu_portofolio/4.avif"
                   alt="Rabbu Portfolio"
                   className="w-full rounded-xl"
                 />
-              </div>
-
-              <div className="feature-cards grid grid-cols-auto-fit gap-8 mt-8">
-                <div className="feature-card bg-white border border-gray-200 rounded-xl overflow-hidden transition">
-                  <div className="feature-image h-48 overflow-hidden">
-                    <div className="image-placeholder bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center text-gray-400 text-lg my-4 h-48">
-                      <span>Dashboard Image</span>
-                    </div>
-                  </div>
-                  <div className="feature-content p-6">
-                    <h4 className="text-xl font-semibold text-default mb-3 tracking-tight leading-tight">
-                      Dashboard
-                    </h4>
-                    <p className="text-lg leading-relaxed text-light m-0">
-                      A customizable snapshot of property trends.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="feature-card bg-white border border-gray-200 rounded-xl overflow-hidden transition">
-                  <div className="feature-image h-48 overflow-hidden">
-                    <div className="image-placeholder bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center text-gray-400 text-lg my-4 h-48">
-                      <span>Properties & Calendar Image</span>
-                    </div>
-                  </div>
-                  <div className="feature-content p-6">
-                    <h4 className="text-xl font-semibold text-default mb-3 tracking-tight leading-tight">
-                      Properties & Calendar
-                    </h4>
-                    <p className="text-lg leading-relaxed text-light m-0">
-                      Displays property statuses and booking details.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="feature-card bg-white border border-gray-200 rounded-xl overflow-hidden transition">
-                  <div className="feature-image h-48 overflow-hidden">
-                    <div className="image-placeholder bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center text-gray-400 text-lg my-4 h-48">
-                      <span>Reviews & Activity Image</span>
-                    </div>
-                  </div>
-                  <div className="feature-content p-6">
-                    <h4 className="text-xl font-semibold text-default mb-3 tracking-tight leading-tight">
-                      Reviews & Activity Feed
-                    </h4>
-                    <p className="text-lg leading-relaxed text-light m-0">
-                      Keeps property owners updated on guest feedback and
-                      property activities.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="feature-card bg-white border border-gray-200 rounded-xl overflow-hidden transition">
-                  <div className="feature-image h-48 overflow-hidden">
-                    <div className="image-placeholder bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center text-gray-400 text-lg my-4 h-48">
-                      <span>Pricing & Statements Image</span>
-                    </div>
-                  </div>
-                  <div className="feature-content p-6">
-                    <h4 className="text-xl font-semibold text-default mb-3 tracking-tight leading-tight">
-                      Pricing & Statements
-                    </h4>
-                    <p className="text-lg leading-relaxed text-light m-0">
-                      Easy access to property related financial statements.
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
           </section>
@@ -477,32 +440,26 @@ function RabbuPortfolio({ onClose }) {
             ref={(el) => (sectionRefs.current["key-features"] = el)}
             className="case-study-section mb-12"
           >
-            <h2 className="text-2xl font-semibold text-default mb-8 tracking-tight leading-tight">
-              Key Features
-            </h2>
-
             <div className="key-features mt-6">
-              <div className="key-feature grid grid-cols-2 gap-12 mb-8 items-center">
-                <div className="key-feature-image w-full">
+              <div className="subsection mb-6">
+                <h3 className="text-2xl font-semibold text-default mb-4 tracking-tight leading-tight">
+                  Comprehensive Performance Insights
+                </h3>
+                <p className="text-lg leading-relaxed text-muted mb-6">
+                  Delivers real-time and customizable insights of financial and
+                  operational metrics, empowering investors to make data-driven
+                  decisions.
+                </p>
+                <div className="image-container w-full mt-4">
                   <img
                     src="/case_studies/rabbu_portofolio/5.avif"
                     alt="Comprehensive Performance Insights"
                     className="w-full rounded-xl"
                   />
                 </div>
-                <div className="key-feature-content">
-                  <h3 className="text-2xl font-semibold text-default mb-4 tracking-tight leading-tight">
-                    Comprehensive Performance Insights
-                  </h3>
-                  <p className="text-lg leading-relaxed text-muted m-0">
-                    Delivers real-time and customizable insights of financial
-                    and operational metrics, empowering investors to make
-                    data-driven decisions.
-                  </p>
-                </div>
               </div>
 
-              <div className="key-feature grid grid-cols-2 gap-12 mb-8 items-center">
+              <div className="key-feature key-feature-image-large grid grid-cols-2 gap-12 mb-8 items-center">
                 <div className="key-feature-image w-full">
                   <img
                     src="/case_studies/rabbu_portofolio/6.webp"
@@ -541,16 +498,6 @@ function RabbuPortfolio({ onClose }) {
               </div>
             </div>
           </section>
-
-          {/* Next Project Link */}
-          <div className="next-project mt-12 pt-6 border-t border-gray-200 text-center">
-            <a
-              href="#"
-              className="next-project-link text-xl font-medium text-primary transition-colors"
-            >
-              Next Project: Rabbu Marketplace →
-            </a>
-          </div>
         </div>
 
         {/* Right Column - Table of Contents */}
