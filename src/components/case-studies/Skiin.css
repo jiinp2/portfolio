@@ -315,7 +315,7 @@
 
 /* Image Container */
 .image-container {
-  background: #fafafa;
+  background: #f3f4f6;
   padding: 1.5rem;
   border-radius: 12px;
   width: 100%;
@@ -324,7 +324,7 @@
 .image-container img {
   width: 100%;
   height: auto;
-  max-height: 480px;
+  max-height: 560px;
   object-fit: contain;
   margin: 0;
 }
@@ -340,7 +340,7 @@
 
 .key-feature-image {
   width: 100%;
-  background: #fafafa;
+  background: #f3f4f6;
   padding: 1.5rem;
   border-radius: 12px;
 }
@@ -348,7 +348,7 @@
 .key-feature-image img {
   width: 100%;
   height: auto;
-  max-height: 480px;
+  max-height: 560px;
   object-fit: contain;
   margin: 0;
 }

@@ -278,7 +278,7 @@
 .subsection-image img {
   width: 100%;
   height: auto;
-  max-height: 480px;
+  max-height: 560px;
   object-fit: contain;
 }
 
@@ -430,12 +430,12 @@
 .subsection > img {
   width: 100%;
   height: auto;
-  max-height: 480px;
+  max-height: 560px;
   object-fit: contain;
   border-radius: 12px;
   margin: 1.5rem 0;
   display: block;
-  background: #fafafa;
+  background: #f3f4f6;
   padding: 1.5rem;
 }
 
@@ -444,12 +444,12 @@
   height: auto;
   border-radius: 12px;
   display: block;
-  background: #fafafa;
+  background: #f3f4f6;
   padding: 1.5rem;
 }
 
 .subsection-image {
-  background: #fafafa;
+  background: #f3f4f6;
   padding: 1.5rem;
   border-radius: 12px;
 }
@@ -458,7 +458,7 @@
   margin: 0;
   width: 100%;
   height: auto;
-  max-height: 480px;
+  max-height: 560px;
   object-fit: contain;
   border-radius: 12px;
   display: block;
