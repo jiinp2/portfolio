@@ -16,9 +16,10 @@ import {
   ArrowUp,
 } from "lucide-react";
 import InfoCard from "../ui/InfoCard";
+import MoreWork from "../MoreWork";
 import "./RabbuMarketplace.css";
 
-function RabbuMarketplace({ onClose }) {
+function RabbuMarketplace({ onClose, currentProjectSlug }) {
   const [activeSection, setActiveSection] = useState("overview");
   const sectionRefs = useRef({});
   const tocListRef = useRef(null);
@@ -607,6 +608,9 @@ function RabbuMarketplace({ onClose }) {
               </div>
             </div>
           </section>
+
+          {/* More Work Section */}
+          <MoreWork currentProjectSlug={currentProjectSlug} onClose={onClose} />
         </div>
 
         {/* Right Column - Table of Contents */}

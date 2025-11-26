@@ -9,9 +9,10 @@ import {
   Settings,
 } from "lucide-react";
 import InfoCard from "../ui/InfoCard";
+import MoreWork from "../MoreWork";
 import "./Maison.css";
 
-function Maison({ onClose }) {
+function Maison({ onClose, currentProjectSlug }) {
   const [activeSection, setActiveSection] = useState("overview");
   const sectionRefs = useRef({});
   const tocListRef = useRef(null);
@@ -230,8 +231,8 @@ function Maison({ onClose }) {
               <p>
                 I designed a dual-focused platform that serves both individual
                 real estate professionals and enterprise brokerages, creating
-                network effects where each audience strengthens the value for the
-                other.
+                network effects where each audience strengthens the value for
+                the other.
               </p>
 
               <div className="info-cards mt-8">
@@ -461,20 +462,23 @@ function Maison({ onClose }) {
               <p>
                 Clear, relatable positioning ("Slack + Discord for real estate")
                 helped align stakeholders, guide design decisions, and
-                communicate value to users. Good positioning is a design artifact,
-                not just marketing.
+                communicate value to users. Good positioning is a design
+                artifact, not just marketing.
               </p>
             </div>
 
             <div className="subsection">
               <h3>Scalability from Day One</h3>
               <p>
-                Designing the information architecture, component system, and user
-                flows with enterprise scale in mind from the start prevented
-                costly redesigns and enabled rapid feature expansion.
+                Designing the information architecture, component system, and
+                user flows with enterprise scale in mind from the start
+                prevented costly redesigns and enabled rapid feature expansion.
               </p>
             </div>
           </section>
+
+          {/* More Work Section */}
+          <MoreWork currentProjectSlug={currentProjectSlug} onClose={onClose} />
         </div>
 
         {/* Right Column - Table of Contents */}
@@ -508,4 +512,3 @@ function Maison({ onClose }) {
 }
 
 export default Maison;
-

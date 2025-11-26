@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { Check, X } from "lucide-react";
+import MoreWork from "../MoreWork";
 import "./Kobo.css";
 
-function Kobo({ onClose }) {
+function Kobo({ onClose, currentProjectSlug }) {
   const [activeSection, setActiveSection] = useState("overview");
   const sectionRefs = useRef({});
   const tocListRef = useRef(null);
@@ -568,6 +569,9 @@ function Kobo({ onClose }) {
               </div>
             </div>
           </section>
+
+          {/* More Work Section */}
+          <MoreWork currentProjectSlug={currentProjectSlug} onClose={onClose} />
         </div>
 
         {/* Right Column - Table of Contents */}

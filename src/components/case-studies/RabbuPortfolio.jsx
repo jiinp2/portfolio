@@ -6,9 +6,10 @@ import {
   DollarSign,
 } from "lucide-react";
 import InfoCard from "../ui/InfoCard";
+import MoreWork from "../MoreWork";
 import "./RabbuPortfolio.css";
 
-function RabbuPortfolio({ onClose }) {
+function RabbuPortfolio({ onClose, currentProjectSlug }) {
   const [activeSection, setActiveSection] = useState("overview");
   const sectionRefs = useRef({});
   const tocListRef = useRef(null);
@@ -498,6 +499,9 @@ function RabbuPortfolio({ onClose }) {
               </div>
             </div>
           </section>
+
+          {/* More Work Section */}
+          <MoreWork currentProjectSlug={currentProjectSlug} onClose={onClose} />
         </div>
 
         {/* Right Column - Table of Contents */}
@@ -505,7 +509,7 @@ function RabbuPortfolio({ onClose }) {
           <nav className="table-of-contents sticky top-8 h-fit w-fit max-w-64 p-0">
             <ul className="toc-list list-none p-0 m-0" ref={tocListRef}>
               {tocSections.map((section) => (
-                <li key={section.id} className="mb-3">
+                <li key={section.id} className="mb-2">
                   <button
                     data-section-id={section.id}
                     className={`toc-item bg-none border-none p-0 text-sm cursor-pointer text-left w-full transition-colors relative block ${

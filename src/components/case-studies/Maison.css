@@ -363,7 +363,7 @@
 .toc-item {
   background: none;
   border: none;
-  padding: 0.5rem 0;
+  padding: 0.25rem 0;
   font-size: var(--font-size-sm);
   color: var(--text-light);
   cursor: pointer;
