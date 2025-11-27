@@ -159,7 +159,7 @@
 
   .case-study-layout {
     display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-columns: 1fr 7fr 1fr;
     gap: 2rem;
     height: 100vh;
     max-width: 1400px;
@@ -248,12 +248,11 @@
     font-size: var(--font-size-2xl);
     font-weight: var(--font-weight-semibold);
     color: var(--color-text);
-    margin-bottom: 1.5rem;
     letter-spacing: var(--letter-spacing-tight);
     line-height: var(--line-height-tight);
     max-width: 560px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .case-study-subtitle {
@@ -262,8 +261,8 @@
     font-weight: var(--font-weight-normal);
     margin-bottom: 3rem;
     max-width: 560px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
     line-height: var(--line-height-relaxed);
   }
 
@@ -276,6 +275,11 @@
     width: 100%;
     border-radius: 0.75rem;
     padding: 1.5rem;
+  }
+
+  /* Maison case study hero card background */
+  .maison-case-study .hero-card {
+    background-color: var(--color-maison);
   }
 
   .hero-image {
@@ -370,6 +374,34 @@
     margin-bottom: 2rem;
   }
 
+  /* Case study images with light gray background */
+  .subsection > img {
+    background-color: #f3f4f6;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    display: block;
+  }
+
+  .subsection > .image-container,
+  .case-study-content .image-container {
+    background-color: #f3f4f6;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    display: block;
+  }
+
+  .case-study-content .image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .subsection-image {
+    background-color: #f3f4f6;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+  }
+
   /* Horizontal subsection layout - side by side content and image */
   .subsection-horizontal {
     display: grid;
@@ -407,12 +439,14 @@
 
   .subsection-image {
     width: 100%;
+    background-color: #f3f4f6;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
   }
 
   .subsection-image img {
     width: 100%;
     height: auto;
-    border-radius: 0.75rem;
     display: block;
   }
 
@@ -602,13 +636,13 @@
     border-color: #262626;
   }
 
-  /* Dark mode for filter/social buttons */
-  .dark-mode .bg-gray-100 {
+  /* Dark mode for filter buttons */
+  .dark-mode .work-filters .bg-gray-100 {
     background-color: #262626;
     color: #d4d4d4;
   }
 
-  .dark-mode .bg-gray-100:hover {
+  .dark-mode .work-filters .bg-gray-100:hover {
     background-color: #333333;
     color: #ffffff;
   }
@@ -716,6 +750,17 @@
   .dark-mode .bg-gray-100:hover {
     background-color: #333333;
     color: #ffffff;
+  }
+
+  /* Social buttons keep light mode styling in dark mode */
+  .dark-mode aside a.bg-gray-100 {
+    background-color: #f3f4f6 !important;
+    color: #4b5563 !important;
+  }
+
+  .dark-mode aside a.bg-gray-100:hover {
+    background-color: #e5e7eb !important;
+    color: #1a1a1a !important;
   }
 
   .dark-mode .text-text {

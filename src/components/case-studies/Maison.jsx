@@ -117,7 +117,7 @@ function Maison({ onClose, currentProjectSlug }) {
         <div className="case-study-content">
           {/* Hero Section */}
           <div className="hero-section mb-8 text-left">
-            <h1 className="case-study-title text-2xl font-semibold tracking-tight text-default mb-6">
+            <h1 className="case-study-title text-2xl font-semibold tracking-tight text-default mb-2">
               Maison
             </h1>
             <p className="case-study-subtitle text-lg text-light font-normal mb-12 max-w-4xl leading-relaxed">
