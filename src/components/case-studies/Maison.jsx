@@ -189,7 +189,7 @@ function Maison({ onClose, currentProjectSlug }) {
                 communication and foster team cohesion.
               </p>
 
-              <div className="info-cards mt-8">
+              <div className="info-cards info-cards-three mt-8">
                 <InfoCard
                   icon={<MessageSquare size={20} />}
                   title="Fragmented communication"
@@ -237,10 +237,14 @@ function Maison({ onClose, currentProjectSlug }) {
 
               <div className="info-cards mt-8">
                 <InfoCard
+                  image="/case_studies/maison/individual-professionals.png"
+                  imageAlt="Individual Professionals Solution"
                   title="For Individual Professionals"
                   description="Professional networking and peer connections, visibility in an industry-specific directory, and purpose-built community features for real estate workflows."
                 />
                 <InfoCard
+                  image="/case_studies/maison/enterprise-brokerages.png"
+                  imageAlt="Enterprise Brokerages Solution"
                   title="For Enterprise Brokerages"
                   description="Internal communication and team management tools, private community spaces replacing scattered Facebook groups and WhatsApp channels, streamlined file sharing and collaboration, and team directory and organizational structure."
                 />

@@ -23,10 +23,14 @@ function TabSection({ activeTab, onTabChange, children }) {
     // Initial position
     updateIndicator()
 
-    // Update on activeTab change
+    // Update on activeTab change and window resize
     const timeoutId = setTimeout(updateIndicator, 0)
+    window.addEventListener('resize', updateIndicator)
     
-    return () => clearTimeout(timeoutId)
+    return () => {
+      clearTimeout(timeoutId)
+      window.removeEventListener('resize', updateIndicator)
+    }
   }, [activeTab])
 
   return (

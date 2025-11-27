@@ -231,6 +231,13 @@ body.dark-mode {
     align-items: start;
 }
 
+/* Tablet Layout (769px - 1023px) */
+@media (max-width: 1023px) and (min-width: 769px) {
+    .experience-item {
+        gap: 0.5rem;
+    }
+}
+
 .experience-date {
     font-size: var(--font-size-sm);
     color: var(--text-light);

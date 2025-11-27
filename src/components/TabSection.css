@@ -105,6 +105,19 @@
 }
 
 /* Responsive Design */
+/* Tablet Layout (769px - 1023px) */
+@media (max-width: 1023px) and (min-width: 769px) {
+    .tabs-section {
+        margin-bottom: 2rem;
+    }
+    
+    .tab-button {
+        padding: 0.75rem 0;
+        font-size: var(--font-size-xs);
+        margin-right: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     .tabs-section {
         margin-bottom: 2rem;

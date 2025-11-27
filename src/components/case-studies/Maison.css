@@ -415,7 +415,15 @@
 }
 
 .maison-case-study .info-cards-three {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.maison-case-study .info-cards-three > * {
+  grid-column: span 2;
+}
+
+.maison-case-study .info-cards-three > *:nth-last-child(-n+2) {
+  grid-column: span 3;
 }
 
 @media (max-width: 1024px) {

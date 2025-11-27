@@ -8,6 +8,11 @@
     box-sizing: border-box !important;
 }
 
+.info-card-with-image {
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
 .info-indicator {
     position: static;
     top: auto;
@@ -52,6 +57,32 @@
     color: #6b7280 !important;
     margin: 0 !important;
     display: block !important;
+}
+
+/* Image Variant */
+.info-card-image-container {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+}
+
+.info-card-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.info-card-with-image .info-card-title {
+    padding: 0 1rem !important;
+    margin-top: 0 !important;
+}
+
+.info-card-with-image .info-card-description {
+    padding: 0 1rem !important;
+    margin-bottom: 1rem !important;
 }
 
 /* Info Cards Container */
