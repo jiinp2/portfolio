@@ -291,18 +291,17 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-bottom: 4rem;
-    padding: 2rem;
-    background-color: #f9fafb;
-    border-radius: 0.75rem;
-    border: 1px solid #e5e7eb;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .info-item h3 {
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-text-light);
-    text-transform: uppercase;
-    letter-spacing: var(--letter-spacing-wide);
+    font-size: var(--font-size-label);
+    font-weight: var(--font-weight-normal);
+    color: #4b5563;
+    letter-spacing: var(--letter-spacing-tight);
+    line-height: var(--line-height-tight);
     margin-bottom: 0.5rem;
   }
 
@@ -454,7 +453,7 @@
     background: transparent;
     border: 0;
     font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-semibold);
     color: #9ca3af;
     cursor: pointer;
     transition: color 0.2s;
@@ -468,7 +467,6 @@
   .toc-item.active,
   .toc-button.active {
     color: var(--color-text);
-    font-weight: var(--font-weight-semibold);
   }
 
   .toc-item:hover,
@@ -517,33 +515,8 @@
     color: #d4d4d4;
   }
 
-  .dark-mode .text-text {
-    color: #ffffff;
-  }
-
-  .dark-mode .text-text-light {
-    color: #b3b3b3;
-  }
-
-  .dark-mode .text-text-muted {
-    color: #999999;
-  }
-
-  .dark-mode .bg-gray-50 {
-    background-color: #0f0f0f;
-  }
-
   .dark-mode button {
     color: #e5e5e5;
-  }
-
-  .dark-mode .bg-text {
-    background-color: #ffffff;
-    color: #0a0a0a;
-  }
-
-  .dark-mode .bg-text:hover {
-    background-color: #e5e5e5;
   }
 
   /* Dark mode links */
@@ -557,19 +530,6 @@
 
   .dark-mode .text-primary:hover {
     color: #86efac;
-  }
-
-  .dark-mode .bg-white {
-    background-color: #171717;
-  }
-
-  .dark-mode .bg-\[#fcfcfc\] {
-    background-color: #0a0a0a;
-  }
-
-  .dark-mode .border-gray-200,
-  .dark-mode .border-gray-100 {
-    border-color: #262626;
   }
 
   .dark-mode .project-preview {
@@ -708,6 +668,7 @@
   .dark-mode .toc-item,
   .dark-mode .toc-button {
     color: #999999;
+    font-weight: var(--font-weight-semibold);
   }
 
   .dark-mode .toc-item.active,
@@ -722,5 +683,64 @@
 
   .dark-mode .toc-indicator {
     background-color: #ffffff;
+  }
+}
+
+@layer utilities {
+  /* Dark mode utility overrides - higher specificity */
+  .dark-mode main {
+    background-color: #0a0a0a !important;
+  }
+
+  .dark-mode aside {
+    background-color: #0a0a0a !important;
+  }
+
+  .dark-mode .bg-white {
+    background-color: #171717 !important;
+  }
+
+  .dark-mode .bg-\[#fcfcfc\] {
+    background-color: #0a0a0a;
+  }
+
+  .dark-mode .bg-gray-50 {
+    background-color: #0f0f0f;
+  }
+
+  .dark-mode .bg-gray-100 {
+    background-color: #262626;
+    color: #d4d4d4;
+  }
+
+  .dark-mode .bg-gray-100:hover {
+    background-color: #333333;
+    color: #ffffff;
+  }
+
+  .dark-mode .text-text {
+    color: #ffffff;
+  }
+
+  .dark-mode .text-text-light {
+    color: #b3b3b3;
+  }
+
+  .dark-mode .text-text-muted {
+    color: #999999;
+  }
+
+  .dark-mode .border-gray-100,
+  .dark-mode .border-gray-200 {
+    border-color: #262626;
+  }
+
+  .dark-mode .bg-text {
+    background-color: #ffffff;
+    color: #0a0a0a;
+  }
+
+  .dark-mode .bg-text:hover {
+    background-color: #e5e5e5;
   }
 }

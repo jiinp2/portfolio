@@ -28,7 +28,6 @@ function Maison({ onClose, currentProjectSlug }) {
     { id: "approach", label: "Design Approach" },
     { id: "features", label: "Key Features" },
     { id: "impact", label: "Design Impact" },
-    { id: "insights", label: "Key Insights" },
   ];
 
   // Intersection Observer for tracking active section
@@ -431,53 +430,6 @@ function Maison({ onClose, currentProjectSlug }) {
                   </ul>
                 </div>
               </div>
-            </div>
-          </section>
-
-          {/* Key Insights Section */}
-          <section
-            id="insights"
-            ref={(el) => (sectionRefs.current.insights = el)}
-            className="case-study-section"
-          >
-            <Label>Key Insights</Label>
-
-            <div className="subsection">
-              <h3>Design for Vertical Markets</h3>
-              <p>
-                Generic solutions often fall short for specialized industries.
-                Designing with deep understanding of real estate workflows
-                created stronger product-market fit and more intuitive user
-                experiences than adapting horizontal tools.
-              </p>
-            </div>
-
-            <div className="subsection">
-              <h3>Network Effects Through Design</h3>
-              <p>
-                Thoughtful product architecture that serves both individual
-                professionals and enterprises creates powerful network effects.
-                Each user type strengthens the platform's value for the other.
-              </p>
-            </div>
-
-            <div className="subsection">
-              <h3>Positioning as a Design Tool</h3>
-              <p>
-                Clear, relatable positioning ("Slack + Discord for real estate")
-                helped align stakeholders, guide design decisions, and
-                communicate value to users. Good positioning is a design
-                artifact, not just marketing.
-              </p>
-            </div>
-
-            <div className="subsection">
-              <h3>Scalability from Day One</h3>
-              <p>
-                Designing the information architecture, component system, and
-                user flows with enterprise scale in mind from the start
-                prevented costly redesigns and enabled rapid feature expansion.
-              </p>
             </div>
           </section>
 
