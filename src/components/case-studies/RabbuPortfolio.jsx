@@ -7,7 +7,6 @@ import {
 } from "lucide-react";
 import InfoCard from "../ui/InfoCard";
 import MoreWork from "../MoreWork";
-import "./RabbuPortfolio.css";
 
 function RabbuPortfolio({ onClose, currentProjectSlug }) {
   const [activeSection, setActiveSection] = useState("overview");

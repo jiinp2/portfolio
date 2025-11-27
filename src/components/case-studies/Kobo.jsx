@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Check, X } from "lucide-react";
+import Label from "../ui/Label";
 import MoreWork from "../MoreWork";
-import "./Kobo.css";
 
 function Kobo({ onClose, currentProjectSlug }) {
   const [activeSection, setActiveSection] = useState("overview");
@@ -144,7 +144,7 @@ function Kobo({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current.overview = el)}
             className="case-study-section"
           >
-            <h2>Overview</h2>
+            <Label>Overview</Label>
 
             <div className="subsection">
               <h3>Introduction</h3>
@@ -204,7 +204,7 @@ function Kobo({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current["design-research"] = el)}
             className="case-study-section"
           >
-            <h2>Design Research</h2>
+            <Label>Design Research</Label>
 
             <div className="subsection">
               <h3>Competitor Analysis</h3>
@@ -346,7 +346,7 @@ function Kobo({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current["design-process"] = el)}
             className="case-study-section"
           >
-            <h2>Design Process</h2>
+            <Label>Design Process</Label>
 
             <div className="subsection">
               <h3>Information Architecture</h3>
@@ -413,7 +413,7 @@ function Kobo({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current["final-design"] = el)}
             className="case-study-section"
           >
-            <h2>Final Design</h2>
+            <Label>Final Design</Label>
 
             <div className="subsection">
               <p>

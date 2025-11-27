@@ -9,8 +9,8 @@ import {
   Settings,
 } from "lucide-react";
 import InfoCard from "../ui/InfoCard";
+import Label from "../ui/Label";
 import MoreWork from "../MoreWork";
-import "./Maison.css";
 
 function Maison({ onClose, currentProjectSlug }) {
   const [activeSection, setActiveSection] = useState("overview");
@@ -157,7 +157,7 @@ function Maison({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current.overview = el)}
             className="case-study-section"
           >
-            <h2>Overview</h2>
+            <Label>Overview</Label>
 
             <div className="subsection">
               <p>
@@ -176,7 +176,7 @@ function Maison({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current.challenge = el)}
             className="case-study-section"
           >
-            <h2>The Challenge</h2>
+            <Label>The Challenge</Label>
 
             <div className="subsection">
               <p>
@@ -225,7 +225,7 @@ function Maison({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current.solution = el)}
             className="case-study-section"
           >
-            <h2>The Solution</h2>
+            <Label>The Solution</Label>
 
             <div className="subsection">
               <p>
@@ -258,7 +258,7 @@ function Maison({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current.role = el)}
             className="case-study-section"
           >
-            <h2>My Role</h2>
+            <Label>My Role</Label>
 
             <div className="subsection">
               <p>
@@ -299,7 +299,7 @@ function Maison({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current.approach = el)}
             className="case-study-section"
           >
-            <h2>Design Approach</h2>
+            <Label>Design Approach</Label>
 
             <div className="info-cards mt-8">
               <InfoCard
@@ -331,7 +331,7 @@ function Maison({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current.features = el)}
             className="case-study-section"
           >
-            <h2>Key Features Designed</h2>
+            <Label>Key Features Designed</Label>
 
             <div className="info-cards info-cards-three mt-8">
               <InfoCard
@@ -373,7 +373,7 @@ function Maison({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current.impact = el)}
             className="case-study-section"
           >
-            <h2>Design Impact</h2>
+            <Label>Design Impact</Label>
 
             <div className="comparison-section">
               <div className="comparison-grid comparison-grid-three">
@@ -440,7 +440,7 @@ function Maison({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current.insights = el)}
             className="case-study-section"
           >
-            <h2>Key Insights</h2>
+            <Label>Key Insights</Label>
 
             <div className="subsection">
               <h3>Design for Vertical Markets</h3>

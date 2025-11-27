@@ -16,8 +16,8 @@ import {
   ArrowUp,
 } from "lucide-react";
 import InfoCard from "../ui/InfoCard";
+import Label from "../ui/Label";
 import MoreWork from "../MoreWork";
-import "./RabbuMarketplace.css";
 
 function RabbuMarketplace({ onClose, currentProjectSlug }) {
   const [activeSection, setActiveSection] = useState("overview");
@@ -161,7 +161,7 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current.overview = el)}
             className="case-study-section"
           >
-            <h2>Overview</h2>
+            <Label>Overview</Label>
 
             <div className="subsection">
               <h3>Introduction</h3>
@@ -225,7 +225,7 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current["design-research"] = el)}
             className="case-study-section"
           >
-            <h2>Design Research</h2>
+            <Label>Design Research</Label>
 
             <div className="subsection">
               <h3>The Short-term Rental Space</h3>
@@ -299,7 +299,7 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current["design-process"] = el)}
             className="case-study-section"
           >
-            <h2>Design Process</h2>
+            <Label>Design Process</Label>
 
             <div className="subsection">
               <h3>Hypothetical User Journey</h3>
@@ -468,7 +468,7 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current["final-design"] = el)}
             className="case-study-section"
           >
-            <h2>Final Design</h2>
+            <Label>Final Design</Label>
 
             <div className="subsection">
               <h3>Rabbu Marketplace</h3>
@@ -575,7 +575,7 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current["design-system"] = el)}
             className="case-study-section"
           >
-            <h2>Design System</h2>
+            <Label>Design System</Label>
 
             <div className="subsection">
               <h3>Early Stage Design System</h3>

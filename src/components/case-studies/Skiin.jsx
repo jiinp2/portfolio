@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Check } from "lucide-react";
+import Label from "../ui/Label";
 import MoreWork from "../MoreWork";
-import "./Skiin.css";
 
 function Skiin({ onClose, currentProjectSlug }) {
   const [activeSection, setActiveSection] = useState("overview");
@@ -143,7 +143,7 @@ function Skiin({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current.overview = el)}
             className="case-study-section"
           >
-            <h2>Overview</h2>
+            <Label>Overview</Label>
 
             <div className="subsection">
               <h3>Introduction</h3>
@@ -210,7 +210,7 @@ function Skiin({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current["design-research"] = el)}
             className="case-study-section"
           >
-            <h2>Design Research</h2>
+            <Label>Design Research</Label>
 
             <div className="subsection">
               <h3>Existing Research</h3>
@@ -257,7 +257,7 @@ function Skiin({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current["final-design"] = el)}
             className="case-study-section"
           >
-            <h2>Final Design</h2>
+            <Label>Final Design</Label>
 
             <div className="subsection">
               <h3>Communication Features</h3>

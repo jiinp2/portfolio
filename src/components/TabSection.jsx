@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import './TabSection.css'
 
 function TabSection({ activeTab, onTabChange, children }) {
   const tabsRef = useRef(null)
@@ -34,24 +33,24 @@ function TabSection({ activeTab, onTabChange, children }) {
   }, [activeTab])
 
   return (
-    <div className="tabs-section">
-      <div className="tabs-header" ref={tabsRef}>
-        <button 
-          className={`tab-button ${activeTab === 'experience' ? 'active' : ''}`}
+    <div className="mb-10 max-md:mb-8">
+      <div className="flex gap-0 mb-10 border-b border-gray-100 relative max-md:mb-8" ref={tabsRef}>
+        <button
+          className={`tab-button bg-transparent border-0 py-3 text-xs font-medium text-gray-400 uppercase tracking-wide cursor-pointer transition-colors duration-200 mr-6 min-h-[44px] flex items-center relative z-10 hover:text-gray-500 max-md:py-4 max-md:text-base max-sm:py-3 max-sm:text-sm max-sm:mr-4 ${activeTab === 'experience' ? 'active text-text' : ''}`}
           onClick={() => onTabChange('experience')}
         >
           EXPERIENCE
         </button>
-        <button 
-          className={`tab-button ${activeTab === 'education' ? 'active' : ''}`}
+        <button
+          className={`tab-button bg-transparent border-0 py-3 text-xs font-medium text-gray-400 uppercase tracking-wide cursor-pointer transition-colors duration-200 mr-6 min-h-[44px] flex items-center relative z-10 hover:text-gray-500 max-md:py-4 max-md:text-base max-sm:py-3 max-sm:text-sm max-sm:mr-4 ${activeTab === 'education' ? 'active text-text' : ''}`}
           onClick={() => onTabChange('education')}
         >
           EDUCATION
         </button>
-        <div className="tab-indicator" ref={indicatorRef} style={indicatorStyle} />
+        <div className="absolute bottom-[-1px] h-0.5 bg-text transition-all duration-100 ease-[cubic-bezier(0.4,0,0.2,1)] z-20" ref={indicatorRef} style={indicatorStyle} />
       </div>
 
-      <div className="tab-content">
+      <div className="min-h-[200px] max-h-[400px] overflow-y-auto [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-sm hover:[&::-webkit-scrollbar-thumb]:bg-gray-200">
         {children}
       </div>
     </div>
