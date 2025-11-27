@@ -117,7 +117,7 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
         <div className="case-study-content">
           {/* Hero Section */}
           <div className="hero-section mb-8 text-left">
-            <h1 className="case-study-title text-2xl font-semibold tracking-tight text-default mb-6">
+            <h1 className="case-study-title text-2xl font-semibold tracking-tight text-default mb-2">
               Rabbu Portfolio
             </h1>
             <p className="case-study-subtitle text-lg text-light font-normal mb-12 max-w-4xl leading-relaxed">
@@ -232,15 +232,15 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
             <div className="outcomes-images-grid mt-4">
               <div className="image-container w-full">
                 <img
-                  src="/case_studies/rabbu_portofolio/2.webp"
-                  alt="Rabbu Portfolio Outcomes 2"
+                  src="/case_studies/rabbu_portofolio/3.webp"
+                  alt="Rabbu Portfolio Outcomes 3"
                   className="w-full rounded-xl"
                 />
               </div>
               <div className="image-container w-full">
                 <img
-                  src="/case_studies/rabbu_portofolio/3.webp"
-                  alt="Rabbu Portfolio Outcomes 3"
+                  src="/case_studies/rabbu_portofolio/2.webp"
+                  alt="Rabbu Portfolio Outcomes 2"
                   className="w-full rounded-xl"
                 />
               </div>
@@ -281,7 +281,7 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
                 from initial discovery to successful property management.
               </p>
 
-              <div className="info-cards mt-8">
+              <div className="info-cards info-cards-four mt-8">
                 <InfoCard
                   number={1}
                   title="Discovery"
@@ -316,7 +316,7 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
                 Marketplace.
               </p>
 
-              <div className="info-cards mt-8">
+              <div className="info-cards info-cards-four mt-8">
                 <InfoCard
                   number={1}
                   title="Strategic Expansion"
@@ -479,13 +479,6 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
               </div>
 
               <div className="key-feature grid grid-cols-2 gap-12 mb-8 items-center">
-                <div className="key-feature-image w-full">
-                  <img
-                    src="/case_studies/rabbu_portofolio/7.webp"
-                    alt="Real-Time Property Activity Tracker"
-                    className="w-full rounded-xl"
-                  />
-                </div>
                 <div className="key-feature-content">
                   <h3 className="text-2xl font-semibold text-default mb-4 tracking-tight leading-tight">
                     Real-Time Property Activity Tracker
@@ -494,6 +487,13 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
                     Provides real-time updates to property happenings, elevating
                     guest satisfaction through proactive property management.
                   </p>
+                </div>
+                <div className="key-feature-image w-full">
+                  <img
+                    src="/case_studies/rabbu_portofolio/7.webp"
+                    alt="Real-Time Property Activity Tracker"
+                    className="w-full rounded-xl"
+                  />
                 </div>
               </div>
             </div>
@@ -504,17 +504,15 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
         </div>
 
         {/* Right Column - Table of Contents */}
-        <div className="case-study-right flex items-start pt-8">
-          <nav className="table-of-contents sticky top-8 h-fit w-fit max-w-64 p-0">
-            <ul className="toc-list list-none p-0 m-0" ref={tocListRef}>
+        <div className="case-study-right">
+          <nav className="table-of-contents">
+            <ul className="toc-list" ref={tocListRef}>
               {tocSections.map((section) => (
-                <li key={section.id} className="mb-2">
+                <li key={section.id}>
                   <button
                     data-section-id={section.id}
-                    className={`toc-item bg-none border-none p-0 text-sm cursor-pointer text-left w-full transition-colors relative block ${
-                      activeSection === section.id
-                        ? "active text-default font-semibold"
-                        : "text-gray-400"
+                    className={`toc-item ${
+                      activeSection === section.id ? "active" : ""
                     }`}
                     onClick={() => scrollToSection(section.id)}
                   >

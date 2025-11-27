@@ -5,8 +5,6 @@ import {
   Users,
   Folder,
   Building,
-  UserPlus,
-  Settings,
 } from "lucide-react";
 import InfoCard from "../ui/InfoCard";
 import Label from "../ui/Label";
@@ -26,7 +24,6 @@ function Maison({ onClose, currentProjectSlug }) {
     { id: "solution", label: "The Solution" },
     { id: "role", label: "My Role" },
     { id: "approach", label: "Design Approach" },
-    { id: "features", label: "Key Features" },
     { id: "impact", label: "Design Impact" },
   ];
 
@@ -320,48 +317,6 @@ function Maison({ onClose, currentProjectSlug }) {
                 number={4}
                 title="Enterprise-First Design"
                 description="Prioritized enterprise features and workflows while maintaining an approachable experience for individual users. Designed for scalability and team management from the ground up."
-              />
-            </div>
-          </section>
-
-          {/* Key Features Section */}
-          <section
-            id="features"
-            ref={(el) => (sectionRefs.current.features = el)}
-            className="case-study-section"
-          >
-            <Label>Key Features Designed</Label>
-
-            <div className="info-cards info-cards-three mt-8">
-              <InfoCard
-                icon={<Users size={20} />}
-                title="Professional Directory"
-                description="Searchable directory with profiles and discovery features"
-              />
-              <InfoCard
-                icon={<MessageSquare size={20} />}
-                title="Community Spaces"
-                description="Secure, organized spaces for teams and interest groups"
-              />
-              <InfoCard
-                icon={<Folder size={20} />}
-                title="File Management"
-                description="Purpose-built sharing and organization for real estate documents"
-              />
-              <InfoCard
-                icon={<Settings size={20} />}
-                title="Industry Workflows"
-                description="Real estate-specific features and integrations"
-              />
-              <InfoCard
-                icon={<Building size={20} />}
-                title="Team Management"
-                description="Brokerage admin tools and organizational hierarchy"
-              />
-              <InfoCard
-                icon={<UserPlus size={20} />}
-                title="Networking Tools"
-                description="Connection requests, messaging, and relationship building"
               />
             </div>
           </section>

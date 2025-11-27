@@ -277,9 +277,22 @@
     padding: 1.5rem;
   }
 
-  /* Maison case study hero card background */
+  /* Case study hero card backgrounds */
   .maison-case-study .hero-card {
     background-color: var(--color-maison);
+  }
+
+  .rabbu-portfolio-case-study .hero-card,
+  .rabbu-marketplace-case-study .hero-card {
+    background-color: var(--color-rabbu);
+  }
+
+  .kobo-case-study .hero-card {
+    background-color: var(--color-kobo);
+  }
+
+  .skiin-case-study .hero-card {
+    background-color: var(--color-skiin);
   }
 
   .hero-image {
@@ -380,6 +393,8 @@
     border-radius: 0.75rem;
     padding: 1.5rem;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .subsection > .image-container,
@@ -387,13 +402,16 @@
     background-color: #f3f4f6;
     border-radius: 0.75rem;
     padding: 1.5rem;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .case-study-content .image-container img {
     width: 100%;
     height: auto;
     display: block;
+    margin: 0 auto;
   }
 
   .subsection-image {
@@ -442,12 +460,24 @@
     background-color: #f3f4f6;
     border-radius: 0.75rem;
     padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .subsection-image img {
     width: 100%;
     height: auto;
     display: block;
+    margin: 0 auto;
+  }
+
+  /* Outcomes images grid - side by side layout */
+  .outcomes-images-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    width: 100%;
   }
 
   /* Responsive: stack on smaller screens */
@@ -459,6 +489,11 @@
 
     .subsection-horizontal-reverse {
       direction: ltr;
+    }
+
+    .outcomes-images-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
   }
 
@@ -518,6 +553,76 @@
     transform: translateY(-50%);
     z-index: 10;
     pointer-events: none;
+  }
+
+  /* Info cards grid - 3 columns, 2 cards expand to full width */
+  .info-cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  /* Default: each card spans 2 columns (3 cards per row) */
+  .info-cards > * {
+    grid-column: span 2;
+  }
+
+  /* When there are only 2 cards, make them each span 3 columns (50% width each) */
+  .info-cards > *:nth-child(1):nth-last-child(2) {
+    grid-column: span 3;
+  }
+
+  .info-cards > *:nth-child(2):nth-last-child(1) {
+    grid-column: span 3;
+  }
+
+  /* Responsive: stack on smaller screens */
+  @media (max-width: 1024px) {
+    .info-cards {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .info-cards > * {
+      grid-column: span 2;
+    }
+
+    .info-cards > *:nth-child(1):nth-last-child(2),
+    .info-cards > *:nth-child(2):nth-last-child(1) {
+      grid-column: span 2;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .info-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .info-cards > * {
+      grid-column: span 1;
+    }
+  }
+
+  /* Info cards with 4 columns layout */
+  .info-cards-four {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .info-cards-four > * {
+    grid-column: span 1;
+  }
+
+  /* Responsive for 4-column layout */
+  @media (max-width: 1024px) {
+    .info-cards-four {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .info-cards-four {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* Dark Mode Styles for Misc Page */

@@ -122,9 +122,11 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
         {/* Middle Column - Main Content */}
         <div className="case-study-content">
           {/* Hero Section */}
-          <div className="hero-section">
-            <h1 className="case-study-title">Rabbu Marketplace</h1>
-            <p className="case-study-subtitle">
+          <div className="hero-section mb-8 text-left">
+            <h1 className="case-study-title text-2xl font-semibold tracking-tight text-default mb-2">
+              Rabbu Marketplace
+            </h1>
+            <p className="case-study-subtitle text-lg text-light font-normal mb-12 max-w-4xl leading-relaxed">
               A platform where investors can find and evaluate profitable
               investment properties.
             </p>
