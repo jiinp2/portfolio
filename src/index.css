@@ -708,15 +708,6 @@
     }
   }
 
-  /* Comparison list icons */
-  .comparison-icon.pro-icon {
-    color: #22c55e;
-  }
-
-  .comparison-icon.con-icon {
-    color: #ef4444;
-  }
-
   /* Photo grid (4-column grid) */
   .competitor-grid {
     display: grid;

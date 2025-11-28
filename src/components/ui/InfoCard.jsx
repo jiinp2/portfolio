@@ -50,23 +50,14 @@ function InfoCard({
         {title}
       </h4>
       {listItems && listItems.length > 0 ? (
-        <ul
-          className={`comparison-list m-0 p-0 list-none ${
-            image ? "px-4 mb-4" : ""
-          }`}
-        >
+        <ul className={`m-0 p-0 list-none ${image ? "px-4 mb-4" : ""}`}>
           {listItems.map((item, index) => (
-            <li
-              key={index}
-              className={`${
-                item.type === "pro" ? "pro" : "con"
-              } mb-4 flex items-start`}
-            >
+            <li key={index} className="mb-4 flex items-start">
               {item.icon && (
                 <div
-                  className={`comparison-icon ${
-                    item.type === "pro" ? "pro-icon" : "con-icon"
-                  } flex-shrink-0 mr-2`}
+                  className={`flex-shrink-0 mr-2 ${
+                    item.type === "pro" ? "text-green-500" : "text-red-500"
+                  }`}
                 >
                   {item.icon}
                 </div>
