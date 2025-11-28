@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <header className="bg-white/80 backdrop-blur-xl border-b border-black/[0.06] py-3 sticky top-0 z-[100] max-sm:py-2">
+    <header className="bg-white/80 backdrop-blur-xl border-b border-black/6 py-3 sticky top-0 z-100 max-sm:py-2">
       <div className="max-w-[1200px] mx-auto px-8 flex justify-between items-center md:max-lg:px-4 max-md:flex-col max-md:gap-3 max-md:px-4">
         {/* Left - Name/Logo */}
         <div className="flex-[0_0_auto]">

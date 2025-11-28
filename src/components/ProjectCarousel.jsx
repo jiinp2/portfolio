@@ -189,7 +189,7 @@ function ProjectCarousel({
             return (
               <div
                 key={projectIndex}
-                className="flex-[0_0_auto] [scroll-snap-align:start] min-w-[280px] max-w-[320px] max-md:min-w-[calc(100vw-3rem)] max-md:max-w-[calc(100vw-3rem)]"
+                className="flex-[0_0_auto] snap-start min-w-[280px] max-w-[320px] max-md:min-w-[calc(100vw-3rem)] max-md:max-w-[calc(100vw-3rem)]"
                 onClick={(e) => {
                   if (hasMovedRef.current) {
                     e.preventDefault();

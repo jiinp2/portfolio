@@ -55,7 +55,7 @@ function InfoCard({
             <li key={index} className="mb-4 flex items-start">
               {item.icon && (
                 <div
-                  className={`flex-shrink-0 mr-2 ${
+                  className={`shrink-0 mr-2 ${
                     item.type === "pro" ? "text-green-500" : "text-red-500"
                   }`}
                 >
