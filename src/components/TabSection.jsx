@@ -35,13 +35,13 @@ function TabSection({ activeTab, onTabChange, children }) {
   return (
     <div className="mb-10 max-md:mb-8">
       <div className="flex gap-0 mb-10 border-b border-gray-100 relative max-md:mb-8" ref={tabsRef}>
-        <button
+        <button 
           className={`tab-button bg-transparent border-0 py-3 text-sm font-medium text-gray-400 uppercase tracking-wide cursor-pointer transition-colors duration-200 mr-6 min-h-[44px] flex items-center relative z-10 hover:text-gray-500 max-md:py-4 max-sm:py-3 max-sm:mr-4 ${activeTab === 'experience' ? 'active text-text' : ''}`}
           onClick={() => onTabChange('experience')}
         >
           EXPERIENCE
         </button>
-        <button
+        <button 
           className={`tab-button bg-transparent border-0 py-3 text-sm font-medium text-gray-400 uppercase tracking-wide cursor-pointer transition-colors duration-200 mr-6 min-h-[44px] flex items-center relative z-10 hover:text-gray-500 max-md:py-4 max-sm:py-3 max-sm:mr-4 ${activeTab === 'education' ? 'active text-text' : ''}`}
           onClick={() => onTabChange('education')}
         >

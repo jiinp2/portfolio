@@ -1,14 +1,10 @@
 import { useState, useEffect, useRef } from "react";
-import {
-  MessageSquare,
-  Search,
-  Users,
-  Folder,
-  Building,
-} from "lucide-react";
+import { MessageSquare, Search, Users, Folder, Building } from "lucide-react";
 import InfoCard from "../ui/InfoCard";
 import Label from "../ui/Label";
 import MoreWork from "../MoreWork";
+import CaseStudyHero from "./components/CaseStudyHero";
+import CaseStudySection from "./components/CaseStudySection";
 
 function Maison({ onClose, currentProjectSlug }) {
   const [activeSection, setActiveSection] = useState("overview");
@@ -113,39 +109,20 @@ function Maison({ onClose, currentProjectSlug }) {
         {/* Middle Column - Main Content */}
         <div className="case-study-content">
           {/* Hero Section */}
-          <div className="hero-section mb-8 text-left">
-            <h1 className="case-study-title text-2xl font-semibold tracking-tight text-default mb-2">
-              Maison
-            </h1>
-            <p className="case-study-subtitle text-lg text-light font-normal mb-12 max-w-4xl leading-relaxed">
-              Building Community Infrastructure for Real Estate Professionals
-            </p>
-            <div className="hero-image-container w-full">
-              <div className="hero-card">
-                <img
-                  src="/case_studies/maison/maison-hero.png"
-                  alt="Maison Hero"
-                  className="hero-image w-full rounded-xl"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Project Info Bar */}
-          <div className="project-info-bar">
-            <div className="info-item">
-              <h3>Timeline</h3>
-              <p>2025 (WIP)</p>
-            </div>
-            <div className="info-item">
-              <h3>My Role</h3>
-              <p>Product Designer, Design Engineer</p>
-            </div>
-            <div className="info-item">
-              <h3>Platform Type</h3>
-              <p>B2B SaaS</p>
-            </div>
-          </div>
+          <CaseStudyHero
+            title="Maison"
+            subtitle="Building Community Infrastructure for Real Estate Professionals"
+            imageSrc="/case_studies/maison/maison-hero.png"
+            imageAlt="Maison Hero"
+            infoItems={[
+              { label: "Team", value: "Maison" },
+              {
+                label: "Role",
+                value: "UI & UX Design, Product Strategy, Frontend Development",
+              },
+              { label: "Timeline", value: "2025 (WIP)" },
+            ]}
+          />
 
           {/* Overview Section */}
           <section
@@ -155,7 +132,7 @@ function Maison({ onClose, currentProjectSlug }) {
           >
             <Label>Overview</Label>
 
-            <div className="subsection">
+            <CaseStudySection title="About Maison">
               <p>
                 Maison is a professional networking and community platform
                 designed specifically for the real estate industry. I led the
@@ -163,7 +140,7 @@ function Maison({ onClose, currentProjectSlug }) {
                 fragmented communication tools into a purpose-built solution for
                 real estate professionals and brokerages.
               </p>
-            </div>
+            </CaseStudySection>
           </section>
 
           {/* The Challenge Section */}
@@ -174,7 +151,40 @@ function Maison({ onClose, currentProjectSlug }) {
           >
             <Label>The Challenge</Label>
 
-            <div className="subsection">
+            <CaseStudySection
+              title="Communication Challenges"
+              infoCards={[
+                {
+                  icon: <MessageSquare size={20} />,
+                  title: "Fragmented communication",
+                  description:
+                    "Across consumer apps not designed for professional use",
+                },
+                {
+                  icon: <Search size={20} />,
+                  title: "Discovery barriers",
+                  description:
+                    "Preventing professionals from connecting with industry peers",
+                },
+                {
+                  icon: <Users size={20} />,
+                  title: "No centralized directory",
+                  description: "For real estate professionals",
+                },
+                {
+                  icon: <Folder size={20} />,
+                  title: "Poor file management",
+                  description:
+                    "With inadequate sharing and organization capabilities",
+                },
+                {
+                  icon: <Building size={20} />,
+                  title: "Missing enterprise tools",
+                  description: "For brokerage community management",
+                },
+              ]}
+              infoCardsLayout="info-cards-three"
+            >
               <p>
                 Real estate professionals and brokerages were struggling with
                 scattered communication across multiple platforms. WhatsApp
@@ -184,35 +194,7 @@ function Maison({ onClose, currentProjectSlug }) {
                 Brokerages lacked purpose-built tools to manage internal
                 communication and foster team cohesion.
               </p>
-
-              <div className="info-cards info-cards-three mt-8">
-                <InfoCard
-                  icon={<MessageSquare size={20} />}
-                  title="Fragmented communication"
-                  description="Across consumer apps not designed for professional use"
-                />
-                <InfoCard
-                  icon={<Search size={20} />}
-                  title="Discovery barriers"
-                  description="Preventing professionals from connecting with industry peers"
-                />
-                <InfoCard
-                  icon={<Users size={20} />}
-                  title="No centralized directory"
-                  description="For real estate professionals"
-                />
-                <InfoCard
-                  icon={<Folder size={20} />}
-                  title="Poor file management"
-                  description="With inadequate sharing and organization capabilities"
-                />
-                <InfoCard
-                  icon={<Building size={20} />}
-                  title="Missing enterprise tools"
-                  description="For brokerage community management"
-                />
-              </div>
-            </div>
+            </CaseStudySection>
           </section>
 
           {/* The Solution Section */}
@@ -223,29 +205,32 @@ function Maison({ onClose, currentProjectSlug }) {
           >
             <Label>The Solution</Label>
 
-            <div className="subsection">
+            <CaseStudySection
+              title="Dual-Focused Platform"
+              infoCards={[
+                {
+                  image: "/case_studies/maison/individual-professionals.png",
+                  imageAlt: "Individual Professionals Solution",
+                  title: "For Individual Professionals",
+                  description:
+                    "Professional networking and peer connections, visibility in an industry-specific directory, and purpose-built community features for real estate workflows.",
+                },
+                {
+                  image: "/case_studies/maison/enterprise-brokerages.png",
+                  imageAlt: "Enterprise Brokerages Solution",
+                  title: "For Enterprise Brokerages",
+                  description:
+                    "Internal communication and team management tools, private community spaces replacing scattered Facebook groups and WhatsApp channels, streamlined file sharing and collaboration, and team directory and organizational structure.",
+                },
+              ]}
+            >
               <p>
                 I designed a dual-focused platform that serves both individual
                 real estate professionals and enterprise brokerages, creating
                 network effects where each audience strengthens the value for
                 the other.
               </p>
-
-              <div className="info-cards mt-8">
-                <InfoCard
-                  image="/case_studies/maison/individual-professionals.png"
-                  imageAlt="Individual Professionals Solution"
-                  title="For Individual Professionals"
-                  description="Professional networking and peer connections, visibility in an industry-specific directory, and purpose-built community features for real estate workflows."
-                />
-                <InfoCard
-                  image="/case_studies/maison/enterprise-brokerages.png"
-                  imageAlt="Enterprise Brokerages Solution"
-                  title="For Enterprise Brokerages"
-                  description="Internal communication and team management tools, private community spaces replacing scattered Facebook groups and WhatsApp channels, streamlined file sharing and collaboration, and team directory and organizational structure."
-                />
-              </div>
-            </div>
+            </CaseStudySection>
           </section>
 
           {/* My Role Section */}
@@ -256,7 +241,7 @@ function Maison({ onClose, currentProjectSlug }) {
           >
             <Label>My Role</Label>
 
-            <div className="subsection">
+            <CaseStudySection title="My Contributions">
               <p>
                 I served as the product designer and design engineer for Maison,
                 working across the full spectrum of product development from
@@ -286,7 +271,7 @@ function Maison({ onClose, currentProjectSlug }) {
                   engineering and business teams
                 </li>
               </ul>
-            </div>
+            </CaseStudySection>
           </section>
 
           {/* Design Approach Section */}
@@ -297,28 +282,35 @@ function Maison({ onClose, currentProjectSlug }) {
           >
             <Label>Design Approach</Label>
 
-            <div className="info-cards mt-8">
-              <InfoCard
-                number={1}
-                title="Research & Discovery"
-                description="Conducted user research with real estate professionals to understand their communication patterns, pain points, and workflows. Mapped the fragmented tool landscape to identify opportunities for a unified solution."
-              />
-              <InfoCard
-                number={2}
-                title="Strategic Product Architecture"
-                description="Designed a dual-sided platform strategy that serves both individual professionals and enterprise teams. Created a system where both audiences strengthen the platform's value through network effects."
-              />
-              <InfoCard
-                number={3}
-                title="Brand & Positioning"
-                description="Developed the brand identity and positioning strategy: 'Slack for workplace + Discord for gamers = Maison for real estate professionals.' This clear positioning helped stakeholders and users immediately understand the product vision."
-              />
-              <InfoCard
-                number={4}
-                title="Enterprise-First Design"
-                description="Prioritized enterprise features and workflows while maintaining an approachable experience for individual users. Designed for scalability and team management from the ground up."
-              />
-            </div>
+            <CaseStudySection
+              title="Design Methodology"
+              infoCards={[
+                {
+                  number: 1,
+                  title: "Research & Discovery",
+                  description:
+                    "Conducted user research with real estate professionals to understand their communication patterns, pain points, and workflows. Mapped the fragmented tool landscape to identify opportunities for a unified solution.",
+                },
+                {
+                  number: 2,
+                  title: "Strategic Product Architecture",
+                  description:
+                    "Designed a dual-sided platform strategy that serves both individual professionals and enterprise teams. Created a system where both audiences strengthen the platform's value through network effects.",
+                },
+                {
+                  number: 3,
+                  title: "Brand & Positioning",
+                  description:
+                    "Developed the brand identity and positioning strategy: 'Slack for workplace + Discord for gamers = Maison for real estate professionals.' This clear positioning helped stakeholders and users immediately understand the product vision.",
+                },
+                {
+                  number: 4,
+                  title: "Enterprise-First Design",
+                  description:
+                    "Prioritized enterprise features and workflows while maintaining an approachable experience for individual users. Designed for scalability and team management from the ground up.",
+                },
+              ]}
+            />
           </section>
 
           {/* Design Impact Section */}

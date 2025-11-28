@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Check } from "lucide-react";
 import Label from "../ui/Label";
 import MoreWork from "../MoreWork";
+import CaseStudyHero from "./components/CaseStudyHero";
 
 function Skiin({ onClose, currentProjectSlug }) {
   const [activeSection, setActiveSection] = useState("overview");
@@ -104,40 +105,17 @@ function Skiin({ onClose, currentProjectSlug }) {
         {/* Middle Column - Main Content */}
         <div className="case-study-content">
           {/* Hero Section */}
-          <div className="hero-section mb-8 text-left">
-            <h1 className="case-study-title text-2xl font-semibold tracking-tight text-default mb-2">
-              Skiin
-            </h1>
-            <p className="case-study-subtitle text-lg text-light font-normal mb-12 max-w-4xl leading-relaxed">
-              Innovating wellness through real-time tracking and sensory
-              textiles.
-            </p>
-            <div className="hero-image-container w-full">
-              <div className="hero-card">
-                <img
-                  src="/case_studies/skiin/hero.avif"
-                  alt="Skiin Hero"
-                  className="hero-image w-full rounded-xl"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Project Info Bar */}
-          <div className="project-info-bar">
-            <div className="info-item">
-              <h3>Team</h3>
-              <p>Myant Design Team</p>
-            </div>
-            <div className="info-item">
-              <h3>Role</h3>
-              <p>Design Research, UI & UX Design</p>
-            </div>
-            <div className="info-item">
-              <h3>Timeline</h3>
-              <p>Feb - Aug 2021</p>
-            </div>
-          </div>
+          <CaseStudyHero
+            title="Skiin"
+            subtitle="Innovating wellness through real-time tracking and sensory textiles."
+            imageSrc="/case_studies/skiin/hero.avif"
+            imageAlt="Skiin Hero"
+            infoItems={[
+              { label: "Team", value: "Myant Design Team" },
+              { label: "Role", value: "Design Research, UI & UX Design" },
+              { label: "Timeline", value: "Feb - Aug 2021" },
+            ]}
+          />
 
           {/* Overview Section */}
           <section

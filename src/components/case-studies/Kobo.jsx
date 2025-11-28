@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Check, X } from "lucide-react";
 import Label from "../ui/Label";
 import MoreWork from "../MoreWork";
+import CaseStudyHero from "./components/CaseStudyHero";
 
 function Kobo({ onClose, currentProjectSlug }) {
   const [activeSection, setActiveSection] = useState("overview");
@@ -105,40 +106,17 @@ function Kobo({ onClose, currentProjectSlug }) {
         {/* Middle Column - Main Content */}
         <div className="case-study-content">
           {/* Hero Section */}
-          <div className="hero-section mb-8 text-left">
-            <h1 className="case-study-title text-2xl font-semibold tracking-tight text-default mb-2">
-              Kobo
-            </h1>
-            <p className="case-study-subtitle text-lg text-light font-normal mb-12 max-w-4xl leading-relaxed">
-              A redesign of the user interface and user flow of the popular
-              eBook and audiobook app.
-            </p>
-            <div className="hero-image-container w-full">
-              <div className="hero-card">
-                <img
-                  src="/case_studies/kobo/kobo-hero.avif"
-                  alt="Kobo Hero"
-                  className="hero-image w-full rounded-xl"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Project Info Bar */}
-          <div className="project-info-bar">
-            <div className="info-item">
-              <h3>Team</h3>
-              <p>Independent Project</p>
-            </div>
-            <div className="info-item">
-              <h3>Role</h3>
-              <p>Design Research, UI & UX Design</p>
-            </div>
-            <div className="info-item">
-              <h3>Timeline</h3>
-              <p>Nov - Dec 2021</p>
-            </div>
-          </div>
+          <CaseStudyHero
+            title="Kobo"
+            subtitle="A redesign of the user interface and user flow of the popular eBook and audiobook app."
+            imageSrc="/case_studies/kobo/kobo-hero.avif"
+            imageAlt="Kobo Hero"
+            infoItems={[
+              { label: "Team", value: "Independent Project" },
+              { label: "Role", value: "Design Research, UI & UX Design" },
+              { label: "Timeline", value: "Nov - Dec 2021" },
+            ]}
+          />
 
           {/* Overview Section */}
           <section

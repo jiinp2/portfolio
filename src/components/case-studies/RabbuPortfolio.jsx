@@ -7,6 +7,8 @@ import {
 } from "lucide-react";
 import InfoCard from "../ui/InfoCard";
 import MoreWork from "../MoreWork";
+import CaseStudyHero from "./components/CaseStudyHero";
+import CaseStudySection from "./components/CaseStudySection";
 
 function RabbuPortfolio({ onClose, currentProjectSlug }) {
   const [activeSection, setActiveSection] = useState("overview");
@@ -116,52 +118,17 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
         {/* Middle Column - Main Content */}
         <div className="case-study-content">
           {/* Hero Section */}
-          <div className="hero-section mb-8 text-left">
-            <h1 className="case-study-title text-2xl font-semibold tracking-tight text-default mb-2">
-              Rabbu Portfolio
-            </h1>
-            <p className="case-study-subtitle text-lg text-light font-normal mb-12 max-w-4xl leading-relaxed">
-              A platform where short-term rental investors can manage their
-              properties and track performance.
-            </p>
-            <div className="hero-image-container w-full">
-              <div className="hero-card">
-                <img
-                  src="/case_studies/rabbu_portofolio/hero.webp"
-                  alt="Rabbu Portfolio Hero"
-                  className="hero-image w-full rounded-xl"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Project Info Bar */}
-          <div className="project-info-bar grid grid-cols-3 gap-8 mb-8 p-8">
-            <div className="info-item">
-              <h3 className="text-sm font-semibold text-light uppercase tracking-wide mb-2">
-                Team
-              </h3>
-              <p className="text-lg leading-relaxed text-muted m-0">
-                Rabbu (3 PMs), Drip Design (2 Designers)
-              </p>
-            </div>
-            <div className="info-item">
-              <h3 className="text-sm font-semibold text-light uppercase tracking-wide mb-2">
-                Role
-              </h3>
-              <p className="text-lg leading-relaxed text-muted m-0">
-                Design Research, UI & UX Design
-              </p>
-            </div>
-            <div className="info-item">
-              <h3 className="text-sm font-semibold text-light uppercase tracking-wide mb-2">
-                Timeline
-              </h3>
-              <p className="text-lg leading-relaxed text-muted m-0">
-                Mar 2022 - Feb 2023
-              </p>
-            </div>
-          </div>
+          <CaseStudyHero
+            title="Rabbu Portfolio"
+            subtitle="A platform where short-term rental investors can manage their properties and track performance."
+            imageSrc="/case_studies/rabbu_portofolio/hero.webp"
+            imageAlt="Rabbu Portfolio Hero"
+            infoItems={[
+              { label: "Team", value: "Rabbu (3 PMs), Drip Design (2 Designers)" },
+              { label: "Role", value: "Design Research, UI & UX Design" },
+              { label: "Timeline", value: "Mar 2022 - Feb 2023" },
+            ]}
+          />
 
           {/* Overview Section */}
           <section
@@ -169,36 +136,28 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current.overview = el)}
             className="case-study-section mb-12"
           >
-            <h2 className="text-2xl font-semibold text-default mb-8 tracking-tight leading-tight">
-              Overview
-            </h2>
+            <h2>Overview</h2>
 
-            <div className="subsection mb-6">
-              <h3 className="text-xl font-semibold text-default mb-4 tracking-tight leading-tight">
-                Introduction
-              </h3>
-              <p className="text-lg leading-relaxed text-muted mb-6">
+            <CaseStudySection title="Introduction">
+              <p className="text-base leading-relaxed text-muted mb-6">
                 Rabbu approached Drip Design to help design their short-term
                 rental (STR) platform by incorporating tools they had previously
                 launched as well as newer features that will help short-term
                 rental investors find and manage property investments.
               </p>
-              <p className="text-lg leading-relaxed text-muted mb-6">
+              <p className="text-base leading-relaxed text-muted mb-6">
                 This case study follows the work for Rabbu Portfolio and Rabbu
                 Marketplace can be found here.
               </p>
-            </div>
+            </CaseStudySection>
 
-            <div className="subsection mb-6">
-              <h3 className="text-xl font-semibold text-default mb-4 tracking-tight leading-tight">
-                What is Rabbu Portfolio?
-              </h3>
-              <p className="text-lg leading-relaxed text-muted mb-6">
+            <CaseStudySection title="What is Rabbu Portfolio?">
+              <p className="text-base leading-relaxed text-muted mb-6">
                 Is a part of Rabbu's STR platform where users can manage their
                 property investments from performance evaluation, rental
                 activity, and statements.
               </p>
-            </div>
+            </CaseStudySection>
           </section>
 
           {/* Outcomes Section */}
@@ -207,44 +166,33 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current.outcomes = el)}
             className="case-study-section mb-12"
           >
-            <h2 className="text-2xl font-semibold text-default mb-8 tracking-tight leading-tight">
-              Outcomes
-            </h2>
+            <h2>Outcomes</h2>
 
-            <div className="subsection mb-8">
-              <p className="text-lg leading-relaxed text-muted mb-6">
+            <CaseStudySection
+              image={{
+                src: "/case_studies/rabbu_portofolio/1.webp",
+                alt: "Rabbu Portfolio Outcomes 1",
+              }}
+              images={[
+                {
+                  src: "/case_studies/rabbu_portofolio/3.webp",
+                  alt: "Rabbu Portfolio Outcomes 3",
+                },
+                {
+                  src: "/case_studies/rabbu_portofolio/2.webp",
+                  alt: "Rabbu Portfolio Outcomes 2",
+                },
+              ]}
+            >
+              <p className="text-base leading-relaxed text-muted mb-6">
                 End-to-end design and launch of Rabbu's Portfolio platform,
                 enhancing the STR management experience.
               </p>
-              <p className="text-lg leading-relaxed text-muted mb-6">
+              <p className="text-base leading-relaxed text-muted mb-6">
                 Revitalized the user interface for cohesion with Rabbu
                 Marketplace.
               </p>
-            </div>
-
-            <div className="image-container w-full mt-4">
-              <img
-                src="/case_studies/rabbu_portofolio/1.webp"
-                alt="Rabbu Portfolio Outcomes 1"
-                className="w-full rounded-xl"
-              />
-            </div>
-            <div className="outcomes-images-grid mt-4">
-              <div className="image-container w-full">
-                <img
-                  src="/case_studies/rabbu_portofolio/3.webp"
-                  alt="Rabbu Portfolio Outcomes 3"
-                  className="w-full rounded-xl"
-                />
-              </div>
-              <div className="image-container w-full">
-                <img
-                  src="/case_studies/rabbu_portofolio/2.webp"
-                  alt="Rabbu Portfolio Outcomes 2"
-                  className="w-full rounded-xl"
-                />
-              </div>
-            </div>
+            </CaseStudySection>
           </section>
 
           {/* Design Research Section */}
@@ -253,92 +201,85 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current["design-research"] = el)}
             className="case-study-section mb-12"
           >
-            <h2 className="text-2xl font-semibold text-default mb-8 tracking-tight leading-tight">
-              Design Research
-            </h2>
+            <h2>Design Research</h2>
 
-            <div className="subsection mb-6">
-              <h3 className="text-xl font-semibold text-default mb-4 tracking-tight leading-tight">
-                Early Stage Hypothetical User Journeys
-              </h3>
-              <p className="text-lg leading-relaxed text-muted mb-6">
+            <CaseStudySection title="Early Stage Hypothetical User Journeys">
+              <p className="text-base leading-relaxed text-muted mb-6">
                 Utilizing hypothetical user journeys provided by Rabbu, we aimed
                 to define user needs and desired outcomes.
               </p>
-              <p className="text-lg leading-relaxed text-muted mb-6">
+              <p className="text-base leading-relaxed text-muted mb-6">
                 Our goal would be to transition from idealized user journeys to
                 more realistic and user-tested versions through future
                 iterations.
               </p>
-            </div>
+            </CaseStudySection>
 
-            <div className="subsection mb-6">
-              <h3 className="text-xl font-semibold text-default mb-4 tracking-tight leading-tight">
-                New User Journey
-              </h3>
-              <p className="text-lg leading-relaxed text-muted mb-8">
+            <CaseStudySection
+              title="New User Journey"
+              infoCards={[
+                {
+                  number: 1,
+                  title: "Discovery",
+                  description: "Investors looking for an online platform to manage their first investment discovers Rabbu Portfolio.",
+                },
+                {
+                  number: 2,
+                  title: "Expert Consultation",
+                  description: "The investor is provided a walkthrough by a Rabbu expert, who demonstrates the platform's efficient property management system.",
+                },
+                {
+                  number: 3,
+                  title: "Seamless Onboarding",
+                  description: "The investor signs a property management contract with Rabbu, officially onboarding their property to the platform.",
+                },
+                {
+                  number: 4,
+                  title: "Portfolio Management",
+                  description: "The investor monitors their performance and financials, leading to their first successful investment.",
+                },
+              ]}
+              infoCardsLayout="info-cards-four"
+            >
+              <p className="text-base leading-relaxed text-muted mb-8">
                 This journey outlines the process of a new Rabbu Portfolio user,
                 from initial discovery to successful property management.
               </p>
+            </CaseStudySection>
 
-              <div className="info-cards info-cards-four mt-8">
-                <InfoCard
-                  number={1}
-                  title="Discovery"
-                  description="Investors looking for an online platform to manage their first investment discovers Rabbu Portfolio."
-                />
-                <InfoCard
-                  number={2}
-                  title="Expert Consultation"
-                  description="The investor is provided a walkthrough by a Rabbu expert, who demonstrates the platform's efficient property management system."
-                />
-                <InfoCard
-                  number={3}
-                  title="Seamless Onboarding"
-                  description="The investor signs a property management contract with Rabbu, officially onboarding their property to the platform."
-                />
-                <InfoCard
-                  number={4}
-                  title="Portfolio Management"
-                  description="The investor monitors their performance and financials, leading to their first successful investment."
-                />
-              </div>
-            </div>
-
-            <div className="subsection mb-6">
-              <h3 className="text-xl font-semibold text-default mb-4 tracking-tight leading-tight">
-                Experienced User Journey
-              </h3>
-              <p className="text-lg leading-relaxed text-muted mb-8">
+            <CaseStudySection
+              title="Experienced User Journey"
+              infoCards={[
+                {
+                  number: 1,
+                  title: "Strategic Expansion",
+                  description: "The investor is aware of Rabbu Marketplace, a platform where they can search for properties to expand their short-term rental portfolio.",
+                },
+                {
+                  number: 2,
+                  title: "Market Analysis",
+                  description: "They deep-dive into potential properties. Utilizing Marketplace tools to assess investment viability.",
+                },
+                {
+                  number: 3,
+                  title: "Informed Investments",
+                  description: "After thorough analysis and consultation with Rabbu experts, the investor selects an additional property to invest in.",
+                },
+                {
+                  number: 4,
+                  title: "Scalable Management",
+                  description: "The investor manages their short-term rentals all-in-one place, easing operations across multiple properties.",
+                },
+              ]}
+              infoCardsLayout="info-cards-four"
+            >
+              <p className="text-base leading-relaxed text-muted mb-8">
                 This journey outlines the process of how an experienced user who
                 finds success with utilizing Portfolio decides to search and
                 onboard additional properties they have found on Rabbu
                 Marketplace.
               </p>
-
-              <div className="info-cards info-cards-four mt-8">
-                <InfoCard
-                  number={1}
-                  title="Strategic Expansion"
-                  description="The investor is aware of Rabbu Marketplace, a platform where they can search for properties to expand their short-term rental portfolio."
-                />
-                <InfoCard
-                  number={2}
-                  title="Market Analysis"
-                  description="They deep-dive into potential properties. Utilizing Marketplace tools to assess investment viability."
-                />
-                <InfoCard
-                  number={3}
-                  title="Informed Investments"
-                  description="After thorough analysis and consultation with Rabbu experts, the investor selects an additional property to invest in."
-                />
-                <InfoCard
-                  number={4}
-                  title="Scalable Management"
-                  description="The investor manages their short-term rentals all-in-one place, easing operations across multiple properties."
-                />
-              </div>
-            </div>
+            </CaseStudySection>
           </section>
 
           {/* Design Process Section */}
@@ -347,38 +288,29 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current["design-process"] = el)}
             className="case-study-section mb-12"
           >
-            <h2 className="text-2xl font-semibold text-default mb-8 tracking-tight leading-tight">
-              Design Process
-            </h2>
+            <h2>Design Process</h2>
 
-            <div className="subsection mb-6">
-              <h3 className="text-xl font-semibold text-default mb-4 tracking-tight leading-tight">
-                Rabbu One
-              </h3>
-              <p className="text-lg leading-relaxed text-muted mb-6">
+            <CaseStudySection title="Rabbu One">
+              <p className="text-base leading-relaxed text-muted mb-6">
                 Rabbu decided to transition to a unified account system
                 facilitated seamless access to both Marketplace and Portfolio,
                 enhancing user interaction across Rabbu services.
               </p>
-            </div>
+            </CaseStudySection>
 
-            <div className="subsection mb-6">
-              <h3 className="text-xl font-semibold text-default mb-4 tracking-tight leading-tight">
-                Unified Account Matrix
-              </h3>
-              <p className="text-lg leading-relaxed text-muted mb-6">
+            <CaseStudySection
+              title="Unified Account Matrix"
+              image={{
+                src: "/case_studies/rabbu_portofolio/8.webp",
+                alt: "Unified Account Matrix",
+              }}
+            >
+              <p className="text-base leading-relaxed text-muted mb-6">
                 Defining how users will interact with different Rabbu services
                 throughout their journey helped with creating transitions
                 between products.
               </p>
-              <div className="image-container w-full mt-4">
-                <img
-                  src="/case_studies/rabbu_portofolio/8.webp"
-                  alt="Unified Account Matrix"
-                  className="w-full rounded-xl"
-                />
-              </div>
-            </div>
+            </CaseStudySection>
           </section>
 
           {/* Final Design Section */}
@@ -387,51 +319,44 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current["final-design"] = el)}
             className="case-study-section mb-12"
           >
-            <h2 className="text-2xl font-semibold text-default mb-8 tracking-tight leading-tight">
-              Final Design
-            </h2>
+            <h2>Final Design</h2>
 
-            <div className="subsection mb-6">
-              <h3 className="text-xl font-semibold text-default mb-4 tracking-tight leading-tight">
-                Rabbu Portfolio
-              </h3>
-              <p className="text-lg leading-relaxed text-muted mb-8">
+            <CaseStudySection
+              title="Rabbu Portfolio"
+              infoCards={[
+                {
+                  icon: <LayoutDashboard size={20} />,
+                  title: "Dashboard",
+                  description: "A customizable snapshot of property trends.",
+                },
+                {
+                  icon: <Calendar size={20} />,
+                  title: "Properties & Calendar",
+                  description: "Displays property statuses and booking details.",
+                },
+                {
+                  icon: <MessageSquare size={20} />,
+                  title: "Reviews & Activity Feed",
+                  description: "Keeps property owners updated on guest feedback and property activities.",
+                },
+                {
+                  icon: <DollarSign size={20} />,
+                  title: "Pricing & Statements",
+                  description: "Easy access to property related financial statements.",
+                },
+              ]}
+              infoCardsLayout="info-cards-four"
+              image={{
+                src: "/case_studies/rabbu_portofolio/4.avif",
+                alt: "Rabbu Portfolio",
+              }}
+            >
+              <p className="text-base leading-relaxed text-muted mb-8">
                 The platform is organized into Dashboard, Properties, Calendar,
                 Reviews, Activity, Pricing, and Statements, providing users
                 comprehensive oversight over their investment properties.
               </p>
-
-              <div className="info-cards info-cards-four mb-4">
-                <InfoCard
-                  icon={<LayoutDashboard size={20} />}
-                  title="Dashboard"
-                  description="A customizable snapshot of property trends."
-                />
-                <InfoCard
-                  icon={<Calendar size={20} />}
-                  title="Properties & Calendar"
-                  description="Displays property statuses and booking details."
-                />
-                <InfoCard
-                  icon={<MessageSquare size={20} />}
-                  title="Reviews & Activity Feed"
-                  description="Keeps property owners updated on guest feedback and property activities."
-                />
-                <InfoCard
-                  icon={<DollarSign size={20} />}
-                  title="Pricing & Statements"
-                  description="Easy access to property related financial statements."
-                />
-              </div>
-
-              <div className="image-container w-full mt-4">
-                <img
-                  src="/case_studies/rabbu_portofolio/4.avif"
-                  alt="Rabbu Portfolio"
-                  className="w-full rounded-xl"
-                />
-              </div>
-            </div>
+            </CaseStudySection>
           </section>
 
           {/* Key Features Section */}
@@ -441,61 +366,51 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
             className="case-study-section mb-12"
           >
             <div className="key-features mt-6">
-              <div className="subsection mb-6">
-                <h3 className="text-2xl font-semibold text-default mb-4 tracking-tight leading-tight">
-                  Comprehensive Performance Insights
-                </h3>
-                <p className="text-lg leading-relaxed text-muted mb-6">
+              <CaseStudySection
+                title="Comprehensive Performance Insights"
+                image={{
+                  src: "/case_studies/rabbu_portofolio/5.avif",
+                  alt: "Comprehensive Performance Insights",
+                }}
+              >
+                <p className="text-base leading-relaxed text-muted mb-6">
                   Delivers real-time and customizable insights of financial and
                   operational metrics, empowering investors to make data-driven
                   decisions.
                 </p>
-                <div className="image-container w-full mt-4">
-                  <img
-                    src="/case_studies/rabbu_portofolio/5.avif"
-                    alt="Comprehensive Performance Insights"
-                    className="w-full rounded-xl"
-                  />
-                </div>
-              </div>
+              </CaseStudySection>
 
-              <div className="key-feature key-feature-image-large grid grid-cols-2 gap-12 mb-8 items-center">
-                <div className="key-feature-image w-full">
-                  <img
-                    src="/case_studies/rabbu_portofolio/6.webp"
-                    alt="Streamlined Property Booking Management"
-                    className="w-full rounded-xl"
-                  />
-                </div>
-                <div className="key-feature-content">
-                  <h3 className="text-2xl font-semibold text-default mb-4 tracking-tight leading-tight">
-                    Streamlined Property Booking Management
-                  </h3>
-                  <p className="text-lg leading-relaxed text-muted m-0">
-                    Simplifies booking management by displaying bookings across
-                    all properties and listing platforms.
-                  </p>
-                </div>
-              </div>
+              <CaseStudySection
+                title="Streamlined Property Booking Management"
+                sideBySide={{
+                  image: {
+                    src: "/case_studies/rabbu_portofolio/6.webp",
+                    alt: "Streamlined Property Booking Management",
+                  },
+                  reverse: false,
+                }}
+              >
+                <p className="text-base leading-relaxed text-muted m-0">
+                  Simplifies booking management by displaying bookings across
+                  all properties and listing platforms.
+                </p>
+              </CaseStudySection>
 
-              <div className="key-feature grid grid-cols-2 gap-12 mb-8 items-center">
-                <div className="key-feature-content">
-                  <h3 className="text-2xl font-semibold text-default mb-4 tracking-tight leading-tight">
-                    Real-Time Property Activity Tracker
-                  </h3>
-                  <p className="text-lg leading-relaxed text-muted m-0">
-                    Provides real-time updates to property happenings, elevating
-                    guest satisfaction through proactive property management.
-                  </p>
-                </div>
-                <div className="key-feature-image w-full">
-                  <img
-                    src="/case_studies/rabbu_portofolio/7.webp"
-                    alt="Real-Time Property Activity Tracker"
-                    className="w-full rounded-xl"
-                  />
-                </div>
-              </div>
+              <CaseStudySection
+                title="Real-Time Property Activity Tracker"
+                sideBySide={{
+                  image: {
+                    src: "/case_studies/rabbu_portofolio/7.webp",
+                    alt: "Real-Time Property Activity Tracker",
+                  },
+                  reverse: true,
+                }}
+              >
+                <p className="text-base leading-relaxed text-muted m-0">
+                  Provides real-time updates to property happenings, elevating
+                  guest satisfaction through proactive property management.
+                </p>
+              </CaseStudySection>
             </div>
           </section>
 

@@ -19,10 +19,10 @@ function InfoCard({ number, icon, title, description, image, imageAlt }) {
           )}
         </div>
       )}
-      <h3 className={`font-semibold text-text tracking-tight leading-tight block text-left ${image ? 'px-4 mt-0' : 'mb-3 mt-0'}`}>
+      <h4 className={`font-semibold text-text tracking-tight leading-tight block text-left ${image ? 'px-4 mt-0' : 'mb-3 mt-0'}`}>
         {title}
-      </h3>
-      <p className={`text-base leading-relaxed text-gray-500 m-0 block text-left ${image ? 'px-4 mb-4' : ''}`}>
+      </h4>
+      <p className={`text-sm leading-relaxed text-gray-500 m-0 block text-left ${image ? 'px-4 mb-4' : ''}`}>
         {description}
       </p>
     </div>

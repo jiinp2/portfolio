@@ -18,6 +18,7 @@ import {
 import InfoCard from "../ui/InfoCard";
 import Label from "../ui/Label";
 import MoreWork from "../MoreWork";
+import CaseStudyHero from "./components/CaseStudyHero";
 
 function RabbuMarketplace({ onClose, currentProjectSlug }) {
   const [activeSection, setActiveSection] = useState("overview");
@@ -122,40 +123,17 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
         {/* Middle Column - Main Content */}
         <div className="case-study-content">
           {/* Hero Section */}
-          <div className="hero-section mb-8 text-left">
-            <h1 className="case-study-title text-2xl font-semibold tracking-tight text-default mb-2">
-              Rabbu Marketplace
-            </h1>
-            <p className="case-study-subtitle text-lg text-light font-normal mb-12 max-w-4xl leading-relaxed">
-              A platform where investors can find and evaluate profitable
-              investment properties.
-            </p>
-            <div className="hero-image-container w-full">
-              <div className="hero-card">
-                <img
-                  src="/case_studies/rabbu_marketplace/market-hero.webp"
-                  alt="Rabbu Marketplace Hero"
-                  className="hero-image w-full rounded-xl"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Project Info Bar */}
-          <div className="project-info-bar">
-            <div className="info-item">
-              <h3>Team</h3>
-              <p>Rabbu (3 PMs), Drip Design (2 Designers)</p>
-            </div>
-            <div className="info-item">
-              <h3>Role</h3>
-              <p>Design Research, UI & UX Design</p>
-            </div>
-            <div className="info-item">
-              <h3>Timeline</h3>
-              <p>Mar 2022 - Feb 2023</p>
-            </div>
-          </div>
+          <CaseStudyHero
+            title="Rabbu Marketplace"
+            subtitle="A platform where investors can find and evaluate profitable investment properties."
+            imageSrc="/case_studies/rabbu_marketplace/market-hero.webp"
+            imageAlt="Rabbu Marketplace Hero"
+            infoItems={[
+              { label: "Team", value: "Rabbu (3 PMs), Drip Design (2 Designers)" },
+              { label: "Role", value: "Design Research, UI & UX Design" },
+              { label: "Timeline", value: "Mar 2022 - Feb 2023" },
+            ]}
+          />
 
           {/* Overview Section */}
           <section
