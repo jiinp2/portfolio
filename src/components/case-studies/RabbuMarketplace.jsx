@@ -363,10 +363,10 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
                 Freemium model offered fully free features with the option for
                 users to upgrade to premium for advanced features.
               </p>
-              <p>
-                This is a comparison of general trends when it comes to
-                comparing the two options.
-              </p>
+                <p>
+                  This is a comparison of general trends when it comes to
+                  comparing the two options.
+                </p>
             </CaseStudySection>
 
             <CaseStudySection
@@ -475,12 +475,12 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
                 reverse: true,
               }}
             >
-              <p>
-                A tool for investors to determine equity required to acquire
-                a property as well as estimated potential earnings. This
-                calculator can be personalized with custom financial
-                information.
-              </p>
+                  <p>
+                    A tool for investors to determine equity required to acquire
+                    a property as well as estimated potential earnings. This
+                    calculator can be personalized with custom financial
+                    information.
+                  </p>
             </CaseStudySection>
 
             <CaseStudySection
@@ -493,12 +493,12 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
                 reverse: true,
               }}
             >
-              <p>
-                Investors can efficiently compare properties based on their
-                investment goals such as cash flow vs. long term property
-                appreciation. As well as access to Rabbu's property
-                recommendations.
-              </p>
+                  <p>
+                    Investors can efficiently compare properties based on their
+                    investment goals such as cash flow vs. long term property
+                    appreciation. As well as access to Rabbu's property
+                    recommendations.
+                  </p>
             </CaseStudySection>
 
             <CaseStudySection
@@ -511,10 +511,10 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
                 reverse: true,
               }}
             >
-              <p>
-                Investors can browse properties to invest in with
-                underwriting provided by Rabbu.
-              </p>
+                  <p>
+                    Investors can browse properties to invest in with
+                    underwriting provided by Rabbu.
+                  </p>
             </CaseStudySection>
           </section>
 

@@ -322,7 +322,13 @@ function Maison({ onClose, currentProjectSlug }) {
                     "Balanced enterprise functionality with individual user approachability, designing for team scalability from day one.",
                 },
               ]}
-            />
+            >
+              <p>
+                Led end-to-end design from research to launch, balancing
+                strategic product thinking with detailed UX and visual design
+                execution.
+              </p>
+            </CaseStudySection>
           </section>
 
           {/* Design Impact Section */}
@@ -334,29 +340,37 @@ function Maison({ onClose, currentProjectSlug }) {
             <Label>Design Impact</Label>
 
             <CaseStudySection
+              title="What We Achieved"
               accentColor="var(--color-maison)"
               infoCards={[
                 {
                   icon: <Sparkles size={20} />,
                   title: "User Experience",
                   description:
-                    "Created an intuitive platform that feels familiar (leveraging mental models from Slack/Discord) while addressing real estate-specific needs. Designed for both power users (brokerages managing large teams) and casual users (individual professionals networking). Built a scalable design system that supports rapid feature development.",
+                    "Created an intuitive platform leveraging familiar mental models from Slack/Discord while addressing real estate-specific needs and supporting scalable feature development.",
                 },
                 {
                   icon: <TrendingUp size={20} />,
                   title: "Business Impact",
                   description:
-                    "Established clear product differentiation in a crowded communication tools market. Enabled dual go-to-market strategy through thoughtful product architecture. Created a platform that drives network effects between individual and enterprise users.",
+                    "Established clear product differentiation in a crowded market through dual go-to-market strategy and platform architecture that drives network effects.",
                 },
                 {
                   icon: <Rocket size={20} />,
                   title: "Product Strategy",
                   description:
-                    "Validated industry-specific platform approach vs. generic tool adaptation. Demonstrated value of purpose-built solutions for vertical markets. Built foundation for expansion into adjacent real estate professional tools.",
+                    "Validated industry-specific platform approach versus generic tool adaptation, demonstrating value of purpose-built solutions and foundation for vertical expansion.",
                 },
               ]}
               infoCardsLayout="info-cards-three"
-            />
+            >
+              <p>
+                The design work created a differentiated platform in a crowded
+                market, establishing a strong foundation for both user
+                experience and business growth across individual and enterprise
+                segments.
+              </p>
+            </CaseStudySection>
           </section>
 
           {/* More Work Section */}
