@@ -369,8 +369,21 @@
     margin-right: auto;
   }
 
+  .case-study-section > span[class*="Label"],
+  .case-study-section > .text-label {
+    max-width: 560px;
+    margin-left: calc((100% - 560px) / 2);
+    margin-right: auto;
+  }
+
   @media (max-width: 640px) {
     .case-study-section > h2 {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .case-study-section > span[class*="Label"],
+    .case-study-section > .text-label {
       margin-left: 0;
       margin-right: 0;
     }
@@ -629,7 +642,7 @@
   .info-cards {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 1.5rem;
+    gap: 1rem;
     width: 100%;
   }
 

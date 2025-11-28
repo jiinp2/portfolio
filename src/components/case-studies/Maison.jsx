@@ -295,30 +295,31 @@ function Maison({ onClose, currentProjectSlug }) {
             <CaseStudySection
               title="Design Methodology"
               accentColor="var(--color-maison)"
+              infoCardsLayout="info-cards-four"
               infoCards={[
                 {
                   number: 1,
                   title: "Research & Discovery",
                   description:
-                    "Conducted user research with real estate professionals to understand their workflows and pain points. Mapped the fragmented tool landscape to identify opportunities for consolidation.",
+                    "Conducted user research with real estate professionals to map workflows and identify pain points in their fragmented tool ecosystem.",
                 },
                 {
                   number: 2,
                   title: "Strategic Product Architecture",
                   description:
-                    "Designed a dual-sided platform strategy that serves both individual professionals and enterprise teams. Created a system where both audiences strengthen the platform's value through network effects.",
+                    "Designed a dual-sided platform that creates value for both individual professionals and enterprise teams through network effects.",
                 },
                 {
                   number: 3,
                   title: "Brand & Positioning",
                   description:
-                    "Developed the brand identity and positioning strategy: 'Slack for workplace + Discord for gamers = Maison for real estate professionals.' This clear positioning helped stakeholders and users immediately understand the product vision.",
+                    "Positioned the product as 'Slack for workplace + Discord for gamers = Maison for real estate' to immediately communicate the vision.",
                 },
                 {
                   number: 4,
                   title: "Enterprise-First Design",
                   description:
-                    "Prioritized enterprise features and workflows while maintaining an approachable experience for individual users. Designed for scalability and team management from the ground up.",
+                    "Balanced enterprise functionality with individual user approachability, designing for team scalability from day one.",
                 },
               ]}
             />
