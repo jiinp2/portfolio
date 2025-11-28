@@ -3,6 +3,7 @@ import { Check } from "lucide-react";
 import Label from "../ui/Label";
 import MoreWork from "../MoreWork";
 import CaseStudyHero from "./components/CaseStudyHero";
+import CaseStudySection from "./components/CaseStudySection";
 
 function Skiin({ onClose, currentProjectSlug }) {
   const [activeSection, setActiveSection] = useState("overview");
@@ -125,8 +126,7 @@ function Skiin({ onClose, currentProjectSlug }) {
           >
             <Label>Overview</Label>
 
-            <div className="subsection">
-              <h3>Introduction</h3>
+            <CaseStudySection title="Introduction">
               <p>
                 As a part of OCAD University's internship program I interned at
                 Myant, a wearable technology company that specializes in
@@ -134,10 +134,9 @@ function Skiin({ onClose, currentProjectSlug }) {
                 in-house product, Skiin, although my responsibilities extended
                 to external client projects as well.
               </p>
-            </div>
+            </CaseStudySection>
 
-            <div className="subsection">
-              <h3>What Is Skiin?</h3>
+            <CaseStudySection title="What Is Skiin?">
               <p>
                 Skiin consists of bio-sensing garments that work in tandem with
                 a mobile application, offering users real-time insights into
@@ -154,19 +153,23 @@ function Skiin({ onClose, currentProjectSlug }) {
                   Product Page ↗
                 </a>
               </p>
-            </div>
+            </CaseStudySection>
 
-            <div className="subsection">
-              <h3>My Responsibilities</h3>
+            <CaseStudySection title="My Responsibilities">
               <p>
                 For Skiin, my responsibilities included ideating and wireframing
                 the application's communication and mood logging features,
                 aiming to enhance user interaction and emotional tracking.
               </p>
-            </div>
+            </CaseStudySection>
 
-            <div className="subsection">
-              <h3>Outcomes</h3>
+            <CaseStudySection
+              title="Outcomes"
+              image={{
+                src: "/case_studies/skiin/1.avif",
+                alt: "Skiin Outcomes",
+              }}
+            >
               <ul className="outcomes-list">
                 <li>
                   <Check className="outcome-icon" size={20} />
@@ -174,14 +177,7 @@ function Skiin({ onClose, currentProjectSlug }) {
                   Skiin's communication features and mood logging feature.
                 </li>
               </ul>
-              <div className="image-container w-full mt-4">
-                <img
-                  src="/case_studies/skiin/1.avif"
-                  alt="Skiin Outcomes"
-                  className="w-full rounded-xl"
-                />
-              </div>
-            </div>
+            </CaseStudySection>
           </section>
 
           {/* Design Research Section */}
@@ -192,8 +188,7 @@ function Skiin({ onClose, currentProjectSlug }) {
           >
             <Label>Design Research</Label>
 
-            <div className="subsection">
-              <h3>Existing Research</h3>
+            <CaseStudySection title="Existing Research">
               <p>
                 To understand Skiin's users and their needs, I relied on
                 existing research conducted by the design and research team.
@@ -201,10 +196,9 @@ function Skiin({ onClose, currentProjectSlug }) {
                 focus groups. I analyzed research findings to inform design
                 decisions.
               </p>
-            </div>
+            </CaseStudySection>
 
-            <div className="subsection">
-              <h3>Key Takeaways</h3>
+            <CaseStudySection title="Key Takeaways">
               <ul className="takeaways-list">
                 <li>
                   Users highly value products that integrate seamlessly into
@@ -219,16 +213,15 @@ function Skiin({ onClose, currentProjectSlug }) {
                   the unique benefits of textile technology.
                 </li>
               </ul>
-            </div>
+            </CaseStudySection>
 
-            <div className="subsection">
-              <h3>Competitive Research</h3>
+            <CaseStudySection title="Competitive Research">
               <p>
                 Before ideation, I conducted an analysis of competing products,
                 focusing on their visual design elements and user journeys, to
                 identify opportunities for enhancing the Skiin experience.
               </p>
-            </div>
+            </CaseStudySection>
           </section>
 
           {/* Final Design Section */}
@@ -239,61 +232,52 @@ function Skiin({ onClose, currentProjectSlug }) {
           >
             <Label>Final Design</Label>
 
-            <div className="subsection">
-              <h3>Communication Features</h3>
+            <CaseStudySection
+              title="Communication Features"
+              image={{
+                src: "/case_studies/skiin/2.webp",
+                alt: "Communication Features Screens",
+              }}
+            >
               <p>
                 Enhancing remote connection through Skiin's in-app messaging and
                 video calling.
               </p>
-              <div className="image-container w-full mt-4">
-                <img
-                  src="/case_studies/skiin/2.webp"
-                  alt="Communication Features Screens"
-                  className="w-full rounded-xl"
-                />
-              </div>
-            </div>
+            </CaseStudySection>
 
-            <div className="subsection">
-              <div className="key-feature grid grid-cols-2 gap-12 mb-8 items-center">
-                <div className="key-feature-content">
-                  <h3>Staying in the Loop</h3>
-                  <p>
-                    Within group chats, each member has a status bar that
-                    provides a quick view on their current health.
-                  </p>
-                </div>
-                <div className="key-feature-image w-full">
-                  <img
-                    src="/case_studies/skiin/3.avif"
-                    alt="Status Bar Screens"
-                    className="w-full rounded-xl"
-                  />
-                </div>
-              </div>
-            </div>
+            <CaseStudySection
+              title="Staying in the Loop"
+              sideBySide={{
+                image: {
+                  src: "/case_studies/skiin/3.avif",
+                  alt: "Status Bar Screens",
+                },
+                reverse: true,
+              }}
+            >
+              <p>
+                Within group chats, each member has a status bar that
+                provides a quick view on their current health.
+              </p>
+            </CaseStudySection>
 
-            <div className="subsection">
-              <div className="key-feature grid grid-cols-2 gap-12 mb-8 items-center">
-                <div className="key-feature-image w-full">
-                  <img
-                    src="/case_studies/skiin/4.webp"
-                    alt="In-Depth Updates Screens"
-                    className="w-full rounded-xl"
-                  />
-                </div>
-                <div className="key-feature-content">
-                  <h3>In-Depth Updates</h3>
-                  <p>
-                    The status bar can be expanded to view user location and
-                    more detailed metrics over time.
-                  </p>
-                </div>
-              </div>
-            </div>
+            <CaseStudySection
+              title="In-Depth Updates"
+              sideBySide={{
+                image: {
+                  src: "/case_studies/skiin/4.webp",
+                  alt: "In-Depth Updates Screens",
+                },
+                reverse: false,
+              }}
+            >
+              <p>
+                The status bar can be expanded to view user location and
+                more detailed metrics over time.
+              </p>
+            </CaseStudySection>
 
-            <div className="subsection">
-              <h3>Mood Logging</h3>
+            <CaseStudySection title="Mood Logging">
               <p>
                 Enhancing remote connection through Skiin's in-app messaging and
                 video calling.
@@ -307,37 +291,33 @@ function Skiin({ onClose, currentProjectSlug }) {
               </div>
             </div>
 
-            <div className="subsection">
-              <h3>Mood Logging Flow</h3>
+            <CaseStudySection
+              title="Mood Logging Flow"
+              image={{
+                src: "/case_studies/skiin/6.webp",
+                alt: "Mood Logging Flow",
+              }}
+            >
               <p>
                 Users can select their mood on a scale of 1-5, add the date,
                 include a note on what they did that day, and tag factors that
                 influenced their mood.
               </p>
-              <div className="image-container w-full mt-4">
-                <img
-                  src="/case_studies/skiin/6.webp"
-                  alt="Mood Logging Flow"
-                  className="w-full rounded-xl"
-                />
-              </div>
-            </div>
+            </CaseStudySection>
 
-            <div className="subsection">
-              <h3>Patterns Over Time</h3>
+            <CaseStudySection
+              title="Patterns Over Time"
+              image={{
+                src: "/case_studies/skiin/7.avif",
+                alt: "Patterns Over Time Screens",
+              }}
+            >
               <p>
                 By viewing mood logs on a daily, weekly, or monthly basis, users
                 can identify reoccurring patterns and understand how they are
                 affected by their daily activities.
               </p>
-              <div className="image-container w-full mt-4">
-                <img
-                  src="/case_studies/skiin/7.avif"
-                  alt="Patterns Over Time Screens"
-                  className="w-full rounded-xl"
-                />
-              </div>
-            </div>
+            </CaseStudySection>
           </section>
 
           {/* More Work Section */}

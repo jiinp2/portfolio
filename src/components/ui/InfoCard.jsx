@@ -1,4 +1,7 @@
-function InfoCard({ number, icon, title, description, image, imageAlt }) {
+function InfoCard({ number, icon, title, description, image, imageAlt, accentColor }) {
+  const iconStyle = accentColor ? { color: accentColor } : {};
+  const numberStyle = accentColor ? { backgroundColor: accentColor } : {};
+  
   return (
     <div className={`relative bg-white border border-gray-200 rounded-xl ${image ? 'p-0 overflow-hidden' : 'p-6 max-sm:p-5'}`}>
       {image && (
@@ -9,11 +12,11 @@ function InfoCard({ number, icon, title, description, image, imageAlt }) {
       {!image && (
         <div className="flex items-center justify-start mb-3">
           {icon ? (
-            <div className="w-8 h-8 text-text text-xl max-sm:w-7 max-sm:h-7 max-sm:text-lg">
+            <div className="w-8 h-8 text-xl max-sm:w-7 max-sm:h-7 max-sm:text-lg" style={iconStyle}>
               {icon}
             </div>
           ) : (
-            <div className="w-8 h-8 rounded-full bg-indigo-500 text-white text-sm font-semibold flex items-center justify-center max-sm:w-7 max-sm:h-7 max-sm:text-xs">
+            <div className="w-8 h-8 rounded-full text-white text-sm font-semibold flex items-center justify-center max-sm:w-7 max-sm:h-7 max-sm:text-xs" style={numberStyle}>
               {number}
             </div>
           )}

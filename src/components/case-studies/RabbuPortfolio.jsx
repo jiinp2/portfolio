@@ -6,6 +6,7 @@ import {
   DollarSign,
 } from "lucide-react";
 import InfoCard from "../ui/InfoCard";
+import Label from "../ui/Label";
 import MoreWork from "../MoreWork";
 import CaseStudyHero from "./components/CaseStudyHero";
 import CaseStudySection from "./components/CaseStudySection";
@@ -136,7 +137,7 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current.overview = el)}
             className="case-study-section mb-12"
           >
-            <h2>Overview</h2>
+            <Label>Overview</Label>
 
             <CaseStudySection title="Introduction">
               <p className="text-base leading-relaxed text-muted mb-6">
@@ -166,7 +167,7 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current.outcomes = el)}
             className="case-study-section mb-12"
           >
-            <h2>Outcomes</h2>
+            <Label>Outcomes</Label>
 
             <CaseStudySection
               image={{
@@ -201,7 +202,7 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current["design-research"] = el)}
             className="case-study-section mb-12"
           >
-            <h2>Design Research</h2>
+            <Label>Design Research</Label>
 
             <CaseStudySection title="Early Stage Hypothetical User Journeys">
               <p className="text-base leading-relaxed text-muted mb-6">
@@ -217,6 +218,7 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
 
             <CaseStudySection
               title="New User Journey"
+              accentColor="var(--color-rabbu)"
               infoCards={[
                 {
                   number: 1,
@@ -249,6 +251,7 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
 
             <CaseStudySection
               title="Experienced User Journey"
+              accentColor="var(--color-rabbu)"
               infoCards={[
                 {
                   number: 1,
@@ -288,7 +291,7 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current["design-process"] = el)}
             className="case-study-section mb-12"
           >
-            <h2>Design Process</h2>
+            <Label>Design Process</Label>
 
             <CaseStudySection title="Rabbu One">
               <p className="text-base leading-relaxed text-muted mb-6">
@@ -319,10 +322,11 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current["final-design"] = el)}
             className="case-study-section mb-12"
           >
-            <h2>Final Design</h2>
+            <Label>Final Design</Label>
 
             <CaseStudySection
               title="Rabbu Portfolio"
+              accentColor="var(--color-rabbu)"
               infoCards={[
                 {
                   icon: <LayoutDashboard size={20} />,

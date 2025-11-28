@@ -6,10 +6,13 @@
   --color-primary: #22c55e;
   --color-primary-hover: #16a34a;
   --color-kobo: #a13d00;
-  --color-skiin: #9dd1e8;
-  --color-rabbu: #c9bae6;
-  --color-rabbu-dark: #623d92;
+  --color-kobo-light: #d45a00;
+  --color-skiin: #6bb5d6;
+  --color-skiin-light: #9dd1e8;
+  --color-rabbu: #623d92;
+  --color-rabbu-light: #c9bae6;
   --color-maison: #1d293d;
+  --color-maison-light: #4c658f;
   --color-text: #1a1a1a;
   --color-text-light: #6b7280;
   --color-text-muted: #4b5563;
@@ -301,7 +304,7 @@
 
   .rabbu-portfolio-case-study .hero-card,
   .rabbu-marketplace-case-study .hero-card {
-    background-color: var(--color-rabbu);
+    background-color: var(--color-rabbu-light);
   }
 
   .kobo-case-study .hero-card {
@@ -309,7 +312,7 @@
   }
 
   .skiin-case-study .hero-card {
-    background-color: var(--color-skiin);
+    background-color: var(--color-skiin-light);
   }
 
   .hero-image {
@@ -604,22 +607,22 @@
     pointer-events: none;
   }
 
-  /* Case study TOC indicator colors */
+  /* Case study TOC indicator colors - using light variants */
   .maison-case-study .toc-indicator {
-    background-color: var(--color-maison);
+    background-color: var(--color-maison-light);
   }
 
   .rabbu-portfolio-case-study .toc-indicator,
   .rabbu-marketplace-case-study .toc-indicator {
-    background-color: var(--color-rabbu);
+    background-color: var(--color-rabbu-light);
   }
 
   .kobo-case-study .toc-indicator {
-    background-color: var(--color-kobo);
+    background-color: var(--color-kobo-light);
   }
 
   .skiin-case-study .toc-indicator {
-    background-color: var(--color-skiin);
+    background-color: var(--color-skiin-light);
   }
 
   /* Info cards grid - 3 columns, 2 cards expand to full width */
@@ -821,7 +824,7 @@
 
   & .project-preview[data-slug="rabbu-portfolio"],
   & .project-preview[data-slug="rabbu-marketplace"] {
-    background: var(--color-rabbu);
+    background: var(--color-rabbu-light);
   }
 
   & .project-preview[data-slug="kobo"] {
@@ -829,7 +832,7 @@
   }
 
   & .project-preview[data-slug="skiin"] {
-    background: var(--color-skiin);
+    background: var(--color-skiin-light);
   }
 
   & .project-preview[data-slug="maison"] {
@@ -938,22 +941,22 @@
     background-color: var(--color-dark-text);
   }
 
-  /* Case study TOC indicator colors in dark mode */
+  /* Case study TOC indicator colors in dark mode - using light variants */
   & .maison-case-study .toc-indicator {
-    background-color: var(--color-maison);
+    background-color: var(--color-maison-light);
   }
 
   & .rabbu-portfolio-case-study .toc-indicator,
   & .rabbu-marketplace-case-study .toc-indicator {
-    background-color: var(--color-rabbu);
+    background-color: var(--color-rabbu-light);
   }
 
   & .kobo-case-study .toc-indicator {
-    background-color: var(--color-kobo);
+    background-color: var(--color-kobo-light);
   }
 
   & .skiin-case-study .toc-indicator {
-    background-color: var(--color-skiin);
+    background-color: var(--color-skiin-light);
   }
 
   /* Key feature content paragraphs - match subsection text color in dark mode */

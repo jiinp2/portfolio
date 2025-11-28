@@ -1,5 +1,14 @@
 import { useState, useEffect, useRef } from "react";
-import { MessageSquare, Search, Users, Folder, Building } from "lucide-react";
+import {
+  MessageSquare,
+  Search,
+  Users,
+  Folder,
+  Building,
+  Sparkles,
+  TrendingUp,
+  Rocket,
+} from "lucide-react";
 import InfoCard from "../ui/InfoCard";
 import Label from "../ui/Label";
 import MoreWork from "../MoreWork";
@@ -153,6 +162,7 @@ function Maison({ onClose, currentProjectSlug }) {
 
             <CaseStudySection
               title="Communication Challenges"
+              accentColor="var(--color-maison)"
               infoCards={[
                 {
                   icon: <MessageSquare size={20} />,
@@ -284,12 +294,13 @@ function Maison({ onClose, currentProjectSlug }) {
 
             <CaseStudySection
               title="Design Methodology"
+              accentColor="var(--color-maison)"
               infoCards={[
                 {
                   number: 1,
                   title: "Research & Discovery",
                   description:
-                    "Conducted user research with real estate professionals to understand their communication patterns, pain points, and workflows. Mapped the fragmented tool landscape to identify opportunities for a unified solution.",
+                    "Conducted user research with real estate professionals to understand their workflows and pain points. Mapped the fragmented tool landscape to identify opportunities for consolidation.",
                 },
                 {
                   number: 2,
@@ -321,63 +332,30 @@ function Maison({ onClose, currentProjectSlug }) {
           >
             <Label>Design Impact</Label>
 
-            <div className="comparison-section">
-              <div className="comparison-grid comparison-grid-three">
-                <div className="comparison-column">
-                  <h5>User Experience</h5>
-                  <ul className="comparison-list">
-                    <li>
-                      Created an intuitive platform that feels familiar
-                      (leveraging mental models from Slack/Discord) while
-                      addressing real estate-specific needs
-                    </li>
-                    <li>
-                      Designed for both power users (brokerages managing large
-                      teams) and casual users (individual professionals
-                      networking)
-                    </li>
-                    <li>
-                      Built a scalable design system that supports rapid feature
-                      development
-                    </li>
-                  </ul>
-                </div>
-                <div className="comparison-column">
-                  <h5>Business Impact</h5>
-                  <ul className="comparison-list">
-                    <li>
-                      Established clear product differentiation in a crowded
-                      communication tools market
-                    </li>
-                    <li>
-                      Enabled dual go-to-market strategy through thoughtful
-                      product architecture
-                    </li>
-                    <li>
-                      Created a platform that drives network effects between
-                      individual and enterprise users
-                    </li>
-                  </ul>
-                </div>
-                <div className="comparison-column">
-                  <h5>Product Strategy</h5>
-                  <ul className="comparison-list">
-                    <li>
-                      Validated industry-specific platform approach vs. generic
-                      tool adaptation
-                    </li>
-                    <li>
-                      Demonstrated value of purpose-built solutions for vertical
-                      markets
-                    </li>
-                    <li>
-                      Built foundation for expansion into adjacent real estate
-                      professional tools
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            <CaseStudySection
+              accentColor="var(--color-maison)"
+              infoCards={[
+                {
+                  icon: <Sparkles size={20} />,
+                  title: "User Experience",
+                  description:
+                    "Created an intuitive platform that feels familiar (leveraging mental models from Slack/Discord) while addressing real estate-specific needs. Designed for both power users (brokerages managing large teams) and casual users (individual professionals networking). Built a scalable design system that supports rapid feature development.",
+                },
+                {
+                  icon: <TrendingUp size={20} />,
+                  title: "Business Impact",
+                  description:
+                    "Established clear product differentiation in a crowded communication tools market. Enabled dual go-to-market strategy through thoughtful product architecture. Created a platform that drives network effects between individual and enterprise users.",
+                },
+                {
+                  icon: <Rocket size={20} />,
+                  title: "Product Strategy",
+                  description:
+                    "Validated industry-specific platform approach vs. generic tool adaptation. Demonstrated value of purpose-built solutions for vertical markets. Built foundation for expansion into adjacent real estate professional tools.",
+                },
+              ]}
+              infoCardsLayout="info-cards-three"
+            />
           </section>
 
           {/* More Work Section */}

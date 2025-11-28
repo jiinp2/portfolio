@@ -19,6 +19,7 @@ import InfoCard from "../ui/InfoCard";
 import Label from "../ui/Label";
 import MoreWork from "../MoreWork";
 import CaseStudyHero from "./components/CaseStudyHero";
+import CaseStudySection from "./components/CaseStudySection";
 
 function RabbuMarketplace({ onClose, currentProjectSlug }) {
   const [activeSection, setActiveSection] = useState("overview");
@@ -143,8 +144,7 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
           >
             <Label>Overview</Label>
 
-            <div className="subsection">
-              <h3>Introduction</h3>
+            <CaseStudySection title="Introduction">
               <p>
                 Rabbu engaged Drip Design to enhance their short-term rental
                 (STR) platform. The collaboration focused on integrating
@@ -155,10 +155,25 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
                 This case study follows the work for Rabbu Marketplace and Rabbu
                 Portfolio can be found here.
               </p>
-            </div>
+            </CaseStudySection>
 
-            <div className="subsection">
-              <h3>Outcomes</h3>
+            <CaseStudySection
+              title="Outcomes"
+              image={{
+                src: "/case_studies/rabbu_marketplace/market-1.webp",
+                alt: "Rabbu Marketplace Outcomes 1",
+              }}
+              images={[
+                {
+                  src: "/case_studies/rabbu_marketplace/market-2.webp",
+                  alt: "Rabbu Marketplace Outcomes 2",
+                },
+                {
+                  src: "/case_studies/rabbu_marketplace/market-3.webp",
+                  alt: "Rabbu Marketplace Outcomes 3",
+                },
+              ]}
+            >
               <ul className="outcomes-list">
                 <li>
                   <Check className="outcome-icon" size={20} />
@@ -173,30 +188,7 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
                   platform of tools for property acquisition and management.
                 </li>
               </ul>
-              <div className="image-container w-full mt-4">
-                <img
-                  src="/case_studies/rabbu_marketplace/market-1.webp"
-                  alt="Rabbu Marketplace Outcomes 1"
-                  className="w-full rounded-xl"
-                />
-              </div>
-              <div className="outcomes-images-grid mt-4">
-                <div className="image-container w-full">
-                  <img
-                    src="/case_studies/rabbu_marketplace/market-2.webp"
-                    alt="Rabbu Marketplace Outcomes 2"
-                    className="w-full rounded-xl"
-                  />
-                </div>
-                <div className="image-container w-full">
-                  <img
-                    src="/case_studies/rabbu_marketplace/market-3.webp"
-                    alt="Rabbu Marketplace Outcomes 3"
-                    className="w-full rounded-xl"
-                  />
-                </div>
-              </div>
-            </div>
+            </CaseStudySection>
           </section>
 
           {/* Design Research Section */}
@@ -207,18 +199,17 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
           >
             <Label>Design Research</Label>
 
-            <div className="subsection">
-              <h3>The Short-term Rental Space</h3>
+            <CaseStudySection title="The Short-term Rental Space">
               <p>
                 The STR industry is experiencing growth with the rise of
                 platforms like Airbnb and VRBO. There is an opportunity for a
                 new platform that can assist new to experienced investors in
                 finding, acquiring, and managing properties.
               </p>
-            </div>
+            </CaseStudySection>
 
             <div className="subsection">
-              <h3>Landscape Review</h3>
+              <h3 className="text-lg font-semibold text-default mb-4 tracking-tight leading-tight">Landscape Review</h3>
               <p>
                 We benchmarked relevant and competing platforms to understand
                 user expectations in functionality and common interaction
@@ -256,21 +247,19 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
               </div>
             </div>
 
-            <div className="subsection">
-              <h3>Previous Design Analysis</h3>
+            <CaseStudySection
+              title="Previous Design Analysis"
+              image={{
+                src: "/case_studies/rabbu_marketplace/market-8.webp",
+                alt: "Previous Design Analysis",
+              }}
+            >
               <p>
                 We evaluated Rabbu's launched tools to better understand product
                 features to identify improvements when integrating them into a
                 holistic platform.
               </p>
-              <div className="image-container w-full mt-4">
-                <img
-                  src="/case_studies/rabbu_marketplace/market-8.webp"
-                  alt="Previous Design Analysis"
-                  className="w-full rounded-xl"
-                />
-              </div>
-            </div>
+            </CaseStudySection>
           </section>
 
           {/* Design Process Section */}
@@ -281,8 +270,38 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
           >
             <Label>Design Process</Label>
 
-            <div className="subsection">
-              <h3>Hypothetical User Journey</h3>
+            <CaseStudySection
+              title="Hypothetical User Journey"
+              accentColor="var(--color-rabbu)"
+              infoCards={[
+                {
+                  number: 1,
+                  title: "Learning",
+                  description: "A user researches STRs, reading about our services, and discovering free tools we offer.",
+                },
+                {
+                  number: 2,
+                  title: "Research",
+                  description: "Delving deeper into STRs, using Rabbu for revenue calculations and discovering tools for understanding the market.",
+                },
+                {
+                  number: 3,
+                  title: "Investment",
+                  description: "The user, now familiar with potential revenue and the market looks to invest in an STR, exploring the out marketplace.",
+                },
+                {
+                  number: 4,
+                  title: "Operation",
+                  description: "After acquiring an STR, the user is lead to Rabbu's property management services.",
+                },
+                {
+                  number: 5,
+                  title: "Expansion",
+                  description: "Pleased with the success of their first STR, the user looks to invest in more properties.",
+                },
+              ]}
+              infoCardsLayout="info-cards-journey"
+            >
               <p>
                 During our regular meetings with the Rabbu team we were aligned
                 with their ideal user journey, which helped with informing the
@@ -290,38 +309,10 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
                 informed by Rabbu's interactions and user interviews with
                 customers thus far.
               </p>
-
-              <div className="info-cards info-cards-journey">
-                <InfoCard
-                  number={1}
-                  title="Learning"
-                  description="A user researches STRs, reading about our services, and discovering free tools we offer."
-                />
-                <InfoCard
-                  number={2}
-                  title="Research"
-                  description="Delving deeper into STRs, using Rabbu for revenue calculations and discovering tools for understanding the market."
-                />
-                <InfoCard
-                  number={3}
-                  title="Investment"
-                  description="The user, now familiar with potential revenue and the market looks to invest in an STR, exploring the out marketplace."
-                />
-                <InfoCard
-                  number={4}
-                  title="Operation"
-                  description="After acquiring an STR, the user is lead to Rabbu's property management services."
-                />
-                <InfoCard
-                  number={5}
-                  title="Expansion"
-                  description="Pleased with the success of their first STR, the user looks to invest in more properties."
-                />
-              </div>
-            </div>
+            </CaseStudySection>
 
             <div className="subsection">
-              <h3>Free Trial vs. Freemium</h3>
+              <h3 className="text-lg font-semibold text-default mb-4 tracking-tight leading-tight">Free Trial vs. Freemium</h3>
               <p>
                 We compared two models for user engagement prior to users
                 committing to a full subscription. The Free Trial model provided
@@ -391,35 +382,40 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
               </div>
             </div>
 
-            <div className="subsection">
-              <h3>Motivations For Choosing Freemium</h3>
+            <CaseStudySection
+              title="Motivations For Choosing Freemium"
+              accentColor="var(--color-rabbu)"
+              infoCards={[
+                {
+                  icon: <Layers size={20} />,
+                  title: "Multiple Features for User Exploration",
+                  description: "The platform will offer a mix of free and paid features. The free features will still provide users with significant value, as demonstrated by the successful utilization of Rabbu's previously launched tools.",
+                },
+                {
+                  icon: <Users size={20} />,
+                  title: "Goal of Increasing User Base",
+                  description: "A freemium model is effective when the objective is to expand the user base by attracting more free accounts.",
+                },
+                {
+                  icon: <Zap size={20} />,
+                  title: "Resource Efficiency and User Outreach",
+                  description: "Rabbu aims to enhance resource efficiency and explore alternative methods, moving away from the intensive user outreach efforts employed thus far through direct sales teams.",
+                },
+                {
+                  icon: <TrendingUp size={20} />,
+                  title: "Gradual Activation of Paid Tiers",
+                  description: "Frequent users can take their time to explore the platform before deciding to upgrade. This flexibility ideally contributes to more organic and sustainable user growth.",
+                },
+              ]}
+            />
 
-              <div className="info-cards">
-                <InfoCard
-                  icon={<Layers size={20} />}
-                  title="Multiple Features for User Exploration"
-                  description="The platform will offer a mix of free and paid features. The free features will still provide users with significant value, as demonstrated by the successful utilization of Rabbu's previously launched tools."
-                />
-                <InfoCard
-                  icon={<Users size={20} />}
-                  title="Goal of Increasing User Base"
-                  description="A freemium model is effective when the objective is to expand the user base by attracting more free accounts."
-                />
-                <InfoCard
-                  icon={<Zap size={20} />}
-                  title="Resource Efficiency and User Outreach"
-                  description="Rabbu aims to enhance resource efficiency and explore alternative methods, moving away from the intensive user outreach efforts employed thus far through direct sales teams."
-                />
-                <InfoCard
-                  icon={<TrendingUp size={20} />}
-                  title="Gradual Activation of Paid Tiers"
-                  description="Frequent users can take their time to explore the platform before deciding to upgrade. This flexibility ideally contributes to more organic and sustainable user growth."
-                />
-              </div>
-            </div>
-
-            <div className="subsection">
-              <h3>Designing for Freemium</h3>
+            <CaseStudySection
+              title="Designing for Freemium"
+              image={{
+                src: "/case_studies/rabbu_marketplace/market-9.webp",
+                alt: "Freemium Design Example",
+              }}
+            >
               <p>
                 Adopting the freemium model influenced our designs, we
                 determined that it would be important to communicate the added
@@ -432,14 +428,7 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
                 need to subscribe to see more comparable listings and additional
                 advanced features.
               </p>
-              <div className="image-container w-full mt-4">
-                <img
-                  src="/case_studies/rabbu_marketplace/market-9.webp"
-                  alt="Freemium Design Example"
-                  className="w-full rounded-xl"
-                />
-              </div>
-            </div>
+            </CaseStudySection>
           </section>
 
           {/* Final Design Section */}
@@ -450,39 +439,37 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
           >
             <Label>Final Design</Label>
 
-            <div className="subsection">
-              <h3>Rabbu Marketplace</h3>
+            <CaseStudySection
+              title="Rabbu Marketplace"
+              accentColor="var(--color-rabbu)"
+              infoCards={[
+                {
+                  icon: <Calculator size={20} />,
+                  title: "Revenue Estimates",
+                  description: "Users can run revenue estimates for any US address based on data that utilizes nearby rentals.",
+                },
+                {
+                  icon: <BarChart size={20} />,
+                  title: "Market Data",
+                  description: "Users can access real-time and historical rental statistic trends in any given area.",
+                },
+                {
+                  icon: <Home size={20} />,
+                  title: "Properties for Sale",
+                  description: "Users can view on-market properties and easily filter investment opportunities based on their own criteria.",
+                },
+              ]}
+              infoCardsLayout="info-cards-three"
+              image={{
+                src: "/case_studies/rabbu_marketplace/market-10.webp",
+                alt: "Rabbu Marketplace",
+              }}
+            >
               <p>
                 Rabbu Marketplace is composed of three different sections,
                 Revenue Estimates, Market Data, and Properties for Sale.
               </p>
-
-              <div className="info-cards info-cards-three">
-                <InfoCard
-                  icon={<Calculator size={20} />}
-                  title="Revenue Estimates"
-                  description="Users can run revenue estimates for any US address based on data that utilizes nearby rentals."
-                />
-                <InfoCard
-                  icon={<BarChart size={20} />}
-                  title="Market Data"
-                  description="Users can access real-time and historical rental statistic trends in any given area."
-                />
-                <InfoCard
-                  icon={<Home size={20} />}
-                  title="Properties for Sale"
-                  description="Users can view on-market properties and easily filter investment opportunities based on their own criteria."
-                />
-              </div>
-
-              <div className="image-container w-full mt-4">
-                <img
-                  src="/case_studies/rabbu_marketplace/market-10.webp"
-                  alt="Rabbu Marketplace"
-                  className="w-full rounded-xl"
-                />
-              </div>
-            </div>
+            </CaseStudySection>
           </section>
 
           {/* Key Features Section */}
@@ -491,62 +478,57 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current["key-features"] = el)}
             className="case-study-section"
           >
-            <div className="key-features">
-              <div className="key-feature">
-                <div className="key-feature-content">
-                  <h3>Investment Return Calculator</h3>
-                  <p>
-                    A tool for investors to determine equity required to acquire
-                    a property as well as estimated potential earnings. This
-                    calculator can be personalized with custom financial
-                    information.
-                  </p>
-                </div>
-                <div className="key-feature-image">
-                  <img
-                    src="/case_studies/rabbu_marketplace/market-11.webp"
-                    alt="Investment Return Calculator"
-                    className="w-full rounded-xl"
-                  />
-                </div>
-              </div>
+            <CaseStudySection
+              title="Investment Return Calculator"
+              sideBySide={{
+                image: {
+                  src: "/case_studies/rabbu_marketplace/market-11.webp",
+                  alt: "Investment Return Calculator",
+                },
+                reverse: true,
+              }}
+            >
+              <p>
+                A tool for investors to determine equity required to acquire
+                a property as well as estimated potential earnings. This
+                calculator can be personalized with custom financial
+                information.
+              </p>
+            </CaseStudySection>
 
-              <div className="key-feature">
-                <div className="key-feature-content">
-                  <h3>Identifying High-Performance Investments</h3>
-                  <p>
-                    Investors can efficiently compare properties based on their
-                    investment goals such as cash flow vs. long term property
-                    appreciation. As well as access to Rabbu's property
-                    recommendations.
-                  </p>
-                </div>
-                <div className="key-feature-image key-feature-image-cropped">
-                  <img
-                    src="/case_studies/rabbu_marketplace/market-12.webp"
-                    alt="Identifying High-Performance Investments"
-                    className="w-full rounded-xl"
-                  />
-                </div>
-              </div>
+            <CaseStudySection
+              title="Identifying High-Performance Investments"
+              sideBySide={{
+                image: {
+                  src: "/case_studies/rabbu_marketplace/market-12.webp",
+                  alt: "Identifying High-Performance Investments",
+                },
+                reverse: true,
+              }}
+            >
+              <p>
+                Investors can efficiently compare properties based on their
+                investment goals such as cash flow vs. long term property
+                appreciation. As well as access to Rabbu's property
+                recommendations.
+              </p>
+            </CaseStudySection>
 
-              <div className="key-feature">
-                <div className="key-feature-content">
-                  <h3>View On-Market Rental Properties</h3>
-                  <p>
-                    Investors can browse properties to invest in with
-                    underwriting provided by Rabbu.
-                  </p>
-                </div>
-                <div className="key-feature-image">
-                  <img
-                    src="/case_studies/rabbu_marketplace/market-13.webp"
-                    alt="View On-Market Rental Properties"
-                    className="w-full rounded-xl"
-                  />
-                </div>
-              </div>
-            </div>
+            <CaseStudySection
+              title="View On-Market Rental Properties"
+              sideBySide={{
+                image: {
+                  src: "/case_studies/rabbu_marketplace/market-13.webp",
+                  alt: "View On-Market Rental Properties",
+                },
+                reverse: true,
+              }}
+            >
+              <p>
+                Investors can browse properties to invest in with
+                underwriting provided by Rabbu.
+              </p>
+            </CaseStudySection>
           </section>
 
           {/* Design System Section */}
@@ -557,36 +539,30 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
           >
             <Label>Design System</Label>
 
-            <div className="subsection">
-              <h3>Early Stage Design System</h3>
+            <CaseStudySection
+              title="Early Stage Design System"
+              images={[
+                {
+                  src: "/case_studies/rabbu_marketplace/market-14.webp",
+                  alt: "Design System Components 1",
+                },
+                {
+                  src: "/case_studies/rabbu_marketplace/market-15.webp",
+                  alt: "Design System Components 2",
+                },
+                {
+                  src: "/case_studies/rabbu_marketplace/market-16.webp",
+                  alt: "Design System Components 3",
+                },
+              ]}
+            >
               <p>
                 Recognizing the need for a cohesive and consistent design
                 approach, this system aims to streamline the design process,
                 ensure consistency across the platform, and facilitate smoother
                 handoffs to the client.
               </p>
-              <div className="image-container w-full mt-4">
-                <img
-                  src="/case_studies/rabbu_marketplace/market-14.webp"
-                  alt="Design System Components 1"
-                  className="w-full rounded-xl"
-                />
-              </div>
-              <div className="image-container w-full mt-4">
-                <img
-                  src="/case_studies/rabbu_marketplace/market-15.webp"
-                  alt="Design System Components 2"
-                  className="w-full rounded-xl"
-                />
-              </div>
-              <div className="image-container w-full mt-4">
-                <img
-                  src="/case_studies/rabbu_marketplace/market-16.webp"
-                  alt="Design System Components 3"
-                  className="w-full rounded-xl"
-                />
-              </div>
-            </div>
+            </CaseStudySection>
           </section>
 
           {/* More Work Section */}
