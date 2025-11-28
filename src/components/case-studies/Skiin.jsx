@@ -255,10 +255,10 @@ function Skiin({ onClose, currentProjectSlug }) {
                 reverse: true,
               }}
             >
-              <p>
-                Within group chats, each member has a status bar that
-                provides a quick view on their current health.
-              </p>
+                  <p>
+                    Within group chats, each member has a status bar that
+                    provides a quick view on their current health.
+                  </p>
             </CaseStudySection>
 
             <CaseStudySection
@@ -271,25 +271,24 @@ function Skiin({ onClose, currentProjectSlug }) {
                 reverse: false,
               }}
             >
-              <p>
-                The status bar can be expanded to view user location and
-                more detailed metrics over time.
-              </p>
+                  <p>
+                    The status bar can be expanded to view user location and
+                    more detailed metrics over time.
+                  </p>
             </CaseStudySection>
 
-            <CaseStudySection title="Mood Logging">
+            <CaseStudySection
+              title="Mood Logging"
+              image={{
+                src: "/case_studies/skiin/5.webp",
+                alt: "Mood Logging Screens",
+              }}
+            >
               <p>
                 Enhancing remote connection through Skiin's in-app messaging and
                 video calling.
               </p>
-              <div className="image-container w-full mt-4">
-                <img
-                  src="/case_studies/skiin/5.webp"
-                  alt="Mood Logging Screens"
-                  className="w-full rounded-xl"
-                />
-              </div>
-            </div>
+            </CaseStudySection>
 
             <CaseStudySection
               title="Mood Logging Flow"

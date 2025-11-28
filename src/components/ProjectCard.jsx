@@ -57,7 +57,7 @@ function ProjectCard({ project, index, isSelected, onClick, disabled }) {
       </div>
       <div className="flex flex-col gap-1 p-0">
         <div className="flex items-center justify-between gap-4">
-          <h3 className="text-lg font-medium text-text tracking-normal m-0 leading-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] inline-flex items-center gap-2 flex-1 max-md:text-base max-sm:text-sm">
+          <h3 className="text-lg font-semibold text-text tracking-tight m-0 leading-tight transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] inline-flex items-center gap-2 flex-1 max-md:text-base max-sm:text-sm">
             {project.name}
             {project.url && (
               <ExternalLink className="external-link-icon opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-current flex-shrink-0" size={14} />
@@ -66,7 +66,7 @@ function ProjectCard({ project, index, isSelected, onClick, disabled }) {
           <p className="text-sm text-text-light m-0 font-normal leading-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] flex-shrink-0 max-md:text-sm max-sm:text-xs">{project.date}</p>
         </div>
         {project.description && (
-          <p className="text-base text-text-light mt-2 mb-0 font-normal leading-relaxed transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">{project.description}</p>
+          <p className="text-sm text-text-light mt-2 mb-0 font-normal leading-relaxed transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">{project.description}</p>
         )}
       </div>
     </div>

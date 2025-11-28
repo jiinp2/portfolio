@@ -395,9 +395,9 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
                 }}
               >
                 <p className="text-base leading-relaxed text-muted m-0">
-                  Simplifies booking management by displaying bookings across
-                  all properties and listing platforms.
-                </p>
+                    Simplifies booking management by displaying bookings across
+                    all properties and listing platforms.
+                  </p>
               </CaseStudySection>
 
               <CaseStudySection
@@ -411,9 +411,9 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
                 }}
               >
                 <p className="text-base leading-relaxed text-muted m-0">
-                  Provides real-time updates to property happenings, elevating
-                  guest satisfaction through proactive property management.
-                </p>
+                    Provides real-time updates to property happenings, elevating
+                    guest satisfaction through proactive property management.
+                  </p>
               </CaseStudySection>
             </div>
           </section>

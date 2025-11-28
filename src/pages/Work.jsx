@@ -78,15 +78,15 @@ function Work() {
                 className="w-full h-full object-cover rounded-full"
               />
             </Link>
-            <h1 className="text-3xl font-medium text-text mb-4 tracking-tight leading-tight transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:text-3xl max-sm:text-4xl">Jiin Park</h1>
-            <p className="text-lg text-text-light mb-8 font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:text-lg max-md:mb-8 max-sm:text-base">
+            <h1 className="text-xl font-semibold text-text mb-4 tracking-tight leading-tight transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:text-xl max-sm:text-xl">Jiin Park</h1>
+            <p className="text-base text-text-light mb-8 font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:text-base max-md:mb-8 max-sm:text-base">
               Product Designer <br /> + Design Engineer
             </p>
           </div>
 
           {/* ABOUT TEXT */}
           <div className="mb-10 max-md:mb-8">
-            <p className="text-base text-text-muted leading-relaxed mb-4 transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] last:mb-0">
+            <p className="text-sm text-text-muted leading-relaxed mb-4 transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] last:mb-0">
               I design and build digital products. At <strong>Maison</strong>, I
               help create better ways for real estate professionals to connect
               and collaborate.
@@ -97,7 +97,7 @@ function Work() {
           <div className="flex gap-2 flex-wrap mb-10 max-md:mb-8">
             <a
               href="/JiinPark_Resume_Portfolio.pdf"
-              className="inline-flex items-center gap-2 py-2 px-4 bg-gray-100 text-text-muted rounded-full no-underline text-base font-medium transition-all duration-200 hover:bg-gray-200 hover:text-text"
+              className="inline-flex items-center gap-2 py-2 px-4 bg-gray-100 text-text-muted rounded-full no-underline text-sm font-medium transition-all duration-200 hover:bg-gray-200 hover:text-text"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -106,7 +106,7 @@ function Work() {
             </a>
             <a
               href="https://www.linkedin.com/in/jiinnoh/"
-              className="inline-flex items-center gap-2 py-2 px-4 bg-gray-100 text-text-muted rounded-full no-underline text-base font-medium transition-all duration-200 hover:bg-gray-200 hover:text-text"
+              className="inline-flex items-center gap-2 py-2 px-4 bg-gray-100 text-text-muted rounded-full no-underline text-sm font-medium transition-all duration-200 hover:bg-gray-200 hover:text-text"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -119,7 +119,7 @@ function Work() {
             </a>
             <a
               href="https://github.com/jiinp2"
-              className="inline-flex items-center gap-2 py-2 px-4 bg-gray-100 text-text-muted rounded-full no-underline text-base font-medium transition-all duration-200 hover:bg-gray-200 hover:text-text"
+              className="inline-flex items-center gap-2 py-2 px-4 bg-gray-100 text-text-muted rounded-full no-underline text-sm font-medium transition-all duration-200 hover:bg-gray-200 hover:text-text"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -139,30 +139,30 @@ function Work() {
                 <div className="mb-10 last:mb-0 max-md:gap-2">
                   <div className="flex flex-col gap-4">
                     <div className="grid grid-cols-[1fr_2fr] gap-4 items-start max-md:gap-2">
-                      <span className="text-base text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">2025</span>
+                      <span className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">2025</span>
                       <div className="flex flex-col gap-0.5">
-                        <div className="text-base font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+                        <div className="text-sm font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                           Founding Design Engineer
                         </div>
-                        <div className="text-base text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">Maison</div>
+                        <div className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">Maison</div>
                       </div>
                     </div>
                     <div className="grid grid-cols-[1fr_2fr] gap-4 items-start max-md:gap-2">
-                      <span className="text-base text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">2022/23</span>
+                      <span className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">2022/23</span>
                       <div className="flex flex-col gap-0.5">
-                        <div className="text-base font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+                        <div className="text-sm font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                           Product Designer
                         </div>
-                        <div className="text-base text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">Drip Design</div>
+                        <div className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">Drip Design</div>
                       </div>
                     </div>
                     <div className="grid grid-cols-[1fr_2fr] gap-4 items-start max-md:gap-2">
-                      <span className="text-base text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">2020</span>
+                      <span className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">2020</span>
                       <div className="flex flex-col gap-0.5">
-                        <div className="text-base font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+                        <div className="text-sm font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                           UI Design & UX Research Intern
                         </div>
-                        <div className="text-base text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">Myant</div>
+                        <div className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">Myant</div>
                       </div>
                     </div>
                   </div>
@@ -175,41 +175,41 @@ function Work() {
                 <div className="mb-10 last:mb-0 max-md:gap-2">
                   <div className="flex flex-col gap-4">
                     <div className="grid grid-cols-[1fr_2fr] gap-4 items-start max-md:gap-2">
-                      <span className="text-base text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">2025</span>
+                      <span className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">2025</span>
                       <div className="flex flex-col gap-0.5">
-                        <div className="text-base font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+                        <div className="text-sm font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                           Software Engineering
                         </div>
-                        <div className="text-base text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+                        <div className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                           BrainStation
                         </div>
                       </div>
                     </div>
                     <div className="grid grid-cols-[1fr_2fr] gap-4 items-start max-md:gap-2">
-                      <span className="text-base text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">2022</span>
+                      <span className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">2022</span>
                       <div className="flex flex-col gap-0.5">
-                        <div className="text-base font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+                        <div className="text-sm font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                           Design System
                         </div>
-                        <div className="text-base text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">Memorisely</div>
+                        <div className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">Memorisely</div>
                       </div>
                     </div>
                     <div className="grid grid-cols-[1fr_2fr] gap-4 items-start max-md:gap-2">
-                      <span className="text-base text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">2021</span>
+                      <span className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">2021</span>
                       <div className="flex flex-col gap-0.5">
-                        <div className="text-base font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">UI Design</div>
-                        <div className="text-base text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+                        <div className="text-sm font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">UI Design</div>
+                        <div className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                           BrainStation
                         </div>
                       </div>
                     </div>
                     <div className="grid grid-cols-[1fr_2fr] gap-4 items-start max-md:gap-2">
-                      <span className="text-base text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">2021</span>
+                      <span className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">2021</span>
                       <div className="flex flex-col gap-0.5">
-                        <div className="text-base font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+                        <div className="text-sm font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                           Industrial Design
                         </div>
-                        <div className="text-base text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">OCADU</div>
+                        <div className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">OCADU</div>
                       </div>
                     </div>
                   </div>

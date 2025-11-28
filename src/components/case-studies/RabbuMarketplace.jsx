@@ -208,44 +208,33 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
               </p>
             </CaseStudySection>
 
-            <div className="subsection">
-              <h3 className="text-lg font-semibold text-default mb-4 tracking-tight leading-tight">Landscape Review</h3>
+            <CaseStudySection
+              title="Landscape Review"
+              photoGrid={[
+                {
+                  src: "/case_studies/rabbu_marketplace/market-4.webp",
+                  alt: "Airbnb",
+                },
+                {
+                  src: "/case_studies/rabbu_marketplace/market-5.webp",
+                  alt: "Zillow",
+                },
+                {
+                  src: "/case_studies/rabbu_marketplace/market-6.webp",
+                  alt: "Awning",
+                },
+                {
+                  src: "/case_studies/rabbu_marketplace/market-7.webp",
+                  alt: "AirDNA",
+                },
+              ]}
+            >
               <p>
                 We benchmarked relevant and competing platforms to understand
                 user expectations in functionality and common interaction
                 patterns.
               </p>
-              <div className="competitor-grid">
-                <div className="competitor-item">
-                  <img
-                    src="/case_studies/rabbu_marketplace/market-4.webp"
-                    alt="Airbnb"
-                    className="w-full rounded-xl"
-                  />
-                </div>
-                <div className="competitor-item">
-                  <img
-                    src="/case_studies/rabbu_marketplace/market-5.webp"
-                    alt="Zillow"
-                    className="w-full rounded-xl"
-                  />
-                </div>
-                <div className="competitor-item">
-                  <img
-                    src="/case_studies/rabbu_marketplace/market-6.webp"
-                    alt="Awning"
-                    className="w-full rounded-xl"
-                  />
-                </div>
-                <div className="competitor-item">
-                  <img
-                    src="/case_studies/rabbu_marketplace/market-7.webp"
-                    alt="AirDNA"
-                    className="w-full rounded-xl"
-                  />
-                </div>
-              </div>
-            </div>
+            </CaseStudySection>
 
             <CaseStudySection
               title="Previous Design Analysis"
@@ -311,8 +300,62 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
               </p>
             </CaseStudySection>
 
-            <div className="subsection">
-              <h3 className="text-lg font-semibold text-default mb-4 tracking-tight leading-tight">Free Trial vs. Freemium</h3>
+            <CaseStudySection
+              title="Free Trial vs. Freemium"
+              accentColor="var(--color-rabbu)"
+              infoCards={[
+                {
+                  title: "Free Trial",
+                  listItems: [
+                    {
+                      icon: <Check size={18} />,
+                      text: "Yields higher activation rates, attracting actively searching users.",
+                      type: "pro",
+                    },
+                    {
+                      icon: <Check size={18} />,
+                      text: "Achieves higher conversion from free to paid due to urgency.",
+                      type: "pro",
+                    },
+                    {
+                      icon: <X size={18} />,
+                      text: "Demands more marketing outreach, reducing resource efficiency.",
+                      type: "con",
+                    },
+                  ],
+                },
+                {
+                  title: "Freemium",
+                  listItems: [
+                    {
+                      icon: <Check size={18} />,
+                      text: "Allows self-paced conversion, gradually highlighting premium features.",
+                      type: "pro",
+                    },
+                    {
+                      icon: <Check size={18} />,
+                      text: "Results in a higher volume of free accounts.",
+                      type: "pro",
+                    },
+                    {
+                      icon: <Check size={18} />,
+                      text: "Improves resource efficiency by reducing the need for aggressive marketing campaigns.",
+                      type: "pro",
+                    },
+                    {
+                      icon: <X size={18} />,
+                      text: "May lead to lower activation rates without immediate pressure to explore all features.",
+                      type: "con",
+                    },
+                    {
+                      icon: <X size={18} />,
+                      text: "Improves resource efficiency but can reduce direct revenue increase.",
+                      type: "con",
+                    },
+                  ],
+                },
+              ]}
+            >
               <p>
                 We compared two models for user engagement prior to users
                 committing to a full subscription. The Free Trial model provided
@@ -320,67 +363,11 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
                 Freemium model offered fully free features with the option for
                 users to upgrade to premium for advanced features.
               </p>
-
-              <div className="comparison-section">
-                <h4>General Trends</h4>
-                <p>
-                  This is a comparison of general trends when it comes to
-                  comparing the two options.
-                </p>
-
-                <div className="comparison-grid">
-                  <div className="comparison-column">
-                    <h5>Free Trial</h5>
-                    <ul className="comparison-list">
-                      <li className="pro">
-                        <Check className="comparison-icon pro-icon" size={18} />
-                        Yields higher activation rates, attracting actively
-                        searching users.
-                      </li>
-                      <li className="pro">
-                        <Check className="comparison-icon pro-icon" size={18} />
-                        Achieves higher conversion from free to paid due to
-                        urgency.
-                      </li>
-                      <li className="con">
-                        <X className="comparison-icon con-icon" size={18} />
-                        Demands more marketing outreach, reducing resource
-                        efficiency.
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="comparison-column">
-                    <h5>Freemium</h5>
-                    <ul className="comparison-list">
-                      <li className="pro">
-                        <Check className="comparison-icon pro-icon" size={18} />
-                        Allows self-paced conversion, gradually highlighting
-                        premium features.
-                      </li>
-                      <li className="pro">
-                        <Check className="comparison-icon pro-icon" size={18} />
-                        Results in a higher volume of free accounts.
-                      </li>
-                      <li className="pro">
-                        <Check className="comparison-icon pro-icon" size={18} />
-                        Improves resource efficiency by reducing the need for
-                        aggressive marketing campaigns.
-                      </li>
-                      <li className="con">
-                        <X className="comparison-icon con-icon" size={18} />
-                        May lead to lower activation rates without immediate
-                        pressure to explore all features.
-                      </li>
-                      <li className="con">
-                        <X className="comparison-icon con-icon" size={18} />
-                        Improves resource efficiency but can reduce direct
-                        revenue increase.
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+              <p>
+                This is a comparison of general trends when it comes to
+                comparing the two options.
+              </p>
+            </CaseStudySection>
 
             <CaseStudySection
               title="Motivations For Choosing Freemium"

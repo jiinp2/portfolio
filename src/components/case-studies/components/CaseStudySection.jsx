@@ -9,6 +9,7 @@ function CaseStudySection({
   infoCardsLayout = "",
   sideBySide,
   accentColor,
+  photoGrid,
 }) {
   // Side-by-side layout variant
   if (sideBySide && sideBySide.image) {
@@ -100,6 +101,17 @@ function CaseStudySection({
         <div className="outcomes-images-grid mt-4">
           {images.map((img, index) => (
             <div key={index} className="image-container w-full">
+              <img src={img.src} alt={img.alt} className="w-full rounded-xl" />
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Photo Grid (4-column grid) */}
+      {photoGrid && photoGrid.length > 0 && (
+        <div className="competitor-grid mt-4">
+          {photoGrid.map((img, index) => (
+            <div key={index} className="competitor-item">
               <img src={img.src} alt={img.alt} className="w-full rounded-xl" />
             </div>
           ))}

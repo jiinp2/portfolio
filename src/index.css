@@ -707,6 +707,45 @@
       grid-template-columns: 1fr;
     }
   }
+
+  /* Comparison list icons */
+  .comparison-icon.pro-icon {
+    color: #22c55e;
+  }
+
+  .comparison-icon.con-icon {
+    color: #ef4444;
+  }
+
+  /* Photo grid (4-column grid) */
+  .competitor-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .competitor-item {
+    width: 100%;
+  }
+
+  .competitor-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @media (max-width: 1024px) {
+    .competitor-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .competitor-grid {
+      grid-template-columns: 1fr;
+    }
+  }
 }
 
 /* Dark Mode Styles */

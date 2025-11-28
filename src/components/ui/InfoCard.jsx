@@ -1,4 +1,4 @@
-function InfoCard({ number, icon, title, description, image, imageAlt, accentColor }) {
+function InfoCard({ number, icon, title, description, image, imageAlt, accentColor, listItems }) {
   const iconStyle = accentColor ? { color: accentColor } : {};
   const numberStyle = accentColor ? { backgroundColor: accentColor } : {};
   
@@ -9,7 +9,7 @@ function InfoCard({ number, icon, title, description, image, imageAlt, accentCol
           <img src={image} alt={imageAlt || title} className="w-full h-auto block object-cover" />
         </div>
       )}
-      {!image && (
+      {!image && (icon || number) && (
         <div className="flex items-center justify-start mb-3">
           {icon ? (
             <div className="w-8 h-8 text-xl max-sm:w-7 max-sm:h-7 max-sm:text-lg" style={iconStyle}>
@@ -25,9 +25,24 @@ function InfoCard({ number, icon, title, description, image, imageAlt, accentCol
       <h4 className={`font-semibold text-text tracking-tight leading-tight block text-left ${image ? 'px-4 mt-0' : 'mb-3 mt-0'}`}>
         {title}
       </h4>
-      <p className={`text-sm leading-relaxed text-gray-500 m-0 block text-left ${image ? 'px-4 mb-4' : ''}`}>
-        {description}
-      </p>
+      {listItems && listItems.length > 0 ? (
+        <ul className={`comparison-list m-0 p-0 list-none ${image ? 'px-4 mb-4' : ''}`}>
+          {listItems.map((item, index) => (
+            <li key={index} className={`${item.type === 'pro' ? 'pro' : 'con'} mb-4 flex items-start`}>
+              {item.icon && (
+                <div className={`comparison-icon ${item.type === 'pro' ? 'pro-icon' : 'con-icon'} flex-shrink-0 mr-2`}>
+                  {item.icon}
+                </div>
+              )}
+              <div className="text-sm leading-relaxed text-gray-500 flex-1">{item.text}</div>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className={`text-sm leading-relaxed text-gray-500 m-0 block text-left ${image ? 'px-4 mb-4' : ''}`}>
+          {description}
+        </p>
+      )}
     </div>
   )
 }

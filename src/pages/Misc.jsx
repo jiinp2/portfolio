@@ -127,17 +127,17 @@ function Misc() {
                 className="w-full h-full object-cover rounded-full"
               />
             </Link>
-            <h1 className="text-3xl font-medium text-text mb-4 tracking-tight leading-tight transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:text-3xl max-sm:text-4xl">
+            <h1 className="text-xl font-semibold text-text mb-4 tracking-tight leading-tight transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:text-xl max-sm:text-xl">
               Jiin Park
             </h1>
-            <p className="text-lg text-white mb-8 font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:text-lg max-md:mb-8 max-sm:text-base">
+            <p className="text-base text-white mb-8 font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:text-base max-md:mb-8 max-sm:text-base">
               Product Designer <br /> + Design Engineer
             </p>
           </div>
 
           {/* ABOUT TEXT */}
           <div className="mb-10 max-md:mb-8">
-            <p className="text-base text-white leading-relaxed mb-4 transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] last:mb-0 max-md:text-base max-sm:text-sm">
+            <p className="text-sm text-white leading-relaxed mb-4 transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] last:mb-0 max-md:text-sm max-sm:text-sm">
               I design and build digital products. At <strong>Maison</strong>, I
               help create better ways for real estate professionals to connect
               and collaborate.
@@ -194,7 +194,7 @@ function Misc() {
                         2025
                       </span>
                       <div className="flex flex-col gap-0.5">
-                        <div className="text-base font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+                        <div className="text-sm font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                           Design Engineer
                         </div>
                         <div className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
@@ -207,7 +207,7 @@ function Misc() {
                         2022/23
                       </span>
                       <div className="flex flex-col gap-0.5">
-                        <div className="text-base font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+                        <div className="text-sm font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                           Product Designer
                         </div>
                         <div className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
@@ -220,7 +220,7 @@ function Misc() {
                         2020
                       </span>
                       <div className="flex flex-col gap-0.5">
-                        <div className="text-base font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+                        <div className="text-sm font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                           UI Design & UX Research Intern
                         </div>
                         <div className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
@@ -242,7 +242,7 @@ function Misc() {
                         2025
                       </span>
                       <div className="flex flex-col gap-0.5">
-                        <div className="text-base font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+                        <div className="text-sm font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                           Software Engineering
                         </div>
                         <div className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
@@ -255,7 +255,7 @@ function Misc() {
                         2022
                       </span>
                       <div className="flex flex-col gap-0.5">
-                        <div className="text-base font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+                        <div className="text-sm font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                           Design System
                         </div>
                         <div className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
@@ -268,7 +268,7 @@ function Misc() {
                         2021
                       </span>
                       <div className="flex flex-col gap-0.5">
-                        <div className="text-base font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+                        <div className="text-sm font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                           UI Design
                         </div>
                         <div className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
@@ -281,7 +281,7 @@ function Misc() {
                         2021
                       </span>
                       <div className="flex flex-col gap-0.5">
-                        <div className="text-base font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+                        <div className="text-sm font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                           Industrial Design
                         </div>
                         <div className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
