@@ -215,6 +215,68 @@
     display: none;
   }
 
+  /* Scrollbar hide utility */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* More Work horizontal scrollbar styling */
+  @media (max-width: 640px) {
+    .more-work-scroll {
+      padding-bottom: 1.5rem;
+      scrollbar-width: thin;
+      scrollbar-color: #e5e7eb transparent;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .more-work-scroll::-webkit-scrollbar {
+      height: 8px;
+      display: block;
+    }
+
+    .more-work-scroll::-webkit-scrollbar-track {
+      background: transparent;
+      margin: 0 1rem;
+    }
+
+    .more-work-scroll::-webkit-scrollbar-thumb {
+      background-color: #e5e7eb;
+      border-radius: 8px;
+      border: none;
+      min-width: 40px;
+    }
+
+    .more-work-scroll::-webkit-scrollbar-thumb:hover {
+      background-color: #d1d5db;
+    }
+  }
+
+  /* Mobile: Show only middle column */
+  @media (max-width: 640px) {
+    .case-study-layout {
+      grid-template-columns: 1fr;
+      gap: 0;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .case-study-left,
+    .case-study-right {
+      display: none;
+    }
+
+    .case-study-content {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
   .back-button {
     background: transparent;
     border: 0;

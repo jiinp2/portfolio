@@ -23,19 +23,20 @@ function MoreWork({ currentProjectSlug, onClose }) {
     <section className="mt-20 pt-20 border-t border-gray-200 w-full max-md:mt-16 max-md:pt-16">
       <div className="w-full p-0">
         <h2 className="text-2xl font-semibold text-text m-0 mb-12 tracking-tight leading-tight text-left max-md:text-xl max-md:mb-8">More Work</h2>
-        <div className="grid grid-cols-3 gap-12 max-md:grid-cols-1 max-md:gap-8 [&_.group:hover_img]:transform-none">
+        <div className="grid grid-cols-3 gap-12 max-md:flex max-md:overflow-x-auto max-md:gap-8 max-md:scroll-smooth max-md:-mx-4 max-md:px-4 more-work-scroll [&_.group:hover_img]:transform-none">
           {otherProjects.map((project) => {
             const projectIndex = projects.findIndex(
               (p) => p.slug === project.slug
             );
             return (
-              <ProjectCard
-                key={project.slug}
-                project={project}
-                index={projectIndex}
-                isSelected={false}
-                onClick={handleProjectClick}
-              />
+              <div key={project.slug} className="max-md:flex-shrink-0 max-md:w-[calc(100vw-4rem)]">
+                <ProjectCard
+                  project={project}
+                  index={projectIndex}
+                  isSelected={false}
+                  onClick={handleProjectClick}
+                />
+              </div>
             );
           })}
         </div>
