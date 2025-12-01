@@ -1,3 +1,5 @@
+import ProjectInfoBar from "../../ui/ProjectInfoBar";
+
 function CaseStudyHero({ title, subtitle, imageSrc, imageAlt, infoItems }) {
   return (
     <>
@@ -18,17 +20,7 @@ function CaseStudyHero({ title, subtitle, imageSrc, imageAlt, infoItems }) {
           </div>
         </div>
       </div>
-      {/* Project Info Bar */}
-      {infoItems && infoItems.length > 0 && (
-        <div className="project-info-bar">
-          {infoItems.map((item, index) => (
-            <div key={index} className="info-item">
-              <h3>{item.label}</h3>
-              <p className="text-sm text-muted font-normal">{item.value}</p>
-            </div>
-          ))}
-        </div>
-      )}
+      <ProjectInfoBar infoItems={infoItems} />
     </>
   );
 }

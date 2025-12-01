@@ -392,15 +392,27 @@
 
   .project-info-bar {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, auto);
     gap: 2rem;
     margin-bottom: 4rem;
-    max-width: 560px;
-    margin-left: auto;
-    margin-right: auto;
+    justify-items: center;
   }
 
-  .info-item h3 {
+  @media (max-width: 1024px) {
+    .project-info-bar {
+      grid-template-columns: repeat(2, auto);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .project-info-bar {
+      grid-template-columns: 1fr;
+      justify-items: start;
+      gap: 1rem;
+    }
+  }
+
+  .info-item h4 {
     font-size: var(--font-size-label);
     font-weight: var(--font-weight-normal);
     color: #4b5563;

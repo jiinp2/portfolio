@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useRef } from "react";
 import {
   MessageSquare,
   Search,
@@ -13,13 +13,10 @@ import Label from "../ui/Label";
 import MoreWork from "../MoreWork";
 import CaseStudyHero from "./components/CaseStudyHero";
 import CaseStudySection from "./components/CaseStudySection";
+import TableOfContents from "./components/TableOfContents";
 
 function Maison({ onClose, currentProjectSlug }) {
-  const [activeSection, setActiveSection] = useState("overview");
   const sectionRefs = useRef({});
-  const tocListRef = useRef(null);
-  const indicatorRef = useRef(null);
-  const [indicatorStyle, setIndicatorStyle] = useState({});
 
   // Table of contents sections
   const tocSections = [
@@ -31,79 +28,6 @@ function Maison({ onClose, currentProjectSlug }) {
     { id: "impact", label: "Design Impact" },
     { id: "in-progress", label: "In Progress" },
   ];
-
-  // Intersection Observer for tracking active section
-  useEffect(() => {
-    const contentElement = document.querySelector(".case-study-content");
-    if (!contentElement) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        let maxRatio = 0;
-        let activeEntry = null;
-
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
-            maxRatio = entry.intersectionRatio;
-            activeEntry = entry;
-          }
-        });
-
-        if (activeEntry) {
-          setActiveSection(activeEntry.target.id);
-        }
-      },
-      {
-        root: contentElement,
-        rootMargin: "-20% 0px -60% 0px",
-        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
-      }
-    );
-
-    Object.values(sectionRefs.current).forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  // Update indicator position
-  useEffect(() => {
-    if (!tocListRef.current || !indicatorRef.current) return;
-
-    const updateIndicator = () => {
-      const activeButton = tocListRef.current.querySelector(
-        `button[data-section-id="${activeSection}"]`
-      );
-      if (activeButton && indicatorRef.current) {
-        const buttonRect = activeButton.getBoundingClientRect();
-        const navRect =
-          indicatorRef.current.parentElement.getBoundingClientRect();
-        const top = buttonRect.top - navRect.top + buttonRect.height / 2;
-        setIndicatorStyle({
-          top: `${top}px`,
-        });
-      }
-    };
-
-    const rafId = requestAnimationFrame(() => {
-      updateIndicator();
-    });
-
-    return () => cancelAnimationFrame(rafId);
-  }, [activeSection]);
-
-  // Scroll to section function
-  const scrollToSection = (sectionId) => {
-    const element = sectionRefs.current[sectionId];
-    if (element) {
-      setActiveSection(sectionId);
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
 
   return (
     <div className="case-study-overlay maison-case-study">
@@ -124,11 +48,12 @@ function Maison({ onClose, currentProjectSlug }) {
             imageSrc="/case_studies/maison/maison-hero.png"
             imageAlt="Maison Hero"
             infoItems={[
-              { label: "Team", value: "Maison" },
+              { label: "Role", value: "Founding Design Engineer" },
               {
-                label: "Role",
-                value: "UI & UX Design, Product Strategy, Frontend Development",
+                label: "Scope",
+                value: "Product Design, Strategy, Frontend Development",
               },
+              { label: "Platform", value: "Web & Mobile" },
               { label: "Timeline", value: "2025 (WIP)" },
             ]}
           />
@@ -143,11 +68,10 @@ function Maison({ onClose, currentProjectSlug }) {
 
             <CaseStudySection title="About Maison">
               <p>
-                Maison is a professional networking and community platform
-                designed specifically for the real estate industry. I led the
-                product design and brand development for a platform that unifies
-                fragmented communication tools into a purpose-built solution for
-                real estate professionals and brokerages.
+                Maison is a professional networking and community platform for
+                the real estate industry. I led the product design to create a
+                dedicated space for industry networking while unifying
+                fragmented communication tools into a purpose-built solution.
               </p>
             </CaseStudySection>
           </section>
@@ -217,7 +141,7 @@ function Maison({ onClose, currentProjectSlug }) {
 
             <CaseStudySection title="Dual-Focused Platform">
               <p>
-                I designed a dual-focused platform that serves both individual
+                We designed a dual-focused platform that serves both individual
                 real estate professionals and enterprise brokerages, creating
                 network effects where each audience strengthens the value for
                 the other.
@@ -228,8 +152,7 @@ function Maison({ onClose, currentProjectSlug }) {
               </h3>
               <p>
                 Professional networking and peer connections, visibility in an
-                industry-specific directory, and purpose-built community
-                features for real estate workflows.
+                industry-specific directory, and community building features.
               </p>
 
               <h3 className="text-lg font-semibold text-default mb-4 mt-20 tracking-tight leading-tight">
@@ -238,8 +161,7 @@ function Maison({ onClose, currentProjectSlug }) {
               <p>
                 Internal communication and team management tools, private
                 community spaces replacing scattered Facebook groups and
-                WhatsApp channels, streamlined file sharing and collaboration,
-                and team directory and organizational structure.
+                WhatsApp channels, streamlined file sharing and collaboration.
               </p>
             </CaseStudySection>
           </section>
@@ -256,7 +178,7 @@ function Maison({ onClose, currentProjectSlug }) {
               <p>
                 I serve as the founding product designer & design engineer for
                 Maison, working across the full spectrum of product development
-                from initial concept to front-endimplementation.
+                from initial concept to front-end implementation.
               </p>
 
               <ul className="takeaways-list">
@@ -395,30 +317,7 @@ function Maison({ onClose, currentProjectSlug }) {
         </div>
 
         {/* Right Column - Table of Contents */}
-        <div className="case-study-right">
-          <nav className="table-of-contents">
-            <ul className="toc-list" ref={tocListRef}>
-              {tocSections.map((section) => (
-                <li key={section.id}>
-                  <button
-                    data-section-id={section.id}
-                    className={`toc-item ${
-                      activeSection === section.id ? "active" : ""
-                    }`}
-                    onClick={() => scrollToSection(section.id)}
-                  >
-                    {section.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-            <div
-              className="toc-indicator"
-              ref={indicatorRef}
-              style={indicatorStyle}
-            />
-          </nav>
-        </div>
+        <TableOfContents sections={tocSections} sectionRefs={sectionRefs} />
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useRef } from "react";
 import {
   Check,
   X,
@@ -20,13 +20,10 @@ import Label from "../ui/Label";
 import MoreWork from "../MoreWork";
 import CaseStudyHero from "./components/CaseStudyHero";
 import CaseStudySection from "./components/CaseStudySection";
+import TableOfContents from "./components/TableOfContents";
 
 function RabbuMarketplace({ onClose, currentProjectSlug }) {
-  const [activeSection, setActiveSection] = useState("overview");
   const sectionRefs = useRef({});
-  const tocListRef = useRef(null);
-  const indicatorRef = useRef(null);
-  const [indicatorStyle, setIndicatorStyle] = useState({});
 
   // Table of contents sections
   const tocSections = [
@@ -36,80 +33,6 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
     { id: "final-design", label: "Final Design" },
     { id: "design-system", label: "Design System" },
   ];
-
-  // Intersection Observer for tracking active section
-  useEffect(() => {
-    const contentElement = document.querySelector(".case-study-content");
-    if (!contentElement) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        let maxRatio = 0;
-        let activeEntry = null;
-
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
-            maxRatio = entry.intersectionRatio;
-            activeEntry = entry;
-          }
-        });
-
-        if (activeEntry) {
-          setActiveSection(activeEntry.target.id);
-        }
-      },
-      {
-        root: contentElement,
-        rootMargin: "-20% 0px -60% 0px",
-        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
-      }
-    );
-
-    Object.values(sectionRefs.current).forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  // Update indicator position
-  useEffect(() => {
-    if (!tocListRef.current || !indicatorRef.current) return;
-
-    const updateIndicator = () => {
-      const activeButton = tocListRef.current.querySelector(
-        `button[data-section-id="${activeSection}"]`
-      );
-      if (activeButton && indicatorRef.current) {
-        const buttonRect = activeButton.getBoundingClientRect();
-        const navRect =
-          indicatorRef.current.parentElement.getBoundingClientRect();
-        const top = buttonRect.top - navRect.top + buttonRect.height / 2;
-        setIndicatorStyle({
-          top: `${top}px`,
-        });
-      }
-    };
-
-    // Use requestAnimationFrame for smoother updates
-    const rafId = requestAnimationFrame(() => {
-      updateIndicator();
-    });
-
-    return () => cancelAnimationFrame(rafId);
-  }, [activeSection]);
-
-  // Scroll to section function
-  const scrollToSection = (sectionId) => {
-    const element = sectionRefs.current[sectionId];
-    if (element) {
-      setActiveSection(sectionId);
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
 
   return (
     <div className="case-study-overlay rabbu-marketplace-case-study">
@@ -130,8 +53,12 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
             imageSrc="/case_studies/rabbu_marketplace/market-hero.webp"
             imageAlt="Rabbu Marketplace Hero"
             infoItems={[
-              { label: "Team", value: "Rabbu (3 PMs), Drip Design (2 Designers)" },
-              { label: "Role", value: "Design Research, UI & UX Design" },
+              { label: "Role", value: "UI & UX Designer" },
+              {
+                label: "Scope",
+                value: "Design Research, UI & UX Design",
+              },
+              { label: "Platform", value: "Web & Mobile" },
               { label: "Timeline", value: "Mar 2022 - Feb 2023" },
             ]}
           />
@@ -557,30 +484,7 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
         </div>
 
         {/* Right Column - Table of Contents */}
-        <div className="case-study-right">
-          <nav className="table-of-contents">
-            <ul className="toc-list" ref={tocListRef}>
-              {tocSections.map((section) => (
-                <li key={section.id}>
-                  <button
-                    data-section-id={section.id}
-                    className={`toc-item ${
-                      activeSection === section.id ? "active" : ""
-                    }`}
-                    onClick={() => scrollToSection(section.id)}
-                  >
-                    {section.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-            <div
-              className="toc-indicator"
-              ref={indicatorRef}
-              style={indicatorStyle}
-            />
-          </nav>
-        </div>
+        <TableOfContents sections={tocSections} sectionRefs={sectionRefs} />
       </div>
     </div>
   );
