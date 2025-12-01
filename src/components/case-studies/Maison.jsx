@@ -146,18 +146,33 @@ function Maison({ onClose, currentProjectSlug }) {
                 network effects where each audience strengthens the value for
                 the other.
               </p>
+            </CaseStudySection>
 
-              <h3 className="text-lg font-semibold text-default mb-4 mt-20 tracking-tight leading-tight">
-                For Individual Professionals
-              </h3>
+            <CaseStudySection
+              title="For Individual Professionals"
+              sideBySide={{
+                image: {
+                  src: "/case_studies/maison/profile.png",
+                  alt: "Individual Professionals Solution",
+                },
+              }}
+            >
               <p>
                 Professional networking and peer connections, visibility in an
                 industry-specific directory, and community building features.
               </p>
+            </CaseStudySection>
 
-              <h3 className="text-lg font-semibold text-default mb-4 mt-20 tracking-tight leading-tight">
-                For Enterprise Brokerages
-              </h3>
+            <CaseStudySection
+              title="For Enterprise Brokerages"
+              sideBySide={{
+                image: {
+                  src: "/case_studies/maison/community.png",
+                  alt: "Enterprise Brokerages Solution",
+                },
+                reverse: true,
+              }}
+            >
               <p>
                 Internal communication and team management tools, private
                 community spaces replacing scattered Facebook groups and

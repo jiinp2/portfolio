@@ -361,7 +361,7 @@
   .hero-card {
     width: 100%;
     border-radius: 0.75rem;
-    padding: 1.5rem;
+    padding: 1rem;
   }
 
   /* Case study hero card backgrounds */
@@ -499,9 +499,21 @@
     margin-right: auto;
   }
 
-  /* Key feature content paragraphs - match subsection text color */
+  /* Key feature content - match subsection styling */
+  .key-feature-content h3 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    letter-spacing: var(--letter-spacing-tight);
+    line-height: var(--line-height-tight);
+  }
+
   .key-feature-content p {
+    font-size: var(--font-size-base);
     color: var(--color-text-muted);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: 1rem;
   }
 
   /* Key feature side-by-side images */
@@ -545,7 +557,7 @@
   .case-study-content .image-container {
     background-color: #f3f4f6;
     border-radius: 0.75rem;
-    padding: 1.5rem;
+    padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
