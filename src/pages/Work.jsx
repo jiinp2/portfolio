@@ -96,7 +96,7 @@ function Work() {
           {/* SOCIAL LINKS */}
           <div className="flex gap-2 flex-wrap mb-10 max-md:mb-8">
             <a
-              href="/JiinPark_Resume_Portfolio.pdf"
+              href="/JiinPark_Resume.pdf"
               className="inline-flex items-center gap-2 py-2 px-4 bg-gray-100 text-text-muted rounded-full no-underline text-sm font-medium transition-all duration-200 hover:bg-gray-200 hover:text-text"
               target="_blank"
               rel="noopener noreferrer"

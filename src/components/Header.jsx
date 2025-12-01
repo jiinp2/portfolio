@@ -12,7 +12,7 @@ function Header() {
         {/* Right - Resume Button */}
         <div className="flex-[0_0_auto]">
           <a
-            href="/JiinPark_Resume_Portfolio.pdf"
+            href="/JiinPark_Resume.pdf"
             className="bg-text text-white no-underline py-2 px-4 rounded-lg font-medium text-sm transition-all duration-150 border border-transparent hover:bg-gray-700 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)] max-md:py-1.5 max-md:px-3 max-sm:text-xs max-sm:py-1.5 max-sm:px-2.5"
             target="_blank"
             rel="noopener noreferrer"

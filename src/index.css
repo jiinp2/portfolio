@@ -271,6 +271,11 @@
       display: none;
     }
 
+    .case-study-left .back-button,
+    .case-study-right .back-button {
+      display: none;
+    }
+
     .case-study-content {
       padding-left: 1rem;
       padding-right: 1rem;

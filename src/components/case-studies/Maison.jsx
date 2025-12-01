@@ -9,7 +9,6 @@ import {
   TrendingUp,
   Rocket,
 } from "lucide-react";
-import InfoCard from "../ui/InfoCard";
 import Label from "../ui/Label";
 import MoreWork from "../MoreWork";
 import CaseStudyHero from "./components/CaseStudyHero";
@@ -30,6 +29,7 @@ function Maison({ onClose, currentProjectSlug }) {
     { id: "role", label: "My Role" },
     { id: "approach", label: "Design Approach" },
     { id: "impact", label: "Design Impact" },
+    { id: "in-progress", label: "In Progress" },
   ];
 
   // Intersection Observer for tracking active section
@@ -215,30 +215,31 @@ function Maison({ onClose, currentProjectSlug }) {
           >
             <Label>The Solution</Label>
 
-            <CaseStudySection
-              title="Dual-Focused Platform"
-              infoCards={[
-                {
-                  image: "/case_studies/maison/individual-professionals.png",
-                  imageAlt: "Individual Professionals Solution",
-                  title: "For Individual Professionals",
-                  description:
-                    "Professional networking and peer connections, visibility in an industry-specific directory, and purpose-built community features for real estate workflows.",
-                },
-                {
-                  image: "/case_studies/maison/enterprise-brokerages.png",
-                  imageAlt: "Enterprise Brokerages Solution",
-                  title: "For Enterprise Brokerages",
-                  description:
-                    "Internal communication and team management tools, private community spaces replacing scattered Facebook groups and WhatsApp channels, streamlined file sharing and collaboration, and team directory and organizational structure.",
-                },
-              ]}
-            >
+            <CaseStudySection title="Dual-Focused Platform">
               <p>
                 I designed a dual-focused platform that serves both individual
                 real estate professionals and enterprise brokerages, creating
                 network effects where each audience strengthens the value for
                 the other.
+              </p>
+
+              <h3 className="text-lg font-semibold text-default mb-4 mt-20 tracking-tight leading-tight">
+                For Individual Professionals
+              </h3>
+              <p>
+                Professional networking and peer connections, visibility in an
+                industry-specific directory, and purpose-built community
+                features for real estate workflows.
+              </p>
+
+              <h3 className="text-lg font-semibold text-default mb-4 mt-20 tracking-tight leading-tight">
+                For Enterprise Brokerages
+              </h3>
+              <p>
+                Internal communication and team management tools, private
+                community spaces replacing scattered Facebook groups and
+                WhatsApp channels, streamlined file sharing and collaboration,
+                and team directory and organizational structure.
               </p>
             </CaseStudySection>
           </section>
@@ -253,19 +254,15 @@ function Maison({ onClose, currentProjectSlug }) {
 
             <CaseStudySection title="My Contributions">
               <p>
-                I served as the product designer and design engineer for Maison,
-                working across the full spectrum of product development from
-                initial concept to implementation.
+                I serve as the founding product designer & design engineer for
+                Maison, working across the full spectrum of product development
+                from initial concept to front-endimplementation.
               </p>
 
               <ul className="takeaways-list">
                 <li>
                   <strong>Product design and UX strategy</strong> for both
                   individual and enterprise experiences
-                </li>
-                <li>
-                  <strong>Design system development</strong> and component
-                  architecture
                 </li>
                 <li>
                   <strong>Brand identity and visual design</strong>
@@ -369,6 +366,26 @@ function Maison({ onClose, currentProjectSlug }) {
                 market, establishing a strong foundation for both user
                 experience and business growth across individual and enterprise
                 segments.
+              </p>
+            </CaseStudySection>
+          </section>
+
+          {/* In Progress Section */}
+          <section
+            id="in-progress"
+            ref={(el) => (sectionRefs.current["in-progress"] = el)}
+            className="case-study-section"
+          >
+            <Label>In Progress</Label>
+
+            <CaseStudySection title="Current Status">
+              <p>
+                Maison is currently in the user testing phase. We're conducting
+                structured interviews and usability sessions with real estate
+                professionals across 8 key scenarios to validate design
+                decisions and identify areas for improvement. This testing will
+                inform final refinements before the platform launches to our
+                target market.
               </p>
             </CaseStudySection>
           </section>
