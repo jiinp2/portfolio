@@ -1,7 +1,8 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Work from './pages/Work'
-import Misc from './pages/Misc'
-import CaseStudyTest from './pages/CaseStudyTest'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
+import Work from "./pages/Work";
+import Misc from "./pages/Misc";
+import CaseStudyTest from "./pages/CaseStudyTest";
 
 function App() {
   return (
@@ -13,9 +14,10 @@ function App() {
           <Route path="/test" element={<CaseStudyTest />} />
           <Route path="/:projectSlug" element={<Work />} />
         </Routes>
+        <Analytics />
       </div>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
