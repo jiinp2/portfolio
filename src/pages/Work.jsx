@@ -87,9 +87,10 @@ function Work() {
           {/* ABOUT TEXT */}
           <div className="mb-10 max-md:mb-8">
             <p className="text-sm text-text-muted leading-relaxed mb-4 transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] last:mb-0">
-              I design and build digital products. At <strong>Maison</strong>, I
-              help create better ways for real estate professionals to connect
-              and collaborate.
+              I design and build digital products.
+              <br />
+              At Maison, I help build trust and transparency for real estate
+              professionals.
             </p>
           </div>
 
