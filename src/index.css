@@ -838,6 +838,7 @@
   & main {
     background-color: var(--color-dark-bg);
     color: var(--color-dark-text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   /* Typography */
@@ -848,18 +849,22 @@
   & h5,
   & h6 {
     color: var(--color-dark-text);
+    transition: color 0.3s ease;
   }
 
   & p {
     color: var(--color-dark-text-secondary);
+    transition: color 0.3s ease;
   }
 
   & button {
     color: var(--color-dark-text-primary);
+    transition: color 0.3s ease;
   }
 
   & a {
     color: var(--color-dark-text);
+    transition: color 0.3s ease;
   }
 
   /* Borders */
@@ -885,23 +890,28 @@
   /* Custom text colors */
   & .text-text {
     color: var(--color-dark-text);
+    transition: color 0.3s ease;
   }
 
   & .text-text-light {
     color: var(--color-dark-text-muted);
+    transition: color 0.3s ease;
   }
 
   & .text-text-muted {
     color: var(--color-dark-text-subtle);
+    transition: color 0.3s ease;
   }
 
   /* Backgrounds - override Tailwind utilities */
   & .bg-white {
     background-color: var(--color-dark-bg-secondary);
+    transition: background-color 0.3s ease;
   }
 
   & .bg-\[#fcfcfc\] {
     background-color: var(--color-dark-bg);
+    transition: background-color 0.3s ease;
   }
 
   & .bg-gray-50 {

@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import { FileText, ArrowLeftRight } from "lucide-react";
+import { FileText } from "lucide-react";
 import CaseStudy from "../components/CaseStudy";
 import ProjectCard from "../components/ProjectCard";
 import TabSection from "../components/TabSection";
+import PageToggle from "../components/PageToggle";
 
 // Project data for Misc page
 const projects = [
@@ -104,7 +105,7 @@ function Misc() {
     >
       {/* Left Column - About Me Section */}
       <aside
-        className={`bg-white p-16 border-r border-gray-100 h-auto overflow-y-auto overflow-x-hidden [scrollbar-gutter:stable] transition-[background-color,border-color,color] duration-600 ease-in-out max-md:relative max-md:w-screen max-md:min-h-auto max-md:h-auto max-md:p-8 max-md:border-r-0 max-md:border-b max-md:border-b-gray-100 max-md:order-1 max-md:overflow-visible max-md:overflow-y-visible max-md:[scrollbar-gutter:auto] max-sm:p-6 ${
+        className={`bg-white p-16 border-r border-gray-100 h-auto overflow-y-auto overflow-x-hidden [scrollbar-gutter:stable] transition-[background-color,border-color,color] duration-300 ease-in-out max-md:relative max-md:w-screen max-md:min-h-auto max-md:h-auto max-md:p-8 max-md:border-r-0 max-md:border-b max-md:border-b-gray-100 max-md:order-1 max-md:overflow-visible max-md:overflow-y-visible max-md:[scrollbar-gutter:auto] max-sm:p-6 ${
           !isDarkMode
             ? "[&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-sm hover:[&::-webkit-scrollbar-thumb]:bg-gray-200"
             : ""
@@ -300,35 +301,22 @@ function Misc() {
 
       {/* Right Column - Case Studies Grid */}
       <main
-        className={`overflow-y-auto h-screen p-16 w-full bg-[#fcfcfc] transition-[background-color,color] duration-600 ease-in-out max-md:ml-0 max-md:h-auto max-md:p-8 max-md:order-2 max-sm:p-6 ${
+        className={`overflow-y-auto h-screen p-16 w-full bg-[#fcfcfc] transition-[background-color,color] duration-300 ease-in-out max-md:ml-0 max-md:h-auto max-md:p-8 max-md:order-2 max-sm:p-6 ${
           !isDarkMode
             ? "[&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-sm hover:[&::-webkit-scrollbar-thumb]:bg-gray-200"
             : ""
         }`}
       >
         <div className="mb-8 flex flex-col gap-6">
-          <div className="flex items-center gap-2">
-            <Link
-              to="/"
-              className="no-underline cursor-pointer transition-all duration-200 hover:[&_h2]:text-gray-500"
-            >
-              <h2 className="text-2xl font-medium text-text tracking-tight leading-tight m-0 transition-colors duration-600 ease-in-out max-md:text-xl max-sm:text-xl">
-                Misc
-              </h2>
-            </Link>
-            <Link
-              to="/"
-              className="inline-flex items-center no-underline cursor-pointer transition-all duration-200 group"
-            >
-              <ArrowLeftRight
-                className="text-primary inline-flex items-center leading-none transition-all duration-900 ease-in-out group-hover:text-primary-hover group-hover:scale-x-[-1]"
-                size={20}
-              />
-            </Link>
+          <div className="flex items-center justify-between">
+            <h2 className="text-2xl font-medium text-text tracking-tight leading-tight m-0 transition-colors duration-300 ease-in-out max-md:text-xl max-sm:text-xl">
+              Misc
+            </h2>
+            <PageToggle isWorkPage={false} />
           </div>
           <div className="flex gap-2 flex-wrap">
             <button
-              className={`flex items-center gap-2 py-2 px-4 border-0 rounded-full text-sm font-medium cursor-pointer transition-all duration-600 ease-in-out ${
+              className={`flex items-center gap-2 py-2 px-4 border-0 rounded-full text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out ${
                 activeFilter === "all"
                   ? "bg-text text-white hover:bg-gray-700"
                   : "bg-gray-100 text-text-muted hover:bg-gray-200 hover:text-text"
