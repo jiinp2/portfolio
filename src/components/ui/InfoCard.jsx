@@ -15,7 +15,7 @@ function InfoCard({
 
   return (
     <div
-      className={`relative bg-white border border-gray-200 rounded-xl ${
+      className={`relative bg-white border border-gray-200 rounded-xl h-full flex flex-col ${
         image ? "p-0 overflow-hidden" : "p-6 max-sm:p-5"
       }`}
     >
@@ -70,7 +70,7 @@ function InfoCard({
         </ul>
       ) : (
         <p
-          className={`text-sm leading-relaxed text-gray-500 m-0 block text-left ${
+          className={`text-sm leading-relaxed text-gray-500 m-0 block text-left flex-1 ${
             image ? "px-4 mb-4" : ""
           }`}
         >

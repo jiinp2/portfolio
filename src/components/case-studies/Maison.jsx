@@ -5,11 +5,7 @@ import {
   Users,
   Folder,
   Building,
-  Sparkles,
-  TrendingUp,
-  Rocket,
 } from "lucide-react";
-import Label from "../ui/Label";
 import MoreWork from "../MoreWork";
 import CaseStudyHero from "./components/CaseStudyHero";
 import CaseStudySection from "./components/CaseStudySection";
@@ -20,13 +16,15 @@ function Maison({ onClose, currentProjectSlug }) {
 
   // Table of contents sections
   const tocSections = [
-    { id: "overview", label: "Overview" },
-    { id: "challenge", label: "The Challenge" },
-    { id: "solution", label: "The Solution" },
+    { id: "context", label: "Context" },
+    { id: "evolution", label: "The Evolution" },
+    { id: "problem", label: "The Problem" },
     { id: "role", label: "My Role" },
     { id: "approach", label: "Design Approach" },
-    { id: "impact", label: "Design Impact" },
-    { id: "in-progress", label: "In Progress" },
+    { id: "challenges", label: "Current Design Challenges" },
+    { id: "survived", label: "What Survived Every Pivot" },
+    { id: "learned", label: "What I Learned" },
+    { id: "next", label: "What's Next" },
   ];
 
   return (
@@ -48,135 +46,84 @@ function Maison({ onClose, currentProjectSlug }) {
             imageSrc="/case_studies/maison/maison-hero.png"
             imageAlt="Maison Hero"
             infoItems={[
-              { label: "Role", value: "Founding Design Engineer" },
+              { label: "Role", value: "Founding Product Designer" },
               {
                 label: "Scope",
                 value: "Product Design, Strategy, Frontend Development",
               },
               { label: "Platform", value: "Web & Mobile" },
-              { label: "Timeline", value: "2025 (WIP)" },
+              { label: "Timeline", value: "2024–2026 (Work in Progress)" },
             ]}
           />
 
-          {/* Overview Section */}
+          {/* Context Section */}
           <section
-            id="overview"
-            ref={(el) => (sectionRefs.current.overview = el)}
+            id="context"
+            ref={(el) => (sectionRefs.current.context = el)}
             className="case-study-section"
           >
-            <Label>Overview</Label>
-
-            <CaseStudySection title="About Maison">
+            <CaseStudySection title="Context">
               <p>
-                Maison is a professional networking and community platform for
-                the real estate industry. I led the product design to create a
-                dedicated space for industry networking while unifying
-                fragmented communication tools into a purpose-built solution.
+                This documents an early-stage startup's journey toward
+                product-market fit, including three strategic pivots based on
+                user feedback. We're currently in user testing before launch.
               </p>
             </CaseStudySection>
           </section>
 
-          {/* The Challenge Section */}
+          {/* The Evolution Section */}
           <section
-            id="challenge"
-            ref={(el) => (sectionRefs.current.challenge = el)}
+            id="evolution"
+            ref={(el) => (sectionRefs.current.evolution = el)}
             className="case-study-section"
           >
-            <Label>The Challenge</Label>
-
             <CaseStudySection
-              title="Communication Challenges"
+              title="The Evolution"
               accentColor="var(--color-maison)"
               infoCards={[
                 {
-                  icon: <MessageSquare size={20} />,
-                  title: "Fragmented communication",
+                  number: 1,
+                  title: "Phase 1: Renovation Marketplace",
                   description:
-                    "Across consumer apps not designed for professional use",
+                    "Early 2024. Initial hypothesis: real estate agents needed better ways to refer clients to renovation contractors. What we learned: We lacked domain expertise and underestimated the complexity of managing collaborative deals.",
                 },
                 {
-                  icon: <Search size={20} />,
-                  title: "Discovery barriers",
+                  number: 2,
+                  title: "Phase 2: Professional Community",
                   description:
-                    "Preventing professionals from connecting with industry peers",
+                    "Mid 2024–2025. Pivot: Real estate professionals needed tools for networking and collaboration. We built community spaces, directories, and messaging to replace fragmented WhatsApp groups and Facebook communities. What we learned: Too scattered. We were solving too many problems without a clear core value proposition.",
                 },
                 {
-                  icon: <Users size={20} />,
-                  title: "No centralized directory",
-                  description: "For real estate professionals",
-                },
-                {
-                  icon: <Folder size={20} />,
-                  title: "Poor file management",
+                  number: 3,
+                  title: "Phase 3: Trust & Verification",
                   description:
-                    "With inadequate sharing and organization capabilities",
-                },
-                {
-                  icon: <Building size={20} />,
-                  title: "Missing enterprise tools",
-                  description: "For brokerage community management",
+                    "2026–Present. A team member worked with a friend's agent referral that went poorly. Despite the personal recommendation, there was no way to verify the agent's track record beforehand. Current direction: Build verified professional profiles with transaction history, licenses, and reviews—like Carfax for real estate agents. This extends to adjacent professionals: lawyers, photographers, stagers.",
                 },
               ]}
-              infoCardsLayout="info-cards-three"
             >
               <p>
-                Real estate professionals and brokerages were struggling with
-                scattered communication across multiple platforms. WhatsApp
-                groups, Facebook communities, and email threads made it
-                difficult to maintain organized conversations, share files
-                efficiently, and build meaningful professional connections.
-                Brokerages lacked purpose-built tools to manage internal
-                communication and foster team cohesion.
+                Three strategic pivots based on user feedback and market
+                validation.
               </p>
             </CaseStudySection>
           </section>
 
-          {/* The Solution Section */}
+          {/* The Problem Section */}
           <section
-            id="solution"
-            ref={(el) => (sectionRefs.current.solution = el)}
+            id="problem"
+            ref={(el) => (sectionRefs.current.problem = el)}
             className="case-study-section"
           >
-            <Label>The Solution</Label>
-
-            <CaseStudySection title="Dual-Focused Platform">
+            <CaseStudySection title="The Problem">
               <p>
-                We designed a dual-focused platform that serves both individual
-                real estate professionals and enterprise brokerages, creating
-                network effects where each audience strengthens the value for
-                the other.
+                Real estate runs on word-of-mouth referrals, but there's no
+                evidence-based system to verify an agent's trustworthiness before
+                engaging. Professionals also struggle with scattered communication
+                across multiple platforms.
               </p>
-            </CaseStudySection>
-
-            <CaseStudySection
-              title="For Individual Professionals"
-              sideBySide={{
-                image: {
-                  src: "/case_studies/maison/profile.png",
-                  alt: "Individual Professionals Solution",
-                },
-              }}
-            >
               <p>
-                Professional networking and peer connections, visibility in an
-                industry-specific directory, and community building features.
-              </p>
-            </CaseStudySection>
-
-            <CaseStudySection
-              title="For Enterprise Brokerages"
-              sideBySide={{
-                image: {
-                  src: "/case_studies/maison/community.png",
-                  alt: "Enterprise Brokerages Solution",
-                },
-                reverse: true,
-              }}
-            >
-              <p>
-                Internal communication and team management tools, private
-                community spaces replacing scattered Facebook groups and
-                WhatsApp channels, streamlined file sharing and collaboration.
+                Core challenge: How do we build trust through verified
+                information while creating space for professional networking?
               </p>
             </CaseStudySection>
           </section>
@@ -187,33 +134,17 @@ function Maison({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current.role = el)}
             className="case-study-section"
           >
-            <Label>My Role</Label>
-
-            <CaseStudySection title="My Contributions">
+            <CaseStudySection title="My Role">
               <p>
-                I serve as the founding product designer & design engineer for
-                Maison, working across the full spectrum of product development
-                from initial concept to front-end implementation.
+                Founding product designer working from
+                concept to front-end implementation.
               </p>
-
               <ul className="takeaways-list">
-                <li>
-                  <strong>Product design and UX strategy</strong> for both
-                  individual and enterprise experiences
-                </li>
-                <li>
-                  <strong>Brand identity and visual design</strong>
-                </li>
-                <li>
-                  <strong>Information architecture and user flows</strong>
-                </li>
-                <li>
-                  <strong>Website design and content strategy</strong>
-                </li>
-                <li>
-                  <strong>Cross-functional collaboration</strong> with
-                  engineering and business teams
-                </li>
+                <li>Product design and UX strategy</li>
+                <li>Brand identity and visual design</li>
+                <li>Information architecture</li>
+                <li>Frontend development (React)</li>
+                <li>Cross-functional collaboration with engineering and business</li>
               </ul>
             </CaseStudySection>
           </section>
@@ -224,105 +155,164 @@ function Maison({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current.approach = el)}
             className="case-study-section"
           >
-            <Label>Design Approach</Label>
+            <CaseStudySection title="Design Approach">
+              <p>
+                <strong>Research:</strong> Conducted ongoing interviews with 20+
+                real estate professionals to validate direction and identify pain
+                points.
+              </p>
+              <p>
+                <strong>Architecture:</strong> Designed a dual-sided platform
+                serving both individuals and enterprise brokerages. The
+                architecture balances current verification needs with future
+                community features.
+              </p>
+              <p>
+                <strong>Rapid execution:</strong> Wireframe → high-fidelity →
+                coded prototype within days. Built reusable React components to
+                iterate quickly without formal design systems.
+              </p>
+              <p>
+                <strong>Strategic contribution:</strong> Participated in product
+                strategy decisions, including the recent pivot. I voice opinions
+                when I disagree but trust the team's collective direction.
+              </p>
+            </CaseStudySection>
+          </section>
 
+          {/* Current Design Challenges Section */}
+          <section
+            id="challenges"
+            ref={(el) => (sectionRefs.current.challenges = el)}
+            className="case-study-section"
+          >
             <CaseStudySection
-              title="Design Methodology"
+              title="Current Design Challenges"
+              accentColor="var(--color-maison)"
+              infoCards={[
+                {
+                  title: "Verification infrastructure",
+                  description:
+                    "Designing profiles that surface verified credentials from MLS data and third-party APIs. Balancing data richness with privacy and determining which trust signals matter most.",
+                },
+                {
+                  title: "Dual audiences",
+                  description:
+                    "Creating experiences for both professionals showcasing expertise and consumers researching agents. Different users need different information hierarchies.",
+                },
+                {
+                  title: "Trust without overwhelm",
+                  description:
+                    "Finding the minimum viable information needed to build confidence.",
+                },
+              ]}
+            >
+              <p>Key design challenges I'm solving:</p>
+            </CaseStudySection>
+          </section>
+
+          {/* What Survived Every Pivot Section */}
+          <section
+            id="survived"
+            ref={(el) => (sectionRefs.current.survived = el)}
+            className="case-study-section"
+          >
+            <CaseStudySection
+              title="What Survived Every Pivot"
               accentColor="var(--color-maison)"
               infoCardsLayout="info-cards-four"
               infoCards={[
                 {
-                  number: 1,
-                  title: "Research & Discovery",
+                  title: "Clean, professional aesthetic",
                   description:
-                    "Conducted user research with real estate professionals to map workflows and identify pain points in their fragmented tool ecosystem.",
+                    "Appropriate for the industry that values credibility and trustworthiness.",
                 },
                 {
-                  number: 2,
-                  title: "Strategic Product Architecture",
+                  title: "Core patterns",
                   description:
-                    "Designed a dual-sided platform that creates value for both individual professionals and enterprise teams through network effects.",
+                    "Profiles, directory, and messaging have been foundational since the beginning.",
                 },
                 {
-                  number: 3,
-                  title: "Brand & Positioning",
+                  title: "Component reusability",
                   description:
-                    "Positioned the product as 'Slack for workplace + Discord for gamers = Maison for real estate' to immediately communicate the vision.",
+                    "Allowing fast iteration without sacrificing quality.",
                 },
                 {
-                  number: 4,
-                  title: "Enterprise-First Design",
+                  title: "User-first mindset",
                   description:
-                    "Balanced enterprise functionality with individual user approachability, designing for team scalability from day one.",
+                    "Focus on real user needs over assumed solutions.",
                 },
               ]}
             >
               <p>
-                Led end-to-end design from research to launch, balancing
-                strategic product thinking with detailed UX and visual design
+                Through three strategic shifts, certain elements remained
+                consistent:
+              </p>
+            </CaseStudySection>
+          </section>
+
+          {/* What I Learned Section */}
+          <section
+            id="learned"
+            ref={(el) => (sectionRefs.current.learned = el)}
+            className="case-study-section"
+          >
+            <CaseStudySection
+              title="What I Learned"
+              accentColor="var(--color-maison)"
+              infoCardsLayout="info-cards-four"
+              infoCards={[
+                {
+                  title: "Designing in ambiguity",
+                  description:
+                    "Stay attached to problems, not solutions. The UI changes constantly, but user needs remain.",
+                },
+                {
+                  title: "Speed + quality",
+                  description:
+                    "Moving fast taught me to design for implementation. My coding background helps me work closely with engineers and think through constraints early.",
+                },
+                {
+                  title: "Strategic thinking",
+                  description:
+                    'I learned to ask "why" before "how" and advocate for users in product discussions.',
+                },
+                {
+                  title: "Real iteration",
+                  description:
+                    "Pivoting based on actual user feedback taught me the difference between theoretical user-centered design and responding to what users tell you.",
+                },
+              ]}
+            >
+              <p>Key lessons from designing through multiple pivots:</p>
+            </CaseStudySection>
+
+            <CaseStudySection title="Reflection">
+              <p>
+                <strong>What I'd do differently:</strong> Earlier user research
+                could have accelerated our learning. We built features before
+                deeply understanding workflows.
+              </p>
+              <p>
+                <strong>What I'm proud of:</strong> Maintaining quality through
+                constant change and contributing to strategy, not just
                 execution.
               </p>
             </CaseStudySection>
           </section>
 
-          {/* Design Impact Section */}
+          {/* What's Next Section */}
           <section
-            id="impact"
-            ref={(el) => (sectionRefs.current.impact = el)}
+            id="next"
+            ref={(el) => (sectionRefs.current.next = el)}
             className="case-study-section"
           >
-            <Label>Design Impact</Label>
-
-            <CaseStudySection
-              title="What We Achieved"
-              accentColor="var(--color-maison)"
-              infoCards={[
-                {
-                  icon: <Sparkles size={20} />,
-                  title: "User Experience",
-                  description:
-                    "Created an intuitive platform leveraging familiar mental models from Slack/Discord while addressing real estate-specific needs and supporting scalable feature development.",
-                },
-                {
-                  icon: <TrendingUp size={20} />,
-                  title: "Business Impact",
-                  description:
-                    "Established clear product differentiation in a crowded market through dual go-to-market strategy and platform architecture that drives network effects.",
-                },
-                {
-                  icon: <Rocket size={20} />,
-                  title: "Product Strategy",
-                  description:
-                    "Validated industry-specific platform approach versus generic tool adaptation, demonstrating value of purpose-built solutions and foundation for vertical expansion.",
-                },
-              ]}
-              infoCardsLayout="info-cards-three"
-            >
+            <CaseStudySection title="What's Next">
               <p>
-                The design work created a differentiated platform in a crowded
-                market, establishing a strong foundation for both user
-                experience and business growth across individual and enterprise
-                segments.
-              </p>
-            </CaseStudySection>
-          </section>
-
-          {/* In Progress Section */}
-          <section
-            id="in-progress"
-            ref={(el) => (sectionRefs.current["in-progress"] = el)}
-            className="case-study-section"
-          >
-            <Label>In Progress</Label>
-
-            <CaseStudySection title="Current Status">
-              <p>
-                Maison is currently in the user testing phase. We're conducting
-                structured interviews and usability sessions with real estate
-                professionals across 8 key scenarios to validate design
-                decisions and identify areas for improvement. This testing will
-                inform final refinements before the platform launches to our
-                target market.
+                Currently conducting structured user testing across eight
+                scenarios to validate decisions before launch. Immediate
+                priorities: refining profiles, solving verification challenges,
+                planning community features for phase two.
               </p>
             </CaseStudySection>
           </section>

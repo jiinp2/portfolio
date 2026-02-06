@@ -3,7 +3,7 @@ export const projects = [
   {
     name: "Maison",
     label: "Scroll to Maison",
-    date: "2025",
+    date: "2025/26",
     category: "case-studies",
     slug: "maison",
     image: "/home/maison_logo.svg",

@@ -101,7 +101,7 @@ function CaseStudySection({
             }
 
             return (
-              <div key={index} className={gridSpan}>
+              <div key={index} className={`${gridSpan} h-full`}>
                 <InfoCard
                   {...card}
                   accentColor={accentColor || card.accentColor}
