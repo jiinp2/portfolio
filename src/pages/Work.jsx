@@ -77,7 +77,7 @@ function Work() {
       >
         <div className="w-full max-md:max-w-none max-md:text-left">
           {/* INTRO */}
-          <div className="mb-8">
+          <div className="mb-10 max-md:mb-8">
             <Link
               to="/misc"
               className="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center mb-6 overflow-hidden cursor-pointer no-underline transition-transform duration-[900ms] ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-[1.02]"
@@ -88,17 +88,13 @@ function Work() {
                 className="w-full h-full object-cover rounded-full"
               />
             </Link>
-            <h1 className="text-xl font-semibold text-text mb-4 tracking-tight leading-tight transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:text-xl max-sm:text-xl">
+            <h1 className="text-xl font-semibold text-text mb-2 tracking-tight leading-tight transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:text-xl max-sm:text-xl">
               Jiin Park
             </h1>
-            <p className="text-base text-text-light mb-8 font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:text-base max-md:mb-8 max-sm:text-base">
-              Product Designer <br /> + Design Engineer
+            <p className="text-base text-text-light mb-3 font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:text-base max-md:mb-3 max-sm:text-base">
+              Product Designer
             </p>
-          </div>
-
-          {/* ABOUT TEXT */}
-          <div className="mb-10 max-md:mb-8">
-            <p className="text-sm text-text-muted leading-relaxed mb-4 transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] last:mb-0">
+            <p className="text-sm text-text-muted leading-relaxed mb-0 transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] last:mb-0">
               I design and build digital products.
               <br />
               At Maison, I help build trust and transparency for real estate
