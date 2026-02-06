@@ -46,7 +46,7 @@ function Maison({ onClose, currentProjectSlug }) {
             imageSrc="/case_studies/maison/maison-hero.png"
             imageAlt="Maison Hero"
             infoItems={[
-              { label: "Role", value: "Founding Product Designer" },
+              { label: "Role", value: "Founding Design Engineer" },
               {
                 label: "Scope",
                 value: "Product Design, Strategy, Frontend Development",
@@ -136,7 +136,7 @@ function Maison({ onClose, currentProjectSlug }) {
           >
             <CaseStudySection title="My Role">
               <p>
-                Founding product designer working from
+                Founding product designer and design engineer working from
                 concept to front-end implementation.
               </p>
               <ul className="takeaways-list">
