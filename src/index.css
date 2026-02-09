@@ -536,6 +536,25 @@
     margin-bottom: 0.5rem;
   }
 
+  /* App Store Reviews–style list: icon + text with aligned icons */
+  .subsection .review-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .subsection .review-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .subsection .review-list .review-icon {
+    flex-shrink: 0;
+    width: 1.125rem;
+    min-width: 1.125rem;
+  }
+
   .subsection > img,
   .subsection > .image-container {
     width: 100%;
