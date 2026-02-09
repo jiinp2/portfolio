@@ -95,10 +95,9 @@ function Work() {
               Product Designer
             </p>
             <p className="text-sm text-text-muted leading-relaxed mb-0 transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] last:mb-0">
-              I design and build digital products.
-              <br />
-              At Maison, I help build trust and transparency for real estate
-              professionals.
+              I balance functionality and creativity with context in mind. My
+              interest in how things work led me to code, and I'm currently
+              exploring AI-driven workflows.
             </p>
           </div>
 
@@ -146,12 +145,12 @@ function Work() {
             {activeTab === "experience" && (
               <div className="mb-0">
                 <div className="mb-10 last:mb-0 max-md:gap-2">
-                  <div className="flex flex-col gap-4">
-                    <div className="grid grid-cols-[1fr_2fr] gap-4 items-start max-md:gap-2">
+                  <div className="flex flex-col gap-6">
+                    <div className="grid grid-cols-[1fr_2fr] gap-2 items-start max-md:gap-2">
                       <span className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
-                        2025
+                        2025/26
                       </span>
-                      <div className="flex flex-col gap-0.5">
+                      <div className="flex flex-col gap-2">
                         <div className="text-sm font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                           Founding Design Engineer
                         </div>
@@ -160,11 +159,11 @@ function Work() {
                         </div>
                       </div>
                     </div>
-                    <div className="grid grid-cols-[1fr_2fr] gap-4 items-start max-md:gap-2">
+                    <div className="grid grid-cols-[1fr_2fr] gap-2 items-start max-md:gap-2">
                       <span className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                         2022/23
                       </span>
-                      <div className="flex flex-col gap-0.5">
+                      <div className="flex flex-col gap-2">
                         <div className="text-sm font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                           Product Designer
                         </div>
@@ -173,11 +172,11 @@ function Work() {
                         </div>
                       </div>
                     </div>
-                    <div className="grid grid-cols-[1fr_2fr] gap-4 items-start max-md:gap-2">
+                    <div className="grid grid-cols-[1fr_2fr] gap-2 items-start max-md:gap-2">
                       <span className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                         2020
                       </span>
-                      <div className="flex flex-col gap-0.5">
+                      <div className="flex flex-col gap-2">
                         <div className="text-sm font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                           UI Design & UX Research Intern
                         </div>
@@ -194,12 +193,12 @@ function Work() {
             {activeTab === "education" && (
               <div className="mb-0">
                 <div className="mb-10 last:mb-0 max-md:gap-2">
-                  <div className="flex flex-col gap-4">
-                    <div className="grid grid-cols-[1fr_2fr] gap-4 items-start max-md:gap-2">
+                  <div className="flex flex-col gap-6">
+                    <div className="grid grid-cols-[1fr_2fr] gap-2 items-start max-md:gap-2">
                       <span className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                         2025
                       </span>
-                      <div className="flex flex-col gap-0.5">
+                      <div className="flex flex-col gap-2">
                         <div className="text-sm font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                           Software Engineering
                         </div>
@@ -208,11 +207,11 @@ function Work() {
                         </div>
                       </div>
                     </div>
-                    <div className="grid grid-cols-[1fr_2fr] gap-4 items-start max-md:gap-2">
+                    <div className="grid grid-cols-[1fr_2fr] gap-2 items-start max-md:gap-2">
                       <span className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                         2022
                       </span>
-                      <div className="flex flex-col gap-0.5">
+                      <div className="flex flex-col gap-2">
                         <div className="text-sm font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                           Design System
                         </div>
@@ -221,11 +220,11 @@ function Work() {
                         </div>
                       </div>
                     </div>
-                    <div className="grid grid-cols-[1fr_2fr] gap-4 items-start max-md:gap-2">
+                    <div className="grid grid-cols-[1fr_2fr] gap-2 items-start max-md:gap-2">
                       <span className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                         2021
                       </span>
-                      <div className="flex flex-col gap-0.5">
+                      <div className="flex flex-col gap-2">
                         <div className="text-sm font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                           UI Design
                         </div>
@@ -234,11 +233,11 @@ function Work() {
                         </div>
                       </div>
                     </div>
-                    <div className="grid grid-cols-[1fr_2fr] gap-4 items-start max-md:gap-2">
+                    <div className="grid grid-cols-[1fr_2fr] gap-2 items-start max-md:gap-2">
                       <span className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                         2021
                       </span>
-                      <div className="flex flex-col gap-0.5">
+                      <div className="flex flex-col gap-2">
                         <div className="text-sm font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                           Industrial Design
                         </div>

@@ -536,10 +536,37 @@
     margin-bottom: 0.5rem;
   }
 
-  /* App Store Reviews–style list: icon + text with aligned icons */
+  /* App Store Reviews: category block with subtitle above list, same left alignment */
+  .subsection .review-categories {
+    display: block;
+  }
+
+  .subsection .review-category {
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  .subsection .review-category:last-child {
+    margin-bottom: 0;
+  }
+
+  .subsection .review-category h4 {
+    display: block;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5rem;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+  }
+
   .subsection .review-list {
     list-style: none;
     padding-left: 0;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .subsection .review-list li {

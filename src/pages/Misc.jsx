@@ -135,10 +135,9 @@ function Misc() {
               Product Designer
             </p>
             <p className="text-sm text-white leading-relaxed mb-0 transition-colors duration-600 ease-in-out last:mb-0 max-md:text-sm max-sm:text-sm">
-              I design and build digital products.
-              <br />
-              At Maison, I help build trust and transparency for real estate
-              professionals.
+              I balance functionality and creativity with context in mind. My
+              interest in how things work led me to code, and I'm currently
+              exploring AI-driven workflows.
             </p>
           </div>
 
@@ -186,12 +185,12 @@ function Misc() {
             {activeTab === "experience" && (
               <div className="mb-0">
                 <div className="mb-10 last:mb-0 max-md:gap-2">
-                  <div className="flex flex-col gap-4">
-                    <div className="grid grid-cols-[1fr_2fr] gap-4 items-start max-md:gap-2">
+                  <div className="flex flex-col gap-6">
+                    <div className="grid grid-cols-[1fr_2fr] gap-2 items-start max-md:gap-2">
                       <span className="text-sm text-text-light font-normal transition-colors duration-600 ease-in-out">
-                        2025
+                        2025/26
                       </span>
-                      <div className="flex flex-col gap-0.5">
+                      <div className="flex flex-col gap-2">
                         <div className="text-sm font-medium text-text transition-colors duration-600 ease-in-out">
                           Founding Design Engineer
                         </div>
@@ -200,11 +199,11 @@ function Misc() {
                         </div>
                       </div>
                     </div>
-                    <div className="grid grid-cols-[1fr_2fr] gap-4 items-start max-md:gap-2">
+                    <div className="grid grid-cols-[1fr_2fr] gap-2 items-start max-md:gap-2">
                       <span className="text-sm text-text-light font-normal transition-colors duration-600 ease-in-out">
                         2022/23
                       </span>
-                      <div className="flex flex-col gap-0.5">
+                      <div className="flex flex-col gap-2">
                         <div className="text-sm font-medium text-text transition-colors duration-600 ease-in-out">
                           Product Designer
                         </div>
@@ -213,11 +212,11 @@ function Misc() {
                         </div>
                       </div>
                     </div>
-                    <div className="grid grid-cols-[1fr_2fr] gap-4 items-start max-md:gap-2">
+                    <div className="grid grid-cols-[1fr_2fr] gap-2 items-start max-md:gap-2">
                       <span className="text-sm text-text-light font-normal transition-colors duration-600 ease-in-out">
                         2020
                       </span>
-                      <div className="flex flex-col gap-0.5">
+                      <div className="flex flex-col gap-2">
                         <div className="text-sm font-medium text-text transition-colors duration-600 ease-in-out">
                           UI Design & UX Research Intern
                         </div>
@@ -234,12 +233,12 @@ function Misc() {
             {activeTab === "education" && (
               <div className="mb-0">
                 <div className="mb-10 last:mb-0 max-md:gap-2">
-                  <div className="flex flex-col gap-4">
-                    <div className="grid grid-cols-[1fr_2fr] gap-4 items-start max-md:gap-2">
+                  <div className="flex flex-col gap-6">
+                    <div className="grid grid-cols-[1fr_2fr] gap-2 items-start max-md:gap-2">
                       <span className="text-sm text-text-light font-normal transition-colors duration-600 ease-in-out">
                         2025
                       </span>
-                      <div className="flex flex-col gap-0.5">
+                      <div className="flex flex-col gap-2">
                         <div className="text-sm font-medium text-text transition-colors duration-600 ease-in-out">
                           Software Engineering
                         </div>
@@ -248,11 +247,11 @@ function Misc() {
                         </div>
                       </div>
                     </div>
-                    <div className="grid grid-cols-[1fr_2fr] gap-4 items-start max-md:gap-2">
+                    <div className="grid grid-cols-[1fr_2fr] gap-2 items-start max-md:gap-2">
                       <span className="text-sm text-text-light font-normal transition-colors duration-600 ease-in-out">
                         2022
                       </span>
-                      <div className="flex flex-col gap-0.5">
+                      <div className="flex flex-col gap-2">
                         <div className="text-sm font-medium text-text transition-colors duration-600 ease-in-out">
                           Design System
                         </div>
@@ -261,11 +260,11 @@ function Misc() {
                         </div>
                       </div>
                     </div>
-                    <div className="grid grid-cols-[1fr_2fr] gap-4 items-start max-md:gap-2">
+                    <div className="grid grid-cols-[1fr_2fr] gap-2 items-start max-md:gap-2">
                       <span className="text-sm text-text-light font-normal transition-colors duration-600 ease-in-out">
                         2021
                       </span>
-                      <div className="flex flex-col gap-0.5">
+                      <div className="flex flex-col gap-2">
                         <div className="text-sm font-medium text-text transition-colors duration-600 ease-in-out">
                           UI Design
                         </div>
@@ -274,11 +273,11 @@ function Misc() {
                         </div>
                       </div>
                     </div>
-                    <div className="grid grid-cols-[1fr_2fr] gap-4 items-start max-md:gap-2">
+                    <div className="grid grid-cols-[1fr_2fr] gap-2 items-start max-md:gap-2">
                       <span className="text-sm text-text-light font-normal transition-colors duration-600 ease-in-out">
                         2021
                       </span>
-                      <div className="flex flex-col gap-0.5">
+                      <div className="flex flex-col gap-2">
                         <div className="text-sm font-medium text-text transition-colors duration-600 ease-in-out">
                           Industrial Design
                         </div>
