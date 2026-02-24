@@ -16,15 +16,15 @@ function Maison({ onClose, currentProjectSlug }) {
 
   // Table of contents sections
   const tocSections = [
-    { id: "context", label: "Context" },
-    { id: "evolution", label: "The Evolution" },
+    { id: "context", label: "Overview" },
+    { id: "evolution", label: "How We Got Here" },
     { id: "problem", label: "The Problem" },
     { id: "role", label: "My Role" },
     { id: "approach", label: "Design Approach" },
-    { id: "challenges", label: "Current Design Challenges" },
-    { id: "survived", label: "What Survived Every Pivot" },
+    { id: "challenges", label: "Design Challenges" },
+    { id: "survived", label: "What Stayed Consistent" },
     { id: "learned", label: "What I Learned" },
-    { id: "next", label: "What's Next" },
+    { id: "next", label: "Status" },
   ];
 
   return (
@@ -42,7 +42,7 @@ function Maison({ onClose, currentProjectSlug }) {
           {/* Hero Section */}
           <CaseStudyHero
             title="Maison"
-            subtitle="Building Community Infrastructure for Real Estate Professionals"
+            subtitle="A trust and verification platform for real estate professionals"
             imageSrc="/case_studies/maison/maison-hero.png"
             imageAlt="Maison Hero"
             infoItems={[
@@ -52,7 +52,7 @@ function Maison({ onClose, currentProjectSlug }) {
                 value: "Product Design, Strategy, Frontend Development",
               },
               { label: "Platform", value: "Web & Mobile" },
-              { label: "Timeline", value: "2024–2026 (Work in Progress)" },
+              { label: "Timeline", value: "April 2025–January 2026" },
             ]}
           />
 
@@ -62,11 +62,17 @@ function Maison({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current.context = el)}
             className="case-study-section"
           >
-            <CaseStudySection title="Context">
+            <CaseStudySection title="Overview">
               <p>
-                This documents an early-stage startup's journey toward
-                product-market fit, including three strategic pivots based on
-                user feedback. We're currently in user testing before launch.
+                Real estate transactions run on personal referrals with no way
+                to verify whether that trust is warranted. We built Maison to
+                fix that: verified professional profiles with transaction
+                history, licenses, and reviews for agents and adjacent
+                professionals.
+              </p>
+              <p>
+                I was the founding designer and design engineer. We closed in
+                early 2026 when funding ran out, before public launch.
               </p>
             </CaseStudySection>
           </section>
@@ -78,33 +84,30 @@ function Maison({ onClose, currentProjectSlug }) {
             className="case-study-section"
           >
             <CaseStudySection
-              title="The Evolution"
+              title="How we got here"
               accentColor="var(--color-maison)"
               infoCards={[
                 {
                   number: 1,
                   title: "Phase 1: Renovation Marketplace",
                   description:
-                    "Early 2024. Initial hypothesis: real estate agents needed better ways to refer clients to renovation contractors. What we learned: We lacked domain expertise and underestimated the complexity of managing collaborative deals.",
+                    "April 2025. Agents needed better ways to refer clients to contractors. We lacked domain expertise and underestimated the complexity of managing deals between unfamiliar parties.",
                 },
                 {
                   number: 2,
                   title: "Phase 2: Professional Community",
                   description:
-                    "Mid 2024–2025. Pivot: Real estate professionals needed tools for networking and collaboration. We built community spaces, directories, and messaging to replace fragmented WhatsApp groups and Facebook communities. What we learned: Too scattered. We were solving too many problems without a clear core value proposition.",
+                    "Mid 2025. We built networking tools to replace fragmented WhatsApp groups and Facebook communities. Too scattered. No clear core value.",
                 },
                 {
                   number: 3,
                   title: "Phase 3: Trust & Verification",
                   description:
-                    "2026–Present. A team member worked with a friend's agent referral that went poorly. Despite the personal recommendation, there was no way to verify the agent's track record beforehand. Current direction: Build verified professional profiles with transaction history, licenses, and reviews—like Carfax for real estate agents. This extends to adjacent professionals: lawyers, photographers, stagers.",
+                    "Late 2025 to January 2026. A team member used a personally recommended agent that performed poorly. There was no way to verify the agent's track record beforehand. We pivoted to verified profiles with transaction history, licenses, and reviews. Think Carfax for real estate agents, extended to lawyers, photographers, and stagers.",
                 },
               ]}
             >
-              <p>
-                Three strategic pivots based on user feedback and market
-                validation.
-              </p>
+              <p>We didn't start with the right idea.</p>
             </CaseStudySection>
           </section>
 
@@ -116,14 +119,14 @@ function Maison({ onClose, currentProjectSlug }) {
           >
             <CaseStudySection title="The Problem">
               <p>
-                Real estate runs on word-of-mouth referrals, but there's no
-                evidence-based system to verify an agent's trustworthiness before
-                engaging. Professionals also struggle with scattered communication
-                across multiple platforms.
+                Real estate runs on word-of-mouth but word-of-mouth can't be
+                audited. Agents manage their professional networks across
+                WhatsApp, Facebook groups, and email with no single source
+                of truth.
               </p>
               <p>
-                Core challenge: How do we build trust through verified
-                information while creating space for professional networking?
+                How do you surface verified information without overwhelming
+                the person making the decision?
               </p>
             </CaseStudySection>
           </section>
@@ -135,17 +138,17 @@ function Maison({ onClose, currentProjectSlug }) {
             className="case-study-section"
           >
             <CaseStudySection title="My Role">
-              <p>
-                Founding product designer and design engineer working from
-                concept to front-end implementation.
-              </p>
+              <p>I worked across design and implementation:</p>
               <ul className="takeaways-list">
                 <li>Product design and UX strategy</li>
                 <li>Brand identity and visual design</li>
                 <li>Information architecture</li>
-                <li>Frontend development (React)</li>
-                <li>Cross-functional collaboration with engineering and business</li>
+                <li>Frontend development in React</li>
+                <li>Product strategy, including pivot decisions</li>
               </ul>
+              <p>
+                I contributed to where the product went, not just how it looked.
+              </p>
             </CaseStudySection>
           </section>
 
@@ -157,25 +160,25 @@ function Maison({ onClose, currentProjectSlug }) {
           >
             <CaseStudySection title="Design Approach">
               <p>
-                <strong>Research:</strong> Conducted ongoing interviews with 20+
-                real estate professionals to validate direction and identify pain
-                points.
+                <strong>Research:</strong> The founder ran 20+ interviews with
+                real estate professionals. I worked from recordings and shared
+                notes to make design decisions. Three patterns held
+                consistently: professionals distrust platforms that feel
+                salesy, credibility signals matter more than features, and most
+                agents were managing their network across at least three tools.
               </p>
               <p>
-                <strong>Architecture:</strong> Designed a dual-sided platform
-                serving both individuals and enterprise brokerages. The
-                architecture balances current verification needs with future
-                community features.
+                <strong>Architecture:</strong> The platform served two
+                audiences: professionals building their reputation and
+                consumers evaluating who to work with. Same underlying data,
+                different information hierarchies. I designed the architecture
+                to serve both without compromising either.
               </p>
               <p>
-                <strong>Rapid execution:</strong> Wireframe → high-fidelity →
-                coded prototype within days. Built reusable React components to
-                iterate quickly without formal design systems.
-              </p>
-              <p>
-                <strong>Strategic contribution:</strong> Participated in product
-                strategy decisions, including the recent pivot. I voice opinions
-                when I disagree but trust the team's collective direction.
+                <strong>Execution:</strong> Wireframe to high-fidelity to coded
+                prototype in days. Working in React meant I thought through
+                implementation constraints as I designed, not after. Reusable
+                components kept iteration fast without starting over each time.
               </p>
             </CaseStudySection>
           </section>
@@ -187,27 +190,22 @@ function Maison({ onClose, currentProjectSlug }) {
             className="case-study-section"
           >
             <CaseStudySection
-              title="Current Design Challenges"
+              title="Design Challenges"
               accentColor="var(--color-maison)"
               infoCards={[
                 {
-                  title: "Verification infrastructure",
+                  title: "Verification without overwhelm",
                   description:
-                    "Designing profiles that surface verified credentials from MLS data and third-party APIs. Balancing data richness with privacy and determining which trust signals matter most.",
+                    "Pulling credentials from MLS data and third-party APIs created an immediate question: how much information actually builds trust versus adds noise? I was working toward the minimum signal set that changes a user's confidence level.",
                 },
                 {
-                  title: "Dual audiences",
+                  title: "Dual audiences, one profile",
                   description:
-                    "Creating experiences for both professionals showcasing expertise and consumers researching agents. Different users need different information hierarchies.",
-                },
-                {
-                  title: "Trust without overwhelm",
-                  description:
-                    "Finding the minimum viable information needed to build confidence.",
+                    "An agent and a consumer look at the same profile with different needs. Getting the information hierarchy right for both, without building two separate products, was the central problem in phase three.",
                 },
               ]}
             >
-              <p>Key design challenges I'm solving:</p>
+              <p>Key challenges in phase three:</p>
             </CaseStudySection>
           </section>
 
@@ -218,7 +216,7 @@ function Maison({ onClose, currentProjectSlug }) {
             className="case-study-section"
           >
             <CaseStudySection
-              title="What Survived Every Pivot"
+              title="What stayed consistent"
               accentColor="var(--color-maison)"
               infoCardsLayout="info-cards-four"
               infoCards={[
@@ -244,10 +242,7 @@ function Maison({ onClose, currentProjectSlug }) {
                 },
               ]}
             >
-              <p>
-                Through three strategic shifts, certain elements remained
-                consistent:
-              </p>
+              <p>Three pivots, same foundation:</p>
             </CaseStudySection>
           </section>
 
@@ -263,40 +258,38 @@ function Maison({ onClose, currentProjectSlug }) {
               infoCardsLayout="info-cards-four"
               infoCards={[
                 {
-                  title: "Designing in ambiguity",
+                  title: "Attach to problems, not solutions",
                   description:
-                    "Stay attached to problems, not solutions. The UI changes constantly, but user needs remain.",
+                    "The UI changed three times. The underlying user needs didn't.",
                 },
                 {
-                  title: "Speed + quality",
+                  title: "Implementation fluency changes how you design",
                   description:
-                    "Moving fast taught me to design for implementation. My coding background helps me work closely with engineers and think through constraints early.",
+                    "Knowing React meant fewer surprises at handoff and faster iteration with engineers.",
                 },
                 {
-                  title: "Strategic thinking",
+                  title: "Ask why before how",
                   description:
-                    'I learned to ask "why" before "how" and advocate for users in product discussions.',
+                    "Participating in pivot decisions, not just executing them, changed how I think about product work.",
                 },
                 {
-                  title: "Real iteration",
+                  title: "Iterate on real feedback",
                   description:
-                    "Pivoting based on actual user feedback taught me the difference between theoretical user-centered design and responding to what users tell you.",
+                    "We built before we fully understood workflows in phase one. By phase three we were testing before building.",
                 },
               ]}
             >
-              <p>Key lessons from designing through multiple pivots:</p>
+              <p>Key lessons from nine months of designing through ambiguity:</p>
             </CaseStudySection>
 
             <CaseStudySection title="Reflection">
               <p>
-                <strong>What I'd do differently:</strong> Earlier user research
-                could have accelerated our learning. We built features before
-                deeply understanding workflows.
+                <strong>What I'd do differently:</strong> Deeper research
+                before building. We would have found the right problem faster.
               </p>
               <p>
-                <strong>What I'm proud of:</strong> Maintaining quality through
-                constant change and contributing to strategy, not just
-                execution.
+                <strong>What I'm proud of:</strong> Design quality held through
+                three pivots, and I had a seat at the product table throughout.
               </p>
             </CaseStudySection>
           </section>
@@ -307,12 +300,17 @@ function Maison({ onClose, currentProjectSlug }) {
             ref={(el) => (sectionRefs.current.next = el)}
             className="case-study-section"
           >
-            <CaseStudySection title="What's Next">
+            <CaseStudySection title="Status">
               <p>
-                Currently conducting structured user testing across eight
-                scenarios to validate decisions before launch. Immediate
-                priorities: refining profiles, solving verification challenges,
-                planning community features for phase two.
+                Structured testing was underway across eight scenarios when the
+                company closed. The Carfax framing resonated immediately with
+                professionals. The verification layer generated the most
+                questions in interviews. The dual-audience architecture held up
+                in testing.
+              </p>
+              <p>
+                Unresolved: the right balance between data richness and privacy
+                on profiles, and scope of community features at launch.
               </p>
             </CaseStudySection>
           </section>
