@@ -58,7 +58,7 @@ function Work() {
 
   // Filter projects based on active filter
   const filteredProjects = projects.filter(
-    (project) => project.category === activeFilter
+    (project) => project.category === activeFilter,
   );
 
   return (
@@ -95,9 +95,9 @@ function Work() {
               Product Designer
             </p>
             <p className="text-sm text-text-muted leading-relaxed mb-0 transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] last:mb-0">
-              I balance functionality and creativity with context in mind. My
-              interest in how things work led me to code, and I'm currently
-              exploring AI-driven workflows.
+              Hi, I'm a designer with 2 years of expeirence in multiple
+              startups. My current interest is in intentional usage of AI tools
+              in the design process.
             </p>
           </div>
 
@@ -291,7 +291,7 @@ function Work() {
         <div className="grid grid-cols-3 gap-10 w-full max-md:grid-cols-1 max-md:gap-6">
           {filteredProjects.map((project, index) => {
             const originalIndex = projects.findIndex(
-              (p) => p.name === project.name
+              (p) => p.name === project.name,
             );
             return (
               <ProjectCard
