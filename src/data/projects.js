@@ -33,7 +33,7 @@ export const projects = [
     name: "Kobo",
     label: "Scroll to Kobo",
     date: "2021",
-    category: "archive",
+    category: "case-studies",
     slug: "kobo",
     image: "/home/kobo_thumbnail.png",
     description: "eBook and audiobook app redesign.",

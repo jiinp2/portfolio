@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import { FileText } from "lucide-react";
+import { FileText, Mail } from "lucide-react";
 import CaseStudy from "../components/CaseStudy";
 import ProjectCard from "../components/ProjectCard";
 import TabSection from "../components/TabSection";
@@ -8,6 +8,14 @@ import PageToggle from "../components/PageToggle";
 
 // Project data for Misc page
 const projects = [
+  {
+    name: "Scrivis Tattoos",
+    label: "Scrivis Tattoos",
+    date: "2025",
+    category: "all",
+    slug: "scrivis-tattoos",
+    video: "/misc/scrivis_video.mp4",
+  },
   {
     name: "Pokemon Valentine",
     label: "Pokemon Valentine",
@@ -135,9 +143,9 @@ function Misc() {
               Product Designer
             </p>
             <p className="text-sm text-white leading-relaxed mb-0 transition-colors duration-600 ease-in-out last:mb-0 max-md:text-sm max-sm:text-sm">
-              I balance functionality and creativity with context in mind. My
-              interest in how things work led me to code, and I'm currently
-              exploring AI-driven workflows.
+              Hi, I'm a designer with 2 years of experience in multiple
+              startups. My current interest is in intentional usage of AI tools
+              in the design process.
             </p>
           </div>
 
@@ -177,6 +185,15 @@ function Misc() {
                 className="w-4 h-4 shrink-0 object-contain"
               />
               GitHub
+            </a>
+            <a
+              href="mailto:jiinpark.work@gmail.com"
+              className="inline-flex items-center gap-2 py-2 px-4 bg-gray-100 text-text-muted rounded-full no-underline text-sm font-medium transition-all duration-200 hover:bg-gray-200 hover:text-text"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Mail size={16} className="shrink-0 text-current" />
+              Email
             </a>
           </div>
 
@@ -325,7 +342,7 @@ function Misc() {
         <div className="grid grid-cols-3 gap-10 w-full max-md:grid-cols-1 max-md:gap-6">
           {filteredProjects.map((project, index) => {
             const originalIndex = projects.findIndex(
-              (p) => p.name === project.name
+              (p) => p.name === project.name,
             );
             return (
               <ProjectCard

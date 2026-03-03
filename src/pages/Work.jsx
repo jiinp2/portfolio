@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import { FileText } from "lucide-react";
+import { FileText, Mail } from "lucide-react";
 import CaseStudy from "../components/CaseStudy";
 import ProjectCard from "../components/ProjectCard";
 import TabSection from "../components/TabSection";
@@ -137,6 +137,15 @@ function Work() {
                 className="w-4 h-4 flex-shrink-0 object-contain"
               />
               GitHub
+            </a>
+            <a
+              href="mailto:jiinpark.work@gmail.com"
+              className="inline-flex items-center gap-2 py-2 px-4 bg-gray-100 text-text-muted rounded-full no-underline text-sm font-medium transition-all duration-200 hover:bg-gray-200 hover:text-text"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Mail size={16} className="flex-shrink-0 text-current" />
+              Email
             </a>
           </div>
 

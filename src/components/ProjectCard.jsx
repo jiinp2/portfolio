@@ -4,6 +4,8 @@ function ProjectCard({ project, index, isSelected, onClick, disabled }) {
   // Get background color based on slug
   const getBgColor = () => {
     switch (project.slug) {
+      case "scrivis-tattoos":
+        return "bg-gray-100";
       case "pokemon-valentine":
         return "bg-[#ffcfec]";
       case "rabbu-portfolio":
@@ -20,11 +22,13 @@ function ProjectCard({ project, index, isSelected, onClick, disabled }) {
     }
   };
 
-  // Get image styles based on slug
+  // Get image/video styles based on slug
   const getImageClasses = () => {
     const base =
       "max-w-full max-h-full w-auto h-auto object-contain transition-transform duration-300";
     switch (project.slug) {
+      case "scrivis-tattoos":
+        return base;
       case "maison":
         return `${base} !max-w-[40%] !max-h-[40%] max-sm:!max-w-[50%] max-sm:!max-h-[50%] [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(5%)_saturate(200%)_hue-rotate(10deg)]`;
       case "rabbu-portfolio":
@@ -61,7 +65,19 @@ function ProjectCard({ project, index, isSelected, onClick, disabled }) {
           className={`project-preview ${getPreviewClasses()}`}
           data-slug={project.slug}
         >
-          {project.image ? (
+          {project.video ? (
+            <video
+              src={project.video}
+              className={`${getImageClasses()} ${
+                !disabled ? "group-hover:scale-105" : ""
+              }`}
+              loop
+              muted
+              playsInline
+              autoPlay
+              aria-label={project.name}
+            />
+          ) : project.image ? (
             <img
               src={project.image}
               alt={project.name}
