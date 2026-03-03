@@ -95,7 +95,7 @@ function Work() {
               Product Designer
             </p>
             <p className="text-sm text-text-muted leading-relaxed mb-0 transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] last:mb-0">
-              Hi, I'm a designer with 2 years of expeirence in multiple
+              Hi, I'm a designer with 2 years of experience in multiple
               startups. My current interest is in intentional usage of AI tools
               in the design process.
             </p>
