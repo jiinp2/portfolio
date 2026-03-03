@@ -1131,6 +1131,16 @@
     background-color: var(--color-dark-text);
   }
 
+  /* Case study overlay - use dark background when open in dark mode */
+  & .case-study-overlay {
+    background-color: var(--color-dark-bg);
+  }
+
+  & .back-button.sticky {
+    background: rgba(26, 26, 26, 0.9);
+    border-color: var(--color-dark-border);
+  }
+
   /* Case study TOC indicator colors in dark mode - using light variants */
   & .maison-case-study .toc-indicator {
     background-color: var(--color-maison-light);

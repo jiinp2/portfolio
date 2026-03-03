@@ -47,4 +47,21 @@ export const projects = [
     image: "/home/skiin_thumbnail.png",
     description: "Wellness tracking through sensory textiles.",
   },
+  {
+    name: "Scrivis Tattoos",
+    label: "Scroll to Scrivis Tattoos",
+    date: "2025",
+    category: "misc",
+    slug: "scrivis-tattoos",
+    video: "/misc/scrivis_video.mp4",
+  },
+  {
+    name: "Pokemon Valentine",
+    label: "Scroll to Pokemon Valentine",
+    date: "2025",
+    category: "misc",
+    slug: "pokemon-valentine",
+    image: "/misc/pokemon_valentine.png",
+    url: "https://pokemon-valentine.vercel.app/",
+  },
 ];

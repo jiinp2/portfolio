@@ -17,15 +17,38 @@ function Work() {
   const [activeFilter, setActiveFilter] = useState("case-studies");
   const [isCaseStudyOpen, setIsCaseStudyOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const stored = localStorage.getItem("theme");
+    return stored === "dark";
+  });
 
   // Persist tab state to localStorage
   useEffect(() => {
     localStorage.setItem("activeTab", activeTab);
   }, [activeTab]);
 
+  // Apply theme to document and persist
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark-mode");
+      document.body.classList.add("dark-mode");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark-mode");
+      document.body.classList.remove("dark-mode");
+      localStorage.setItem("theme", "light");
+    }
+  }, [isDarkMode]);
+
+  const toggleTheme = () => setIsDarkMode((prev) => !prev);
+
   // Open case study
   const openCaseStudy = (projectIndex) => {
     const project = projects[projectIndex];
+    if (project.url) {
+      window.open(project.url, "_blank", "noopener,noreferrer");
+      return;
+    }
     navigate(`/${project.slug}`);
     setSelectedProject(projectIndex);
     setIsCaseStudyOpen(true);
@@ -79,13 +102,21 @@ function Work() {
           {/* INTRO */}
           <div className="mb-10 max-md:mb-8">
             <Link
-              to="/misc"
+              to="/"
               className="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center mb-6 overflow-hidden cursor-pointer no-underline transition-transform duration-[900ms] ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-[1.02]"
             >
               <img
-                src="/home/jiin_profile.png"
+                src={
+                  isDarkMode
+                    ? "/home/jiin_profile_dark.png"
+                    : "/home/jiin_profile.png"
+                }
                 alt="Jiin Park"
                 className="w-full h-full object-cover rounded-full"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "/home/jiin_profile.png";
+                }}
               />
             </Link>
             <h1 className="text-xl font-semibold text-text mb-2 tracking-tight leading-tight transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:text-xl max-sm:text-xl">
@@ -272,7 +303,7 @@ function Work() {
             <h2 className="text-2xl font-medium text-text tracking-tight leading-tight m-0 transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:text-xl max-sm:text-xl">
               Work
             </h2>
-            <PageToggle isWorkPage={true} />
+            <PageToggle isDarkMode={isDarkMode} onToggle={toggleTheme} />
           </div>
           <div className="flex gap-2 flex-wrap">
             <button
@@ -294,6 +325,16 @@ function Work() {
               onClick={() => setActiveFilter("archive")}
             >
               Archive
+            </button>
+            <button
+              className={`flex items-center gap-2 py-2 px-4 border-0 rounded-full text-sm font-medium cursor-pointer transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
+                activeFilter === "misc"
+                  ? "bg-text text-white hover:bg-gray-700"
+                  : "bg-gray-100 text-text-muted hover:bg-gray-200 hover:text-text"
+              }`}
+              onClick={() => setActiveFilter("misc")}
+            >
+              Misc
             </button>
           </div>
         </div>
