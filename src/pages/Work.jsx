@@ -126,7 +126,7 @@ function Work() {
               Product Designer
             </p>
             <p className="text-sm text-text-muted leading-relaxed mb-0 transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] last:mb-0">
-              Hi, I'm a designer with 2 years of experience in multiple
+              Hi, I'm a designer with 2 years of experience at early-stage
               startups. My current interest is in intentional usage of AI tools
               in the design process.
             </p>
@@ -314,7 +314,7 @@ function Work() {
               }`}
               onClick={() => setActiveFilter("case-studies")}
             >
-              Selected
+              Case Studies
             </button>
             <button
               className={`flex items-center gap-2 py-2 px-4 border-0 rounded-full text-sm font-medium cursor-pointer transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
@@ -324,7 +324,7 @@ function Work() {
               }`}
               onClick={() => setActiveFilter("misc")}
             >
-              Misc
+              Explorative
             </button>
           </div>
         </div>

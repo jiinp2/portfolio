@@ -50,10 +50,12 @@ export const projects = [
   {
     name: "Scrivis Tattoos",
     label: "Scroll to Scrivis Tattoos",
-    date: "2025",
+    date: "2026",
     category: "misc",
     slug: "scrivis-tattoos",
     video: "/misc/scrivis_video.mp4",
+    url: "https://scrivis.vercel.app/",
+    description: "Tattoo artist portfolio and bookings website.",
   },
   {
     name: "Pokemon Valentine",
@@ -63,5 +65,6 @@ export const projects = [
     slug: "pokemon-valentine",
     image: "/misc/pokemon_valentine.png",
     url: "https://pokemon-valentine.vercel.app/",
+    description: "Valentine's day card generator.",
   },
 ];

@@ -53,6 +53,8 @@ function ProjectCard({ project, index, isSelected, onClick, disabled }) {
     }
   };
 
+  const isExplorative = project.category === "misc";
+
   return (
     <div
       className={`group flex flex-col gap-4 max-md:gap-3 max-sm:gap-2 ${
@@ -60,15 +62,15 @@ function ProjectCard({ project, index, isSelected, onClick, disabled }) {
       }`}
       onClick={() => !disabled && onClick(index)}
     >
-      <div className="bg-white rounded-xl overflow-hidden border border-gray-200">
+      {isExplorative ? (
         <div
-          className={`project-preview ${getPreviewClasses()}`}
+          className="w-full aspect-[4/3] rounded-xl overflow-hidden flex items-center justify-center bg-transparent"
           data-slug={project.slug}
         >
           {project.video ? (
             <video
               src={project.video}
-              className={`${getImageClasses()} ${
+              className={`w-full h-full object-cover transition-transform duration-300 ${
                 !disabled ? "group-hover:scale-105" : ""
               }`}
               loop
@@ -81,19 +83,48 @@ function ProjectCard({ project, index, isSelected, onClick, disabled }) {
             <img
               src={project.image}
               alt={project.name}
-              className={`${getImageClasses()} ${
+              className={`w-full h-full object-cover transition-transform duration-300 ${
                 !disabled ? "group-hover:scale-105" : ""
               }`}
             />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center bg-transparent">
-              <span className="preview-icon text-5xl opacity-20 text-text max-md:text-4xl max-sm:text-3xl">
-                📄
-              </span>
-            </div>
-          )}
+          ) : null}
         </div>
-      </div>
+      ) : (
+        <div className="bg-white rounded-xl overflow-hidden border border-gray-200">
+          <div
+            className={`project-preview ${getPreviewClasses()}`}
+            data-slug={project.slug}
+          >
+            {project.video ? (
+              <video
+                src={project.video}
+                className={`${getImageClasses()} ${
+                  !disabled ? "group-hover:scale-105" : ""
+                }`}
+                loop
+                muted
+                playsInline
+                autoPlay
+                aria-label={project.name}
+              />
+            ) : project.image ? (
+              <img
+                src={project.image}
+                alt={project.name}
+                className={`${getImageClasses()} ${
+                  !disabled ? "group-hover:scale-105" : ""
+                }`}
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center bg-transparent">
+                <span className="preview-icon text-5xl opacity-20 text-text max-md:text-4xl max-sm:text-3xl">
+                  📄
+                </span>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
       <div className="flex flex-col gap-1 p-0">
         <div className="flex items-center justify-between gap-4">
           <h3 className="text-lg font-semibold text-text tracking-tight m-0 leading-tight transition-colors duration-600 ease-in-out inline-flex items-center gap-2 flex-1 max-md:text-base max-sm:text-sm">
