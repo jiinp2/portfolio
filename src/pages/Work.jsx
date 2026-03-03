@@ -107,9 +107,7 @@ function Work() {
             >
               <img
                 src={
-                  isDarkMode
-                    ? "/home/jiin_profile_dark.png"
-                    : "/home/jiin_profile.png"
+                  isDarkMode ? "/home/jiin_ac.png" : "/home/jiin_profile.png"
                 }
                 alt="Jiin Park"
                 className="w-full h-full object-cover rounded-full"
@@ -128,7 +126,7 @@ function Work() {
             <p className="text-sm text-text-muted leading-relaxed mb-0 transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] last:mb-0">
               Hi, I'm a designer with 2 years of experience at early-stage
               startups. My current interest is in intentional usage of AI tools
-              in the design process.
+              in design.
             </p>
           </div>
 
