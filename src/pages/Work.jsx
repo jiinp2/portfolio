@@ -318,16 +318,6 @@ function Work() {
             </button>
             <button
               className={`flex items-center gap-2 py-2 px-4 border-0 rounded-full text-sm font-medium cursor-pointer transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
-                activeFilter === "archive"
-                  ? "bg-text text-white hover:bg-gray-700"
-                  : "bg-gray-100 text-text-muted hover:bg-gray-200 hover:text-text"
-              }`}
-              onClick={() => setActiveFilter("archive")}
-            >
-              Archive
-            </button>
-            <button
-              className={`flex items-center gap-2 py-2 px-4 border-0 rounded-full text-sm font-medium cursor-pointer transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
                 activeFilter === "misc"
                   ? "bg-text text-white hover:bg-gray-700"
                   : "bg-gray-100 text-text-muted hover:bg-gray-200 hover:text-text"

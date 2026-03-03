@@ -42,7 +42,7 @@ export const projects = [
     name: "Skiin",
     label: "Scroll to Skiin",
     date: "2020",
-    category: "archive",
+    category: "case-studies",
     slug: "skiin",
     image: "/home/skiin_thumbnail.png",
     description: "Wellness tracking through sensory textiles.",
