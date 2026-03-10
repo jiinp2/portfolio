@@ -10,6 +10,7 @@ function ProjectCard({ project, index, isSelected, onClick, disabled }) {
         return "bg-[#ffcfec]";
       case "rabbu-portfolio":
       case "rabbu-marketplace":
+      case "rabbu":
         return "bg-rabbu";
       case "kobo":
         return "bg-kobo";
@@ -32,6 +33,7 @@ function ProjectCard({ project, index, isSelected, onClick, disabled }) {
       case "maison":
         return `${base} !max-w-[40%] !max-h-[40%] max-sm:!max-w-[50%] max-sm:!max-h-[50%] [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(5%)_saturate(200%)_hue-rotate(10deg)]`;
       case "rabbu-portfolio":
+      case "rabbu":
         return `${base} !w-[60%] !h-[150%] !object-cover !object-top`;
       case "kobo":
         return `${base} !w-full !h-[150%] !object-cover !object-top`;
@@ -45,6 +47,7 @@ function ProjectCard({ project, index, isSelected, onClick, disabled }) {
     const base = `w-full aspect-[4/3] flex items-center justify-center overflow-hidden p-8 box-border ${getBgColor()} max-md:p-2 max-sm:p-2`;
     switch (project.slug) {
       case "rabbu-portfolio":
+      case "rabbu":
         return `${base} !pb-0 !items-start max-md:!p-2 max-md:!pb-0 max-md:!items-start`;
       case "kobo":
         return `${base} !pb-0 !items-start max-md:!p-1 max-md:!pb-0 max-md:!items-start`;

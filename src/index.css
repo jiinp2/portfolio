@@ -370,7 +370,8 @@
   }
 
   .rabbu-portfolio-case-study .hero-card,
-  .rabbu-marketplace-case-study .hero-card {
+  .rabbu-marketplace-case-study .hero-card,
+  .rabbu-case-study .hero-card {
     background-color: var(--color-rabbu-light);
   }
 
@@ -763,7 +764,8 @@
   }
 
   .rabbu-portfolio-case-study .toc-indicator,
-  .rabbu-marketplace-case-study .toc-indicator {
+  .rabbu-marketplace-case-study .toc-indicator,
+  .rabbu-case-study .toc-indicator {
     background-color: var(--color-rabbu-light);
   }
 
@@ -1013,7 +1015,8 @@
   }
 
   & .project-preview[data-slug="rabbu-portfolio"],
-  & .project-preview[data-slug="rabbu-marketplace"] {
+  & .project-preview[data-slug="rabbu-marketplace"],
+  & .project-preview[data-slug="rabbu"] {
     background: var(--color-rabbu-light);
   }
 
@@ -1147,7 +1150,8 @@
   }
 
   & .rabbu-portfolio-case-study .toc-indicator,
-  & .rabbu-marketplace-case-study .toc-indicator {
+  & .rabbu-marketplace-case-study .toc-indicator,
+  & .rabbu-case-study .toc-indicator {
     background-color: var(--color-rabbu-light);
   }
 

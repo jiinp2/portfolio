@@ -1,3 +1,4 @@
+import Rabbu from "./case-studies/Rabbu";
 import RabbuPortfolio from "./case-studies/RabbuPortfolio";
 import RabbuMarketplace from "./case-studies/RabbuMarketplace";
 import Kobo from "./case-studies/Kobo";
@@ -10,6 +11,8 @@ function CaseStudy({ project, onClose }) {
     switch (project.name) {
       case "Maison":
         return <Maison onClose={onClose} currentProjectSlug={project.slug} />;
+      case "Rabbu":
+        return <Rabbu onClose={onClose} currentProjectSlug={project.slug} />;
       case "Rabbu Portfolio":
         return (
           <RabbuPortfolio onClose={onClose} currentProjectSlug={project.slug} />
