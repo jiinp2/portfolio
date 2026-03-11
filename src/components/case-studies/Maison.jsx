@@ -18,14 +18,6 @@ function Maison({ onClose, currentProjectSlug }) {
     { id: "reflection", label: "Reflection" },
   ];
 
-  const ImagePlaceholder = ({ snippet, caption }) => (
-    <p className="mt-4 mb-4 text-sm text-text-muted italic border-l-2 border-gray-200 pl-4">
-      [ UI SNIPPET: {snippet} ]
-      <br />
-      <span className="not-italic">{caption}</span>
-    </p>
-  );
-
   return (
     <div className="case-study-overlay maison-case-study">
       <div className="case-study-layout">
@@ -175,10 +167,6 @@ function Maison({ onClose, currentProjectSlug }) {
                 was making filtering feel lightweight, more like browsing a
                 professional community than running a database query.
               </p>
-              <ImagePlaceholder
-                snippet="Directory with filters"
-                caption="Show the browse experience and filter system"
-              />
             </CaseStudySection>
             <CaseStudySection
               title="Profiles"
