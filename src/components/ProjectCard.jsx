@@ -73,7 +73,7 @@ function ProjectCard({ project, index, isSelected, onClick, disabled }) {
           {project.video ? (
             <video
               src={project.video}
-              className={`w-full h-full object-cover transition-transform duration-300 ${
+              className={`w-full h-full object-cover object-center transition-transform duration-300 ${
                 !disabled ? "group-hover:scale-105" : ""
               }`}
               loop
@@ -86,7 +86,7 @@ function ProjectCard({ project, index, isSelected, onClick, disabled }) {
             <img
               src={project.image}
               alt={project.name}
-              className={`w-full h-full object-cover transition-transform duration-300 ${
+              className={`w-full h-full object-cover object-center transition-transform duration-300 ${
                 !disabled ? "group-hover:scale-105" : ""
               }`}
             />
