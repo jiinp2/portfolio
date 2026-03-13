@@ -327,7 +327,7 @@ function Work() {
           </div>
         </div>
         <div className="grid grid-cols-3 gap-10 w-full max-md:grid-cols-1 max-md:gap-6">
-          {filteredProjects.map((project, index) => {
+          {filteredProjects.map((project) => {
             const originalIndex = projects.findIndex(
               (p) => p.name === project.name,
             );

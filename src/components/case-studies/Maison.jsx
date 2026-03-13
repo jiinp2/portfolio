@@ -59,7 +59,7 @@ function Maison({ onClose, currentProjectSlug }) {
               <p>
                 Maison was built to fix that. I joined as the founding design
                 engineer and spent nine months designing and building a dedicated
-                platform for real estate professionals — through two major pivots
+                platform for real estate professionals, through two major pivots
                 before the company closed in early 2026.
               </p>
             </CaseStudySection>
@@ -73,7 +73,7 @@ function Maison({ onClose, currentProjectSlug }) {
             <CaseStudySection title="How We Got Here">
               <p>We didn't start with the right idea.</p>
               <p>
-                <strong>Phase 1 — Renovation Marketplace</strong> (April 2025)
+                <strong>Phase 1: Renovation Marketplace</strong> (April 2025)
                 <br />
                 We built tooling for agents to refer clients to contractors. It
                 failed quickly. The referral relationship required trust that
@@ -86,17 +86,17 @@ function Maison({ onClose, currentProjectSlug }) {
                 <div className="w-full bg-[#f3f4f6] rounded-xl p-4 flex items-center justify-center">
                   <img
                     src="/case_studies/maison/maison-phase-1.png"
-                    alt="Maison Phase 1 — Renovation Marketplace"
+                    alt="Maison Phase 1: Renovation Marketplace"
                     className="w-full rounded-xl"
                   />
                 </div>
               </div>
               <p>
-                <strong>Phase 2 — Professional Network</strong> (Mid 2025)
+                <strong>Phase 2: Professional Network</strong> (Mid 2025)
                 <br />
                 Scrapping the marketplace forced us to go back to the agents
                 themselves. What consistently surfaced in those conversations
-                was fragmentation — not any single missing feature, but the
+                was fragmentation, not any single missing feature, but the
                 exhaustion of stitching together five different tools for tasks
                 that should happen in one place. We built that platform: a
                 directory, communities, messaging, file management, and
@@ -119,7 +119,7 @@ function Maison({ onClose, currentProjectSlug }) {
                 with them in mind.
               </p>
               <p>
-                The design challenge wasn't feature parity — it was earning
+                The design challenge wasn't feature parity. It was earning
                 trust from professionals who had already tried generic tools and
                 abandoned them. The product had to feel purpose-built from the
                 first screen, or it wouldn't get a second look.
@@ -135,15 +135,15 @@ function Maison({ onClose, currentProjectSlug }) {
             <CaseStudySection title="My Role">
               <p>
                 As the founding design engineer, I owned the full design
-                surface — UX strategy, information architecture, visual design,
+                surface: UX strategy, information architecture, visual design,
                 brand, and frontend implementation in Next.js and React. There
                 was no design team to hand off to; I shipped production UI
                 alongside the engineers.
               </p>
               <p>
                 For brand, we made a deliberate choice to anchor to a visual
-                language familiar from LinkedIn — professional density, restrained
-                colour — then pushed it toward something more purpose-built for
+                language familiar from LinkedIn (professional density, restrained
+                colour) then pushed it toward something more purpose-built for
                 real estate. The goal was immediate legibility: professionals
                 should land on it and recognise what kind of product it was
                 without being told.
@@ -151,9 +151,9 @@ function Maison({ onClose, currentProjectSlug }) {
               <p>
                 Beyond execution, I was part of the strategic layer: I was in
                 the room for both pivot decisions, helping frame what the
-                product should become before a single wireframe was drawn. That
-                combination — being able to think through strategy and then
-                build the thing — defined how I worked throughout.
+                product should become before a single wireframe was drawn. Being
+                able to think through strategy and then build the thing defined
+                how I worked throughout.
               </p>
             </CaseStudySection>
           </section>
@@ -256,13 +256,13 @@ function Maison({ onClose, currentProjectSlug }) {
                 Working in Next.js and React meant I could move from wireframe
                 to production in days. I owned the full frontend: server
                 components, client interactivity, and UI state. I built the
-                component library from scratch — React components with defined
-                variants — which gave the engineering team a stable UI
+                component library from scratch (React components with defined
+                variants), which gave the engineering team a stable UI
                 foundation and kept visual consistency across surfaces as the
-                product evolved. On backend systems — real-time messaging,
-                payments, file storage — I worked closely with the engineering
-                team, shaping requirements and refining once a baseline was
-                live.
+                product evolved. On backend systems like real-time messaging,
+                payments, and file storage, I worked closely with the
+                engineering team, shaping requirements and refining once a
+                baseline was live.
               </p>
               <p>
                 I deliberately avoided a formal handoff process. I'd align on
@@ -282,13 +282,13 @@ function Maison({ onClose, currentProjectSlug }) {
             <CaseStudySection title="Outcomes">
               <p>
                 Maison closed before public launch. By that point Phase 2 was
-                fully functional — real-time messaging, community moderation,
+                fully functional: real-time messaging, community moderation,
                 file management, and subscription flows were all live and being
                 tested internally with a small group of agents.
               </p>
               <p>
                 The fragmentation problem resonated with every agent we spoke
-                to — across roughly 15 interviews spanning both phases. The harder problem was habit change: getting professionals
+                to, across roughly 15 interviews spanning both phases. The harder problem was habit change: getting professionals
                 to make Maison their primary tool, rather than a parallel tab,
                 required depth and daily utility we didn't have time to build.
                 We validated the problem. We didn't get to the tipping point.
@@ -316,7 +316,7 @@ function Maison({ onClose, currentProjectSlug }) {
               </p>
               <p>
                 <strong>What I'm proud of:</strong> I had a real seat at the
-                table for both pivots — helping shape what the product became,
+                table for both pivots, helping shape what the product became,
                 not just executing someone else's direction. Design quality held
                 through every change, and when the company closed we had
                 something genuinely finished. That's rare in a startup that
