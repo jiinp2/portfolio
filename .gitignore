@@ -29,6 +29,9 @@ dist-ssr
 # Cursor local workspace
 .cursor/
 
+# Claude local workspace
+.claude/
+
 # Test pages
 src/pages/InfoCardTest.jsx
 src/pages/InfoCardTest.css
