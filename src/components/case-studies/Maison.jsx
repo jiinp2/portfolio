@@ -58,9 +58,9 @@ function Maison({ onClose, currentProjectSlug }) {
               </p>
               <p>
                 Maison was built to fix that. I joined as the founding design
-                engineer and spent nine months designing and building a dedicated
-                platform for real estate professionals, through two major pivots
-                before the company closed in early 2026.
+                engineer and spent nine months designing and building a
+                dedicated platform for real estate professionals, through two
+                major pivots before the company closed in early 2026.
               </p>
             </CaseStudySection>
           </section>
@@ -77,16 +77,15 @@ function Maison({ onClose, currentProjectSlug }) {
                 <br />
                 We built tooling for agents to refer clients to contractors. It
                 failed quickly. The referral relationship required trust that
-                didn't exist between strangers on a new platform, and the domain
-                knowledge needed to vet contractors was deeper than we
-                anticipated. We were solving a distribution problem without
-                addressing the underlying trust gap.
+                didn't exist between strangers on a new platform, and the
+                domain knowledge needed to vet contractors was deeper than we
+                anticipated.
               </p>
               <div className="mt-4 mb-6 max-w-[560px] mx-auto">
                 <div className="w-full bg-[#f3f4f6] rounded-xl p-4 flex items-center justify-center">
                   <img
                     src="/case_studies/maison/maison-phase-1.png"
-                    alt="Maison Phase 1: Renovation Marketplace"
+                    alt="Maison Phase 1 — Renovation Marketplace"
                     className="w-full rounded-xl"
                   />
                 </div>
@@ -94,13 +93,12 @@ function Maison({ onClose, currentProjectSlug }) {
               <p>
                 <strong>Phase 2: Professional Network</strong> (Mid 2025)
                 <br />
-                Scrapping the marketplace forced us to go back to the agents
-                themselves. What consistently surfaced in those conversations
-                was fragmentation, not any single missing feature, but the
-                exhaustion of stitching together five different tools for tasks
-                that should happen in one place. We built that platform: a
-                directory, communities, messaging, file management, and
-                professional profiles.
+                Scrapping the marketplace forced us back to the agents. What
+                consistently surfaced was fragmentation, not any single missing
+                feature, but the exhaustion of stitching together five
+                different tools for tasks that should happen in one place. We
+                built that platform: a directory, communities, messaging, file
+                management, and professional profiles.
               </p>
             </CaseStudySection>
           </section>
@@ -120,9 +118,9 @@ function Maison({ onClose, currentProjectSlug }) {
               </p>
               <p>
                 The design challenge wasn't feature parity. It was earning
-                trust from professionals who had already tried generic tools and
-                abandoned them. The product had to feel purpose-built from the
-                first screen, or it wouldn't get a second look.
+                trust from professionals who had already tried generic tools
+                and abandoned them. The product had to feel purpose-built from
+                the first screen, or it wouldn't get a second look.
               </p>
             </CaseStudySection>
           </section>
@@ -137,23 +135,20 @@ function Maison({ onClose, currentProjectSlug }) {
                 As the founding design engineer, I owned the full design
                 surface: UX strategy, information architecture, visual design,
                 brand, and frontend implementation in Next.js and React. There
-                was no design team to hand off to; I shipped production UI
+                was no design team to hand off to. I shipped production UI
                 alongside the engineers.
               </p>
               <p>
-                For brand, we made a deliberate choice to anchor to a visual
-                language familiar from LinkedIn (professional density, restrained
-                colour) then pushed it toward something more purpose-built for
-                real estate. The goal was immediate legibility: professionals
-                should land on it and recognise what kind of product it was
-                without being told.
+                For brand, we anchored to a visual language familiar from
+                LinkedIn (professional density, restrained colour) then pushed
+                it toward something more purpose-built for real estate. The
+                goal was immediate legibility: professionals should land on it
+                and recognise what kind of product it was without being told.
               </p>
               <p>
-                Beyond execution, I was part of the strategic layer: I was in
-                the room for both pivot decisions, helping frame what the
-                product should become before a single wireframe was drawn. Being
-                able to think through strategy and then build the thing defined
-                how I worked throughout.
+                I was also in the room for both pivot decisions, helping frame
+                what the product should become before any wireframes were
+                drawn.
               </p>
             </CaseStudySection>
           </section>
@@ -236,12 +231,12 @@ function Maison({ onClose, currentProjectSlug }) {
             >
               <p>
                 Real-time DMs and group chats with a floating chat UI that
-                persisted across the platform. Designing for read state, unread
-                counts, and notification logic surfaced edge cases that only
-                emerge when you're simultaneously designing and building: what
-                does "read" mean in a group thread? When does a notification
-                badge clear? Those decisions had to be resolved in code, not
-                just in Figma.
+                persisted across the platform. Designing for read state,
+                unread counts, and notification logic surfaced edge cases that
+                only emerge when you're simultaneously designing and building.
+                What does "read" mean in a group thread? When does a
+                notification badge clear? Those decisions had to be resolved in
+                code, not just in mockups.
               </p>
             </CaseStudySection>
           </section>
@@ -256,20 +251,16 @@ function Maison({ onClose, currentProjectSlug }) {
                 Working in Next.js and React meant I could move from wireframe
                 to production in days. I owned the full frontend: server
                 components, client interactivity, and UI state. I built the
-                component library from scratch (React components with defined
-                variants), which gave the engineering team a stable UI
-                foundation and kept visual consistency across surfaces as the
-                product evolved. On backend systems like real-time messaging,
-                payments, and file storage, I worked closely with the
-                engineering team, shaping requirements and refining once a
-                baseline was live.
+                component library from scratch with defined variants, which
+                gave the engineering team a stable UI foundation and kept
+                visual consistency across surfaces as the product evolved.
               </p>
               <p>
-                I deliberately avoided a formal handoff process. I'd align on
-                direction through a call or a Linear ticket, let the team build
-                a working baseline, then go in directly to iterate from there.
-                It kept the feedback loop tight and meant design decisions could
-                be tested in the real product, not in a prototype.
+                I avoided a formal handoff process. I'd align on direction
+                through a call or a Linear ticket, let the team build a
+                working baseline, then go in directly to iterate. It kept the
+                feedback loop tight and meant design decisions got tested in
+                the real product, not in a prototype.
               </p>
             </CaseStudySection>
           </section>
@@ -283,15 +274,16 @@ function Maison({ onClose, currentProjectSlug }) {
               <p>
                 Maison closed before public launch. By that point Phase 2 was
                 fully functional: real-time messaging, community moderation,
-                file management, and subscription flows were all live and being
-                tested internally with a small group of agents.
+                file management, and subscription flows were all live and
+                being tested internally with a small group of agents.
               </p>
               <p>
                 The fragmentation problem resonated with every agent we spoke
-                to, across roughly 15 interviews spanning both phases. The harder problem was habit change: getting professionals
-                to make Maison their primary tool, rather than a parallel tab,
-                required depth and daily utility we didn't have time to build.
-                We validated the problem. We didn't get to the tipping point.
+                to across roughly 15 interviews spanning both phases. The
+                harder problem was habit change: getting professionals to make
+                Maison their primary tool rather than a parallel tab required
+                depth and daily utility we didn't have time to build. We
+                validated the problem. We didn't get to the tipping point.
               </p>
             </CaseStudySection>
           </section>
@@ -306,19 +298,18 @@ function Maison({ onClose, currentProjectSlug }) {
                 Working through two pivots taught me to attach to problems
                 rather than solutions. The UI changed completely between
                 phases. The core frustration agents had with their tools
-                didn't. That's the thing worth protecting.
+                didn't.
               </p>
               <p>
                 <strong>What I'd do differently:</strong> front-load research.
-                A few structured conversations with agents before Phase 1 would
-                have surfaced the fragmentation problem weeks earlier and saved
-                us from building the wrong thing first.
+                A few structured conversations with agents before Phase 1
+                would have surfaced the fragmentation problem weeks earlier.
               </p>
               <p>
                 <strong>What I'm proud of:</strong> I had a real seat at the
                 table for both pivots, helping shape what the product became,
-                not just executing someone else's direction. Design quality held
-                through every change, and when the company closed we had
+                not just executing someone else's direction. Design quality
+                held through every change, and when the company closed we had
                 something genuinely finished. That's rare in a startup that
                 pivoted twice.
               </p>
