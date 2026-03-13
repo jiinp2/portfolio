@@ -26,6 +26,9 @@ dist-ssr
 # Cursor Rules
 .cursorrules
 
+# Cursor local workspace
+.cursor/
+
 # Test pages
 src/pages/InfoCardTest.jsx
 src/pages/InfoCardTest.css
