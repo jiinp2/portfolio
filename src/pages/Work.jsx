@@ -341,7 +341,7 @@ function Work() {
               return (
                 <div
                   key={project.slug}
-                  className="group/card w-full p-5 md:p-6 flex flex-col md:flex-row gap-6 md:gap-10 items-stretch md:items-start rounded-xl"
+                  className="group/card w-full p-3 md:p-6 flex flex-col md:flex-row gap-6 md:gap-10 items-stretch md:items-start rounded-xl"
                 >
                   <button
                     type="button"
