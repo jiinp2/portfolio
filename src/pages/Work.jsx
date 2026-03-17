@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import { FileText, Mail } from "lucide-react";
+import { ExternalLink, FileText, Mail } from "lucide-react";
 import CaseStudy from "../components/CaseStudy";
 import ProjectCard from "../components/ProjectCard";
 import TabSection from "../components/TabSection";
@@ -83,6 +83,12 @@ function Work() {
   const filteredProjects = projects.filter(
     (project) => project.category === activeFilter,
   );
+
+  // Explorative: timeline order (most recent first)
+  const explorativeProjects =
+    activeFilter === "misc"
+      ? [...filteredProjects].sort((a, b) => (b.date < a.date ? -1 : 1))
+      : [];
 
   return (
     <div
@@ -326,22 +332,86 @@ function Work() {
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-10 w-full max-md:grid-cols-2 max-sm:grid-cols-1 max-md:gap-6">
-          {filteredProjects.map((project) => {
-            const originalIndex = projects.findIndex(
-              (p) => p.name === project.name,
-            );
-            return (
-              <ProjectCard
-                key={originalIndex}
-                project={project}
-                index={originalIndex}
-                isSelected={selectedProject === originalIndex}
-                onClick={openCaseStudy}
-              />
-            );
-          })}
-        </div>
+        {activeFilter === "misc" ? (
+          <div className="flex flex-col gap-12 max-md:gap-10">
+            {explorativeProjects.map((project) => {
+              const originalIndex = projects.findIndex(
+                (p) => p.slug === project.slug,
+              );
+              return (
+                <div
+                  key={project.slug}
+                  className="group/card w-full p-5 md:p-6 flex flex-col md:flex-row gap-6 md:gap-10 items-stretch md:items-start rounded-xl"
+                >
+                  <button
+                    type="button"
+                    onClick={() => openCaseStudy(originalIndex)}
+                    className="w-full md:w-[min(42%,360px)] md:shrink-0 aspect-[4/3] rounded-xl overflow-hidden flex items-center justify-center bg-gray-100 border-0 p-0 cursor-pointer group"
+                  >
+                    {project.video ? (
+                      <video
+                        src={project.video}
+                        className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-[1.02]"
+                        loop
+                        muted
+                        playsInline
+                        autoPlay
+                        aria-label={project.name}
+                      />
+                    ) : project.image ? (
+                      <img
+                        src={project.image}
+                        alt={project.name}
+                        className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-[1.02]"
+                      />
+                    ) : null}
+                  </button>
+                  <div className="flex flex-col gap-1 min-w-0 flex-1 px-4 md:px-6">
+                    <span className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:text-sm max-sm:text-xs">
+                      {project.date}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => openCaseStudy(originalIndex)}
+                      className="text-left border-0 p-0 bg-transparent cursor-pointer inline-flex items-center gap-2"
+                    >
+                      <h3 className="text-lg font-semibold text-text tracking-tight m-0 leading-tight transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:text-base max-sm:text-sm">
+                        {project.name}
+                      </h3>
+                      {project.url && (
+                        <ExternalLink
+                          className="opacity-60 text-text-light group-hover/card:opacity-100 group-hover/card:text-text transition-all duration-200 shrink-0"
+                          size={14}
+                          aria-hidden
+                        />
+                      )}
+                    </button>
+                    <p className="text-sm text-text-light font-normal leading-relaxed mt-2 mb-0 transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] cursor-text select-text">
+                      {project.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="grid grid-cols-3 gap-10 w-full max-md:grid-cols-2 max-sm:grid-cols-1 max-md:gap-6">
+            {filteredProjects.map((project) => {
+              const originalIndex = projects.findIndex(
+                (p) => p.name === project.name,
+              );
+              return (
+                <ProjectCard
+                  key={originalIndex}
+                  project={project}
+                  index={originalIndex}
+                  isSelected={selectedProject === originalIndex}
+                  onClick={openCaseStudy}
+                />
+              );
+            })}
+          </div>
+        )}
       </main>
 
       {/* Case Study View */}
