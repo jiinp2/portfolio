@@ -26,12 +26,12 @@ function ProjectCard({ project, index, isSelected, onClick, disabled }) {
   // Get image/video styles based on slug
   const getImageClasses = () => {
     const base =
-      "max-w-full max-h-full w-auto h-auto object-contain transition-transform duration-300";
+      "max-w-full max-h-full w-auto h-auto object-contain transition-transform duration-300 max-sm:w-full max-sm:h-full max-sm:object-cover";
     switch (project.slug) {
       case "scrivis-tattoos":
         return base;
       case "maison":
-        return `${base} !max-w-[40%] !max-h-[40%] max-sm:!max-w-[50%] max-sm:!max-h-[50%] [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(5%)_saturate(200%)_hue-rotate(10deg)]`;
+        return `${base} !max-w-[40%] !max-h-[40%] max-sm:!max-w-[65%] max-sm:!max-h-[65%] max-sm:!object-contain [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(5%)_saturate(200%)_hue-rotate(10deg)]`;
       case "rabbu-portfolio":
       case "rabbu":
         return `${base} !w-[60%] !h-[150%] !object-cover !object-top`;

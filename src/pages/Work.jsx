@@ -326,7 +326,7 @@ function Work() {
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-10 w-full max-md:grid-cols-1 max-md:gap-6">
+        <div className="grid grid-cols-3 gap-10 w-full max-md:grid-cols-2 max-sm:grid-cols-1 max-md:gap-6">
           {filteredProjects.map((project) => {
             const originalIndex = projects.findIndex(
               (p) => p.name === project.name,
