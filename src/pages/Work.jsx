@@ -346,12 +346,12 @@ function Work() {
                   <button
                     type="button"
                     onClick={() => openCaseStudy(originalIndex)}
-                    className="w-full md:w-[min(42%,360px)] md:shrink-0 aspect-[4/3] rounded-xl overflow-hidden flex items-center justify-center bg-gray-100 border-0 p-0 cursor-pointer group"
+                    className="w-full md:w-[min(42%,360px)] md:shrink-0 aspect-[4/3] rounded-xl overflow-hidden flex items-start justify-center bg-gray-100 border-0 p-0 cursor-pointer group"
                   >
                     {project.video ? (
                       <video
                         src={project.video}
-                        className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-[1.02]"
+                        className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
                         loop
                         muted
                         playsInline
@@ -362,7 +362,7 @@ function Work() {
                       <img
                         src={project.image}
                         alt={project.name}
-                        className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-[1.02]"
+                        className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
                       />
                     ) : null}
                   </button>
