@@ -44,13 +44,13 @@ function ProjectCard({ project, index, isSelected, onClick, disabled }) {
 
   // Get preview container styles based on slug
   const getPreviewClasses = () => {
-    const base = `w-full aspect-[4/3] flex items-center justify-center overflow-hidden p-8 box-border ${getBgColor()} max-md:p-2 max-sm:p-2`;
+    const base = `w-full aspect-[4/3] flex items-center justify-center overflow-hidden p-8 box-border ${getBgColor()} max-md:p-3 max-sm:p-3`;
     switch (project.slug) {
       case "rabbu-portfolio":
       case "rabbu":
-        return `${base} !pb-0 !items-start max-md:!p-2 max-md:!pb-0 max-md:!items-start`;
+        return `${base} !pb-0 !items-start max-md:!p-3 max-md:!pb-0 max-md:!items-start`;
       case "kobo":
-        return `${base} !pb-0 !items-start max-md:!p-1 max-md:!pb-0 max-md:!items-start`;
+        return `${base} !pb-0 !items-start max-md:!p-2 max-md:!pb-0 max-md:!items-start`;
       default:
         return base;
     }

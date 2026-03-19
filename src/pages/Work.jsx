@@ -362,7 +362,7 @@ function Work() {
                       <img
                         src={project.image}
                         alt={project.name}
-                        className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
+                        className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-[1.02]"
                       />
                     ) : null}
                   </button>
