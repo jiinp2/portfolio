@@ -107,22 +107,27 @@ function Work() {
         <div className="w-full max-md:max-w-none max-md:text-left">
           {/* INTRO */}
           <div className="mb-10 max-md:mb-8">
-            <Link
-              to="/"
-              className="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center mb-6 overflow-hidden cursor-pointer no-underline transition-transform duration-[900ms] ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-[1.02]"
-            >
-              <img
-                src={
-                  isDarkMode ? "/home/jiin_ac.png" : "/home/jiin_profile.png"
-                }
-                alt="Jiin Park"
-                className="w-full h-full object-cover rounded-full"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = "/home/jiin_profile.png";
-                }}
-              />
-            </Link>
+            <div className="flex items-center justify-between gap-4 max-md:mb-6">
+              <Link
+                to="/"
+                className="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center mb-6 max-md:mb-0 overflow-hidden cursor-pointer no-underline transition-transform duration-[900ms] ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-[1.02]"
+              >
+                <img
+                  src={
+                    isDarkMode ? "/home/jiin_ac.png" : "/home/jiin_profile.png"
+                  }
+                  alt="Jiin Park"
+                  className="w-full h-full object-cover rounded-full"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "/home/jiin_profile.png";
+                  }}
+                />
+              </Link>
+              <div className="hidden max-md:block">
+                <PageToggle isDarkMode={isDarkMode} onToggle={toggleTheme} />
+              </div>
+            </div>
             <h1 className="text-xl font-semibold text-text mb-2 tracking-tight leading-tight transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:text-xl max-sm:text-xl">
               Jiin Park
             </h1>
@@ -307,7 +312,9 @@ function Work() {
             <h2 className="text-2xl font-medium text-text tracking-tight leading-tight m-0 transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:text-xl max-sm:text-xl">
               Work
             </h2>
-            <PageToggle isDarkMode={isDarkMode} onToggle={toggleTheme} />
+            <div className="hidden max-md:block">
+              <PageToggle isDarkMode={isDarkMode} onToggle={toggleTheme} />
+            </div>
           </div>
           <div className="flex gap-2 flex-wrap">
             <button
