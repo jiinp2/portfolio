@@ -312,7 +312,7 @@ function Work() {
             <h2 className="text-2xl font-medium text-text tracking-tight leading-tight m-0 transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:text-xl max-sm:text-xl">
               Work
             </h2>
-            <div className="hidden max-md:block">
+            <div className="max-md:hidden">
               <PageToggle isDarkMode={isDarkMode} onToggle={toggleTheme} />
             </div>
           </div>
