@@ -8,8 +8,9 @@ function PageToggle({ isDarkMode, onToggle }) {
       style={{
         width: "64px",
         height: "32px",
-        backgroundColor: isDarkMode ? "#171717" : "#f3f4f6",
-        transition: "background-color 0.3s ease",
+        backgroundColor: isDarkMode ? "#2a2a2a" : "#f3f4f6",
+        border: isDarkMode ? "1px solid #3f3f46" : "1px solid transparent",
+        transition: "background-color 0.3s ease, border-color 0.3s ease",
         textDecoration: "none",
         display: "inline-flex",
         outline: "none",
