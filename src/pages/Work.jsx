@@ -201,7 +201,7 @@ function Work() {
                       </span>
                       <div className="flex flex-col gap-2">
                         <div className="text-sm font-medium text-text transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
-                          Founding Design Engineer
+                          Founding Product Designer
                         </div>
                         <div className="text-sm text-text-light font-normal transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                           Maison
