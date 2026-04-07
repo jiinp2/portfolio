@@ -34,7 +34,7 @@ function Maison({ onClose, currentProjectSlug }) {
             imageSrc="/case_studies/maison/maison-hero.png"
             imageAlt="Maison Hero"
             infoItems={[
-              { label: "Role", value: "Founding Design Engineer" },
+              { label: "Role", value: "Founding Product Designer" },
               {
                 label: "Scope",
                 value: "Product Design · Frontend Development · Strategy",
@@ -51,17 +51,13 @@ function Maison({ onClose, currentProjectSlug }) {
           >
             <CaseStudySection title="Overview">
               <p>
-                Real estate professionals have no professional home. Deals get
-                coordinated over WhatsApp, referrals happen through Facebook
-                groups, and files get lost in email threads. Every tool they
-                rely on was built for someone else.
+                Maison is a professional networking platform for real estate
+                agents. I was the founding product designer, working directly
+                with the founder over 10 months. There was no PM, no design
+                system, and no established roadmap when I joined. Product
+                decisions were made between me and the founder.
               </p>
-              <p>
-                Maison was built to fix that. I joined as the founding design
-                engineer and spent nine months designing and building a
-                dedicated platform for real estate professionals, through two
-                major pivots before the company closed in early 2026.
-              </p>
+              <p>The company went through two pivots before closing in early 2026.</p>
             </CaseStudySection>
           </section>
 
@@ -132,7 +128,7 @@ function Maison({ onClose, currentProjectSlug }) {
           >
             <CaseStudySection title="My Role">
               <p>
-                As the founding design engineer, I owned the full design
+                As the founding product designer, I owned the full design
                 surface: UX strategy, information architecture, visual design,
                 brand, and frontend implementation in Next.js and React. There
                 was no design team to hand off to. I shipped production UI

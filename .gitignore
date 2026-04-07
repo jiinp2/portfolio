@@ -32,6 +32,9 @@ dist-ssr
 # Claude local workspace
 .claude/
 
+# Case study markdown files
+*.md
+
 # Test pages
 src/pages/InfoCardTest.jsx
 src/pages/InfoCardTest.css
