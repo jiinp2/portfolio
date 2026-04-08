@@ -11,13 +11,13 @@ function MoreWork({ currentProjectSlug, onClose }) {
   // Filter out current project and show all others
   const otherProjects = useMemo(
     () => projects.filter((project) => project.slug !== currentProjectSlug),
-    [currentProjectSlug]
+    [currentProjectSlug],
   );
 
   // Duplicate list for seamless marquee loop
   const marqueeProjects = useMemo(
     () => [...otherProjects, ...otherProjects],
-    [otherProjects]
+    [otherProjects],
   );
 
   useEffect(() => {
@@ -50,7 +50,9 @@ function MoreWork({ currentProjectSlug, onClose }) {
   return (
     <section className="mt-20 pt-20 border-t border-gray-200 w-full max-md:mt-16 max-md:pt-16">
       <div className="w-full p-0">
-        <h2 className="text-2xl font-semibold text-text m-0 mb-12 tracking-tight leading-tight text-left max-md:text-xl max-md:mb-8">More Work</h2>
+        <h3 className="w-full text-left text-base font-semibold text-text m-0 mb-4 tracking-tight leading-tight">
+          More Work
+        </h3>
         <div
           className="more-work-marquee max-md:-mx-4 max-md:px-4"
           data-paused={isUserInteracting ? "true" : "false"}
@@ -60,25 +62,25 @@ function MoreWork({ currentProjectSlug, onClose }) {
         >
           <div className="more-work-marquee-track [&_.group:hover_img]:transform-none">
             {marqueeProjects.map((project, idx) => {
-            const projectIndex = projects.findIndex(
-              (p) => p.slug === project.slug
-            );
-            return (
-              <div
-                key={`${project.slug}-${idx}`}
-                className="more-work-marquee-item"
-                aria-hidden={idx >= otherProjects.length}
-              >
-                <ProjectCard
-                  project={project}
-                  index={projectIndex}
-                  isSelected={false}
-                  onClick={handleProjectClick}
-                  useShortDescription
-                  isMoreWork
-                />
-              </div>
-            );
+              const projectIndex = projects.findIndex(
+                (p) => p.slug === project.slug,
+              );
+              return (
+                <div
+                  key={`${project.slug}-${idx}`}
+                  className="more-work-marquee-item"
+                  aria-hidden={idx >= otherProjects.length}
+                >
+                  <ProjectCard
+                    project={project}
+                    index={projectIndex}
+                    isSelected={false}
+                    onClick={handleProjectClick}
+                    useShortDescription
+                    isMoreWork
+                  />
+                </div>
+              );
             })}
           </div>
         </div>

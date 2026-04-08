@@ -13,7 +13,6 @@ function Maison({ onClose, currentProjectSlug }) {
     { id: "problem", label: "The Problem" },
     { id: "process", label: "Process" },
     { id: "built", label: "What We Built" },
-    { id: "technical", label: "Technical Depth" },
     { id: "outcomes", label: "Outcomes" },
     { id: "reflection", label: "Reflection" },
   ];
@@ -43,37 +42,6 @@ function Maison({ onClose, currentProjectSlug }) {
               { label: "Status", value: "Closed before public launch" },
             ]}
           />
-
-          <div
-            className="mb-12 grid grid-cols-2 gap-4 sm:grid-cols-4 w-full"
-            role="img"
-            aria-label="Project stats: 10 months, 2 pivots, over 20 interviews, 5 features"
-          >
-            <div className="bg-gray-50 rounded-xl px-4 py-3 text-center sm:text-left">
-              <div className="text-xs text-text-muted tracking-tight">Timeline</div>
-              <div className="mt-1 text-lg font-semibold text-text tracking-tight">
-                10 mo
-              </div>
-            </div>
-            <div className="bg-gray-50 rounded-xl px-4 py-3 text-center sm:text-left">
-              <div className="text-xs text-text-muted tracking-tight">Pivots</div>
-              <div className="mt-1 text-lg font-semibold text-text tracking-tight">
-                2
-              </div>
-            </div>
-            <div className="bg-gray-50 rounded-xl px-4 py-3 text-center sm:text-left">
-              <div className="text-xs text-text-muted tracking-tight">Interviews</div>
-              <div className="mt-1 text-lg font-semibold text-text tracking-tight">
-                20+
-              </div>
-            </div>
-            <div className="bg-gray-50 rounded-xl px-4 py-3 text-center sm:text-left">
-              <div className="text-xs text-text-muted tracking-tight">Features</div>
-              <div className="mt-1 text-lg font-semibold text-text tracking-tight">
-                5
-              </div>
-            </div>
-          </div>
 
           <section
             id="overview"
@@ -111,60 +79,82 @@ function Maison({ onClose, currentProjectSlug }) {
               </p>
 
               <div
-                className="mt-8 w-full flex flex-col gap-4 lg:flex-row lg:items-stretch lg:gap-3"
+                className="mt-8 flex w-full flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:grid-rows-[auto_auto] lg:gap-x-3 lg:gap-y-0"
                 role="img"
                 aria-label="Phase 1 referral marketplace compared to Phase 2 professional network"
               >
-                <div className="bg-gray-50 rounded-xl p-5 flex flex-col gap-3 text-left lg:flex-1 min-w-0">
-                  <p className="text-xs font-medium uppercase tracking-wide text-text-muted m-0">
-                    Phase 1 · Apr 2025
-                  </p>
-                  <p className="text-base font-semibold text-text m-0 tracking-tight">
-                    Referral marketplace
-                  </p>
-                  <p className="text-sm text-text-muted leading-relaxed m-0">
-                    Homeowners, realtors, and contractors linked through exclusive
-                    geographic patches—the high-trust alternative to
-                    volume-first marketplaces.
-                  </p>
-                  <ul className="text-sm text-text-muted leading-relaxed m-0 pl-5 list-disc space-y-1">
-                    <li>Agents</li>
-                    <li>Homeowners</li>
-                    <li>Contractors</li>
-                  </ul>
-                  <p className="text-sm leading-relaxed m-0 mt-1 rounded-lg border border-red-200/70 bg-red-50 px-3 py-2.5 text-red-950">
-                    All three groups needed traction on a new platform; growth
-                    wasn&apos;t fast enough to continue.
-                  </p>
+                <div className="flex flex-col gap-3 rounded-xl bg-gray-50 p-5 lg:contents">
+                  <div className="flex min-h-0 min-w-0 flex-col gap-3 text-left lg:col-start-1 lg:row-start-1 lg:bg-gray-50 lg:p-5 lg:pb-3 lg:rounded-t-xl">
+                    <p className="text-xs font-medium uppercase tracking-wide text-text-muted m-0">
+                      Phase 1 · Apr 2025
+                    </p>
+                    <p className="text-base font-semibold text-text m-0 tracking-tight">
+                      Referral marketplace
+                    </p>
+                    <p className="text-sm text-text-muted leading-relaxed m-0">
+                      Homeowners, realtors, and contractors linked through exclusive
+                      geographic patches—the high-trust alternative to
+                      volume-first marketplaces.
+                    </p>
+                    <ul className="text-sm text-text-muted leading-relaxed m-0 pl-5 list-disc space-y-1">
+                      <li>Agents</li>
+                      <li>Homeowners</li>
+                      <li>Contractors</li>
+                    </ul>
+                  </div>
+                  <div className="lg:col-start-1 lg:row-start-2 lg:bg-gray-50 lg:px-5 lg:pb-5 lg:rounded-b-xl">
+                    <p className="phase-status-callout text-sm leading-relaxed m-0 rounded-lg border border-red-200/70 bg-red-50 px-3 py-2.5 text-red-950">
+                      All three groups needed traction on a new platform; growth
+                      wasn&apos;t fast enough to continue.
+                    </p>
+                  </div>
                 </div>
 
                 <div
-                  className="hidden lg:flex shrink-0 items-center justify-center px-1 text-text-muted text-2xl font-light select-none"
+                  className="hidden shrink-0 items-center justify-center px-1 text-text-muted text-2xl font-light select-none lg:col-start-2 lg:row-span-2 lg:flex lg:self-center"
                   aria-hidden
                 >
                   →
                 </div>
 
-                <div className="bg-gray-50 rounded-xl p-5 flex flex-col gap-3 text-left lg:flex-1 min-w-0">
-                  <p className="text-xs font-medium uppercase tracking-wide text-text-muted m-0">
-                    Phase 2 · Mid 2025
-                  </p>
-                  <p className="text-base font-semibold text-text m-0 tracking-tight">
-                    Professional network
-                  </p>
-                  <p className="text-sm text-text-muted leading-relaxed m-0">
-                    Focused on agents only. One platform for directory,
-                    communities, messaging, files, and profiles.
-                  </p>
-                  <ul className="text-sm text-text-muted leading-relaxed m-0 pl-5 list-disc space-y-1">
-                    <li>Directory</li>
-                    <li>Communities</li>
-                    <li>Messaging · Files · Profiles</li>
-                  </ul>
-                  <p className="text-sm leading-relaxed m-0 mt-1 rounded-lg border border-emerald-200/70 bg-emerald-50 px-3 py-2.5 text-emerald-950">
-                    Shipped fully functional. Closed before public launch.
-                  </p>
+                <div className="flex flex-col gap-3 rounded-xl bg-gray-50 p-5 lg:contents">
+                  <div className="flex min-h-0 min-w-0 flex-col gap-3 text-left lg:col-start-3 lg:row-start-1 lg:bg-gray-50 lg:p-5 lg:pb-3 lg:rounded-t-xl">
+                    <p className="text-xs font-medium uppercase tracking-wide text-text-muted m-0">
+                      Phase 2 · Mid 2025
+                    </p>
+                    <p className="text-base font-semibold text-text m-0 tracking-tight">
+                      Professional network
+                    </p>
+                    <p className="text-sm text-text-muted leading-relaxed m-0">
+                      Focused on agents only. One platform for directory,
+                      communities, messaging, files, and profiles.
+                    </p>
+                    <ul className="text-sm text-text-muted leading-relaxed m-0 pl-5 list-disc space-y-1">
+                      <li>Directory</li>
+                      <li>Communities</li>
+                      <li>Messaging · Files · Profiles</li>
+                    </ul>
+                  </div>
+                  <div className="lg:col-start-3 lg:row-start-2 lg:bg-gray-50 lg:px-5 lg:pb-5 lg:rounded-b-xl">
+                    <p className="phase-status-callout text-sm leading-relaxed m-0 rounded-lg border border-emerald-200/70 bg-emerald-50 px-3 py-2.5 text-emerald-950">
+                      Shipped fully functional. Closed before public launch.
+                    </p>
+                  </div>
                 </div>
+              </div>
+
+              <div className="mt-8 w-full">
+                <div className="w-full bg-[#f3f4f6] rounded-xl p-4 flex items-center justify-center">
+                  <img
+                    src="/case_studies/maison/maison-phase-1.png"
+                    alt="Maison Phase 1 referral marketplace interface"
+                    className="w-full rounded-xl"
+                  />
+                </div>
+                <p className="case-study-image-caption">
+                  Phase 1 product: referrals across homeowners, realtors, and
+                  contractors before the pivot to an agent-only network.
+                </p>
               </div>
             </CaseStudySection>
           </section>
@@ -195,7 +185,27 @@ function Maison({ onClose, currentProjectSlug }) {
                   <p className="text-xs font-medium uppercase tracking-wide text-text-muted m-0 mb-2">
                     Before
                   </p>
-                  <p className="text-sm text-text-muted leading-relaxed m-0">
+                  <div
+                    className="mt-3 mb-4 flex w-full min-w-0 flex-row flex-nowrap items-center justify-evenly gap-2 sm:gap-3 py-3 sm:py-4"
+                    aria-hidden
+                  >
+                    <img
+                      src="/case_studies/maison/whatsapp.png"
+                      alt=""
+                      className="h-9 w-auto max-h-9 shrink-0 object-contain"
+                    />
+                    <img
+                      src="/case_studies/maison/facebook.png"
+                      alt=""
+                      className="h-9 w-auto max-h-9 shrink-0 object-contain"
+                    />
+                    <img
+                      src="/case_studies/maison/gmail.png"
+                      alt=""
+                      className="h-9 w-auto max-h-9 shrink-0 object-contain"
+                    />
+                  </div>
+                  <p className="text-center text-sm text-text-muted leading-relaxed m-0">
                     WhatsApp · Facebook groups · Email · Generic CRMs — tools
                     stitched together, none built for agents.
                   </p>
@@ -204,7 +214,7 @@ function Maison({ onClose, currentProjectSlug }) {
                   <p className="text-xs font-medium uppercase tracking-wide text-text-muted m-0 mb-2">
                     After
                   </p>
-                  <p className="text-sm text-text-muted leading-relaxed m-0">
+                  <p className="text-center text-sm text-text-muted leading-relaxed m-0">
                     Maison — one place for networking, reputation, communities,
                     files, and messaging.
                   </p>
@@ -393,24 +403,6 @@ function Maison({ onClose, currentProjectSlug }) {
                 same time meant edge cases came up fast. Notification logic, read
                 states, and unread counts got resolved in the real product rather
                 than in mockups.
-              </p>
-            </CaseStudySection>
-          </section>
-
-          <section
-            id="technical"
-            ref={(el) => (sectionRefs.current.technical = el)}
-            className="case-study-section"
-          >
-            <CaseStudySection title="Technical Depth">
-              <p>
-                I could take a new feature from wireframe to production in about
-                three to four weeks. I built the component library from scratch,
-                which gave the engineering team a consistent foundation and kept
-                the UI coherent as the product grew. Rather than formal handoffs,
-                I&apos;d align on direction through a call or a Linear ticket, let
-                the team build a working baseline, then go in directly to
-                iterate.
               </p>
             </CaseStudySection>
           </section>

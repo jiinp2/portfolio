@@ -37,6 +37,9 @@ function CaseStudySection({
                   className="w-full rounded-xl max-h-[500px] object-contain"
                 />
               </div>
+              {sideBySide.image.caption ? (
+                <p className="case-study-image-caption">{sideBySide.image.caption}</p>
+              ) : null}
             </div>
           </>
         ) : (
@@ -49,6 +52,9 @@ function CaseStudySection({
                   className="w-full rounded-xl max-h-[500px] object-contain"
                 />
               </div>
+              {sideBySide.image.caption ? (
+                <p className="case-study-image-caption">{sideBySide.image.caption}</p>
+              ) : null}
             </div>
             <div className="order-1 md:order-2">
               {title && (
@@ -122,6 +128,9 @@ function CaseStudySection({
               className="w-full rounded-xl"
             />
           </div>
+          {image.caption ? (
+            <p className="case-study-image-caption">{image.caption}</p>
+          ) : null}
         </div>
       )}
 
