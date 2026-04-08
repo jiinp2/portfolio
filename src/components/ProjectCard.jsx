@@ -134,7 +134,7 @@ function ProjectCard({ project, index, isSelected, onClick, disabled }) {
             {project.name}
             {project.url && (
               <ExternalLink
-                className="external-link-icon opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-current shrink-0"
+                className="external-link-icon opacity-60 transition-opacity duration-200 text-current shrink-0"
                 size={14}
               />
             )}
@@ -143,6 +143,11 @@ function ProjectCard({ project, index, isSelected, onClick, disabled }) {
             {project.date}
           </p>
         </div>
+        {project.url && (
+          <p className="text-xs text-text-muted mt-1 mb-0 leading-tight">
+            Open site ↗
+          </p>
+        )}
         {project.description && (
           <p className="text-sm text-text-light mt-2 mb-0 font-normal leading-relaxed transition-colors duration-600 ease-in-out">
             {project.description}

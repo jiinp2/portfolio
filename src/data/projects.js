@@ -56,7 +56,7 @@ export const projects = [
     video: "/misc/scrivis_video.mp4",
     url: "https://scrivis.vercel.app/",
     description:
-      "Designed and coded a portfolio and booking site for a tattoo artist. Showcases past work and flash designs, handles client booking forms, and the visual design blends modern UI with medieval whimsy: text bubbles, pointing hand navigation, and other nods to their style.",
+      "Portfolio and booking site for a tattoo artist, blending modern UI with medieval whimsy.",
   },
   {
     name: "Pokemon Valentine",
@@ -67,6 +67,6 @@ export const projects = [
     image: "/misc/pokemon_valentine.png",
     url: "https://pokemon-valentine.vercel.app/",
     description:
-      "A one-day hackathon project from BrainStation. A Valentine's card generator using the PokeAPI: pick a Fighting or Fairy type, get a unique message from that Pokemon, and download it as an image.",
+      "One-day hackathon: a Pokémon Valentine card generator using the PokéAPI.",
   },
 ];

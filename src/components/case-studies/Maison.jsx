@@ -67,35 +67,71 @@ function Maison({ onClose, currentProjectSlug }) {
             className="case-study-section"
           >
             <CaseStudySection title="How We Got Here">
-              <p>We didn't start with the right idea.</p>
               <p>
-                <strong>Phase 1: Renovation Marketplace</strong> (April 2025)
-                <br />
-                We built tooling for agents to refer clients to contractors. It
-                failed quickly. The referral relationship required trust that
-                didn't exist between strangers on a new platform, and the
-                domain knowledge needed to vet contractors was deeper than we
-                anticipated.
+                We didn&apos;t start with the right idea. The first product
+                required agents, homeowners, and contractors to all be active on
+                the platform at the same time, and getting one group without the
+                others meant nobody saw value. We went back to the drawing board
+                and talked to agents directly. What kept coming up was
+                fragmentation. Not any single missing feature, but the exhaustion
+                of stitching together tools that were never built for them.
               </p>
-              <div className="mt-4 mb-6 max-w-[560px] mx-auto">
-                <div className="w-full bg-[#f3f4f6] rounded-xl p-4 flex items-center justify-center">
-                  <img
-                    src="/case_studies/maison/maison-phase-1.png"
-                    alt="Maison Phase 1 — Renovation Marketplace"
-                    className="w-full rounded-xl"
-                  />
+
+              <div
+                className="mt-8 w-full flex flex-col gap-4 lg:flex-row lg:items-stretch lg:gap-3"
+                role="img"
+                aria-label="Phase 1 renovation marketplace compared to Phase 2 professional network"
+              >
+                <div className="bg-gray-50 rounded-xl p-5 flex flex-col gap-3 text-left lg:flex-1 min-w-0">
+                  <p className="text-xs font-medium uppercase tracking-wide text-text-muted m-0">
+                    Phase 1 · Apr 2025
+                  </p>
+                  <p className="text-base font-semibold text-text m-0 tracking-tight">
+                    Renovation marketplace
+                  </p>
+                  <p className="text-sm text-text-muted leading-relaxed m-0">
+                    Referral platform connecting homeowners to vetted contractors
+                    via agents. Contractors assigned to geographic patches.
+                  </p>
+                  <ul className="text-sm text-text-muted leading-relaxed m-0 pl-5 list-disc space-y-1">
+                    <li>Agents</li>
+                    <li>Homeowners</li>
+                    <li>Contractors</li>
+                  </ul>
+                  <p className="text-sm leading-relaxed m-0 mt-1 rounded-lg border border-red-200/70 bg-red-50 px-3 py-2.5 text-red-950">
+                    All three groups needed to be active at once. Too many moving
+                    parts before anyone saw value.
+                  </p>
+                </div>
+
+                <div
+                  className="hidden lg:flex shrink-0 items-center justify-center px-1 text-text-muted text-2xl font-light select-none"
+                  aria-hidden
+                >
+                  →
+                </div>
+
+                <div className="bg-gray-50 rounded-xl p-5 flex flex-col gap-3 text-left lg:flex-1 min-w-0">
+                  <p className="text-xs font-medium uppercase tracking-wide text-text-muted m-0">
+                    Phase 2 · Mid 2025
+                  </p>
+                  <p className="text-base font-semibold text-text m-0 tracking-tight">
+                    Professional network
+                  </p>
+                  <p className="text-sm text-text-muted leading-relaxed m-0">
+                    Focused on agents only. One platform for directory,
+                    communities, messaging, files, and profiles.
+                  </p>
+                  <ul className="text-sm text-text-muted leading-relaxed m-0 pl-5 list-disc space-y-1">
+                    <li>Directory</li>
+                    <li>Communities</li>
+                    <li>Messaging · Files · Profiles</li>
+                  </ul>
+                  <p className="text-sm leading-relaxed m-0 mt-1 rounded-lg border border-emerald-200/70 bg-emerald-50 px-3 py-2.5 text-emerald-950">
+                    Shipped fully functional. Closed before public launch.
+                  </p>
                 </div>
               </div>
-              <p>
-                <strong>Phase 2: Professional Network</strong> (Mid 2025)
-                <br />
-                Scrapping the marketplace forced us back to the agents. What
-                consistently surfaced was fragmentation, not any single missing
-                feature, but the exhaustion of stitching together five
-                different tools for tasks that should happen in one place. We
-                built that platform: a directory, communities, messaging, file
-                management, and professional profiles.
-              </p>
             </CaseStudySection>
           </section>
 
@@ -291,23 +327,22 @@ function Maison({ onClose, currentProjectSlug }) {
           >
             <CaseStudySection title="Reflection">
               <p>
-                Working through two pivots taught me to attach to problems
-                rather than solutions. The UI changed completely between
-                phases. The core frustration agents had with their tools
-                didn't.
+                Working at a startup as a founding team member taught me more
+                than I expected. Without a defined process or team to lean on,
+                I had to figure out what the product needed and how to move it
+                forward at the same time.
               </p>
               <p>
-                <strong>What I'd do differently:</strong> front-load research.
-                A few structured conversations with agents before Phase 1
-                would have surfaced the fragmentation problem weeks earlier.
+                <strong>What I'd do differently:</strong> start with research.
+                A few conversations with agents before Phase 1 would have
+                surfaced the fragmentation problem weeks earlier.
               </p>
               <p>
-                <strong>What I'm proud of:</strong> I had a real seat at the
-                table for both pivots, helping shape what the product became,
-                not just executing someone else's direction. Design quality
-                held through every change, and when the company closed we had
-                something genuinely finished. That's rare in a startup that
-                pivoted twice.
+                <strong>What I took from it:</strong> I'm glad I took on a
+                role with real product ownership right out of my software
+                engineering diploma. Shaping what got built, not just designing
+                it, and shipping production code at the same time pushed me in
+                ways a more defined role wouldn't have.
               </p>
             </CaseStudySection>
           </section>
