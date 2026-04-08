@@ -57,8 +57,8 @@ function Maison({ onClose, currentProjectSlug }) {
               <p>
                 I joined as the founding product designer and worked directly
                 with the founder on product direction and hiring. I covered the
-                full design scope, from UX strategy and visual design to frontend
-                implementation in React.
+                full design scope, from UX strategy and visual design to
+                frontend implementation in React.
               </p>
             </CaseStudySection>
           </section>
@@ -71,11 +71,12 @@ function Maison({ onClose, currentProjectSlug }) {
             <CaseStudySection title="Background">
               <p>
                 Maison started as a referral-only platform connecting
-                homeowners, realtors, and contractors through exclusive geographic
-                patches. Platforms like Angi, HomeStars, and Jiffy are built on
-                volume and we were building the high-trust alternative. Getting all
-                three groups active on a brand new platform wasn&apos;t gaining
-                traction fast enough, and we pivoted to focus entirely on agents.
+                homeowners, realtors, and contractors through exclusive
+                geographic patches. Platforms like Angi, HomeStars, and Jiffy
+                are built on volume and we were building the high-trust
+                alternative. Getting all three groups active on a brand new
+                platform wasn&apos;t gaining traction fast enough, and we
+                pivoted to focus entirely on agents.
               </p>
 
               <div
@@ -92,8 +93,8 @@ function Maison({ onClose, currentProjectSlug }) {
                       Referral marketplace
                     </p>
                     <p className="text-sm text-text-muted leading-relaxed m-0">
-                      Homeowners, realtors, and contractors linked through exclusive
-                      geographic patches—the high-trust alternative to
+                      Homeowners, realtors, and contractors linked through
+                      exclusive geographic patches—the high-trust alternative to
                       volume-first marketplaces.
                     </p>
                     <ul className="text-sm text-text-muted leading-relaxed m-0 pl-5 list-disc space-y-1">
@@ -177,47 +178,57 @@ function Maison({ onClose, currentProjectSlug }) {
               </p>
 
               <div
-                className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 w-full max-w-full"
+                className="mt-8 grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 sm:items-center w-full max-w-full"
                 role="img"
                 aria-label="Before: fragmented tools. After: Maison"
               >
-                <div className="bg-gray-50 rounded-xl p-5 text-left">
+                <div className="flex min-h-0 min-w-0 flex-col rounded-xl bg-gray-50 p-5 text-left w-full">
                   <p className="text-xs font-medium uppercase tracking-wide text-text-muted m-0 mb-2">
                     Before
                   </p>
-                  <div
-                    className="mt-3 mb-4 flex w-full min-w-0 flex-row flex-nowrap items-center justify-evenly gap-2 sm:gap-3 py-3 sm:py-4"
-                    aria-hidden
-                  >
-                    <img
-                      src="/case_studies/maison/whatsapp.png"
-                      alt=""
-                      className="h-9 w-auto max-h-9 shrink-0 object-contain"
-                    />
-                    <img
-                      src="/case_studies/maison/facebook.png"
-                      alt=""
-                      className="h-9 w-auto max-h-9 shrink-0 object-contain"
-                    />
-                    <img
-                      src="/case_studies/maison/gmail.png"
-                      alt=""
-                      className="h-9 w-auto max-h-9 shrink-0 object-contain"
-                    />
+                  <div className="mt-3 flex flex-col gap-4">
+                    <div
+                      className="flex w-full min-w-0 flex-row flex-nowrap items-center justify-evenly gap-2 py-2 sm:gap-3 sm:py-3"
+                      aria-hidden
+                    >
+                      <img
+                        src="/case_studies/maison/whatsapp.png"
+                        alt=""
+                        className="h-11 w-auto max-h-11 shrink-0 object-contain sm:h-12 sm:max-h-12"
+                      />
+                      <img
+                        src="/case_studies/maison/facebook.png"
+                        alt=""
+                        className="h-11 w-auto max-h-11 shrink-0 object-contain sm:h-12 sm:max-h-12"
+                      />
+                      <img
+                        src="/case_studies/maison/gmail.png"
+                        alt=""
+                        className="h-11 w-auto max-h-11 shrink-0 object-contain sm:h-12 sm:max-h-12"
+                      />
+                    </div>
+                    <p className="m-0 text-center text-sm leading-relaxed text-text-muted">
+                      WhatsApp · Facebook groups · Email · Generic CRMs <br />{" "}
+                      Tools stitched together, none built for agents.
+                    </p>
                   </div>
-                  <p className="text-center text-sm text-text-muted leading-relaxed m-0">
-                    WhatsApp · Facebook groups · Email · Generic CRMs — tools
-                    stitched together, none built for agents.
-                  </p>
                 </div>
-                <div className="bg-gray-50 rounded-xl p-5 text-left">
+                <div className="flex min-h-0 min-w-0 flex-col rounded-xl bg-gray-50 p-5 text-left w-full">
                   <p className="text-xs font-medium uppercase tracking-wide text-text-muted m-0 mb-2">
                     After
                   </p>
-                  <p className="text-center text-sm text-text-muted leading-relaxed m-0">
-                    Maison — one place for networking, reputation, communities,
-                    files, and messaging.
-                  </p>
+                  <div className="mt-3 flex flex-col gap-3">
+                    <img
+                      src="/case_studies/maison/maison-after.png"
+                      alt=""
+                      className="mx-auto w-full max-w-full rounded-lg object-contain object-top max-h-40 sm:max-h-48"
+                    />
+                    <p className="m-0 text-center text-sm leading-relaxed text-text-muted">
+                      Maison <br />
+                      One place for networking, reputation, communities, files,
+                      and messaging.
+                    </p>
+                  </div>
                 </div>
               </div>
             </CaseStudySection>
@@ -288,8 +299,8 @@ function Maison({ onClose, currentProjectSlug }) {
                       aria-hidden
                     />
                     <p className="text-sm text-text-muted leading-relaxed m-0">
-                      Reputation is built through relationships and contribution,
-                      not a static page.
+                      Reputation is built through relationships and
+                      contribution, not a static page.
                     </p>
                   </div>
 
@@ -377,8 +388,9 @@ function Maison({ onClose, currentProjectSlug }) {
                 Agents were already running communities on Facebook but the
                 platform wasn&apos;t built for their needs. We studied how those
                 groups worked and borrowed familiar patterns so the experience
-                felt immediately legible. Established agents got a place to build
-                visibility. Newer agents got a reason to engage with the field.
+                felt immediately legible. Established agents got a place to
+                build visibility. Newer agents got a reason to engage with the
+                field.
               </p>
             </CaseStudySection>
             <CaseStudySection title="File & Resource Management">
@@ -386,8 +398,8 @@ function Maison({ onClose, currentProjectSlug }) {
                 Each community had a shared file system with folder trees,
                 uploads, and permissions. This was the direct replacement for
                 WhatsApp threads where files were getting lost. Agents responded
-                well to this during testing and said it fixed something they dealt
-                with every day.
+                well to this during testing and said it fixed something they
+                dealt with every day.
               </p>
             </CaseStudySection>
             <CaseStudySection
@@ -399,10 +411,10 @@ function Maison({ onClose, currentProjectSlug }) {
             >
               <p>
                 Real-time DMs and group chats with a floating chat UI that
-                persisted across the platform. Building in design and code at the
-                same time meant edge cases came up fast. Notification logic, read
-                states, and unread counts got resolved in the real product rather
-                than in mockups.
+                persisted across the platform. Building in design and code at
+                the same time meant edge cases came up fast. Notification logic,
+                read states, and unread counts got resolved in the real product
+                rather than in mockups.
               </p>
             </CaseStudySection>
           </section>
@@ -416,14 +428,14 @@ function Maison({ onClose, currentProjectSlug }) {
               <p>
                 Phase 2 shipped fully functional before the company closed.
                 Real-time messaging, community moderation, file management, and
-                subscription flows were all live in internal testing with agents.
-                Maison closed in early 2026 before reaching public launch.
-                During testing, agents responded positively to file management
-                and the networking features. Finding other professionals and
-                staying current with the field were the things they said
-                they&apos;d actually use. What we didn&apos;t fully solve was
-                habit change. Getting professionals to make it their primary
-                tool required more depth than we had time to build.
+                subscription flows were all live in internal testing with
+                agents. Maison closed in early 2026 before reaching public
+                launch. During testing, agents responded positively to file
+                management and the networking features. Finding other
+                professionals and staying current with the field were the things
+                they said they&apos;d actually use. What we didn&apos;t fully
+                solve was habit change. Getting professionals to make it their
+                primary tool required more depth than we had time to build.
               </p>
             </CaseStudySection>
           </section>
@@ -442,10 +454,10 @@ function Maison({ onClose, currentProjectSlug }) {
               </p>
               <p>
                 I&apos;m glad I took on a role with real product ownership right
-                out of my software engineering diploma. Getting to influence what
-                got built, not just design it, and shipping production code at
-                the same time pushed me in ways a more defined role wouldn&apos;t
-                have.
+                out of my software engineering diploma. Getting to influence
+                what got built, not just design it, and shipping production code
+                at the same time pushed me in ways a more defined role
+                wouldn&apos;t have.
               </p>
             </CaseStudySection>
           </section>
