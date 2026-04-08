@@ -94,7 +94,7 @@ function Maison({ onClose, currentProjectSlug }) {
                     </p>
                     <p className="text-sm text-text-muted leading-relaxed m-0">
                       Homeowners, realtors, and contractors linked through
-                      exclusive geographic patches—the high-trust alternative to
+                      exclusive geographic patches, the high-trust alternative to
                       volume-first marketplaces.
                     </p>
                     <ul className="text-sm text-text-muted leading-relaxed m-0 pl-5 list-disc space-y-1">
@@ -350,8 +350,8 @@ function Maison({ onClose, currentProjectSlug }) {
             >
               <p>
                 Phase 2 was a full professional network: directory, profiles,
-                communities, shared files, and messaging—built so agents could
-                work and connect in one place.
+                communities, shared files, and messaging. We built it so agents
+                could work and connect in one place.
               </p>
             </CaseStudySection>
             <CaseStudySection title="Directory">
