@@ -74,6 +74,8 @@ function MoreWork({ currentProjectSlug, onClose }) {
                   index={projectIndex}
                   isSelected={false}
                   onClick={handleProjectClick}
+                  useShortDescription
+                  isMoreWork
                 />
               </div>
             );

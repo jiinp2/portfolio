@@ -259,7 +259,7 @@
 
   /* More Work marquee (end-to-end banner) */
   .more-work-marquee {
-    --more-work-speed: 90s; /* slow/premium */
+    --more-work-speed: 55s; /* faster */
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -269,19 +269,19 @@
     display: flex;
     flex-wrap: nowrap;
     width: max-content;
-    gap: 2rem;
+    gap: 3rem;
     will-change: transform;
     animation: moreWorkMarquee var(--more-work-speed) linear infinite;
   }
 
   .more-work-marquee-item {
     flex: 0 0 auto;
-    width: 300px;
+    width: 260px;
   }
 
   @media (max-width: 768px) {
     .more-work-marquee-item {
-      width: 260px;
+      width: 220px;
     }
   }
 

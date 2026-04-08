@@ -1,6 +1,14 @@
 import { ExternalLink } from "lucide-react";
 
-function ProjectCard({ project, index, isSelected, onClick, disabled }) {
+function ProjectCard({
+  project,
+  index,
+  isSelected,
+  onClick,
+  disabled,
+  useShortDescription = false,
+  isMoreWork = false,
+}) {
   // Get background color based on slug
   const getBgColor = () => {
     switch (project.slug) {
@@ -44,7 +52,7 @@ function ProjectCard({ project, index, isSelected, onClick, disabled }) {
 
   // Get preview container styles based on slug
   const getPreviewClasses = () => {
-    const base = `w-full aspect-[4/3] flex items-center justify-center overflow-hidden p-8 box-border ${getBgColor()} max-md:p-3 max-sm:p-3`;
+    const base = `w-full aspect-4/3 flex items-center justify-center overflow-hidden p-8 box-border ${getBgColor()} max-md:p-3 max-sm:p-3`;
     switch (project.slug) {
       case "rabbu-portfolio":
       case "rabbu":
@@ -57,17 +65,37 @@ function ProjectCard({ project, index, isSelected, onClick, disabled }) {
   };
 
   const isExplorative = project.category === "misc";
+  const isExternalLink = Boolean(project.url);
+  const displayDescription = useShortDescription
+    ? (project.descriptionShort ?? project.description)
+    : project.description;
+
+  const moreWorkButtonClassName =
+    "inline-flex w-full shrink-0 items-center justify-center gap-2 text-sm font-medium text-text border border-gray-200 bg-white rounded-lg px-3 py-2 transition-colors hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 cursor-pointer disabled:cursor-not-allowed";
+
+  const handlePrimaryAction = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (disabled) return;
+
+    if (isExternalLink) {
+      window.open(project.url, "_blank", "noopener,noreferrer");
+      return;
+    }
+
+    onClick(index);
+  };
 
   return (
     <div
       className={`group flex flex-col gap-4 max-md:gap-3 max-sm:gap-2 ${
         disabled ? "opacity-60 cursor-default" : "cursor-pointer"
-      }`}
+      } h-full`}
       onClick={() => !disabled && onClick(index)}
     >
       {isExplorative ? (
         <div
-          className="w-full aspect-[4/3] rounded-xl overflow-hidden flex items-center justify-center bg-transparent"
+          className="w-full aspect-4/3 rounded-xl overflow-hidden flex items-center justify-center bg-transparent"
           data-slug={project.slug}
         >
           {project.video ? (
@@ -128,32 +156,59 @@ function ProjectCard({ project, index, isSelected, onClick, disabled }) {
           </div>
         </div>
       )}
-      <div className="flex flex-col gap-1 p-0">
-        <div className="flex items-center justify-between gap-4">
-          <h3 className="text-lg font-semibold text-text tracking-tight m-0 leading-tight transition-colors duration-600 ease-in-out inline-flex items-center gap-2 flex-1 max-md:text-base max-sm:text-sm">
-            {project.name}
-            {project.url && (
-              <ExternalLink
-                className="external-link-icon opacity-60 transition-opacity duration-200 text-current shrink-0"
-                size={14}
-              />
+      {isMoreWork ? (
+        <div className="flex min-h-0 flex-1 flex-col gap-6 p-0">
+          <div className="flex min-h-0 flex-1 flex-col gap-1">
+            <div className="flex items-center justify-between gap-4">
+              <h3 className="text-lg font-semibold text-text tracking-tight m-0 leading-tight transition-colors duration-600 ease-in-out inline-flex items-center gap-2 flex-1 max-md:text-base max-sm:text-sm">
+                {project.name}
+              </h3>
+              <p className="text-sm text-text-light m-0 font-normal leading-normal transition-colors duration-600 ease-in-out shrink-0 max-md:text-sm max-sm:text-xs">
+                {project.date}
+              </p>
+            </div>
+            {displayDescription ? (
+              <p className="mt-2 mb-0 text-sm font-normal leading-relaxed text-text-light transition-colors duration-600 ease-in-out">
+                {displayDescription}
+              </p>
+            ) : null}
+          </div>
+
+          <button
+            type="button"
+            className={moreWorkButtonClassName}
+            onClick={handlePrimaryAction}
+            disabled={disabled}
+          >
+            {isExternalLink ? (
+              <>
+                <ExternalLink size={16} className="shrink-0" />
+                <span>Open link</span>
+              </>
+            ) : (
+              <span>Read case study</span>
             )}
-          </h3>
-          <p className="text-sm text-text-light m-0 font-normal leading-normal transition-colors duration-600 ease-in-out shrink-0 max-md:text-sm max-sm:text-xs">
-            {project.date}
-          </p>
+          </button>
         </div>
-        {project.url && (
-          <p className="text-xs text-text-muted mt-1 mb-0 leading-tight">
-            Open site ↗
-          </p>
-        )}
-        {project.description && (
-          <p className="text-sm text-text-light mt-2 mb-0 font-normal leading-relaxed transition-colors duration-600 ease-in-out">
-            {project.description}
-          </p>
-        )}
-      </div>
+      ) : (
+        <div className="flex min-h-0 flex-1 flex-col gap-1 p-0">
+          <div className="flex items-center justify-between gap-4">
+            <h3 className="text-lg font-semibold text-text tracking-tight m-0 leading-tight transition-colors duration-600 ease-in-out inline-flex items-center gap-2 flex-1 max-md:text-base max-sm:text-sm">
+              {project.name}
+            </h3>
+            <p className="text-sm text-text-light m-0 font-normal leading-normal transition-colors duration-600 ease-in-out shrink-0 max-md:text-sm max-sm:text-xs">
+              {project.date}
+            </p>
+          </div>
+          {displayDescription ? (
+            <p className="mt-2 mb-0 flex-1 text-sm font-normal leading-relaxed text-text-light transition-colors duration-600 ease-in-out">
+              {displayDescription}
+            </p>
+          ) : (
+            <div className="min-h-0 flex-1" />
+          )}
+        </div>
+      )}
     </div>
   );
 }
