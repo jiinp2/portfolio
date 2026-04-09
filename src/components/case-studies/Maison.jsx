@@ -84,8 +84,8 @@ function Maison({ onClose, currentProjectSlug }) {
                 role="img"
                 aria-label="Phase 1 referral marketplace compared to Phase 2 professional network"
               >
-                <div className="flex flex-col gap-3 rounded-xl bg-gray-50 p-5 lg:contents">
-                  <div className="flex min-h-0 min-w-0 flex-col gap-3 text-left lg:col-start-1 lg:row-start-1 lg:bg-gray-50 lg:p-5 lg:pb-3 lg:rounded-t-xl">
+                <div className="flex flex-col gap-3 rounded-xl bg-white border border-gray-200 p-5 lg:contents">
+                  <div className="flex min-h-0 min-w-0 flex-col gap-3 text-left lg:col-start-1 lg:row-start-1 lg:bg-white lg:border lg:border-gray-200 lg:border-b-0 lg:p-5 lg:pb-3 lg:rounded-t-xl">
                     <p className="text-xs font-medium uppercase tracking-wide text-text-muted m-0">
                       Phase 1 · Apr 2025
                     </p>
@@ -103,7 +103,7 @@ function Maison({ onClose, currentProjectSlug }) {
                       <li>Contractors</li>
                     </ul>
                   </div>
-                  <div className="lg:col-start-1 lg:row-start-2 lg:bg-gray-50 lg:px-5 lg:pb-5 lg:rounded-b-xl">
+                  <div className="lg:col-start-1 lg:row-start-2 lg:bg-white lg:border lg:border-gray-200 lg:border-t-0 lg:px-5 lg:pb-5 lg:rounded-b-xl">
                     <p className="phase-status-callout text-sm leading-relaxed m-0 rounded-lg border border-red-200/70 bg-red-50 px-3 py-2.5 text-red-950">
                       All three groups needed traction on a new platform; growth
                       wasn&apos;t fast enough to continue.
@@ -118,8 +118,8 @@ function Maison({ onClose, currentProjectSlug }) {
                   →
                 </div>
 
-                <div className="flex flex-col gap-3 rounded-xl bg-gray-50 p-5 lg:contents">
-                  <div className="flex min-h-0 min-w-0 flex-col gap-3 text-left lg:col-start-3 lg:row-start-1 lg:bg-gray-50 lg:p-5 lg:pb-3 lg:rounded-t-xl">
+                <div className="flex flex-col gap-3 rounded-xl bg-white border border-gray-200 p-5 lg:contents">
+                  <div className="flex min-h-0 min-w-0 flex-col gap-3 text-left lg:col-start-3 lg:row-start-1 lg:bg-white lg:border lg:border-gray-200 lg:border-b-0 lg:p-5 lg:pb-3 lg:rounded-t-xl">
                     <p className="text-xs font-medium uppercase tracking-wide text-text-muted m-0">
                       Phase 2 · Mid 2025
                     </p>
@@ -136,7 +136,7 @@ function Maison({ onClose, currentProjectSlug }) {
                       <li>Messaging · Files · Profiles</li>
                     </ul>
                   </div>
-                  <div className="lg:col-start-3 lg:row-start-2 lg:bg-gray-50 lg:px-5 lg:pb-5 lg:rounded-b-xl">
+                  <div className="lg:col-start-3 lg:row-start-2 lg:bg-white lg:border lg:border-gray-200 lg:border-t-0 lg:px-5 lg:pb-5 lg:rounded-b-xl">
                     <p className="phase-status-callout text-sm leading-relaxed m-0 rounded-lg border border-emerald-200/70 bg-emerald-50 px-3 py-2.5 text-emerald-950">
                       Shipped fully functional. Closed before public launch.
                     </p>
@@ -182,7 +182,7 @@ function Maison({ onClose, currentProjectSlug }) {
                 role="img"
                 aria-label="Before: fragmented tools. After: Maison"
               >
-                <div className="flex min-h-0 min-w-0 flex-col rounded-xl bg-gray-50 p-5 text-left w-full">
+                <div className="flex min-h-0 min-w-0 flex-col rounded-xl bg-white border border-gray-200 p-5 text-left w-full">
                   <p className="text-xs font-medium uppercase tracking-wide text-text-muted m-0 mb-2">
                     Before
                   </p>
@@ -213,7 +213,7 @@ function Maison({ onClose, currentProjectSlug }) {
                     </p>
                   </div>
                 </div>
-                <div className="flex min-h-0 min-w-0 flex-col rounded-xl bg-gray-50 p-5 text-left w-full">
+                <div className="flex min-h-0 min-w-0 flex-col rounded-xl bg-white border border-gray-200 p-5 text-left w-full">
                   <p className="text-xs font-medium uppercase tracking-wide text-text-muted m-0 mb-2">
                     After
                   </p>
@@ -256,7 +256,7 @@ function Maison({ onClose, currentProjectSlug }) {
                   role="img"
                   aria-label="Build order: presence, then engagement, then utility"
                 >
-                  <div className="bg-gray-50 rounded-xl p-5 flex flex-col gap-3 text-left lg:flex-1 min-w-0">
+                  <div className="bg-white border border-gray-200 rounded-xl p-5 flex flex-col gap-3 text-left lg:flex-1 min-w-0">
                     <p className="text-xs font-medium uppercase tracking-wide text-text-muted m-0">
                       First
                     </p>
@@ -284,7 +284,7 @@ function Maison({ onClose, currentProjectSlug }) {
                     →
                   </div>
 
-                  <div className="bg-gray-50 rounded-xl p-5 flex flex-col gap-3 text-left lg:flex-1 min-w-0">
+                  <div className="bg-white border border-gray-200 rounded-xl p-5 flex flex-col gap-3 text-left lg:flex-1 min-w-0">
                     <p className="text-xs font-medium uppercase tracking-wide text-text-muted m-0">
                       Second
                     </p>
@@ -311,7 +311,7 @@ function Maison({ onClose, currentProjectSlug }) {
                     →
                   </div>
 
-                  <div className="bg-gray-50 rounded-xl p-5 flex flex-col gap-3 text-left lg:flex-1 min-w-0">
+                  <div className="bg-white border border-gray-200 rounded-xl p-5 flex flex-col gap-3 text-left lg:flex-1 min-w-0">
                     <p className="text-xs font-medium uppercase tracking-wide text-text-muted m-0">
                       Third
                     </p>
