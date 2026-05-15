@@ -1,5 +1,28 @@
 import { useState, useEffect, useRef } from "react";
 
+const CASE_STUDY_SCROLL_ROOT_SELECTOR = ".case-study-content";
+
+const TOC_INTERSECTION_ROOT_MARGIN = "-20% 0px -60% 0px";
+const TOC_INTERSECTION_THRESHOLDS = [
+  0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0,
+];
+
+const SCROLL_STOP_POLL_INTERVAL_MS = 100;
+/** Clears programmatic-scroll guard even if polling never sees a stationary frame. */
+const SCROLL_GUARD_RELEASE_AFTER_MS = 2000;
+
+function findStrongestIntersectingEntry(entries) {
+  let highestRatio = 0;
+  let best = null;
+  for (const entry of entries) {
+    if (entry.isIntersecting && entry.intersectionRatio > highestRatio) {
+      highestRatio = entry.intersectionRatio;
+      best = entry;
+    }
+  }
+  return best;
+}
+
 function TableOfContents({ sections, sectionRefs }) {
   const [activeSection, setActiveSection] = useState(sections[0]?.id || "");
   const tocListRef = useRef(null);
@@ -7,115 +30,104 @@ function TableOfContents({ sections, sectionRefs }) {
   const [indicatorStyle, setIndicatorStyle] = useState({});
   const isScrollingRef = useRef(false);
 
-  // Intersection Observer for tracking active section
   useEffect(() => {
-    const contentElement = document.querySelector(".case-study-content");
-    if (!contentElement) return;
+    const contentRoot = document.querySelector(CASE_STUDY_SCROLL_ROOT_SELECTOR);
+    if (!contentRoot) {
+      return;
+    }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // Don't update active section while programmatically scrolling
-        if (isScrollingRef.current) return;
-
-        let maxRatio = 0;
-        let activeEntry = null;
-
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
-            maxRatio = entry.intersectionRatio;
-            activeEntry = entry;
-          }
-        });
-
-        if (activeEntry) {
-          setActiveSection(activeEntry.target.id);
-        }
-      },
-      {
-        root: contentElement,
-        rootMargin: "-20% 0px -60% 0px",
-        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+    const observer = new IntersectionObserver((entries) => {
+      if (isScrollingRef.current) {
+        return;
       }
-    );
 
-    Object.values(sectionRefs.current).forEach((ref) => {
-      if (ref) observer.observe(ref);
+      const best = findStrongestIntersectingEntry(entries);
+      if (best) {
+        setActiveSection(best.target.id);
+      }
+    }, {
+      root: contentRoot,
+      rootMargin: TOC_INTERSECTION_ROOT_MARGIN,
+      threshold: TOC_INTERSECTION_THRESHOLDS,
+    });
+
+    Object.values(sectionRefs.current).forEach((node) => {
+      if (node) {
+        observer.observe(node);
+      }
     });
 
     return () => observer.disconnect();
   }, [sectionRefs]);
 
-  // Update indicator position
   useEffect(() => {
-    if (!tocListRef.current || !indicatorRef.current) return;
+    if (!tocListRef.current || !indicatorRef.current) {
+      return;
+    }
 
-    const updateIndicator = () => {
+    const updateIndicatorPosition = () => {
       const activeButton = tocListRef.current.querySelector(
-        `button[data-section-id="${activeSection}"]`
+        `button[data-section-id="${activeSection}"]`,
       );
       if (activeButton && indicatorRef.current) {
         const buttonRect = activeButton.getBoundingClientRect();
         const navRect =
           indicatorRef.current.parentElement.getBoundingClientRect();
         const top = buttonRect.top - navRect.top + buttonRect.height / 2;
-        setIndicatorStyle({
-          top: `${top}px`,
-        });
+        setIndicatorStyle({ top: `${top}px` });
       }
     };
 
-    const rafId = requestAnimationFrame(() => {
-      updateIndicator();
-    });
-
-    return () => cancelAnimationFrame(rafId);
+    const frameId = requestAnimationFrame(updateIndicatorPosition);
+    return () => cancelAnimationFrame(frameId);
   }, [activeSection]);
 
-  // Scroll to section function
   const scrollToSection = (sectionId) => {
-    const element = sectionRefs.current[sectionId];
-    if (element) {
-      // Set flag to prevent intersection observer from updating during scroll
-      isScrollingRef.current = true;
-      setActiveSection(sectionId);
-
-      const contentElement = document.querySelector(".case-study-content");
-      if (!contentElement) return;
-
-      let lastScrollTop = contentElement.scrollTop;
-      let scrollEndTimer = null;
-
-      const checkScrollEnd = () => {
-        const currentScrollTop = contentElement.scrollTop;
-        
-        if (Math.abs(currentScrollTop - lastScrollTop) < 1) {
-          // Scroll has stopped
-          isScrollingRef.current = false;
-          if (scrollEndTimer) {
-            clearInterval(scrollEndTimer);
-            scrollEndTimer = null;
-          }
-        } else {
-          lastScrollTop = currentScrollTop;
-        }
-      };
-
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-
-      // Check for scroll end every 100ms
-      scrollEndTimer = setInterval(checkScrollEnd, 100);
-
-      // Fallback: re-enable after a longer timeout (for very long scrolls)
-      setTimeout(() => {
-        isScrollingRef.current = false;
-        if (scrollEndTimer) {
-          clearInterval(scrollEndTimer);
-        }
-      }, 2000);
+    const target = sectionRefs.current[sectionId];
+    if (!target) {
+      return;
     }
+
+    isScrollingRef.current = true;
+    setActiveSection(sectionId);
+
+    const scrollRoot = document.querySelector(CASE_STUDY_SCROLL_ROOT_SELECTOR);
+    if (!scrollRoot) {
+      return;
+    }
+
+    let lastScrollTop = scrollRoot.scrollTop;
+    let pollIntervalId = null;
+
+    const pollForScrollStopped = () => {
+      const currentScrollTop = scrollRoot.scrollTop;
+      if (Math.abs(currentScrollTop - lastScrollTop) < 1) {
+        isScrollingRef.current = false;
+        if (pollIntervalId !== null) {
+          clearInterval(pollIntervalId);
+          pollIntervalId = null;
+        }
+      } else {
+        lastScrollTop = currentScrollTop;
+      }
+    };
+
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    pollIntervalId = setInterval(
+      pollForScrollStopped,
+      SCROLL_STOP_POLL_INTERVAL_MS,
+    );
+
+    setTimeout(() => {
+      isScrollingRef.current = false;
+      if (pollIntervalId !== null) {
+        clearInterval(pollIntervalId);
+      }
+    }, SCROLL_GUARD_RELEASE_AFTER_MS);
   };
 
   return (
@@ -147,4 +159,3 @@ function TableOfContents({ sections, sectionRefs }) {
 }
 
 export default TableOfContents;
-

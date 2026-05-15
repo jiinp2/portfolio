@@ -5,51 +5,44 @@ import Kobo from "./case-studies/Kobo";
 import Skiin from "./case-studies/Skiin";
 import Maison from "./case-studies/Maison";
 
+/** Keys match `project.name` from `projects` data. */
+const CASE_STUDY_COMPONENT_BY_PROJECT_NAME = {
+  Maison,
+  Rabbu,
+  "Rabbu Portfolio": RabbuPortfolio,
+  "Rabbu Marketplace": RabbuMarketplace,
+  Kobo,
+  Skiin,
+};
+
 function CaseStudy({ project, onClose }) {
-  // Route to specific case study component based on project name
-  const renderCaseStudy = () => {
-    switch (project.name) {
-      case "Maison":
-        return <Maison onClose={onClose} currentProjectSlug={project.slug} />;
-      case "Rabbu":
-        return <Rabbu onClose={onClose} currentProjectSlug={project.slug} />;
-      case "Rabbu Portfolio":
-        return (
-          <RabbuPortfolio onClose={onClose} currentProjectSlug={project.slug} />
-        );
-      case "Rabbu Marketplace":
-        return (
-          <RabbuMarketplace
-            onClose={onClose}
-            currentProjectSlug={project.slug}
-          />
-        );
-      case "Kobo":
-        return <Kobo onClose={onClose} currentProjectSlug={project.slug} />;
-      case "Skiin":
-        return <Skiin onClose={onClose} currentProjectSlug={project.slug} />;
-      default:
-        return (
-          <div className="case-study-overlay">
-            <div className="case-study-content">
-              <button className="back-button" onClick={onClose}>
-                ← Back
-              </button>
-              <h1 className="case-study-title">{project.name}</h1>
-              <div className="case-study-body">
-                <p>Case study content goes here...</p>
-                <p>
-                  This is where the detailed project information, process, and
-                  results would be displayed.
-                </p>
-              </div>
-            </div>
-          </div>
-        );
-    }
+  const CaseStudyView = CASE_STUDY_COMPONENT_BY_PROJECT_NAME[project.name];
+  const caseStudyProps = {
+    onClose,
+    currentProjectSlug: project.slug,
   };
 
-  return renderCaseStudy();
+  if (CaseStudyView) {
+    return <CaseStudyView {...caseStudyProps} />;
+  }
+
+  return (
+    <div className="case-study-overlay">
+      <div className="case-study-content">
+        <button className="back-button" onClick={onClose}>
+          ← Back
+        </button>
+        <h1 className="case-study-title">{project.name}</h1>
+        <div className="case-study-body">
+          <p>Case study content goes here...</p>
+          <p>
+            This is where the detailed project information, process, and
+            results would be displayed.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default CaseStudy;

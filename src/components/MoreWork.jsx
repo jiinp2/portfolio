@@ -3,18 +3,19 @@ import { useNavigate } from "react-router-dom";
 import ProjectCard from "./ProjectCard";
 import { projects } from "../data/projects";
 
+const INTERACTION_RESUME_MS = 2500;
+
 function MoreWork({ currentProjectSlug, onClose }) {
   const navigate = useNavigate();
   const [isUserInteracting, setIsUserInteracting] = useState(false);
-  const interactionTimeoutRef = useRef(null);
+  const interactionResumeTimerRef = useRef(null);
 
-  // Filter out current project and show all others
   const otherProjects = useMemo(
-    () => projects.filter((project) => project.slug !== currentProjectSlug),
+    () =>
+      projects.filter(({ slug }) => slug !== currentProjectSlug),
     [currentProjectSlug],
   );
 
-  // Duplicate list for seamless marquee loop
   const marqueeProjects = useMemo(
     () => [...otherProjects, ...otherProjects],
     [otherProjects],
@@ -22,25 +23,24 @@ function MoreWork({ currentProjectSlug, onClose }) {
 
   useEffect(() => {
     return () => {
-      if (interactionTimeoutRef.current) {
-        window.clearTimeout(interactionTimeoutRef.current);
+      if (interactionResumeTimerRef.current !== null) {
+        window.clearTimeout(interactionResumeTimerRef.current);
       }
     };
   }, []);
 
   const pauseForUserInteraction = () => {
-    setIsUserInteracting(true);
-    if (interactionTimeoutRef.current) {
-      window.clearTimeout(interactionTimeoutRef.current);
+    if (interactionResumeTimerRef.current !== null) {
+      window.clearTimeout(interactionResumeTimerRef.current);
     }
-    interactionTimeoutRef.current = window.setTimeout(() => {
+    setIsUserInteracting(true);
+    interactionResumeTimerRef.current = window.setTimeout(() => {
       setIsUserInteracting(false);
-    }, 2500);
+    }, INTERACTION_RESUME_MS);
   };
 
   const handleProjectClick = (projectIndex) => {
     const project = projects[projectIndex];
-    // Close current case study and navigate to new one
     if (onClose) {
       onClose();
     }
