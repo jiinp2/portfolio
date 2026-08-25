@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import { ExternalLink, FileText, Mail } from "lucide-react";
+import { FileText, Mail } from "lucide-react";
 import CaseStudy from "../components/CaseStudy";
 import ProjectCard from "../components/ProjectCard";
 import TabSection from "../components/TabSection";
@@ -69,10 +69,7 @@ const SOCIAL_LINKS = [
   { href: "mailto:jiinpark.work@gmail.com", label: "Email", kind: "mail" },
 ];
 
-const WORK_FILTER_OPTIONS = [
-  { id: "case-studies", label: "Case Studies" },
-  { id: "misc", label: "Explorative" },
-];
+const SECTION_HEADING_CLASS = `text-sm font-medium text-text tracking-wide leading-tight m-0 ${SIDEBAR_TEXT_TRANSITION}`;
 
 function setBodyScrollLocked(locked) {
   document.body.style.overflow = locked ? "hidden" : "auto";
@@ -105,7 +102,6 @@ function Work() {
     const savedTab = localStorage.getItem("activeTab");
     return (savedTab === "skills" ? "experience" : savedTab) || "experience";
   });
-  const [activeFilter, setActiveFilter] = useState("case-studies");
   const [isCaseStudyOpen, setIsCaseStudyOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -119,12 +115,10 @@ function Work() {
 
   useEffect(() => {
     if (isDarkMode) {
-      document.documentElement.classList.add("dark-mode");
-      document.body.classList.add("dark-mode");
+      document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
     } else {
-      document.documentElement.classList.remove("dark-mode");
-      document.body.classList.remove("dark-mode");
+      document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
     }
   }, [isDarkMode]);
@@ -165,14 +159,13 @@ function Work() {
     }
   }, [projectSlug]);
 
-  const filteredProjects = projects.filter(
-    (project) => project.category === activeFilter,
+  const selectedProjects = projects.filter(
+    (project) => project.category === "case-studies",
   );
 
-  const explorativeProjects =
-    activeFilter === "misc"
-      ? [...filteredProjects].sort((a, b) => (b.date < a.date ? -1 : 1))
-      : [];
+  const additionalProjects = [...projects]
+    .filter((project) => project.category === "misc")
+    .sort((a, b) => (b.date < a.date ? -1 : 1));
 
   return (
     <div
@@ -181,7 +174,7 @@ function Work() {
       }`}
     >
       <aside
-        className={`bg-white p-16 border-r border-gray-100 h-auto overflow-y-auto overflow-x-hidden [scrollbar-gutter:stable] transition-[background-color,border-color,color] duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:relative max-md:w-screen max-md:min-h-auto max-md:h-auto max-md:p-8 max-md:border-r-0 max-md:border-b max-md:border-b-gray-100 max-md:order-1 max-md:overflow-visible max-md:overflow-y-visible max-md:[scrollbar-gutter:auto] max-sm:p-6 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-sm hover:[&::-webkit-scrollbar-thumb]:bg-gray-200 ${
+        className={`bg-surface p-16 border-r border-border text-text h-auto overflow-y-auto overflow-x-hidden [scrollbar-gutter:stable] transition-[background-color,border-color,color] duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:relative max-md:w-screen max-md:min-h-auto max-md:h-auto max-md:p-8 max-md:border-r-0 max-md:border-b max-md:border-b-border max-md:order-1 max-md:overflow-visible max-md:overflow-y-visible max-md:[scrollbar-gutter:auto] max-sm:p-6 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-sm hover:[&::-webkit-scrollbar-thumb]:bg-gray-200 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-700 dark:hover:[&::-webkit-scrollbar-thumb]:bg-neutral-600 ${
           isCaseStudyOpen
             ? "max-md:transform max-md:-translate-x-full max-md:opacity-0 max-md:transition-[transform,opacity] max-md:duration-[800ms] max-md:ease-[cubic-bezier(0.4,0,0.2,1)]"
             : ""
@@ -192,22 +185,21 @@ function Work() {
             <div className="flex items-center justify-between gap-4 max-md:mb-6">
               <Link
                 to="/"
-                className="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center mb-6 max-md:mb-0 overflow-hidden cursor-pointer no-underline transition-transform duration-[900ms] ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-[1.02]"
+                className="w-20 h-20 rounded-full bg-surface-muted flex items-center justify-center mb-6 max-md:mb-0 overflow-hidden cursor-pointer no-underline transition-[background-color,transform] duration-[900ms] ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-[1.02]"
               >
                 <img
-                  src={
-                    isDarkMode ? "/home/jiin_ac.png" : "/home/jiin_profile.png"
-                  }
+                  src="/home/jiin_profile.png"
                   alt="Jiin Park"
-                  className="w-full h-full object-cover rounded-full"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = "/home/jiin_profile.png";
-                  }}
+                  className="h-full w-full rounded-full object-cover dark:hidden"
+                />
+                <img
+                  src="/home/jiin_ac.png"
+                  alt="Jiin Park"
+                  className="hidden h-full w-full rounded-full object-cover dark:block"
                 />
               </Link>
               <div className="hidden max-md:block">
-                <PageToggle isDarkMode={isDarkMode} onToggle={toggleTheme} />
+                <PageToggle onToggle={toggleTheme} />
               </div>
             </div>
             <h1
@@ -223,9 +215,9 @@ function Work() {
             <p
               className={`text-sm text-text-muted leading-relaxed mb-0 ${SIDEBAR_TEXT_TRANSITION} last:mb-0`}
             >
-              Hi, I'm a designer with 2 years of experience at early-stage
-              startups. My current interest is in intentional usage of AI tools
-              in design.
+              Hi, I'm a product designer who's owned end-to-end scope at
+              early-stage startups, from UX strategy to shipping production
+              code as a founding design hire.
             </p>
           </div>
 
@@ -268,104 +260,20 @@ function Work() {
       </aside>
 
       <main
-        className="overflow-y-auto h-screen p-16 w-full bg-[#fcfcfc] transition-[background-color,color] duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:ml-0 max-md:h-auto max-md:p-8 max-md:order-2 max-sm:p-6 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-sm hover:[&::-webkit-scrollbar-thumb]:bg-gray-200"
+        className="overflow-y-auto h-screen p-16 w-full bg-surface-page text-text transition-[background-color,color] duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:ml-0 max-md:h-auto max-md:p-8 max-md:order-2 max-sm:p-6 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-sm hover:[&::-webkit-scrollbar-thumb]:bg-gray-200 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-700 dark:hover:[&::-webkit-scrollbar-thumb]:bg-neutral-600"
       >
-        <div className="mb-8 flex flex-col gap-6">
-          <div className="flex items-center justify-between">
-            <h2 className={`text-2xl font-medium text-text tracking-tight leading-tight m-0 ${SIDEBAR_TEXT_TRANSITION} max-md:text-xl max-sm:text-xl`}>
-              Work
-            </h2>
-            <div className="max-md:hidden">
-              <PageToggle isDarkMode={isDarkMode} onToggle={toggleTheme} />
-            </div>
-          </div>
-          <div className="flex gap-2 flex-wrap">
-            {WORK_FILTER_OPTIONS.map(({ id, label }) => (
-              <button
-                key={id}
-                className={`flex items-center gap-2 py-2 px-4 border-0 rounded-full text-sm font-medium cursor-pointer transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
-                  activeFilter === id
-                    ? "bg-text text-white hover:bg-gray-700"
-                    : "bg-gray-100 text-text-muted hover:bg-gray-200 hover:text-text"
-                }`}
-                onClick={() => setActiveFilter(id)}
-              >
-                {label}
-              </button>
-            ))}
+        <div className="mb-8 flex justify-end">
+          <div className="max-md:hidden shrink-0">
+            <PageToggle onToggle={toggleTheme} />
           </div>
         </div>
-        {activeFilter === "misc" ? (
-          <div className="flex flex-col gap-12 max-md:gap-10">
-            {explorativeProjects.map((project) => {
-              const originalIndex = projects.findIndex(
-                (p) => p.slug === project.slug,
-              );
-              return (
-                <div
-                  key={project.slug}
-                  className="group/card w-full p-3 md:p-6 flex flex-col md:flex-row gap-6 md:gap-10 items-stretch md:items-start rounded-xl"
-                >
-                  <button
-                    type="button"
-                    onClick={() => openCaseStudy(originalIndex)}
-                    className="w-full md:w-[min(42%,360px)] md:shrink-0 aspect-[4/3] rounded-xl overflow-hidden flex items-start justify-center bg-gray-100 border-0 p-0 cursor-pointer group"
-                  >
-                    {project.video ? (
-                      <video
-                        src={project.video}
-                        className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
-                        loop
-                        muted
-                        playsInline
-                        autoPlay
-                        aria-label={project.name}
-                      />
-                    ) : project.image ? (
-                      <img
-                        src={project.image}
-                        alt={project.name}
-                        className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-[1.02]"
-                      />
-                    ) : null}
-                  </button>
-                  <div className="flex flex-col gap-1 min-w-0 flex-1 px-4 md:px-6">
-                    <span
-                      className={`text-sm text-text-light font-normal ${SIDEBAR_TEXT_TRANSITION} max-md:text-sm max-sm:text-xs`}
-                    >
-                      {project.date}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => openCaseStudy(originalIndex)}
-                      className="text-left border-0 p-0 bg-transparent cursor-pointer inline-flex items-center gap-2"
-                    >
-                      <h3
-                        className={`text-lg font-semibold text-text tracking-tight m-0 leading-tight ${SIDEBAR_TEXT_TRANSITION} max-md:text-base max-sm:text-sm`}
-                      >
-                        {project.name}
-                      </h3>
-                      {project.url && (
-                        <ExternalLink
-                          className="opacity-60 text-text-light group-hover/card:opacity-100 group-hover/card:text-text transition-all duration-200 shrink-0"
-                          size={14}
-                          aria-hidden
-                        />
-                      )}
-                    </button>
-                    <p
-                      className={`text-sm text-text-light font-normal leading-relaxed mt-2 mb-0 ${SIDEBAR_TEXT_TRANSITION} cursor-text select-text`}
-                    >
-                      {project.description}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        ) : (
+
+        <section>
+          <h2 className={`${SECTION_HEADING_CLASS} mb-8 max-md:mb-6`}>
+            Selected Projects
+          </h2>
           <div className="grid grid-cols-3 gap-10 w-full max-md:grid-cols-2 max-sm:grid-cols-1 max-md:gap-6">
-            {filteredProjects.map((project) => {
+            {selectedProjects.map((project) => {
               const originalIndex = projects.findIndex(
                 (p) => p.name === project.name,
               );
@@ -380,7 +288,32 @@ function Work() {
               );
             })}
           </div>
-        )}
+        </section>
+
+        {additionalProjects.length > 0 ? (
+          <section className="mt-20 max-md:mt-16">
+            <h2 className={`${SECTION_HEADING_CLASS} mb-8 max-md:mb-6`}>
+              Additional Work
+            </h2>
+            <div className="grid grid-cols-3 gap-10 w-full max-md:grid-cols-2 max-sm:grid-cols-1 max-md:gap-6">
+              {additionalProjects.map((project) => {
+                const originalIndex = projects.findIndex(
+                  (p) => p.slug === project.slug,
+                );
+                return (
+                  <ProjectCard
+                    key={originalIndex}
+                    project={project}
+                    index={originalIndex}
+                    isSelected={selectedProject === originalIndex}
+                    onClick={openCaseStudy}
+                    useStandardPreview
+                  />
+                );
+              })}
+            </div>
+          </section>
+        ) : null}
       </main>
 
       {isCaseStudyOpen && selectedProject !== null && (

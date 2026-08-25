@@ -1,59 +1,20 @@
 import { Sun, Moon } from "lucide-react";
 
-function PageToggle({ isDarkMode, onToggle }) {
+function PageToggle({ onToggle }) {
   return (
     <button
       onClick={onToggle}
-      className="relative rounded-full border-0 cursor-pointer"
-      style={{
-        width: "64px",
-        height: "32px",
-        backgroundColor: isDarkMode ? "#2a2a2a" : "#f3f4f6",
-        border: isDarkMode ? "1px solid #3f3f46" : "1px solid transparent",
-        transition: "background-color 0.3s ease, border-color 0.3s ease",
-        textDecoration: "none",
-        display: "inline-flex",
-        outline: "none",
-      }}
-      aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+      className="relative inline-flex h-8 w-16 cursor-pointer rounded-full border border-transparent bg-gray-100 outline-none transition-[background-color,border-color] duration-300 dark:border-zinc-700 dark:bg-[#2a2a2a]"
+      aria-label="Toggle color theme"
     >
-      {/* Sliding knob */}
-      <div
-        className="absolute flex items-center justify-center rounded-full"
-        style={{
-          top: "4px",
-          width: "24px",
-          height: "24px",
-          backgroundColor: "#ffffff",
-          boxShadow: "0 2px 8px rgba(0, 0, 0, 0.15)",
-          transform: isDarkMode ? "translateX(36px)" : "translateX(4px)",
-          transition: "transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)",
-        }}
-      >
-        {/* Sun icon - visible in light mode */}
+      <div className="absolute top-1 flex h-6 w-6 translate-x-1 items-center justify-center rounded-full bg-white shadow-[0_2px_8px_rgba(0,0,0,0.15)] transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] dark:translate-x-9">
         <Sun
-          className="absolute text-amber-500"
+          className="absolute scale-100 rotate-0 text-amber-500 opacity-100 transition-[transform,opacity] duration-200 dark:scale-0 dark:rotate-180 dark:opacity-0"
           size={16}
-          style={{
-            transform: isDarkMode
-              ? "scale(0) rotate(180deg)"
-              : "scale(1) rotate(0deg)",
-            opacity: isDarkMode ? 0 : 1,
-            transition: "transform 0.2s ease, opacity 0.2s ease",
-          }}
         />
-
-        {/* Moon icon - visible in dark mode */}
         <Moon
-          className="absolute text-indigo-400"
+          className="absolute scale-0 -rotate-180 text-indigo-400 opacity-0 transition-[transform,opacity] duration-200 dark:scale-100 dark:rotate-0 dark:opacity-100"
           size={16}
-          style={{
-            transform: isDarkMode
-              ? "scale(1) rotate(0deg)"
-              : "scale(0) rotate(-180deg)",
-            opacity: isDarkMode ? 1 : 0,
-            transition: "transform 0.2s ease, opacity 0.2s ease",
-          }}
         />
       </div>
     </button>

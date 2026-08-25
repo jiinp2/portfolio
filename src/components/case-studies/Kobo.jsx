@@ -100,6 +100,12 @@ function Kobo({ onClose, currentProjectSlug }) {
                   visual style offers a more modern look.
                 </li>
               </ul>
+              <p>
+                This was a course project for BrainStation's UI Design
+                program, not a shipped product, so there's no usage data. The
+                heuristic review and app-store takeaways above were the
+                evidence base for every decision.
+              </p>
             </CaseStudySection>
           </section>
 

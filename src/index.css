@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* stylelint-disable-next-line at-rule-no-unknown */
 @theme {
   /* Custom Colors */
@@ -17,6 +19,14 @@
   --color-text-light: #6b7280;
   --color-text-muted: #4b5563;
   --color-border: #e9ecef;
+
+  /* Semantic surfaces (light defaults; remapped in .dark) */
+  --color-surface: #ffffff;
+  --color-surface-page: #fcfcfc;
+  --color-surface-muted: #f3f4f6;
+  --color-surface-muted-hover: #e5e7eb;
+  --color-surface-inverted: #1a1a1a;
+  --color-surface-inverted-hover: #374151;
 
   /* Custom Font Sizes */
   --font-size-xs: 0.75rem;
@@ -66,6 +76,28 @@
   --color-dark-border: #262626;
   --color-dark-primary: #4ade80;
   --color-dark-primary-hover: #86efac;
+}
+
+@layer base {
+  .dark {
+    color-scheme: dark;
+    --color-text: #ffffff;
+    --color-text-light: #b3b3b3;
+    --color-text-muted: #999999;
+    --color-primary: #4ade80;
+    --color-primary-hover: #86efac;
+    --color-border: #262626;
+    --color-surface: #171717;
+    --color-surface-page: #0a0a0a;
+    --color-surface-muted: #262626;
+    --color-surface-muted-hover: #333333;
+    --color-surface-inverted: #ffffff;
+    --color-surface-inverted-hover: #e5e5e5;
+  }
+
+  .dark body {
+    color: var(--color-dark-text-primary);
+  }
 }
 
 @layer base {
@@ -165,6 +197,10 @@
     animation: fadeIn 0.2s ease-in-out;
   }
 
+  .dark .case-study-overlay {
+    background-color: var(--color-dark-bg);
+  }
+
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -259,7 +295,8 @@
 
   /* More Work marquee (end-to-end banner) */
   .more-work-marquee {
-    --more-work-speed: 55s; /* faster */
+    --more-work-speed: 95s;
+    --more-work-speed-hover: 140s;
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -292,7 +329,10 @@
   }
 
   .more-work-marquee:hover .more-work-marquee-track,
-  .more-work-marquee:focus-within .more-work-marquee-track,
+  .more-work-marquee:focus-within .more-work-marquee-track {
+    animation-duration: var(--more-work-speed-hover);
+  }
+
   .more-work-marquee[data-paused="true"] .more-work-marquee-track {
     animation-play-state: paused;
   }
@@ -362,6 +402,10 @@
     color: #6b7280;
   }
 
+  .dark .back-button:hover {
+    color: var(--color-dark-text-muted);
+  }
+
   .back-button.sticky {
     position: sticky;
     top: 2rem;
@@ -373,6 +417,11 @@
     border: 1px solid #e5e7eb;
     margin-bottom: 0;
     width: fit-content;
+  }
+
+  .dark .back-button.sticky {
+    background: rgba(26, 26, 26, 0.9);
+    border-color: var(--color-dark-border);
   }
 
   .back-arrow {
@@ -829,6 +878,21 @@
     color: #6b7280;
   }
 
+  .dark .toc-item,
+  .dark .toc-button {
+    color: var(--color-dark-text-subtle);
+  }
+
+  .dark .toc-item:hover,
+  .dark .toc-button:hover {
+    color: var(--color-dark-text-secondary);
+  }
+
+  .dark .toc-item.active,
+  .dark .toc-button.active {
+    color: var(--color-dark-text);
+  }
+
   .toc-indicator {
     position: absolute;
     left: -0.5rem;
@@ -961,140 +1025,27 @@
   }
 }
 
-/* Dark Mode Styles */
-.dark-mode {
-  /* Base dark mode styles */
-  & body,
-  & aside,
-  & main {
-    background-color: var(--color-dark-bg);
-    color: var(--color-dark-text-primary);
-    transition:
-      background-color 0.3s ease,
-      color 0.3s ease;
-  }
-
-  /* Typography */
-  & h1,
-  & h2,
-  & h3,
-  & h4,
-  & h5,
-  & h6 {
-    color: var(--color-dark-text);
-    transition: color 0.3s ease;
-  }
-
-  & p {
-    color: var(--color-dark-text-secondary);
-    transition: color 0.3s ease;
-  }
-
-  & button {
-    color: var(--color-dark-text-primary);
-    transition: color 0.3s ease;
-  }
-
-  & a {
-    color: var(--color-dark-text);
-    transition: color 0.3s ease;
-  }
-
-  /* Borders */
-  & aside {
-    border-color: var(--color-dark-border);
-  }
-
-  & .border-b,
-  & .border-gray-100,
-  & .border-gray-200 {
-    border-color: var(--color-dark-border);
-  }
-
-  /* Primary colors */
-  & .text-primary {
-    color: var(--color-dark-primary);
-  }
-
-  & .text-primary:hover {
-    color: var(--color-dark-primary-hover);
-  }
-
-  /* Custom text colors */
-  & .text-text {
-    color: var(--color-dark-text);
-    transition: color 0.3s ease;
-  }
-
-  & .text-text-light {
-    color: var(--color-dark-text-muted);
-    transition: color 0.3s ease;
-  }
-
-  & .text-text-muted {
-    color: var(--color-dark-text-subtle);
-    transition: color 0.3s ease;
-  }
-
-  /* Backgrounds - override Tailwind utilities */
-  & .bg-white {
+/* Dark mode — scoped rules not covered by semantic tokens or dark: utilities */
+.dark {
+  /* Case study cards still use bg-white utilities */
+  & .case-study-overlay .bg-white {
     background-color: var(--color-dark-bg-secondary);
-    transition: background-color 0.3s ease;
   }
 
-  & .bg-\[#fcfcfc\] {
-    background-color: var(--color-dark-bg);
-    transition: background-color 0.3s ease;
+  & .case-study-overlay .border-gray-100,
+  & .case-study-overlay .border-gray-200 {
+    border-color: var(--color-dark-border);
   }
 
-  & .bg-gray-50 {
-    background-color: #0f0f0f;
-  }
-
-  & .bg-gray-100 {
-    background-color: var(--color-dark-bg-elevated);
-    color: var(--color-dark-text-secondary);
-  }
-
-  & .bg-gray-100:hover {
-    background-color: #333333;
-    color: var(--color-dark-text);
-  }
-
-  & .bg-text {
-    background-color: var(--color-dark-text);
-    color: var(--color-dark-bg);
-  }
-
-  & .bg-text:hover {
-    background-color: var(--color-dark-text-primary);
-  }
-
-  /* Social buttons keep light mode styling */
-  & aside a.bg-gray-100 {
-    background-color: #f3f4f6;
-    color: #4b5563;
-  }
-
-  & aside a.bg-gray-100:hover {
-    background-color: #e5e7eb;
-    color: #1a1a1a;
-  }
-
-  /* Project cards */
+  /* Project card previews */
   & .project-preview {
     background: var(--color-dark-bg-tertiary);
   }
 
-  & .group h3 {
-    color: var(--color-dark-text);
+  & .project-preview[data-fill="true"] {
+    background: transparent;
   }
 
-  & .group p {
-    color: var(--color-dark-text-muted);
-  }
-
-  /* Slug-specific backgrounds maintain their colors */
   & .project-preview[data-slug="pokemon-valentine"] {
     background: #ffcfec;
   }
@@ -1117,79 +1068,35 @@
     background: var(--color-maison);
   }
 
-  & .project-preview[data-slug="maison"] .preview-image {
-    filter: brightness(0) saturate(100%) invert(90%) sepia(5%) saturate(200%)
-      hue-rotate(10deg);
-  }
-
-  /* Coming soon tag */
   & .coming-soon-tag {
     background: var(--color-dark-bg-tertiary);
     color: #a0a0a0;
   }
 
-  /* Icons */
   & .preview-icon {
     color: #a0a0a0;
     opacity: 0.3;
   }
 
-  & .external-link-icon {
-    color: currentColor;
+  /* Social pills keep light styling in the sidebar */
+  & aside a.bg-gray-100 {
+    background-color: #f3f4f6;
+    color: #4b5563;
   }
 
-  /* Tabs */
-  & .tab-button {
-    color: var(--color-dark-text-subtle);
+  & aside a.bg-gray-100:hover {
+    background-color: #e5e7eb;
+    color: #1a1a1a;
   }
 
-  & .tab-button.active {
-    color: var(--color-dark-text);
-  }
-
-  & .tab-button:hover {
-    color: var(--color-dark-text-secondary);
-  }
-
-  /* Filter buttons */
-  & .work-filters .bg-gray-100 {
-    background-color: var(--color-dark-bg-elevated);
-    color: var(--color-dark-text-secondary);
-  }
-
-  & .work-filters .bg-gray-100:hover {
-    background-color: #333333;
-    color: var(--color-dark-text);
-  }
-
-  & .bg-text.bg-gray-100 {
-    background-color: var(--color-dark-text);
-    color: var(--color-dark-bg);
-  }
-
-  /* Images */
   & img:not(.project-preview img) {
     opacity: 0.95;
-  }
-
-  /* Scrollbars */
-  & aside::-webkit-scrollbar,
-  & main::-webkit-scrollbar,
-  & .tab-content::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  & aside::-webkit-scrollbar-track,
-  & main::-webkit-scrollbar-track,
-  & .tab-content::-webkit-scrollbar-track {
-    background: transparent;
   }
 
   & aside::-webkit-scrollbar-thumb,
   & main::-webkit-scrollbar-thumb,
   & .tab-content::-webkit-scrollbar-thumb {
     background: #404040;
-    border-radius: 3px;
   }
 
   & aside::-webkit-scrollbar-thumb:hover,
@@ -1198,57 +1105,6 @@
     background: #525252;
   }
 
-  /* Table of Contents */
-  & .toc-item,
-  & .toc-button {
-    color: var(--color-dark-text-subtle);
-    font-weight: var(--font-weight-semibold);
-  }
-
-  & .toc-item.active,
-  & .toc-button.active {
-    color: var(--color-dark-text);
-  }
-
-  & .toc-item:hover,
-  & .toc-button:hover {
-    color: var(--color-dark-text-secondary);
-  }
-
-  & .toc-indicator {
-    background-color: var(--color-dark-text);
-  }
-
-  /* Case study overlay - use dark background when open in dark mode */
-  & .case-study-overlay {
-    background-color: var(--color-dark-bg);
-  }
-
-  & .back-button.sticky {
-    background: rgba(26, 26, 26, 0.9);
-    border-color: var(--color-dark-border);
-  }
-
-  /* Case study TOC indicator colors in dark mode - using light variants */
-  & .maison-case-study .toc-indicator {
-    background-color: var(--color-maison-light);
-  }
-
-  & .rabbu-portfolio-case-study .toc-indicator,
-  & .rabbu-marketplace-case-study .toc-indicator,
-  & .rabbu-case-study .toc-indicator {
-    background-color: var(--color-rabbu-light);
-  }
-
-  & .kobo-case-study .toc-indicator {
-    background-color: var(--color-kobo-light);
-  }
-
-  & .skiin-case-study .toc-indicator {
-    background-color: var(--color-skiin-light);
-  }
-
-  /* Key feature content paragraphs - match subsection text color in dark mode */
   & .key-feature-content p {
     color: var(--color-dark-text-secondary);
   }

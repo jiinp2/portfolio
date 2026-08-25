@@ -104,6 +104,10 @@ function Skiin({ onClose, currentProjectSlug }) {
                   Skiin's communication features and mood logging feature.
                 </li>
               </ul>
+              <p>
+                These features shipped as part of the Skiin app, giving users
+                a way to log and track their mood over time.
+              </p>
             </CaseStudySection>
           </section>
 

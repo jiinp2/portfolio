@@ -48,7 +48,7 @@ function MoreWork({ currentProjectSlug, onClose }) {
   };
 
   return (
-    <section className="mt-20 pt-20 border-t border-gray-200 w-full max-md:mt-16 max-md:pt-16">
+    <section className="mt-20 pt-20 border-t border-border w-full max-md:mt-16 max-md:pt-16">
       <div className="w-full p-0">
         <h3 className="w-full text-left text-base font-semibold text-text m-0 mb-4 tracking-tight leading-tight">
           More Work

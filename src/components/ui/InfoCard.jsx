@@ -40,7 +40,7 @@ function InfoCard({
 
   return (
     <div
-      className={`relative bg-white border border-gray-200 rounded-xl h-full flex flex-col ${rootLayoutClass}`}
+      className={`relative bg-surface border border-border rounded-xl h-full flex flex-col ${rootLayoutClass}`}
     >
       {hasImage ? (
         <div className="w-full h-auto mb-5 overflow-hidden rounded-t-xl">
@@ -78,7 +78,7 @@ function InfoCard({
                   {item.icon}
                 </div>
               ) : null}
-              <div className="text-sm leading-relaxed text-gray-500 flex-1">
+              <div className="text-sm leading-relaxed text-text-muted flex-1">
                 {item.text}
               </div>
             </li>
@@ -86,7 +86,7 @@ function InfoCard({
         </ul>
       ) : (
         <p
-          className={`text-sm leading-relaxed text-gray-500 m-0 block text-left flex-1 ${bodyHorizontalPaddingClass}`}
+          className={`text-sm leading-relaxed text-text-muted m-0 block text-left flex-1 ${bodyHorizontalPaddingClass}`}
         >
           {description}
         </p>

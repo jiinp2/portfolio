@@ -10,10 +10,9 @@ const DESCRIPTION_CLASS_BASE =
   "mt-2 mb-0 text-sm font-normal leading-relaxed text-text-light transition-colors duration-600 ease-in-out";
 
 const MORE_WORK_PRIMARY_BUTTON_CLASS =
-  "inline-flex w-full shrink-0 items-center justify-center gap-2 text-sm font-medium text-text border border-gray-200 bg-white rounded-lg px-3 py-2 transition-colors hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 cursor-pointer disabled:cursor-not-allowed";
+  "inline-flex w-full shrink-0 items-center justify-center gap-2 text-sm font-medium text-text border border-border bg-surface rounded-lg px-3 py-2 transition-colors hover:bg-gray-50 dark:hover:bg-dark-bg-elevated focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 dark:focus-visible:ring-neutral-600 cursor-pointer disabled:cursor-not-allowed";
 
 const PREVIEW_BACKGROUND_BY_SLUG = {
-  "scrivis-tattoos": "bg-gray-100",
   "pokemon-valentine": "bg-[#ffcfec]",
   "rabbu-portfolio": "bg-rabbu",
   "rabbu-marketplace": "bg-rabbu",
@@ -23,14 +22,24 @@ const PREVIEW_BACKGROUND_BY_SLUG = {
   maison: "bg-maison",
 };
 
+const PREVIEW_FILL_SLUGS = new Set(["scrivis-tattoos"]);
+
 const STANDARD_IMAGE_CLASS_BASE =
   "max-w-full max-h-full w-auto h-auto object-contain transition-transform duration-300 max-sm:w-full max-sm:h-full max-sm:object-cover";
+
+function isFillPreview(slug) {
+  return PREVIEW_FILL_SLUGS.has(slug);
+}
 
 function normalizePreviewBackgroundClass(slug) {
   return PREVIEW_BACKGROUND_BY_SLUG[slug] ?? "bg-gray-100";
 }
 
 function buildStandardImageClasses(slug) {
+  if (isFillPreview(slug)) {
+    return "h-full w-full object-cover object-center transition-transform duration-300";
+  }
+
   let modifier = "";
   switch (slug) {
     case "maison":
@@ -51,6 +60,10 @@ function buildStandardImageClasses(slug) {
 }
 
 function buildPreviewContainerClasses(slug) {
+  if (isFillPreview(slug)) {
+    return "box-border flex aspect-4/3 w-full overflow-hidden bg-transparent p-0";
+  }
+
   const bg = normalizePreviewBackgroundClass(slug);
   const base = `w-full aspect-4/3 flex items-center justify-center overflow-hidden p-8 box-border ${bg} max-md:p-3 max-sm:p-3`;
 
@@ -74,6 +87,45 @@ function CardTitleRow({ name, date }) {
   );
 }
 
+function ProjectCardPreview({ project, interactive = true, className = "" }) {
+  const interactiveScaleSuffix = interactive ? "group-hover:scale-105" : "";
+  const mediaClass =
+    `${buildStandardImageClasses(project.slug)} ${interactiveScaleSuffix}`.trimEnd();
+  const previewInnerClassName = buildPreviewContainerClasses(project.slug);
+
+  return (
+    <div
+      className={`bg-surface rounded-xl overflow-hidden border border-border ${className}`.trimEnd()}
+    >
+      <div
+        className={`project-preview ${previewInnerClassName}`}
+        data-slug={project.slug}
+        {...(isFillPreview(project.slug) ? { "data-fill": "true" } : {})}
+      >
+        {project.video ? (
+          <video
+            src={project.video}
+            className={mediaClass}
+            loop
+            muted
+            playsInline
+            autoPlay
+            aria-label={project.name}
+          />
+        ) : project.image ? (
+          <img src={project.image} alt={project.name} className={mediaClass} />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center bg-transparent">
+            <span className="preview-icon text-5xl opacity-20 text-text max-md:text-4xl max-sm:text-3xl">
+              📄
+            </span>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 function ProjectCard({
   project,
   index,
@@ -82,8 +134,10 @@ function ProjectCard({
   disabled,
   useShortDescription = false,
   isMoreWork = false,
+  useStandardPreview = false,
 }) {
   const isExplorative = project.category === "misc";
+  const showStandardPreview = useStandardPreview || isMoreWork;
   const isExternalLink = Boolean(project.url);
   const displayDescription = useShortDescription
     ? (project.descriptionShort ?? project.description)
@@ -92,8 +146,6 @@ function ProjectCard({
   const interactiveScaleSuffix = disabled ? "" : "group-hover:scale-105";
   const explorativeMediaClass =
     `w-full h-full object-cover object-center transition-transform duration-300 ${interactiveScaleSuffix}`.trimEnd();
-  const standardMediaOuterClass =
-    `${buildStandardImageClasses(project.slug)} ${interactiveScaleSuffix}`.trimEnd();
 
   const rootVisualStateClass = disabled
     ? "opacity-60 cursor-default"
@@ -118,39 +170,8 @@ function ProjectCard({
     }
   };
 
-  const previewInnerClassName = buildPreviewContainerClasses(project.slug);
-
   const standardCaseMarkup = (
-    <div className="bg-white rounded-xl overflow-hidden border border-gray-200">
-      <div
-        className={`project-preview ${previewInnerClassName}`}
-        data-slug={project.slug}
-      >
-        {project.video ? (
-          <video
-            src={project.video}
-            className={standardMediaOuterClass}
-            loop
-            muted
-            playsInline
-            autoPlay
-            aria-label={project.name}
-          />
-        ) : project.image ? (
-          <img
-            src={project.image}
-            alt={project.name}
-            className={standardMediaOuterClass}
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center bg-transparent">
-            <span className="preview-icon text-5xl opacity-20 text-text max-md:text-4xl max-sm:text-3xl">
-              📄
-            </span>
-          </div>
-        )}
-      </div>
-    </div>
+    <ProjectCardPreview project={project} interactive={!disabled} />
   );
 
   const explorativeMarkup = (
@@ -183,7 +204,7 @@ function ProjectCard({
       className={`group flex flex-col gap-4 max-md:gap-3 max-sm:gap-2 ${rootVisualStateClass} h-full`}
       onClick={handleCardSurfaceClick}
     >
-      {isExplorative ? explorativeMarkup : standardCaseMarkup}
+      {isExplorative && !showStandardPreview ? explorativeMarkup : standardCaseMarkup}
 
       {isMoreWork ? (
         <div className="flex min-h-0 flex-1 flex-col gap-6 p-0">
@@ -227,3 +248,4 @@ function ProjectCard({
 }
 
 export default ProjectCard;
+export { ProjectCardPreview };

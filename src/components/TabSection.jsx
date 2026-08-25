@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const TAB_BUTTON_CLASS =
-  "tab-button bg-transparent border-0 py-3 text-sm font-medium text-gray-400 tracking-wide cursor-pointer transition-colors duration-200 mr-6 min-h-[44px] flex items-center relative z-10 hover:text-gray-500 max-md:py-4 max-sm:py-3 max-sm:mr-4";
+  "tab-button bg-transparent border-0 py-3 text-sm font-medium text-gray-400 dark:text-dark-text-subtle tracking-wide cursor-pointer transition-colors duration-200 mr-6 min-h-[44px] flex items-center relative z-10 hover:text-gray-500 dark:hover:text-dark-text-secondary max-md:py-4 max-sm:py-3 max-sm:mr-4";
 
 const TABS = [
   { id: "experience", label: "Experience" },
@@ -45,7 +45,7 @@ function TabSection({ activeTab, onTabChange, children }) {
   return (
     <div className="mb-10 max-md:mb-8">
       <div
-        className="flex gap-0 mb-10 border-b border-gray-100 relative max-md:mb-8"
+        className="flex gap-0 mb-10 border-b border-border relative max-md:mb-8"
         ref={tabsRef}
       >
         {TABS.map(({ id, label }) => (
@@ -66,7 +66,7 @@ function TabSection({ activeTab, onTabChange, children }) {
         />
       </div>
 
-      <div className="min-h-[200px] max-h-[400px] overflow-y-auto [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-sm hover:[&::-webkit-scrollbar-thumb]:bg-gray-200">
+      <div className="min-h-[200px] max-h-[400px] overflow-y-auto [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-sm hover:[&::-webkit-scrollbar-thumb]:bg-gray-200 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-700 dark:hover:[&::-webkit-scrollbar-thumb]:bg-neutral-600">
         {children}
       </div>
     </div>

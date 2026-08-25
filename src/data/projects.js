@@ -34,7 +34,7 @@ export const projects = [
     name: "Kobo",
     label: "Scroll to Kobo",
     date: "2021",
-    category: "case-studies",
+    category: "misc",
     slug: "kobo",
     image: "/home/kobo_thumbnail.png",
     description: "eBook and audiobook app redesign.",
@@ -43,7 +43,7 @@ export const projects = [
     name: "Skiin",
     label: "Scroll to Skiin",
     date: "2020",
-    category: "case-studies",
+    category: "misc",
     slug: "skiin",
     image: "/home/skiin_thumbnail.png",
     description: "Wellness tracking through sensory textiles.",
@@ -56,8 +56,7 @@ export const projects = [
     slug: "scrivis-tattoos",
     video: "/misc/scrivis_video.mp4",
     url: "https://scrivis.vercel.app/",
-    description:
-      "Designed and coded a portfolio and booking site for a tattoo artist. Showcases past work and flash designs, handles client booking forms, and the visual design blends modern UI with medieval whimsy: text bubbles, pointing hand navigation, and other nods to their style.",
+    description: "Portfolio and booking site for a tattoo artist.",
     descriptionShort: "Portfolio and booking site for a tattoo artist.",
   },
   {
@@ -68,8 +67,7 @@ export const projects = [
     slug: "pokemon-valentine",
     image: "/misc/pokemon_valentine.png",
     url: "https://pokemon-valentine.vercel.app/",
-    description:
-      "A one-day hackathon project from BrainStation. A Valentine's card generator using the PokeAPI: pick a Fighting or Fairy type, get a unique message from that Pokemon, and download it as an image.",
+    description: "Pokémon Valentine card generator using the PokéAPI.",
     descriptionShort: "Pokémon Valentine card generator (PokéAPI).",
   },
 ];
