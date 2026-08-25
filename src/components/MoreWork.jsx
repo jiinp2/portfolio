@@ -1,14 +1,11 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProjectCard from "./ProjectCard";
 import { projects } from "../data/projects";
 
-const INTERACTION_RESUME_MS = 2500;
-
 function MoreWork({ currentProjectSlug, onClose }) {
   const navigate = useNavigate();
-  const [isUserInteracting, setIsUserInteracting] = useState(false);
-  const interactionResumeTimerRef = useRef(null);
+  const [isTouchPaused, setIsTouchPaused] = useState(false);
 
   const otherProjects = useMemo(
     () =>
@@ -20,24 +17,6 @@ function MoreWork({ currentProjectSlug, onClose }) {
     () => [...otherProjects, ...otherProjects],
     [otherProjects],
   );
-
-  useEffect(() => {
-    return () => {
-      if (interactionResumeTimerRef.current !== null) {
-        window.clearTimeout(interactionResumeTimerRef.current);
-      }
-    };
-  }, []);
-
-  const pauseForUserInteraction = () => {
-    if (interactionResumeTimerRef.current !== null) {
-      window.clearTimeout(interactionResumeTimerRef.current);
-    }
-    setIsUserInteracting(true);
-    interactionResumeTimerRef.current = window.setTimeout(() => {
-      setIsUserInteracting(false);
-    }, INTERACTION_RESUME_MS);
-  };
 
   const handleProjectClick = (projectIndex) => {
     const project = projects[projectIndex];
@@ -55,12 +34,12 @@ function MoreWork({ currentProjectSlug, onClose }) {
         </h3>
         <div
           className="more-work-marquee max-md:-mx-4 max-md:px-4"
-          data-paused={isUserInteracting ? "true" : "false"}
-          onPointerDown={pauseForUserInteraction}
-          onTouchStart={pauseForUserInteraction}
-          onWheel={pauseForUserInteraction}
+          data-paused={isTouchPaused ? "true" : "false"}
+          onTouchStart={() => setIsTouchPaused(true)}
+          onTouchEnd={() => setIsTouchPaused(false)}
+          onTouchCancel={() => setIsTouchPaused(false)}
         >
-          <div className="more-work-marquee-track [&_.group:hover_img]:transform-none">
+          <div className="more-work-marquee-track">
             {marqueeProjects.map((project, idx) => {
               const projectIndex = projects.findIndex(
                 (p) => p.slug === project.slug,

@@ -171,7 +171,13 @@ function ProjectCard({
   };
 
   const standardCaseMarkup = (
-    <ProjectCardPreview project={project} interactive={!disabled} />
+    <ProjectCardPreview
+      project={project}
+      interactive={!disabled && !isMoreWork}
+      className={
+        isMoreWork ? "transition-colors group-hover:border-text/30" : ""
+      }
+    />
   );
 
   const explorativeMarkup = (

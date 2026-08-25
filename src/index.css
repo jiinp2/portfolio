@@ -296,10 +296,23 @@
   /* More Work marquee (end-to-end banner) */
   .more-work-marquee {
     --more-work-speed: 95s;
-    --more-work-speed-hover: 140s;
     overflow: hidden;
     position: relative;
     width: 100%;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 8%,
+      black 92%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 8%,
+      black 92%,
+      transparent
+    );
   }
 
   .more-work-marquee-track {
@@ -328,9 +341,11 @@
     }
   }
 
-  .more-work-marquee:hover .more-work-marquee-track,
-  .more-work-marquee:focus-within .more-work-marquee-track {
-    animation-duration: var(--more-work-speed-hover);
+  @media (hover: hover) {
+    .more-work-marquee:hover .more-work-marquee-track,
+    .more-work-marquee:focus-within .more-work-marquee-track {
+      animation-play-state: paused;
+    }
   }
 
   .more-work-marquee[data-paused="true"] .more-work-marquee-track {
