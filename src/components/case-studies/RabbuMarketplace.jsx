@@ -49,7 +49,7 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
           {/* Hero Section */}
           <CaseStudyHero
             title="Rabbu Marketplace"
-            subtitle="A platform where investors can find and evaluate profitable investment properties."
+            subtitle="Where investors find and evaluate investment properties."
             imageSrc="/case_studies/rabbu_marketplace/market-hero.webp"
             imageAlt="Rabbu Marketplace Hero"
             infoItems={[
@@ -73,14 +73,13 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
 
             <CaseStudySection title="Introduction">
               <p>
-                Rabbu engaged Drip Design to enhance their short-term rental
-                (STR) platform. The collaboration focused on integrating
-                existing tools and introducing new features to assist investors
-                in finding and managing properties effectively.
+                Rabbu came to Drip Design to improve their short-term rental
+                platform. We folded existing tools into one place and added
+                features to help investors find and manage properties.
               </p>
               <p>
-                This case study follows the work for Rabbu Marketplace and Rabbu
-                Portfolio can be found here.
+                This case study covers Marketplace. Portfolio is a separate case
+                study.
               </p>
             </CaseStudySection>
 
@@ -104,15 +103,12 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
               <ul className="outcomes-list">
                 <li>
                   <Check className="outcome-icon" size={20} />
-                  Creation of a holistic platform of tools for assessing and
-                  acquiring successful short-term rentals.
+                  A set of tools for assessing and buying short-term rentals.
                 </li>
                 <li>
                   <Check className="outcome-icon" size={20} />
-                  MVP launched in October 2022, within one month the platform
-                  had 33,000+ unique users who ran estimates, and 2,000+
-                  accounts were created. The project delivered a unified
-                  platform of tools for property acquisition and management.
+                  MVP launched in October 2022. Within a month, 33,000+ unique
+                  users ran estimates and 2,000+ accounts were created.
                 </li>
               </ul>
             </CaseStudySection>
@@ -128,10 +124,9 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
 
             <CaseStudySection title="The Short-term Rental Space">
               <p>
-                The STR industry is experiencing growth with the rise of
-                platforms like Airbnb and VRBO. There is an opportunity for a
-                new platform that can assist new to experienced investors in
-                finding, acquiring, and managing properties.
+                Short-term rentals were growing with Airbnb and VRBO. Newer and
+                experienced investors still needed better ways to find, buy, and
+                manage properties.
               </p>
             </CaseStudySection>
 
@@ -157,9 +152,8 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
               ]}
             >
               <p>
-                We benchmarked relevant and competing platforms to understand
-                user expectations in functionality and common interaction
-                patterns.
+                We looked at competing products to see what people already
+                expected and which patterns were familiar.
               </p>
             </CaseStudySection>
 
@@ -171,9 +165,8 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
               }}
             >
               <p>
-                We evaluated Rabbu's launched tools to better understand product
-                features to identify improvements when integrating them into a
-                holistic platform.
+                We reviewed Rabbu&apos;s existing tools to see what to keep and
+                what to fix when bringing them into one product.
               </p>
             </CaseStudySection>
           </section>
@@ -203,12 +196,12 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
                 {
                   number: 3,
                   title: "Investment",
-                  description: "The user, now familiar with potential revenue and the market looks to invest in an STR, exploring the out marketplace.",
+                  description: "The user, now familiar with potential revenue and the market looks to invest in an STR, exploring our marketplace.",
                 },
                 {
                   number: 4,
                   title: "Operation",
-                  description: "After acquiring an STR, the user is lead to Rabbu's property management services.",
+                  description: "After acquiring an STR, the user is led to Rabbu's property management services.",
                 },
                 {
                   number: 5,
@@ -219,11 +212,9 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
               infoCardsLayout="info-cards-journey"
             >
               <p>
-                During our regular meetings with the Rabbu team we were aligned
-                with their ideal user journey, which helped with informing the
-                platform's navigation. Although hypothetical this journey is
-                informed by Rabbu's interactions and user interviews with
-                customers thus far.
+                In meetings with Rabbu, we aligned on an ideal user journey that
+                shaped the navigation. It&apos;s hypothetical, but grounded in
+                their customer conversations and interviews so far.
               </p>
             </CaseStudySection>
 
@@ -284,16 +275,10 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
               ]}
             >
               <p>
-                We compared two models for user engagement prior to users
-                committing to a full subscription. The Free Trial model provided
-                a limited-time access to all features, and in contrast, the
-                Freemium model offered fully free features with the option for
-                users to upgrade to premium for advanced features.
+                Before a full subscription, we compared a free trial (all
+                features for a limited time) with freemium (some features free,
+                upgrade for the rest).
               </p>
-                <p>
-                  This is a comparison of general trends when it comes to
-                  comparing the two options.
-                </p>
             </CaseStudySection>
 
             <CaseStudySection
@@ -302,23 +287,23 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
               infoCards={[
                 {
                   icon: <Layers size={20} />,
-                  title: "Multiple Features for User Exploration",
-                  description: "The platform will offer a mix of free and paid features. The free features will still provide users with significant value, as demonstrated by the successful utilization of Rabbu's previously launched tools.",
+                  title: "Room to explore",
+                  description: "Free and paid features side by side. Free still has to be useful, which matched how people already used Rabbu's earlier tools.",
                 },
                 {
                   icon: <Users size={20} />,
-                  title: "Goal of Increasing User Base",
-                  description: "A freemium model is effective when the objective is to expand the user base by attracting more free accounts.",
+                  title: "Growing the user base",
+                  description: "Freemium made sense if the goal was more free accounts first.",
                 },
                 {
                   icon: <Zap size={20} />,
-                  title: "Resource Efficiency and User Outreach",
-                  description: "Rabbu aims to enhance resource efficiency and explore alternative methods, moving away from the intensive user outreach efforts employed thus far through direct sales teams.",
+                  title: "Less reliance on sales outreach",
+                  description: "Rabbu wanted a lighter model than relying so hard on direct sales.",
                 },
                 {
                   icon: <TrendingUp size={20} />,
-                  title: "Gradual Activation of Paid Tiers",
-                  description: "Frequent users can take their time to explore the platform before deciding to upgrade. This flexibility ideally contributes to more organic and sustainable user growth.",
+                  title: "Time to upgrade",
+                  description: "People can explore before paying, which should support steadier growth.",
                 },
               ]}
             />
@@ -331,16 +316,13 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
               }}
             >
               <p>
-                Adopting the freemium model influenced our designs, we
-                determined that it would be important to communicate the added
-                benefits of subscribing to a premium account and doing so needs
-                to be a seamless process.
+                Freemium shaped the UI. Premium benefits had to be clear, and
+                upgrading had to feel simple.
               </p>
               <p>
-                In the example below the user is still able to see the ratings,
-                average daily rate, revenue, etc. for this property but will
-                need to subscribe to see more comparable listings and additional
-                advanced features.
+                In the example below, the user can still see ratings, average
+                daily rate, revenue, and more. Subscribing unlocks comparable
+                listings and advanced features.
               </p>
             </CaseStudySection>
           </section>
@@ -360,17 +342,17 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
                 {
                   icon: <Calculator size={20} />,
                   title: "Revenue Estimates",
-                  description: "Users can run revenue estimates for any US address based on data that utilizes nearby rentals.",
+                  description: "Run revenue estimates for any US address using nearby rental data.",
                 },
                 {
                   icon: <BarChart size={20} />,
                   title: "Market Data",
-                  description: "Users can access real-time and historical rental statistic trends in any given area.",
+                  description: "Real-time and historical rental trends for a given area.",
                 },
                 {
                   icon: <Home size={20} />,
                   title: "Properties for Sale",
-                  description: "Users can view on-market properties and easily filter investment opportunities based on their own criteria.",
+                  description: "On-market listings, filterable by investment criteria.",
                 },
               ]}
               infoCardsLayout="info-cards-three"
@@ -380,8 +362,8 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
               }}
             >
               <p>
-                Rabbu Marketplace is composed of three different sections,
-                Revenue Estimates, Market Data, and Properties for Sale.
+                Marketplace has three sections: Revenue Estimates, Market Data,
+                and Properties for Sale.
               </p>
             </CaseStudySection>
           </section>
@@ -402,46 +384,39 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
                 reverse: true,
               }}
             >
-                  <p>
-                    A tool for investors to determine equity required to acquire
-                    a property as well as estimated potential earnings. This
-                    calculator can be personalized with custom financial
-                    information.
-                  </p>
+              <p>
+                Estimate equity needed and potential earnings. Investors can
+                plug in their own numbers.
+              </p>
             </CaseStudySection>
 
             <CaseStudySection
-              title="Identifying High-Performance Investments"
+              title="Comparing investments"
               sideBySide={{
                 image: {
                   src: "/case_studies/rabbu_marketplace/market-12.webp",
-                  alt: "Identifying High-Performance Investments",
+                  alt: "Comparing investments",
                 },
                 reverse: true,
               }}
             >
-                  <p>
-                    Investors can efficiently compare properties based on their
-                    investment goals such as cash flow vs. long term property
-                    appreciation. As well as access to Rabbu's property
-                    recommendations.
-                  </p>
+              <p>
+                Compare properties by goals like cash flow vs. long-term
+                appreciation, plus Rabbu&apos;s recommendations.
+              </p>
             </CaseStudySection>
 
             <CaseStudySection
-              title="View On-Market Rental Properties"
+              title="On-market rentals"
               sideBySide={{
                 image: {
                   src: "/case_studies/rabbu_marketplace/market-13.webp",
-                  alt: "View On-Market Rental Properties",
+                  alt: "On-market rentals",
                 },
                 reverse: true,
               }}
             >
-                  <p>
-                    Investors can browse properties to invest in with
-                    underwriting provided by Rabbu.
-                  </p>
+              <p>Browse properties with underwriting from Rabbu.</p>
             </CaseStudySection>
           </section>
 
@@ -471,10 +446,8 @@ function RabbuMarketplace({ onClose, currentProjectSlug }) {
               ]}
             >
               <p>
-                Recognizing the need for a cohesive and consistent design
-                approach, this system aims to streamline the design process,
-                ensure consistency across the platform, and facilitate smoother
-                handoffs to the client.
+                We needed a consistent system so the product felt like one
+                product and handoffs to the client were cleaner.
               </p>
             </CaseStudySection>
           </section>

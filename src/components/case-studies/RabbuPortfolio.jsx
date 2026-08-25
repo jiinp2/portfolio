@@ -42,7 +42,7 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
           {/* Hero Section */}
           <CaseStudyHero
             title="Rabbu Portfolio"
-            subtitle="A platform where short-term rental investors can manage their properties and track performance."
+            subtitle="Where short-term rental investors manage properties and track performance."
             imageSrc="/case_studies/rabbu_portofolio/hero.webp"
             imageAlt="Rabbu Portfolio Hero"
             infoItems={[
@@ -66,22 +66,21 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
 
             <CaseStudySection title="Introduction">
               <p className="text-base leading-relaxed text-muted mb-6">
-                Rabbu approached Drip Design to help design their short-term
-                rental (STR) platform by incorporating tools they had previously
-                launched as well as newer features that will help short-term
-                rental investors find and manage property investments.
+                Rabbu came to Drip Design to redesign their short-term rental
+                platform. They wanted their existing tools and newer features in
+                one place so investors could find and manage properties more
+                easily.
               </p>
               <p className="text-base leading-relaxed text-muted mb-6">
-                This case study follows the work for Rabbu Portfolio and Rabbu
-                Marketplace can be found here.
+                This case study covers Portfolio. Marketplace is a separate case
+                study.
               </p>
             </CaseStudySection>
 
             <CaseStudySection title="What is Rabbu Portfolio?">
               <p className="text-base leading-relaxed text-muted mb-6">
-                Is a part of Rabbu's STR platform where users can manage their
-                property investments from performance evaluation, rental
-                activity, and statements.
+                Rabbu Portfolio is where investors manage their short-term
+                rentals: performance, rental activity, and statements.
               </p>
             </CaseStudySection>
           </section>
@@ -111,12 +110,10 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
               ]}
             >
               <p className="text-base leading-relaxed text-muted mb-6">
-                End-to-end design and launch of Rabbu's Portfolio platform,
-                enhancing the STR management experience.
+                We designed and launched Portfolio end to end.
               </p>
               <p className="text-base leading-relaxed text-muted mb-6">
-                Revitalized the user interface for cohesion with Rabbu
-                Marketplace.
+                We also reworked the UI so it felt consistent with Marketplace.
               </p>
             </CaseStudySection>
           </section>
@@ -131,13 +128,9 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
 
             <CaseStudySection title="Early Stage Hypothetical User Journeys">
               <p className="text-base leading-relaxed text-muted mb-6">
-                Utilizing hypothetical user journeys provided by Rabbu, we aimed
-                to define user needs and desired outcomes.
-              </p>
-              <p className="text-base leading-relaxed text-muted mb-6">
-                Our goal would be to transition from idealized user journeys to
-                more realistic and user-tested versions through future
-                iterations.
+                Rabbu gave us hypothetical user journeys to start from. We used
+                them to sketch needs and outcomes, knowing we&apos;d replace the
+                idealized versions with tested ones later.
               </p>
             </CaseStudySection>
 
@@ -169,8 +162,8 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
               infoCardsLayout="info-cards-four"
             >
               <p className="text-base leading-relaxed text-muted mb-8">
-                This journey outlines the process of a new Rabbu Portfolio user,
-                from initial discovery to successful property management.
+                How a new investor finds Portfolio and gets their first property
+                running.
               </p>
             </CaseStudySection>
 
@@ -202,10 +195,8 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
               infoCardsLayout="info-cards-four"
             >
               <p className="text-base leading-relaxed text-muted mb-8">
-                This journey outlines the process of how an experienced user who
-                finds success with utilizing Portfolio decides to search and
-                onboard additional properties they have found on Rabbu
-                Marketplace.
+                How someone already using Portfolio expands into more properties
+                through Marketplace.
               </p>
             </CaseStudySection>
           </section>
@@ -220,9 +211,8 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
 
             <CaseStudySection title="Rabbu One">
               <p className="text-base leading-relaxed text-muted mb-6">
-                Rabbu decided to transition to a unified account system
-                facilitated seamless access to both Marketplace and Portfolio,
-                enhancing user interaction across Rabbu services.
+                Rabbu moved to a unified account so people could move between
+                Marketplace and Portfolio without separate logins.
               </p>
             </CaseStudySection>
 
@@ -234,9 +224,8 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
               }}
             >
               <p className="text-base leading-relaxed text-muted mb-6">
-                Defining how users will interact with different Rabbu services
-                throughout their journey helped with creating transitions
-                between products.
+                Mapping how people move between Rabbu products made the handoffs
+                between them clearer.
               </p>
             </CaseStudySection>
           </section>
@@ -271,7 +260,7 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
                 {
                   icon: <DollarSign size={20} />,
                   title: "Pricing & Statements",
-                  description: "Easy access to property related financial statements.",
+                  description: "Financial statements for each property.",
                 },
               ]}
               infoCardsLayout="info-cards-four"
@@ -282,8 +271,8 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
             >
               <p className="text-base leading-relaxed text-muted mb-8">
                 The platform is organized into Dashboard, Properties, Calendar,
-                Reviews, Activity, Pricing, and Statements, providing users
-                comprehensive oversight over their investment properties.
+                Reviews, Activity, Pricing, and Statements so investors can see
+                what&apos;s going on across their properties.
               </p>
             </CaseStudySection>
           </section>
@@ -296,49 +285,48 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
           >
             <div className="key-features mt-6">
               <CaseStudySection
-                title="Comprehensive Performance Insights"
+                title="Performance insights"
                 image={{
                   src: "/case_studies/rabbu_portofolio/5.avif",
-                  alt: "Comprehensive Performance Insights",
+                  alt: "Performance insights",
                 }}
               >
                 <p className="text-base leading-relaxed text-muted mb-6">
-                  Delivers real-time and customizable insights of financial and
-                  operational metrics, empowering investors to make data-driven
-                  decisions.
+                  Real-time, customizable view of financial and operational
+                  metrics so investors can decide what to do next.
                 </p>
               </CaseStudySection>
 
               <CaseStudySection
-                title="Streamlined Property Booking Management"
+                title="Booking management"
                 sideBySide={{
                   image: {
                     src: "/case_studies/rabbu_portofolio/6.webp",
-                    alt: "Streamlined Property Booking Management",
+                    alt: "Booking management",
                   },
                   reverse: false,
                 }}
               >
                 <p className="text-base leading-relaxed text-muted m-0">
-                    Simplifies booking management by displaying bookings across
-                    all properties and listing platforms.
-                  </p>
+                  Bookings across all properties and listing platforms in one
+                  place.
+                </p>
               </CaseStudySection>
 
               <CaseStudySection
-                title="Real-Time Property Activity Tracker"
+                title="Property activity"
                 sideBySide={{
                   image: {
                     src: "/case_studies/rabbu_portofolio/7.webp",
-                    alt: "Real-Time Property Activity Tracker",
+                    alt: "Property activity",
                   },
                   reverse: true,
                 }}
               >
                 <p className="text-base leading-relaxed text-muted m-0">
-                    Provides real-time updates to property happenings, elevating
-                    guest satisfaction through proactive property management.
-                  </p>
+                  Live updates on what&apos;s happening at each property, so
+                  owners can respond sooner.
+                </p>
               </CaseStudySection>
             </div>
           </section>

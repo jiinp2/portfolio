@@ -215,9 +215,9 @@ function Work() {
             <p
               className={`text-sm text-text-muted leading-relaxed mb-0 ${SIDEBAR_TEXT_TRANSITION} last:mb-0`}
             >
-              Hi, I'm a product designer who's owned end-to-end scope at
-              early-stage startups, from UX strategy to shipping production
-              code.
+              Hi, I'm a product designer. I've worked early-stage startups end
+              to end, from the product decisions through to the code that
+              ships.
             </p>
           </div>
 

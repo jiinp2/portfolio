@@ -32,7 +32,7 @@ function Kobo({ onClose, currentProjectSlug }) {
           {/* Hero Section */}
           <CaseStudyHero
             title="Kobo"
-            subtitle="A redesign of the user interface and user flow of the popular eBook and audiobook app."
+            subtitle="A redesign of the Kobo eBook and audiobook app interface and flows."
             imageSrc="/case_studies/kobo/kobo-hero.avif"
             imageAlt="Kobo Hero"
             infoItems={[
@@ -56,27 +56,23 @@ function Kobo({ onClose, currentProjectSlug }) {
 
             <CaseStudySection title="Introduction">
               <p>
-                This project, the final assignment for the UI Design course at
-                BrainStation, involved choosing the Kobo mobile application to
-                redesign its user interface.
+                For the final project in BrainStation&apos;s UI Design course, I
+                redesigned the Kobo mobile app.
               </p>
             </CaseStudySection>
 
             <CaseStudySection title="What is Kobo?">
               <p>
-                Kobo is a reading platform that offers a wide selection of
-                e-books and audiobooks for users to access on their electronic
-                devices.
+                Kobo is a reading app for eBooks and audiobooks across phones
+                and other devices.
               </p>
             </CaseStudySection>
 
             <CaseStudySection title="Objective">
               <p>
-                The objective of the project was to enhance the app's user
-                interface by applying the skills and knowledge acquired
-                throughout the course. Additionally, I aimed to improve user
-                flows and clarify the application's offerings for users seeking
-                a comprehensive e-book and audiobook app.
+                I wanted to tighten the interface and the main flows, and make
+                it clearer what the app offers for people looking for eBooks and
+                audiobooks in one place.
               </p>
             </CaseStudySection>
 
@@ -89,22 +85,20 @@ function Kobo({ onClose, currentProjectSlug }) {
             >
               <ul className="outcomes-list">
                 <li>
-                  <Check className="outcome-icon" size={20} />A redesigned
-                  onboarding process to better showcase the app's key features,
-                  setting clear expectations.
+                  <Check className="outcome-icon" size={20} />A clearer
+                  onboarding flow that shows the main features up front.
                 </li>
                 <li>
-                  <Check className="outcome-icon" size={20} />
-                  Reorganizing the tab bar and redesigning the hierarchy helps
-                  users navigate the app more efficiently, while an updated
-                  visual style offers a more modern look.
+                  <Check className="outcome-icon" size={20} />A reworked tab bar
+                  and hierarchy so navigation is simpler, plus a more current
+                  visual style.
                 </li>
               </ul>
               <p>
-                This was a course project for BrainStation's UI Design
-                program, not a shipped product, so there's no usage data. The
-                heuristic review and app-store takeaways above were the
-                evidence base for every decision.
+                This was a course project for BrainStation&apos;s UI Design
+                program, not a shipped product, so there&apos;s no usage data.
+                The heuristic review and app-store takeaways were the evidence
+                for every decision.
               </p>
             </CaseStudySection>
           </section>
@@ -125,9 +119,8 @@ function Kobo({ onClose, currentProjectSlug }) {
               }}
             >
               <p>
-                A competitor analysis was conducted to better understand the
-                e-book and audiobook market and gather insights into user
-                expectations in terms of features and flows.
+                I looked at other eBook and audiobook apps to see what people
+                expect from features and flows.
               </p>
             </CaseStudySection>
 
@@ -139,20 +132,16 @@ function Kobo({ onClose, currentProjectSlug }) {
               }}
             >
               <p>
-                Additional platforms were studied to gain insights into how
-                content is organized when there is large number of content to
-                choose from. For example, apps like Spotify were examined to see
-                how users manage access to two different types of content (music
-                and podcasts).
+                I also studied apps with a lot of content to choose from.
+                Spotify was useful for how it handles two content types (music
+                and podcasts) in one place.
               </p>
             </CaseStudySection>
 
             <CaseStudySection title="App Analysis">
               <p>
-                The app was reviewed in-depth through a heuristic review using
-                Jakob Nielson's 10 general principles for interactive design.
-                This approach helped identify areas for improvement and ensured
-                that the redesign would align with industry standards.
+                I ran a heuristic review of Kobo using Jakob Nielsen&apos;s 10
+                usability principles to find what to fix in the redesign.
               </p>
             </CaseStudySection>
 
@@ -204,8 +193,8 @@ function Kobo({ onClose, currentProjectSlug }) {
                 App Store Reviews
               </h3>
               <p>
-                Takeaways based on app store reviews to see how real users felt
-                about the app.
+                Takeaways from app store reviews on how real users felt about
+                the app.
               </p>
 
               <div className="review-categories">
@@ -268,11 +257,9 @@ function Kobo({ onClose, currentProjectSlug }) {
               }}
             >
               <p>
-                Planning the information architecture visually allowed me to map
-                out where to move or combine different features and as a
-                reference for prioritizing redesigns within the project's scope.
-                The goal was to make it easier for users to find what they are
-                looking for by improving the app's navigation and organization.
+                Mapping the information architecture showed where to move or
+                combine features, and what to prioritize in scope. The goal was
+                simpler navigation so people could find what they need.
               </p>
             </CaseStudySection>
 
@@ -284,9 +271,9 @@ function Kobo({ onClose, currentProjectSlug }) {
               }}
             >
               <p>
-                Early ideations were explored through sketches and mid-fidelity
-                wireframes of key screens. These helped to iterate on navigation
-                and interactions, and refine the information architecture.
+                I explored ideas through sketches and mid-fidelity wireframes of
+                key screens, iterating on navigation, interactions, and the
+                information architecture.
               </p>
             </CaseStudySection>
 
@@ -298,10 +285,9 @@ function Kobo({ onClose, currentProjectSlug }) {
               }}
             >
               <p>
-                This moodboard was created with the goal of using imagery that
-                evokes a nostalgic and warm feeling of a local bookshop inspired
-                by copy on Kobo's website stating, 'Your favourite local
-                bookshop.'
+                The moodboard aimed for a nostalgic, warm local-bookshop feel,
+                inspired by Kobo&apos;s own line, &apos;Your favourite local
+                bookshop.&apos;
               </p>
             </CaseStudySection>
 
@@ -313,8 +299,8 @@ function Kobo({ onClose, currentProjectSlug }) {
               }}
             >
               <p>
-                This style guide introduces an updated color palette that
-                revitalizes Kobo's current visual language.
+                The style guide updates the color palette while staying
+                recognizable as Kobo.
               </p>
             </CaseStudySection>
           </section>
@@ -329,9 +315,8 @@ function Kobo({ onClose, currentProjectSlug }) {
 
             <CaseStudySection>
               <p>
-                The redesigned Kobo app addresses key user pain points through
-                improved navigation, enhanced discoverability, and a more
-                intuitive user experience.
+                The redesign focuses on clearer navigation, easier discovery,
+                and flows that are simpler to follow.
               </p>
             </CaseStudySection>
 
@@ -346,11 +331,8 @@ function Kobo({ onClose, currentProjectSlug }) {
               }}
             >
               <p>
-                The redesigned onboarding process introduces users to
-                personalization possibilities and the breadth of content
-                available. This ensures users are immediately aware of the app's
-                capabilities, setting the stage for a tailored and engaging
-                experience from the start.
+                Onboarding introduces personalization and the range of content
+                available, so people know what the app can do from the start.
               </p>
             </CaseStudySection>
 
@@ -365,9 +347,8 @@ function Kobo({ onClose, currentProjectSlug }) {
               }}
             >
               <p>
-                The different subscription plans are outlined upfront. Users can
-                choose their preferred genres, enabling the tailored
-                recommendations.
+                Subscription plans show up front. Users can pick preferred
+                genres so recommendations fit them.
               </p>
             </CaseStudySection>
 
@@ -379,9 +360,8 @@ function Kobo({ onClose, currentProjectSlug }) {
               }}
             >
               <p>
-                The tab bar has been redesigned for improved navigation
-                efficiency. Users can also reorganize their Home Screen
-                according to their usage patterns.
+                The tab bar is reworked for clearer navigation. Users can also
+                reorder the Home screen to match how they use the app.
               </p>
             </CaseStudySection>
 
@@ -396,10 +376,8 @@ function Kobo({ onClose, currentProjectSlug }) {
               }}
             >
               <p>
-                Users can now effortlessly switch between their eBooks,
-                audiobooks, and collections in a unified library interface.
-                Simplifying navigation and reducing the cognitive load, making
-                it easier for users to manage and access their content.
+                eBooks, audiobooks, and collections live in one library, so
+                switching between them is simpler.
               </p>
             </CaseStudySection>
 
@@ -414,11 +392,8 @@ function Kobo({ onClose, currentProjectSlug }) {
               }}
             >
               <p>
-                A new grid view showcases book covers, enabling users to
-                visually sift through titles more easily. Accompanied by
-                personalized book lists, this design enhances discoverability
-                and ensures users can find books that cater to their tastes with
-                minimal effort.
+                A grid of covers makes browsing titles faster, with personalized
+                lists to help people find books that fit them.
               </p>
             </CaseStudySection>
 
@@ -433,10 +408,9 @@ function Kobo({ onClose, currentProjectSlug }) {
               }}
             >
               <p>
-                Key information about books is displayed above the fold,
-                including a clear indication that books cannot be directly
-                purchased in the app. This transparency eliminates confusion and
-                helps set accurate expectations for the purchasing process.
+                Key book details sit above the fold, including a clear note that
+                books can&apos;t be purchased in-app, so expectations are set
+                early.
               </p>
             </CaseStudySection>
 
@@ -450,14 +424,10 @@ function Kobo({ onClose, currentProjectSlug }) {
                 reverse: false,
               }}
             >
+              <p>Search covers titles and authors.</p>
               <p>
-                An updated search that allows users to search titles and
-                authors.
-              </p>
-              <p>
-                The profile design is a quick concept where users can follow
-                each other, view the books they are currently reading, share
-                goals and awards, and more.
+                The profile is a quick concept for following people, seeing what
+                they&apos;re reading, and sharing goals and awards.
               </p>
             </CaseStudySection>
           </section>

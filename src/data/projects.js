@@ -7,8 +7,7 @@ export const projects = [
     category: "case-studies",
     slug: "maison",
     image: "/home/maison_logo.svg",
-    description:
-      "Professional networking and community platform for real estate professionals and brokerages.",
+    description: "A professional network for real estate agents.",
     descriptionShort: "Professional network for real estate agents.",
   },
   {
@@ -28,7 +27,7 @@ export const projects = [
     category: "case-studies",
     slug: "rabbu-marketplace",
     image: "/home/rabbu_marketplace_thumbnail.png",
-    description: "Investment property discovery and evaluation platform.",
+    description: "Tools for finding and evaluating investment properties.",
   },
   {
     name: "Kobo",

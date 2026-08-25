@@ -31,7 +31,7 @@ function Skiin({ onClose, currentProjectSlug }) {
           {/* Hero Section */}
           <CaseStudyHero
             title="Skiin"
-            subtitle="Innovating wellness through real-time tracking and sensory textiles."
+            subtitle="Wellness tracking through bio-sensing garments and a companion app."
             imageSrc="/case_studies/skiin/hero.avif"
             imageAlt="Skiin Hero"
             infoItems={[
@@ -55,20 +55,18 @@ function Skiin({ onClose, currentProjectSlug }) {
 
             <CaseStudySection title="Introduction">
               <p>
-                As a part of OCAD University's internship program I interned at
-                Myant, a wearable technology company that specializes in
-                textiles knitted with sensors. My primary focus was on Myant's
-                in-house product, Skiin, although my responsibilities extended
-                to external client projects as well.
+                Through OCAD University&apos;s internship program, I interned at
+                Myant, a wearable tech company that knits sensors into textiles.
+                My main focus was Skiin, Myant&apos;s in-house product, with some
+                work on external client projects as well.
               </p>
             </CaseStudySection>
 
             <CaseStudySection title="What Is Skiin?">
               <p>
-                Skiin consists of bio-sensing garments that work in tandem with
-                a mobile application, offering users real-time insights into
-                their wellness. Sensors collect and track health data over time,
-                which can be shared with a user's circle of care.
+                Skiin is bio-sensing garments paired with a mobile app. Sensors
+                collect health data over time and surface it in real time.
+                People can also share that data with their circle of care.
               </p>
               <p>
                 <a
@@ -84,9 +82,8 @@ function Skiin({ onClose, currentProjectSlug }) {
 
             <CaseStudySection title="My Responsibilities">
               <p>
-                For Skiin, my responsibilities included ideating and wireframing
-                the application's communication and mood logging features,
-                aiming to enhance user interaction and emotional tracking.
+                On Skiin, I ideated and wireframed the communication and mood
+                logging features.
               </p>
             </CaseStudySection>
 
@@ -100,13 +97,13 @@ function Skiin({ onClose, currentProjectSlug }) {
               <ul className="outcomes-list">
                 <li>
                   <Check className="outcome-icon" size={20} />
-                  Designed the user flow and high-fidelity wireframes for
-                  Skiin's communication features and mood logging feature.
+                  Designed the user flows and high-fidelity wireframes for
+                  Skiin&apos;s communication and mood logging features.
                 </li>
               </ul>
               <p>
-                These features shipped as part of the Skiin app, giving users
-                a way to log and track their mood over time.
+                These features shipped in the Skiin app, so users could log and
+                track mood over time.
               </p>
             </CaseStudySection>
           </section>
@@ -121,10 +118,9 @@ function Skiin({ onClose, currentProjectSlug }) {
 
             <CaseStudySection title="Existing Research">
               <p>
-                To understand Skiin's users and their needs, I relied on
-                existing research conducted by the design and research team.
-                This included a combination of user surveys, interviews, and
-                focus groups. I analyzed research findings to inform design
+                To understand Skiin&apos;s users, I worked from research the
+                design and research team had already done: surveys, interviews,
+                and focus groups. I used those findings to guide design
                 decisions.
               </p>
             </CaseStudySection>
@@ -132,25 +128,24 @@ function Skiin({ onClose, currentProjectSlug }) {
             <CaseStudySection title="Key Takeaways">
               <ul className="takeaways-list">
                 <li>
-                  Users highly value products that integrate seamlessly into
-                  their daily lives and deliver precise wellness insights.
+                  People want products that fit into daily life and give clear
+                  wellness insights.
                 </li>
                 <li>
-                  Users expressed a desire for a product that motivates them to
-                  maintain healthy habits.
+                  They also want something that helps them stick with healthy
+                  habits.
                 </li>
                 <li>
-                  The team identified the need to differentiate by focusing on
-                  the unique benefits of textile technology.
+                  The team wanted to stand out by leaning into what textile
+                  sensing can do that other wearables can&apos;t.
                 </li>
               </ul>
             </CaseStudySection>
 
             <CaseStudySection title="Competitive Research">
               <p>
-                Before ideation, I conducted an analysis of competing products,
-                focusing on their visual design elements and user journeys, to
-                identify opportunities for enhancing the Skiin experience.
+                Before ideating, I looked at competing products, their visuals
+                and user journeys, for opportunities to improve Skiin.
               </p>
             </CaseStudySection>
           </section>
@@ -171,8 +166,8 @@ function Skiin({ onClose, currentProjectSlug }) {
               }}
             >
               <p>
-                Enhancing remote connection through Skiin's in-app messaging and
-                video calling.
+                In-app messaging and video calling so people can stay connected
+                remotely.
               </p>
             </CaseStudySection>
 
@@ -186,10 +181,10 @@ function Skiin({ onClose, currentProjectSlug }) {
                 reverse: true,
               }}
             >
-                  <p>
-                    Within group chats, each member has a status bar that
-                    provides a quick view on their current health.
-                  </p>
+              <p>
+                In group chats, each member has a status bar with a quick view
+                of their current health.
+              </p>
             </CaseStudySection>
 
             <CaseStudySection
@@ -202,10 +197,10 @@ function Skiin({ onClose, currentProjectSlug }) {
                 reverse: false,
               }}
             >
-                  <p>
-                    The status bar can be expanded to view user location and
-                    more detailed metrics over time.
-                  </p>
+              <p>
+                Expanding the status bar shows location and more detailed
+                metrics over time.
+              </p>
             </CaseStudySection>
 
             <CaseStudySection
@@ -216,8 +211,7 @@ function Skiin({ onClose, currentProjectSlug }) {
               }}
             >
               <p>
-                Enhancing remote connection through Skiin's in-app messaging and
-                video calling.
+                A way to log mood and related context alongside the sensor data.
               </p>
             </CaseStudySection>
 
@@ -229,9 +223,8 @@ function Skiin({ onClose, currentProjectSlug }) {
               }}
             >
               <p>
-                Users can select their mood on a scale of 1-5, add the date,
-                include a note on what they did that day, and tag factors that
-                influenced their mood.
+                Users pick a mood from 1–5, add a date, note what they did that
+                day, and tag factors that influenced how they felt.
               </p>
             </CaseStudySection>
 
@@ -243,9 +236,8 @@ function Skiin({ onClose, currentProjectSlug }) {
               }}
             >
               <p>
-                By viewing mood logs on a daily, weekly, or monthly basis, users
-                can identify reoccurring patterns and understand how they are
-                affected by their daily activities.
+                Viewing mood logs by day, week, or month helps people spot
+                patterns and how daily activities affect them.
               </p>
             </CaseStudySection>
           </section>

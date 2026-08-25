@@ -29,7 +29,7 @@ function Maison({ onClose, currentProjectSlug }) {
         <div className="case-study-content">
           <CaseStudyHero
             title="Maison"
-            subtitle="A professional network for real estate professionals"
+            subtitle="A professional network for real estate agents"
             imageSrc="/case_studies/maison/maison-hero.png"
             imageAlt="Maison Hero"
             infoItems={[
@@ -50,15 +50,15 @@ function Maison({ onClose, currentProjectSlug }) {
           >
             <CaseStudySection title="Overview">
               <p>
-                Maison is a professional networking platform for real estate
-                agents. In a field where reputation and relationships drive
-                business, agents had no dedicated space for either.
+                Maison is a professional network for real estate agents. In a
+                field where reputation and relationships drive business, agents
+                had no dedicated space for either.
               </p>
               <p>
-                I joined as the founding product designer and worked directly
-                with the founder on product direction and hiring. I covered the
-                full design scope, from UX strategy and visual design to
-                frontend implementation in React.
+                I joined as the founding product designer and worked with the
+                founder on product direction and hiring. I handled the design
+                work end to end, from UX and visual design through frontend in
+                React.
               </p>
             </CaseStudySection>
           </section>
@@ -73,10 +73,10 @@ function Maison({ onClose, currentProjectSlug }) {
                 Maison started as a referral-only platform connecting
                 homeowners, realtors, and contractors through exclusive
                 geographic patches. Platforms like Angi, HomeStars, and Jiffy
-                are built on volume and we were building the high-trust
-                alternative. Getting all three groups active on a brand new
-                platform wasn&apos;t gaining traction fast enough, and we
-                pivoted to focus entirely on agents.
+                optimize for volume. We were trying for higher trust instead.
+                Getting all three groups active on a brand new platform
+                wasn&apos;t gaining traction fast enough, so we pivoted to focus
+                entirely on agents.
               </p>
 
               <div
@@ -94,8 +94,8 @@ function Maison({ onClose, currentProjectSlug }) {
                     </p>
                     <p className="text-sm text-text-muted leading-relaxed m-0">
                       Homeowners, realtors, and contractors linked through
-                      exclusive geographic patches, the high-trust alternative to
-                      volume-first marketplaces.
+                      exclusive geographic patches, meant as a higher-trust
+                      option than volume-first marketplaces.
                     </p>
                     <ul className="text-sm text-text-muted leading-relaxed m-0 pl-5 list-disc space-y-1">
                       <li>Agents</li>
@@ -242,7 +242,7 @@ function Maison({ onClose, currentProjectSlug }) {
             <CaseStudySection title="Process">
               <p>
                 Agents wanted a professional space to build reputation and stay
-                connected to peers. We built presence first, a directory and
+                connected to peers. We started with presence: a directory and
                 profiles so agents could be found and stand out. Then
                 communities, because reputation in real estate comes from
                 relationships and contribution, not a static page. Messaging and
@@ -370,11 +370,10 @@ function Maison({ onClose, currentProjectSlug }) {
             >
               <p>
                 Each professional had a profile with intro, credentials,
-                achievements, and links. It served two audiences: peers
-                evaluating a collaborator and clients evaluating who to hire. We
-                shaped it around how agents present themselves professionally,
-                credentials and track record up front, rather than a generic
-                social profile layout.
+                achievements, and links. It had to work for two audiences: peers
+                evaluating a collaborator, and clients deciding who to hire. We
+                put credentials and track record up front, instead of treating
+                it like a generic social profile.
               </p>
             </CaseStudySection>
             <CaseStudySection
@@ -428,14 +427,16 @@ function Maison({ onClose, currentProjectSlug }) {
               <p>
                 Phase 2 shipped fully functional before the company closed.
                 Real-time messaging, community moderation, file management, and
-                subscription flows were all live in internal testing with
-                agents. Maison closed in early 2026 before reaching public
-                launch. During testing, agents responded positively to file
-                management and the networking features. Finding other
-                professionals and staying current with the field were the things
-                they said they&apos;d actually use. What we didn&apos;t fully
-                solve was habit change. Getting professionals to make it their
-                primary tool required more depth than we had time to build.
+                subscription flows were live in internal testing with agents.
+                Maison closed in early 2026 before a public launch.
+              </p>
+              <p>
+                During testing, agents were most interested in file management
+                and networking. Finding other professionals and staying current
+                with the field were the things they said they&apos;d actually
+                use. What we didn&apos;t fully solve was habit change. Getting
+                people to make it their primary tool needed more depth than we
+                had time to build.
               </p>
             </CaseStudySection>
           </section>
@@ -447,17 +448,15 @@ function Maison({ onClose, currentProjectSlug }) {
           >
             <CaseStudySection title="Reflection">
               <p>
-                This role pushed me to think beyond design and into product
-                strategy. Along the way I developed a stronger sense of the why
-                behind decisions, not just the how. I&apos;m looking to build on
-                that in my next role.
+                This role pushed me past design into product decisions. I got
+                clearer on the why behind what we built, not only the how.
               </p>
               <p>
-                I&apos;m glad I took on a role with real product ownership right
-                out of my software engineering diploma. Getting to influence
-                what got built, not just design it, and shipping production code
-                at the same time pushed me in ways a more defined role
-                wouldn&apos;t have.
+                I&apos;m glad I took a role with real product ownership right
+                after my software engineering diploma. Getting to influence what
+                got built, not just design it, and shipping production code at
+                the same time stretched me in ways a narrower role wouldn&apos;t
+                have.
               </p>
             </CaseStudySection>
           </section>
