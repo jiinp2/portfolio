@@ -217,7 +217,7 @@ function Work() {
             >
               Hi, I'm a product designer who's owned end-to-end scope at
               early-stage startups, from UX strategy to shipping production
-              code as a founding design hire.
+              code.
             </p>
           </div>
 
