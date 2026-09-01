@@ -10,10 +10,10 @@ const DESCRIPTION_CLASS_BASE =
   "mt-2 mb-0 text-sm font-normal leading-relaxed text-text-light transition-colors duration-600 ease-in-out";
 
 const PROJECT_CARD_CTA_CLASS =
-  "project-card-cta project-card-cta-trigger inline-flex w-40 self-start items-center justify-center gap-2 text-sm font-medium text-text border border-border bg-surface rounded-lg px-3 py-1.5 transition-colors hover:bg-gray-50 dark:hover:bg-dark-bg-elevated focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 dark:focus-visible:ring-neutral-600 cursor-pointer disabled:cursor-not-allowed";
+  "project-card-cta project-card-cta-trigger inline-flex w-40 self-start items-center justify-center gap-2 text-sm font-medium text-text border border-border bg-surface rounded-lg px-3 py-1.5 transition-colors hover:bg-gray-100 hover:border-gray-300 dark:hover:bg-dark-bg-elevated dark:hover:border-neutral-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 dark:focus-visible:ring-neutral-600 cursor-pointer disabled:cursor-not-allowed";
 
 const PROJECT_CARD_HOVER_SYNC_CLASS =
-  "has-[.project-card-preview-trigger:hover]:[&_.project-card-preview-frame]:border-text/30 has-[.project-card-cta-trigger:hover]:[&_.project-card-preview-frame]:border-text/30 has-[.project-card-preview-trigger:hover]:[&_.project-card-preview-media]:scale-105 has-[.project-card-cta-trigger:hover]:[&_.project-card-preview-media]:scale-105 has-[.project-card-preview-trigger:hover]:[&_.project-card-cta]:bg-gray-50 has-[.project-card-preview-trigger:hover]:[&_.project-card-cta]:dark:bg-dark-bg-elevated";
+  "has-[.project-card-preview-trigger:hover]:[&_.project-card-preview-frame]:border-text/30 has-[.project-card-cta-trigger:hover]:[&_.project-card-preview-frame]:border-text/30 has-[.project-card-preview-trigger:hover]:[&_.project-card-preview-media]:scale-105 has-[.project-card-cta-trigger:hover]:[&_.project-card-preview-media]:scale-105 has-[.project-card-preview-trigger:hover]:[&_.project-card-cta]:bg-gray-100 has-[.project-card-preview-trigger:hover]:[&_.project-card-cta]:border-gray-300 has-[.project-card-preview-trigger:hover]:[&_.project-card-cta]:dark:bg-dark-bg-elevated has-[.project-card-preview-trigger:hover]:[&_.project-card-cta]:dark:border-neutral-600";
 
 const PREVIEW_BACKGROUND_BY_SLUG = {
   "pokemon-valentine": "bg-[#ffcfec]",
