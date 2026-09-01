@@ -45,7 +45,7 @@ function buildStandardImageClasses(slug) {
 
   switch (slug) {
     case "maison":
-      return `${STANDARD_IMAGE_CLASS_BASE} max-w-[40%] max-h-[40%] max-sm:max-w-[65%] max-sm:max-h-[65%] [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(5%)_saturate(200%)_hue-rotate(10deg)]`;
+      return "shrink-0 w-[80px] h-[80px] max-sm:w-[40px] max-sm:h-[40px] object-contain [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(5%)_saturate(200%)_hue-rotate(10deg)]";
     case "rabbu-portfolio":
     case "rabbu":
     case "rabbu-marketplace":
