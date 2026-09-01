@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import { FileText, Mail } from "lucide-react";
+import { FileText, Mail, Moon, Sun } from "lucide-react";
 import CaseStudy from "../components/CaseStudy";
 import ProjectCard from "../components/ProjectCard";
 import TabSection from "../components/TabSection";
@@ -70,6 +70,71 @@ const SOCIAL_LINKS = [
 ];
 
 const SECTION_HEADING_CLASS = `text-sm font-medium text-text tracking-wide leading-tight m-0 ${SIDEBAR_TEXT_TRANSITION}`;
+
+const TORONTO_TIMEZONE = "America/Toronto";
+
+function formatTorontoTime(date) {
+  return new Date(date)
+    .toLocaleTimeString("en-US", {
+      timeZone: TORONTO_TIMEZONE,
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    })
+    .toLowerCase()
+    .replace(/\s(?=[ap]m)/, "");
+}
+
+function getTorontoHour(date) {
+  const hourPart = new Intl.DateTimeFormat("en-US", {
+    timeZone: TORONTO_TIMEZONE,
+    hour: "numeric",
+    hour12: false,
+  })
+    .formatToParts(date)
+    .find((part) => part.type === "hour");
+
+  return Number(hourPart?.value ?? 0);
+}
+
+function getTorontoTimeState(date) {
+  const hour = getTorontoHour(date);
+  return {
+    time: formatTorontoTime(date),
+    isDaytime: hour >= 6 && hour < 20,
+  };
+}
+
+function TorontoLocalTime() {
+  const [clock, setClock] = useState(() => getTorontoTimeState(new Date()));
+
+  useEffect(() => {
+    const updateTime = () => setClock(getTorontoTimeState(new Date()));
+    updateTime();
+    const intervalId = window.setInterval(updateTime, 30_000);
+    return () => window.clearInterval(intervalId);
+  }, []);
+
+  return (
+    <p
+      className={`flex items-center gap-1.5 text-sm m-0 ${SIDEBAR_TEXT_TRANSITION}`}
+    >
+      {clock.isDaytime ? (
+        <Sun size={14} className="shrink-0 text-amber-500" aria-hidden="true" />
+      ) : (
+        <Moon
+          size={14}
+          className="shrink-0 text-indigo-400"
+          aria-hidden="true"
+        />
+      )}
+      <span>
+        <span className="font-medium text-text tabular-nums">{clock.time}</span>
+        <span className="text-text-light font-normal"> in Toronto, ON</span>
+      </span>
+    </p>
+  );
+}
 
 function setBodyScrollLocked(locked) {
   document.body.style.overflow = locked ? "hidden" : "auto";
@@ -216,8 +281,7 @@ function Work() {
               className={`text-sm text-text-muted leading-relaxed mb-0 ${SIDEBAR_TEXT_TRANSITION} last:mb-0`}
             >
               Hi, I'm a product designer. I've worked early-stage startups end
-              to end, from the product decisions through to the code that
-              ships.
+              to end, from the product decisions through to the code that ships.
             </p>
           </div>
 
@@ -256,15 +320,19 @@ function Work() {
               <TimelineTabPanel entries={EDUCATION_ENTRIES} />
             )}
           </TabSection>
+
+          <div className="mt-12 flex max-md:mt-10">
+            <TorontoLocalTime />
+          </div>
         </div>
       </aside>
 
-      <main
-        className="overflow-y-auto h-screen p-16 w-full bg-surface-page text-text transition-[background-color,color] duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:ml-0 max-md:h-auto max-md:p-8 max-md:order-2 max-sm:p-6 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-sm hover:[&::-webkit-scrollbar-thumb]:bg-gray-200 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-700 dark:hover:[&::-webkit-scrollbar-thumb]:bg-neutral-600"
-      >
+      <main className="overflow-y-auto h-screen p-16 w-full bg-surface-page text-text transition-[background-color,color] duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:ml-0 max-md:h-auto max-md:p-8 max-md:order-2 max-sm:p-6 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-sm hover:[&::-webkit-scrollbar-thumb]:bg-gray-200 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-700 dark:hover:[&::-webkit-scrollbar-thumb]:bg-neutral-600">
         <section>
           <div className="mb-8 flex items-center justify-between gap-4 max-md:mb-6">
-            <h2 className={`${SECTION_HEADING_CLASS} m-0`}>Selected Projects</h2>
+            <h2 className={`${SECTION_HEADING_CLASS} m-0`}>
+              Selected Projects
+            </h2>
             <div className="max-md:hidden shrink-0">
               <PageToggle onToggle={toggleTheme} />
             </div>
