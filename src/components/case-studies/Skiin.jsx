@@ -1,12 +1,11 @@
 import { useRef } from "react";
 import { Check } from "lucide-react";
 import Label from "../ui/Label";
-import MoreWork from "../MoreWork";
 import CaseStudyHero from "./components/CaseStudyHero";
 import CaseStudySection from "./components/CaseStudySection";
 import TableOfContents from "./components/TableOfContents";
 
-function Skiin({ onClose, currentProjectSlug }) {
+function Skiin({ onClose }) {
   const sectionRefs = useRef({});
 
   // Table of contents sections
@@ -242,8 +241,6 @@ function Skiin({ onClose, currentProjectSlug }) {
             </CaseStudySection>
           </section>
 
-          {/* More Work Section */}
-          <MoreWork currentProjectSlug={currentProjectSlug} onClose={onClose} />
         </div>
 
         {/* Right Column - Table of Contents */}

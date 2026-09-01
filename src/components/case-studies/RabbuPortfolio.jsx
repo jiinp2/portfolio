@@ -7,12 +7,11 @@ import {
 } from "lucide-react";
 import InfoCard from "../ui/InfoCard";
 import Label from "../ui/Label";
-import MoreWork from "../MoreWork";
 import CaseStudyHero from "./components/CaseStudyHero";
 import CaseStudySection from "./components/CaseStudySection";
 import TableOfContents from "./components/TableOfContents";
 
-function RabbuPortfolio({ onClose, currentProjectSlug }) {
+function RabbuPortfolio({ onClose }) {
   const sectionRefs = useRef({});
 
   // Table of contents sections
@@ -331,8 +330,6 @@ function RabbuPortfolio({ onClose, currentProjectSlug }) {
             </div>
           </section>
 
-          {/* More Work Section */}
-          <MoreWork currentProjectSlug={currentProjectSlug} onClose={onClose} />
         </div>
 
         {/* Right Column - Table of Contents */}

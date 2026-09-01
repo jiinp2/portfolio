@@ -1,10 +1,9 @@
 import { useRef } from "react";
-import MoreWork from "../MoreWork";
 import CaseStudyHero from "./components/CaseStudyHero";
 import CaseStudySection from "./components/CaseStudySection";
 import TableOfContents from "./components/TableOfContents";
 
-function Maison({ onClose, currentProjectSlug }) {
+function Maison({ onClose }) {
   const sectionRefs = useRef({});
 
   const tocSections = [
@@ -461,7 +460,6 @@ function Maison({ onClose, currentProjectSlug }) {
             </CaseStudySection>
           </section>
 
-          <MoreWork currentProjectSlug={currentProjectSlug} onClose={onClose} />
         </div>
 
         <TableOfContents sections={tocSections} sectionRefs={sectionRefs} />

@@ -1,12 +1,11 @@
 import { useRef } from "react";
 import { Check, X } from "lucide-react";
 import Label from "../ui/Label";
-import MoreWork from "../MoreWork";
 import CaseStudyHero from "./components/CaseStudyHero";
 import CaseStudySection from "./components/CaseStudySection";
 import TableOfContents from "./components/TableOfContents";
 
-function Kobo({ onClose, currentProjectSlug }) {
+function Kobo({ onClose }) {
   const sectionRefs = useRef({});
 
   // Table of contents sections
@@ -432,8 +431,6 @@ function Kobo({ onClose, currentProjectSlug }) {
             </CaseStudySection>
           </section>
 
-          {/* More Work Section */}
-          <MoreWork currentProjectSlug={currentProjectSlug} onClose={onClose} />
         </div>
 
         {/* Right Column - Table of Contents */}

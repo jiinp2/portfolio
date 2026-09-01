@@ -7,12 +7,11 @@ import {
   Home,
 } from "lucide-react";
 import Label from "../ui/Label";
-import MoreWork from "../MoreWork";
 import CaseStudyHero from "./components/CaseStudyHero";
 import CaseStudySection from "./components/CaseStudySection";
 import TableOfContents from "./components/TableOfContents";
 
-function Rabbu({ onClose, currentProjectSlug }) {
+function Rabbu({ onClose }) {
   const sectionRefs = useRef({});
 
   const tocSections = [
@@ -347,7 +346,6 @@ function Rabbu({ onClose, currentProjectSlug }) {
             </CaseStudySection>
           </section>
 
-          <MoreWork currentProjectSlug={currentProjectSlug} onClose={onClose} />
         </div>
 
         <TableOfContents sections={tocSections} sectionRefs={sectionRefs} />

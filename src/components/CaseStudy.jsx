@@ -19,7 +19,6 @@ function CaseStudy({ project, onClose }) {
   const CaseStudyView = CASE_STUDY_COMPONENT_BY_PROJECT_NAME[project.name];
   const caseStudyProps = {
     onClose,
-    currentProjectSlug: project.slug,
   };
 
   if (CaseStudyView) {
