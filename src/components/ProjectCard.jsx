@@ -10,7 +10,10 @@ const DESCRIPTION_CLASS_BASE =
   "mt-2 mb-0 text-sm font-normal leading-relaxed text-text-light transition-colors duration-600 ease-in-out";
 
 const PROJECT_CARD_CTA_CLASS =
-  "inline-flex w-40 self-start items-center justify-center gap-2 text-sm font-medium text-text border border-border bg-surface rounded-lg px-3 py-1.5 transition-colors hover:bg-gray-50 dark:hover:bg-dark-bg-elevated peer-hover/preview:bg-gray-50 dark:peer-hover/preview:bg-dark-bg-elevated focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 dark:focus-visible:ring-neutral-600 cursor-pointer disabled:cursor-not-allowed";
+  "project-card-cta project-card-cta-trigger inline-flex w-40 self-start items-center justify-center gap-2 text-sm font-medium text-text border border-border bg-surface rounded-lg px-3 py-1.5 transition-colors hover:bg-gray-50 dark:hover:bg-dark-bg-elevated focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 dark:focus-visible:ring-neutral-600 cursor-pointer disabled:cursor-not-allowed";
+
+const PROJECT_CARD_HOVER_SYNC_CLASS =
+  "has-[.project-card-preview-trigger:hover]:[&_.project-card-preview-frame]:border-text/30 has-[.project-card-cta-trigger:hover]:[&_.project-card-preview-frame]:border-text/30 has-[.project-card-preview-trigger:hover]:[&_.project-card-preview-media]:scale-105 has-[.project-card-cta-trigger:hover]:[&_.project-card-preview-media]:scale-105 has-[.project-card-preview-trigger:hover]:[&_.project-card-cta]:bg-gray-50 has-[.project-card-preview-trigger:hover]:[&_.project-card-cta]:dark:bg-dark-bg-elevated";
 
 const PREVIEW_BACKGROUND_BY_SLUG = {
   "pokemon-valentine": "bg-[#ffcfec]",
@@ -89,12 +92,12 @@ function CardTitleRow({ name, date }) {
 
 function ProjectCardPreview({ project, interactive = false, className = "" }) {
   const mediaClass =
-    `${buildStandardImageClasses(project.slug)}${interactive ? " transition-transform duration-300 group-hover:scale-105" : ""}`.trimEnd();
+    `${buildStandardImageClasses(project.slug)} project-card-preview-media${interactive ? " transition-transform duration-300" : ""}`.trimEnd();
   const previewInnerClassName = buildPreviewContainerClasses(project.slug);
 
   return (
     <div
-      className={`bg-surface rounded-xl overflow-hidden border border-border${interactive ? " transition-colors group-hover:border-text/30" : ""} ${className}`.trimEnd()}
+      className={`project-card-preview-frame bg-surface rounded-xl overflow-hidden border border-border${interactive ? " transition-colors" : ""} ${className}`.trimEnd()}
     >
       <div
         className={`project-preview ${previewInnerClassName}`}
@@ -156,13 +159,13 @@ function ProjectCard({
 
   const explorativePreview = (
     <div
-      className={`w-full aspect-4/3 rounded-xl overflow-hidden flex items-center justify-center bg-transparent border border-border${!disabled ? " transition-colors group-hover:border-text/30" : ""}`}
+      className={`project-card-preview-frame w-full aspect-4/3 rounded-xl overflow-hidden flex items-center justify-center bg-transparent border border-border${!disabled ? " transition-colors" : ""}`}
       data-slug={project.slug}
     >
       {project.video ? (
         <video
           src={project.video}
-          className={`w-full h-full object-cover object-center${!disabled ? " transition-transform duration-300 group-hover:scale-105" : ""}`}
+          className={`project-card-preview-media w-full h-full object-cover object-center${!disabled ? " transition-transform duration-300" : ""}`}
           loop
           muted
           playsInline
@@ -173,7 +176,7 @@ function ProjectCard({
         <img
           src={project.image}
           alt={project.name}
-          className={`w-full h-full object-cover object-center${!disabled ? " transition-transform duration-300 group-hover:scale-105" : ""}`}
+          className={`project-card-preview-media w-full h-full object-cover object-center${!disabled ? " transition-transform duration-300" : ""}`}
         />
       ) : null}
     </div>
@@ -184,11 +187,11 @@ function ProjectCard({
 
   return (
     <article
-      className={`flex h-full flex-col gap-4 max-md:gap-3 max-sm:gap-2 ${disabled ? "opacity-60" : ""}`}
+      className={`flex h-full flex-col gap-4 max-md:gap-3 max-sm:gap-2 ${disabled ? "opacity-60" : PROJECT_CARD_HOVER_SYNC_CLASS}`}
     >
       <button
         type="button"
-        className="group peer/preview block w-full rounded-xl border-0 bg-transparent p-0 text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 dark:focus-visible:ring-neutral-600 disabled:cursor-not-allowed"
+        className="project-card-preview-trigger block w-full rounded-xl border-0 bg-transparent p-0 text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 dark:focus-visible:ring-neutral-600 disabled:cursor-not-allowed"
         onClick={handlePrimaryAction}
         disabled={disabled}
         aria-label={previewAriaLabel}
@@ -205,7 +208,7 @@ function ProjectCard({
 
       <button
         type="button"
-        className={`${PROJECT_CARD_CTA_CLASS}`}
+        className={`${PROJECT_CARD_CTA_CLASS} -mt-2`}
         onClick={handlePrimaryAction}
         disabled={disabled}
       >
