@@ -208,7 +208,7 @@ function ProjectCard({
 
       <button
         type="button"
-        className={`${PROJECT_CARD_CTA_CLASS} -mt-2`}
+        className={`${PROJECT_CARD_CTA_CLASS} mt-auto`}
         onClick={handlePrimaryAction}
         disabled={disabled}
       >
