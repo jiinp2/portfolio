@@ -9,8 +9,8 @@ const DATE_CLASS =
 const DESCRIPTION_CLASS_BASE =
   "mt-2 mb-0 text-sm font-normal leading-relaxed text-text-light transition-colors duration-600 ease-in-out";
 
-const MORE_WORK_PRIMARY_BUTTON_CLASS =
-  "inline-flex w-full shrink-0 items-center justify-center gap-2 text-sm font-medium text-text border border-border bg-surface rounded-lg px-3 py-2 transition-colors hover:bg-gray-50 dark:hover:bg-dark-bg-elevated focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 dark:focus-visible:ring-neutral-600 cursor-pointer disabled:cursor-not-allowed";
+const PROJECT_CARD_CTA_CLASS =
+  "inline-flex w-40 self-start items-center justify-center gap-2 text-sm font-medium text-text border border-border bg-surface rounded-lg px-3 py-1.5 transition-colors hover:bg-gray-50 dark:hover:bg-dark-bg-elevated peer-hover/preview:bg-gray-50 dark:peer-hover/preview:bg-dark-bg-elevated focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 dark:focus-visible:ring-neutral-600 cursor-pointer disabled:cursor-not-allowed";
 
 const PREVIEW_BACKGROUND_BY_SLUG = {
   "pokemon-valentine": "bg-[#ffcfec]",
@@ -25,7 +25,7 @@ const PREVIEW_BACKGROUND_BY_SLUG = {
 const PREVIEW_FILL_SLUGS = new Set(["scrivis-tattoos"]);
 
 const STANDARD_IMAGE_CLASS_BASE =
-  "max-w-full max-h-full w-auto h-auto object-contain transition-transform duration-300 max-sm:w-full max-sm:h-full max-sm:object-cover";
+  "max-w-full max-h-full w-auto h-auto object-contain max-sm:w-full max-sm:h-full max-sm:object-cover";
 
 function isFillPreview(slug) {
   return PREVIEW_FILL_SLUGS.has(slug);
@@ -37,7 +37,7 @@ function normalizePreviewBackgroundClass(slug) {
 
 function buildStandardImageClasses(slug) {
   if (isFillPreview(slug)) {
-    return "h-full w-full object-cover object-center transition-transform duration-300";
+    return "h-full w-full object-cover object-center";
   }
 
   let modifier = "";
@@ -87,15 +87,14 @@ function CardTitleRow({ name, date }) {
   );
 }
 
-function ProjectCardPreview({ project, interactive = true, className = "" }) {
-  const interactiveScaleSuffix = interactive ? "group-hover:scale-105" : "";
+function ProjectCardPreview({ project, interactive = false, className = "" }) {
   const mediaClass =
-    `${buildStandardImageClasses(project.slug)} ${interactiveScaleSuffix}`.trimEnd();
+    `${buildStandardImageClasses(project.slug)}${interactive ? " transition-transform duration-300 group-hover:scale-105" : ""}`.trimEnd();
   const previewInnerClassName = buildPreviewContainerClasses(project.slug);
 
   return (
     <div
-      className={`bg-surface rounded-xl overflow-hidden border border-border ${className}`.trimEnd()}
+      className={`bg-surface rounded-xl overflow-hidden border border-border${interactive ? " transition-colors group-hover:border-text/30" : ""} ${className}`.trimEnd()}
     >
       <div
         className={`project-preview ${previewInnerClassName}`}
@@ -129,66 +128,41 @@ function ProjectCardPreview({ project, interactive = true, className = "" }) {
 function ProjectCard({
   project,
   index,
-  isSelected,
-  onClick,
-  disabled,
+  onOpenProject,
+  disabled = false,
   useShortDescription = false,
-  isMoreWork = false,
   useStandardPreview = false,
 }) {
   const isExplorative = project.category === "misc";
-  const showStandardPreview = useStandardPreview || isMoreWork;
   const isExternalLink = Boolean(project.url);
   const displayDescription = useShortDescription
     ? (project.descriptionShort ?? project.description)
     : project.description;
 
-  const interactiveScaleSuffix = disabled ? "" : "group-hover:scale-105";
-  const explorativeMediaClass =
-    `w-full h-full object-cover object-center transition-transform duration-300 ${interactiveScaleSuffix}`.trimEnd();
-
-  const rootVisualStateClass = disabled
-    ? "opacity-60 cursor-default"
-    : "cursor-pointer";
-
-  const handlePrimaryAction = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
+  const handlePrimaryAction = () => {
     if (disabled) {
       return;
     }
-    if (isExternalLink) {
-      window.open(project.url, "_blank", "noopener,noreferrer");
-      return;
-    }
-    onClick(index);
+    onOpenProject(index);
   };
 
-  const handleCardSurfaceClick = () => {
-    if (!disabled) {
-      onClick(index);
-    }
-  };
+  const previewAriaLabel = isExternalLink
+    ? `Visit ${project.name} site`
+    : `View ${project.name} case study`;
 
-  const standardCaseMarkup = (
-    <ProjectCardPreview
-      project={project}
-      interactive={!disabled && !isMoreWork}
-      className={
-        isMoreWork ? "transition-colors group-hover:border-text/30" : ""
-      }
-    />
+  const standardPreview = (
+    <ProjectCardPreview project={project} interactive={!disabled} />
   );
 
-  const explorativeMarkup = (
+  const explorativePreview = (
     <div
-      className="w-full aspect-4/3 rounded-xl overflow-hidden flex items-center justify-center bg-transparent"
+      className={`w-full aspect-4/3 rounded-xl overflow-hidden flex items-center justify-center bg-transparent border border-border${!disabled ? " transition-colors group-hover:border-text/30" : ""}`}
       data-slug={project.slug}
     >
       {project.video ? (
         <video
           src={project.video}
-          className={explorativeMediaClass}
+          className={`w-full h-full object-cover object-center${!disabled ? " transition-transform duration-300 group-hover:scale-105" : ""}`}
           loop
           muted
           playsInline
@@ -199,57 +173,52 @@ function ProjectCard({
         <img
           src={project.image}
           alt={project.name}
-          className={explorativeMediaClass}
+          className={`w-full h-full object-cover object-center${!disabled ? " transition-transform duration-300 group-hover:scale-105" : ""}`}
         />
       ) : null}
     </div>
   );
 
+  const previewContent =
+    isExplorative && !useStandardPreview ? explorativePreview : standardPreview;
+
   return (
-    <div
-      className={`group flex flex-col gap-4 max-md:gap-3 max-sm:gap-2 ${rootVisualStateClass} h-full`}
-      onClick={handleCardSurfaceClick}
+    <article
+      className={`flex h-full flex-col gap-4 max-md:gap-3 max-sm:gap-2 ${disabled ? "opacity-60" : ""}`}
     >
-      {isExplorative && !showStandardPreview ? explorativeMarkup : standardCaseMarkup}
+      <button
+        type="button"
+        className="group peer/preview block w-full rounded-xl border-0 bg-transparent p-0 text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 dark:focus-visible:ring-neutral-600 disabled:cursor-not-allowed"
+        onClick={handlePrimaryAction}
+        disabled={disabled}
+        aria-label={previewAriaLabel}
+      >
+        {previewContent}
+      </button>
 
-      {isMoreWork ? (
-        <div className="flex min-h-0 flex-1 flex-col gap-6 p-0">
-          <div className="flex min-h-0 flex-1 flex-col gap-1">
-            <CardTitleRow name={project.name} date={project.date} />
-            {displayDescription ? (
-              <p className={DESCRIPTION_CLASS_BASE}>{displayDescription}</p>
-            ) : null}
-          </div>
+      <div className="flex min-h-0 flex-1 flex-col gap-1">
+        <CardTitleRow name={project.name} date={project.date} />
+        {displayDescription ? (
+          <p className={DESCRIPTION_CLASS_BASE}>{displayDescription}</p>
+        ) : null}
+      </div>
 
-          <button
-            type="button"
-            className={MORE_WORK_PRIMARY_BUTTON_CLASS}
-            onClick={handlePrimaryAction}
-            disabled={disabled}
-          >
-            {isExternalLink ? (
-              <>
-                <ExternalLink size={16} className="shrink-0" />
-                <span>Open link</span>
-              </>
-            ) : (
-              <span>Read case study</span>
-            )}
-          </button>
-        </div>
-      ) : (
-        <div className="flex min-h-0 flex-1 flex-col gap-1 p-0">
-          <CardTitleRow name={project.name} date={project.date} />
-          {displayDescription ? (
-            <p className={`${DESCRIPTION_CLASS_BASE} flex-1`}>
-              {displayDescription}
-            </p>
-          ) : (
-            <div className="min-h-0 flex-1" />
-          )}
-        </div>
-      )}
-    </div>
+      <button
+        type="button"
+        className={`${PROJECT_CARD_CTA_CLASS}`}
+        onClick={handlePrimaryAction}
+        disabled={disabled}
+      >
+        {isExternalLink ? (
+          <>
+            <ExternalLink size={16} className="shrink-0" aria-hidden="true" />
+            <span>Visit site</span>
+          </>
+        ) : (
+          <span>View case study</span>
+        )}
+      </button>
+    </article>
   );
 }
 

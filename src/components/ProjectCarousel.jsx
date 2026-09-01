@@ -201,8 +201,7 @@ function ProjectCarousel({
                 <ProjectCard
                   project={project}
                   index={projectIndex}
-                  isSelected={false}
-                  onClick={handleCardClick}
+                  onOpenProject={handleCardClick}
                 />
               </div>
             );

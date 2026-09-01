@@ -125,7 +125,7 @@ function Work() {
 
   const toggleTheme = () => setIsDarkMode((prev) => !prev);
 
-  const openCaseStudy = (projectIndex) => {
+  const openProject = (projectIndex) => {
     const project = projects[projectIndex];
     if (project.url) {
       window.open(project.url, "_blank", "noopener,noreferrer");
@@ -282,8 +282,7 @@ function Work() {
                   key={originalIndex}
                   project={project}
                   index={originalIndex}
-                  isSelected={selectedProject === originalIndex}
-                  onClick={openCaseStudy}
+                  onOpenProject={openProject}
                 />
               );
             })}
@@ -305,8 +304,7 @@ function Work() {
                     key={originalIndex}
                     project={project}
                     index={originalIndex}
-                    isSelected={selectedProject === originalIndex}
-                    onClick={openCaseStudy}
+                    onOpenProject={openProject}
                     useStandardPreview
                   />
                 );
