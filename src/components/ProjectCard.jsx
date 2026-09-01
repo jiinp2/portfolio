@@ -13,7 +13,7 @@ const PROJECT_CARD_CTA_CLASS =
   "project-card-cta project-card-cta-trigger inline-flex w-40 self-start items-center justify-center gap-2 text-sm font-medium text-text border border-border bg-surface rounded-lg px-3 py-1.5 transition-colors hover:bg-gray-100 hover:border-gray-300 dark:hover:bg-dark-bg-elevated dark:hover:border-neutral-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 dark:focus-visible:ring-neutral-600 cursor-pointer disabled:cursor-not-allowed";
 
 const PROJECT_CARD_HOVER_SYNC_CLASS =
-  "has-[.project-card-preview-trigger:hover]:[&_.project-card-preview-frame]:border-text/30 has-[.project-card-cta-trigger:hover]:[&_.project-card-preview-frame]:border-text/30 has-[.project-card-preview-trigger:hover]:[&_.project-card-preview-media]:scale-105 has-[.project-card-cta-trigger:hover]:[&_.project-card-preview-media]:scale-105 has-[.project-card-preview-trigger:hover]:[&_.project-card-cta]:bg-gray-100 has-[.project-card-preview-trigger:hover]:[&_.project-card-cta]:border-gray-300 has-[.project-card-preview-trigger:hover]:[&_.project-card-cta]:dark:bg-dark-bg-elevated has-[.project-card-preview-trigger:hover]:[&_.project-card-cta]:dark:border-neutral-600";
+  "has-[.project-card-preview-trigger:hover]:[&_.project-card-preview-frame]:border-text/30 has-[.project-card-cta-trigger:hover]:[&_.project-card-preview-frame]:border-text/30 has-[.project-card-preview-trigger:hover]:[&_.project-card-cta]:bg-gray-100 has-[.project-card-preview-trigger:hover]:[&_.project-card-cta]:border-gray-300 has-[.project-card-preview-trigger:hover]:[&_.project-card-cta]:dark:bg-dark-bg-elevated has-[.project-card-preview-trigger:hover]:[&_.project-card-cta]:dark:border-neutral-600";
 
 const PREVIEW_BACKGROUND_BY_SLUG = {
   "pokemon-valentine": "bg-[#ffcfec]",
@@ -28,7 +28,7 @@ const PREVIEW_BACKGROUND_BY_SLUG = {
 const PREVIEW_FILL_SLUGS = new Set(["scrivis-tattoos"]);
 
 const STANDARD_IMAGE_CLASS_BASE =
-  "max-w-full max-h-full w-auto h-auto object-contain max-sm:w-full max-sm:h-full max-sm:object-cover";
+  "max-h-full max-w-full h-auto w-auto object-contain";
 
 function isFillPreview(slug) {
   return PREVIEW_FILL_SLUGS.has(slug);
@@ -43,23 +43,18 @@ function buildStandardImageClasses(slug) {
     return "h-full w-full object-cover object-center";
   }
 
-  let modifier = "";
   switch (slug) {
     case "maison":
-      modifier =
-        " !max-w-[40%] !max-h-[40%] max-sm:!max-w-[65%] max-sm:!max-h-[65%] max-sm:!object-contain [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(5%)_saturate(200%)_hue-rotate(10deg)]";
-      break;
+      return `${STANDARD_IMAGE_CLASS_BASE} max-w-[40%] max-h-[40%] max-sm:max-w-[65%] max-sm:max-h-[65%] [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(5%)_saturate(200%)_hue-rotate(10deg)]`;
     case "rabbu-portfolio":
     case "rabbu":
-      modifier = " !w-[60%] !h-[150%] !object-cover !object-top";
-      break;
+    case "rabbu-marketplace":
     case "kobo":
-      modifier = " !w-full !h-[150%] !object-cover !object-top";
-      break;
+    case "skiin":
+      return `${STANDARD_IMAGE_CLASS_BASE} h-full w-full object-contain object-center`;
     default:
-      modifier = "";
+      return STANDARD_IMAGE_CLASS_BASE;
   }
-  return `${STANDARD_IMAGE_CLASS_BASE}${modifier}`;
 }
 
 function buildPreviewContainerClasses(slug) {
@@ -68,17 +63,7 @@ function buildPreviewContainerClasses(slug) {
   }
 
   const bg = normalizePreviewBackgroundClass(slug);
-  const base = `w-full aspect-4/3 flex items-center justify-center overflow-hidden p-8 box-border ${bg} max-md:p-3 max-sm:p-3`;
-
-  switch (slug) {
-    case "rabbu-portfolio":
-    case "rabbu":
-      return `${base} !pb-0 !items-start max-md:!p-3 max-md:!pb-0 max-md:!items-start`;
-    case "kobo":
-      return `${base} !pb-0 !items-start max-md:!p-2 max-md:!pb-0 max-md:!items-start`;
-    default:
-      return base;
-  }
+  return `w-full aspect-4/3 flex items-center justify-center overflow-hidden p-8 box-border ${bg} max-md:p-3 max-sm:p-3`;
 }
 
 function CardTitleRow({ name, date }) {
@@ -92,7 +77,7 @@ function CardTitleRow({ name, date }) {
 
 function ProjectCardPreview({ project, interactive = false, className = "" }) {
   const mediaClass =
-    `${buildStandardImageClasses(project.slug)} project-card-preview-media${interactive ? " transition-transform duration-300" : ""}`.trimEnd();
+    `${buildStandardImageClasses(project.slug)} project-card-preview-media`.trimEnd();
   const previewInnerClassName = buildPreviewContainerClasses(project.slug);
 
   return (
@@ -165,7 +150,7 @@ function ProjectCard({
       {project.video ? (
         <video
           src={project.video}
-          className={`project-card-preview-media w-full h-full object-cover object-center${!disabled ? " transition-transform duration-300" : ""}`}
+          className="project-card-preview-media h-full w-full object-contain object-center"
           loop
           muted
           playsInline
@@ -176,7 +161,7 @@ function ProjectCard({
         <img
           src={project.image}
           alt={project.name}
-          className={`project-card-preview-media w-full h-full object-cover object-center${!disabled ? " transition-transform duration-300" : ""}`}
+          className="project-card-preview-media h-full w-full object-contain object-center"
         />
       ) : null}
     </div>
