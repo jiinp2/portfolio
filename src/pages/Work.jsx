@@ -262,16 +262,13 @@ function Work() {
       <main
         className="overflow-y-auto h-screen p-16 w-full bg-surface-page text-text transition-[background-color,color] duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:ml-0 max-md:h-auto max-md:p-8 max-md:order-2 max-sm:p-6 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-sm hover:[&::-webkit-scrollbar-thumb]:bg-gray-200 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-700 dark:hover:[&::-webkit-scrollbar-thumb]:bg-neutral-600"
       >
-        <div className="mb-8 flex justify-end">
-          <div className="max-md:hidden shrink-0">
-            <PageToggle onToggle={toggleTheme} />
-          </div>
-        </div>
-
         <section>
-          <h2 className={`${SECTION_HEADING_CLASS} mb-8 max-md:mb-6`}>
-            Selected Projects
-          </h2>
+          <div className="mb-8 flex items-center justify-between gap-4 max-md:mb-6">
+            <h2 className={`${SECTION_HEADING_CLASS} m-0`}>Selected Projects</h2>
+            <div className="max-md:hidden shrink-0">
+              <PageToggle onToggle={toggleTheme} />
+            </div>
+          </div>
           <div className="grid grid-cols-3 gap-10 w-full max-md:grid-cols-2 max-sm:grid-cols-1 max-md:gap-6">
             {selectedProjects.map((project) => {
               const originalIndex = projects.findIndex(
