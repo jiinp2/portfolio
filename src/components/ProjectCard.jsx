@@ -45,7 +45,7 @@ function buildStandardImageClasses(slug) {
 
   switch (slug) {
     case "maison":
-      return "shrink-0 w-[80px] h-[80px] max-sm:w-[40px] max-sm:h-[40px] object-contain [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(5%)_saturate(200%)_hue-rotate(10deg)]";
+      return "shrink-0 w-10 h-10 object-contain [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(5%)_saturate(200%)_hue-rotate(10deg)]";
     case "rabbu-portfolio":
     case "rabbu":
     case "rabbu-marketplace":
