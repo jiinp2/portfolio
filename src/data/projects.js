@@ -11,16 +11,6 @@ export const projects = [
     descriptionShort: "Professional network for real estate agents.",
   },
   {
-    name: "Rabbu Portfolio",
-    label: "Scroll to Rabbu Portfolio",
-    date: "2023",
-    category: "case-studies",
-    slug: "rabbu-portfolio",
-    image: "/home/rabbu_portfolio_thumbnail.avif",
-    description:
-      "Property management platform for short-term rental investors.",
-  },
-  {
     name: "Rabbu Marketplace",
     label: "Scroll to Rabbu Marketplace",
     date: "2023",
@@ -28,6 +18,16 @@ export const projects = [
     slug: "rabbu-marketplace",
     image: "/home/rabbu_marketplace_thumbnail.png",
     description: "Tools for finding and evaluating investment properties.",
+  },
+  {
+    name: "Rabbu Portfolio",
+    label: "Scroll to Rabbu Portfolio",
+    date: "2023",
+    category: "misc",
+    slug: "rabbu-portfolio",
+    image: "/home/rabbu_portfolio_thumbnail.avif",
+    description:
+      "Property management platform for short-term rental investors.",
   },
   {
     name: "Kobo",

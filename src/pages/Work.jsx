@@ -120,16 +120,16 @@ function TorontoLocalTime() {
       className={`flex items-center gap-1.5 text-sm m-0 ${SIDEBAR_TEXT_TRANSITION}`}
     >
       {clock.isDaytime ? (
-        <Sun size={14} className="shrink-0 text-amber-500" aria-hidden="true" />
+        <Sun size={14} className="shrink-0 text-text-light" aria-hidden="true" />
       ) : (
         <Moon
           size={14}
-          className="shrink-0 text-indigo-400"
+          className="shrink-0 text-text-light"
           aria-hidden="true"
         />
       )}
       <span>
-        <span className="font-medium text-text tabular-nums">{clock.time}</span>
+        <span className="text-text tabular-nums">{clock.time}</span>
         <span className="text-text-light font-normal"> in Toronto, ON</span>
       </span>
     </p>
@@ -320,10 +320,6 @@ function Work() {
               <TimelineTabPanel entries={EDUCATION_ENTRIES} />
             )}
           </TabSection>
-
-          <div className="mt-12 flex max-md:mt-10">
-            <TorontoLocalTime />
-          </div>
         </div>
       </aside>
 
@@ -377,6 +373,10 @@ function Work() {
             </div>
           </section>
         ) : null}
+
+        <div className="mt-16 flex max-md:mt-12">
+          <TorontoLocalTime />
+        </div>
       </main>
 
       {isCaseStudyOpen && selectedProject !== null && (
