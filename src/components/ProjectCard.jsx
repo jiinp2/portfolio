@@ -22,7 +22,7 @@ const PREVIEW_BACKGROUND_BY_SLUG = {
   rabbu: "bg-rabbu",
   kobo: "bg-kobo",
   skiin: "bg-skiin",
-  maison: "bg-maison",
+  maison: "bg-[#A8B8D4]",
 };
 
 const PREVIEW_FILL_SLUGS = new Set(["scrivis-tattoos"]);
@@ -32,6 +32,10 @@ const STANDARD_IMAGE_CLASS_BASE =
 
 function isFillPreview(slug) {
   return PREVIEW_FILL_SLUGS.has(slug);
+}
+
+function isMaisonPreview(slug) {
+  return slug === "maison";
 }
 
 function normalizePreviewBackgroundClass(slug) {
@@ -45,7 +49,7 @@ function buildStandardImageClasses(slug) {
 
   switch (slug) {
     case "maison":
-      return "shrink-0 w-10 h-10 object-contain [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(5%)_saturate(200%)_hue-rotate(10deg)]";
+      return "relative z-10 shrink-0 w-10 h-10 object-contain [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(5%)_saturate(200%)_hue-rotate(10deg)]";
     case "rabbu-portfolio":
     case "rabbu":
     case "rabbu-marketplace":
@@ -63,7 +67,43 @@ function buildPreviewContainerClasses(slug) {
   }
 
   const bg = normalizePreviewBackgroundClass(slug);
-  return `w-full aspect-4/3 flex items-center justify-center overflow-hidden p-8 box-border ${bg} max-md:p-3 max-sm:p-3`;
+  const maisonLayout = isMaisonPreview(slug) ? " relative" : "";
+  return `w-full aspect-4/3 flex items-center justify-center overflow-hidden p-8 box-border ${bg}${maisonLayout} max-md:p-3 max-sm:p-3`;
+}
+
+function MaisonPreviewGlow() {
+  return (
+    <div
+      className="pointer-events-none absolute inset-0 overflow-hidden"
+      aria-hidden="true"
+    >
+      <style>{`
+        @keyframes maison-glow-drift-a {
+          0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+          50% { transform: translate3d(14%, 12%, 0) scale(1.12); }
+        }
+        @keyframes maison-glow-drift-b {
+          0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+          50% { transform: translate3d(-16%, 10%, 0) scale(1.14); }
+        }
+        .maison-glow-blob-a {
+          animation: maison-glow-drift-a 8s ease-in-out infinite;
+        }
+        .maison-glow-blob-b {
+          animation: maison-glow-drift-b 10s ease-in-out infinite;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .maison-glow-blob-a,
+          .maison-glow-blob-b {
+            animation: none;
+          }
+        }
+      `}</style>
+      <div className="absolute inset-[-20%] rounded-full bg-[#8FA3C4] opacity-50 blur-[70px]" />
+      <div className="maison-glow-blob-a absolute -top-[40%] -left-[30%] h-[110%] w-[110%] rounded-full bg-[#1F2C4E] opacity-100 blur-[55px] will-change-transform" />
+      <div className="maison-glow-blob-b absolute -top-[15%] -right-[25%] h-[100%] w-[100%] rounded-full bg-[#3A4F7A] opacity-100 blur-[60px] will-change-transform" />
+    </div>
+  );
 }
 
 function CardTitleRow({ name, date }) {
@@ -89,6 +129,7 @@ function ProjectCardPreview({ project, interactive = false, className = "" }) {
         data-slug={project.slug}
         {...(isFillPreview(project.slug) ? { "data-fill": "true" } : {})}
       >
+        {isMaisonPreview(project.slug) ? <MaisonPreviewGlow /> : null}
         {project.video ? (
           <video
             src={project.video}
