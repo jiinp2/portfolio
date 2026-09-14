@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import { FileText, Mail, Moon, Sun } from "lucide-react";
+import { FileText, Mail } from "lucide-react";
 import CaseStudy from "../components/CaseStudy";
 import ProjectCard from "../components/ProjectCard";
 import TabSection from "../components/TabSection";
@@ -70,71 +70,6 @@ const SOCIAL_LINKS = [
 ];
 
 const SECTION_HEADING_CLASS = `text-sm font-medium text-text tracking-wide leading-tight m-0 ${SIDEBAR_TEXT_TRANSITION}`;
-
-const TORONTO_TIMEZONE = "America/Toronto";
-
-function formatTorontoTime(date) {
-  return new Date(date)
-    .toLocaleTimeString("en-US", {
-      timeZone: TORONTO_TIMEZONE,
-      hour: "numeric",
-      minute: "2-digit",
-      hour12: true,
-    })
-    .toLowerCase()
-    .replace(/\s(?=[ap]m)/, "");
-}
-
-function getTorontoHour(date) {
-  const hourPart = new Intl.DateTimeFormat("en-US", {
-    timeZone: TORONTO_TIMEZONE,
-    hour: "numeric",
-    hour12: false,
-  })
-    .formatToParts(date)
-    .find((part) => part.type === "hour");
-
-  return Number(hourPart?.value ?? 0);
-}
-
-function getTorontoTimeState(date) {
-  const hour = getTorontoHour(date);
-  return {
-    time: formatTorontoTime(date),
-    isDaytime: hour >= 6 && hour < 20,
-  };
-}
-
-function TorontoLocalTime() {
-  const [clock, setClock] = useState(() => getTorontoTimeState(new Date()));
-
-  useEffect(() => {
-    const updateTime = () => setClock(getTorontoTimeState(new Date()));
-    updateTime();
-    const intervalId = window.setInterval(updateTime, 30_000);
-    return () => window.clearInterval(intervalId);
-  }, []);
-
-  return (
-    <p
-      className={`flex items-center gap-1.5 text-sm m-0 ${SIDEBAR_TEXT_TRANSITION}`}
-    >
-      {clock.isDaytime ? (
-        <Sun size={14} className="shrink-0 text-text-light" aria-hidden="true" />
-      ) : (
-        <Moon
-          size={14}
-          className="shrink-0 text-text-light"
-          aria-hidden="true"
-        />
-      )}
-      <span>
-        <span className="text-text tabular-nums">{clock.time}</span>
-        <span className="text-text-light font-normal"> in Toronto, ON</span>
-      </span>
-    </p>
-  );
-}
 
 function setBodyScrollLocked(locked) {
   document.body.style.overflow = locked ? "hidden" : "auto";
@@ -374,10 +309,6 @@ function Work() {
             </div>
           </section>
         ) : null}
-
-        <div className="mt-16 flex max-md:mt-12">
-          <TorontoLocalTime />
-        </div>
       </main>
 
       {isCaseStudyOpen && selectedProject !== null && (
