@@ -177,7 +177,7 @@ function ProjectCard({
 
   const previewAriaLabel = isExternalLink
     ? `Visit ${project.name} site`
-    : `View ${project.name} case study`;
+    : `Read ${project.name} case study`;
 
   const standardPreview = (
     <ProjectCardPreview project={project} interactive={!disabled} />
@@ -244,7 +244,7 @@ function ProjectCard({
             <span>Visit site</span>
           </>
         ) : (
-          <span>View case study</span>
+          <span>Read case study</span>
         )}
       </button>
     </article>

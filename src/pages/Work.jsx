@@ -216,8 +216,7 @@ function Work() {
               className={`text-sm text-text-muted leading-relaxed mb-0 ${SIDEBAR_TEXT_TRANSITION} last:mb-0`}
             >
               Hi, my name is pronounced like <span className="italic">gin</span>{" "}
-              🥃. I'm a Toronto-based designer who's worked at early-stage
-              startups.
+              🥃. I'm a Toronto-based designer with agency & startup experience.
             </p>
           </div>
 
