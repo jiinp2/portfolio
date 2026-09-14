@@ -280,8 +280,9 @@ function Work() {
             <p
               className={`text-sm text-text-muted leading-relaxed mb-0 ${SIDEBAR_TEXT_TRANSITION} last:mb-0`}
             >
-              Hi, I'm a product designer. I've worked early-stage startups end
-              to end, from the product decisions through to the code that ships.
+              Hi, my name is pronounced like <span className="italic">gin</span>{" "}
+              🥃. I'm a Toronto-based designer who's worked at early-stage
+              startups.
             </p>
           </div>
 
