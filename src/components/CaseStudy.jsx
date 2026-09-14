@@ -14,7 +14,7 @@ const CASE_STUDY_COMPONENT_BY_PROJECT_NAME = {
   "Rabbu Marketplace": RabbuMarketplace,
   Kobo,
   Skiin,
-  Wattpad,
+  "Wattpad Text Scenes": Wattpad,
 };
 
 function hasCaseStudy(projectName) {

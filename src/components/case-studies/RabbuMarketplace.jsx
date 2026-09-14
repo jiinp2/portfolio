@@ -101,11 +101,9 @@ function RabbuMarketplace({ onClose }) {
             >
               <ul className="outcomes-list">
                 <li>
-                  <Check className="outcome-icon" size={20} />
                   A set of tools for assessing and buying short-term rentals.
                 </li>
                 <li>
-                  <Check className="outcome-icon" size={20} />
                   MVP launched in October 2022. Within a month, 33,000+ unique
                   users ran estimates and 2,000+ accounts were created.
                 </li>
@@ -129,31 +127,38 @@ function RabbuMarketplace({ onClose }) {
               </p>
             </CaseStudySection>
 
-            <CaseStudySection
-              title="Landscape Review"
-              photoGrid={[
-                {
-                  src: "/case_studies/rabbu_marketplace/market-4.webp",
-                  alt: "Airbnb",
-                },
-                {
-                  src: "/case_studies/rabbu_marketplace/market-5.webp",
-                  alt: "Zillow",
-                },
-                {
-                  src: "/case_studies/rabbu_marketplace/market-6.webp",
-                  alt: "Awning",
-                },
-                {
-                  src: "/case_studies/rabbu_marketplace/market-7.webp",
-                  alt: "AirDNA",
-                },
-              ]}
-            >
+            <CaseStudySection title="Landscape Review">
               <p>
                 We looked at competing products to see what people already
                 expected and which patterns were familiar.
               </p>
+              <div className="mt-8 grid grid-cols-2 gap-4 max-sm:grid-cols-1">
+                {[
+                  {
+                    src: "/case_studies/rabbu_marketplace/market-4.webp",
+                    alt: "Airbnb",
+                  },
+                  {
+                    src: "/case_studies/rabbu_marketplace/market-5.webp",
+                    alt: "Zillow",
+                  },
+                  {
+                    src: "/case_studies/rabbu_marketplace/market-6.webp",
+                    alt: "Awning",
+                  },
+                  {
+                    src: "/case_studies/rabbu_marketplace/market-7.webp",
+                    alt: "AirDNA",
+                  },
+                ].map((img) => (
+                  <img
+                    key={img.src}
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full rounded-xl"
+                  />
+                ))}
+              </div>
             </CaseStudySection>
 
             <CaseStudySection
@@ -280,32 +285,42 @@ function RabbuMarketplace({ onClose }) {
               </p>
             </CaseStudySection>
 
-            <CaseStudySection
-              title="Motivations For Choosing Freemium"
-              accentColor="var(--color-rabbu)"
-              infoCards={[
-                {
-                  icon: <Layers size={20} />,
-                  title: "Room to explore",
-                  description: "Free and paid features side by side. Free still has to be useful, which matched how people already used Rabbu's earlier tools.",
-                },
-                {
-                  icon: <Users size={20} />,
-                  title: "Growing the user base",
-                  description: "Freemium made sense if the goal was more free accounts first.",
-                },
-                {
-                  icon: <Zap size={20} />,
-                  title: "Less reliance on sales outreach",
-                  description: "Rabbu wanted a lighter model than relying so hard on direct sales.",
-                },
-                {
-                  icon: <TrendingUp size={20} />,
-                  title: "Time to upgrade",
-                  description: "People can explore before paying, which should support steadier growth.",
-                },
-              ]}
-            />
+            <CaseStudySection title="Motivations For Choosing Freemium">
+              <div className="mt-8 grid grid-cols-2 gap-4 max-sm:grid-cols-1">
+                {[
+                  {
+                    icon: <Layers size={20} />,
+                    title: "Room to explore",
+                    description:
+                      "Free and paid features side by side. Free still has to be useful, which matched how people already used Rabbu's earlier tools.",
+                  },
+                  {
+                    icon: <Users size={20} />,
+                    title: "Growing the user base",
+                    description:
+                      "Freemium made sense if the goal was more free accounts first.",
+                  },
+                  {
+                    icon: <Zap size={20} />,
+                    title: "Less reliance on sales outreach",
+                    description:
+                      "Rabbu wanted a lighter model than relying so hard on direct sales.",
+                  },
+                  {
+                    icon: <TrendingUp size={20} />,
+                    title: "Time to upgrade",
+                    description:
+                      "People can explore before paying, which should support steadier growth.",
+                  },
+                ].map((card) => (
+                  <InfoCard
+                    key={card.title}
+                    {...card}
+                    accentColor="var(--color-rabbu)"
+                  />
+                ))}
+              </div>
+            </CaseStudySection>
 
             <CaseStudySection
               title="Designing for Freemium"
@@ -427,27 +442,31 @@ function RabbuMarketplace({ onClose }) {
           >
             <Label>Design System</Label>
 
-            <CaseStudySection
-              title="Early Stage Design System"
-              images={[
-                {
-                  src: "/case_studies/rabbu_marketplace/market-14.webp",
-                  alt: "Design System Components 1",
-                },
-                {
-                  src: "/case_studies/rabbu_marketplace/market-15.webp",
-                  alt: "Design System Components 2",
-                },
-                {
-                  src: "/case_studies/rabbu_marketplace/market-16.webp",
-                  alt: "Design System Components 3",
-                },
-              ]}
-            >
+            <CaseStudySection title="Early Stage Design System">
               <p>
                 We needed a consistent system so the product felt like one
                 product and handoffs to the client were cleaner.
               </p>
+              <div className="mt-8 flex flex-col gap-6">
+                <div className="image-container">
+                  <img
+                    src="/case_studies/rabbu_marketplace/market-14.webp"
+                    alt="Design System Components 1"
+                  />
+                </div>
+                <div className="image-container">
+                  <img
+                    src="/case_studies/rabbu_marketplace/market-15.webp"
+                    alt="Design System Components 2"
+                  />
+                </div>
+                <div className="image-container">
+                  <img
+                    src="/case_studies/rabbu_marketplace/market-16.webp"
+                    alt="Design System Components 3"
+                  />
+                </div>
+              </div>
             </CaseStudySection>
           </section>
 

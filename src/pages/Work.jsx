@@ -165,11 +165,14 @@ function Work() {
   }, [projectSlug]);
 
   const selectedProjects = projects.filter(
-    (project) => project.category === "case-studies" && project.listed !== false,
+    (project) =>
+      project.category === "case-studies" && project.listed !== false,
   );
 
   const additionalProjects = [...projects]
-    .filter((project) => project.category === "misc" && project.listed !== false)
+    .filter(
+      (project) => project.category === "misc" && project.listed !== false,
+    )
     .sort((a, b) => {
       if (a.date === b.date) {
         return 0;

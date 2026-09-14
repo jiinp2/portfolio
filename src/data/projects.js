@@ -48,14 +48,13 @@ export const projects = [
     description: "Wellness tracking through sensory textiles.",
   },
   {
-    name: "Wattpad",
-    label: "Scroll to Wattpad",
+    name: "Wattpad Text Scenes",
+    label: "Scroll to Wattpad Text Scenes",
     date: "2026",
     category: "misc",
     slug: "wattpad",
-    listed: false,
-    previewLabel: "Wattpad",
-    description: "Concept for a text scene feature.",
+    image: "/case_studies/wattpad/text-scene.png",
+    description: "Concept for a new Wattpad feature.",
   },
   {
     name: "Scrivis Tattoos",

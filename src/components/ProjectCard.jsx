@@ -24,8 +24,10 @@ const PREVIEW_BACKGROUND_BY_SLUG = {
   kobo: "bg-kobo",
   skiin: "bg-skiin",
   maison: "bg-[#A8B8D4]",
-  wattpad: "bg-[#FF460D]",
 };
+
+const WATTPAD_PREVIEW_GRADIENT =
+  "linear-gradient(160deg, #FF9358 0%, #FF7A3A 36%, #FF460D 72%, #C23006 100%)";
 
 const PREVIEW_FILL_SLUGS = new Set(["scrivis-tattoos"]);
 
@@ -40,6 +42,10 @@ function isMaisonPreview(slug) {
   return slug === "maison";
 }
 
+function isWattpadPreview(slug) {
+  return slug === "wattpad";
+}
+
 function normalizePreviewBackgroundClass(slug) {
   return PREVIEW_BACKGROUND_BY_SLUG[slug] ?? "bg-gray-100";
 }
@@ -47,6 +53,10 @@ function normalizePreviewBackgroundClass(slug) {
 function buildStandardImageClasses(slug) {
   if (isFillPreview(slug)) {
     return "h-full w-full object-cover object-center";
+  }
+
+  if (isWattpadPreview(slug)) {
+    return "h-auto w-full max-w-none shrink-0 object-cover object-top";
   }
 
   switch (slug) {
@@ -64,6 +74,10 @@ function buildStandardImageClasses(slug) {
 }
 
 function buildPreviewContainerClasses(slug) {
+  if (isWattpadPreview(slug)) {
+    return "box-border flex aspect-4/3 w-full items-start justify-center overflow-hidden pt-4 px-3 pb-0";
+  }
+
   if (isFillPreview(slug)) {
     return "box-border flex aspect-4/3 w-full overflow-hidden bg-transparent p-0";
   }
@@ -129,6 +143,11 @@ function ProjectCardPreview({ project, interactive = false, className = "" }) {
       <div
         className={`project-preview ${previewInnerClassName}`}
         data-slug={project.slug}
+        style={
+          isWattpadPreview(project.slug)
+            ? { background: WATTPAD_PREVIEW_GRADIENT }
+            : undefined
+        }
         {...(isFillPreview(project.slug) ? { "data-fill": "true" } : {})}
       >
         {isMaisonPreview(project.slug) ? <MaisonPreviewGlow /> : null}
