@@ -4,6 +4,7 @@ import RabbuMarketplace from "./case-studies/RabbuMarketplace";
 import Kobo from "./case-studies/Kobo";
 import Skiin from "./case-studies/Skiin";
 import Maison from "./case-studies/Maison";
+import Wattpad from "./case-studies/Wattpad";
 
 /** Keys match `project.name` from `projects` data. */
 const CASE_STUDY_COMPONENT_BY_PROJECT_NAME = {
@@ -13,7 +14,12 @@ const CASE_STUDY_COMPONENT_BY_PROJECT_NAME = {
   "Rabbu Marketplace": RabbuMarketplace,
   Kobo,
   Skiin,
+  Wattpad,
 };
+
+function hasCaseStudy(projectName) {
+  return Boolean(CASE_STUDY_COMPONENT_BY_PROJECT_NAME[projectName]);
+}
 
 function CaseStudy({ project, onClose }) {
   const CaseStudyView = CASE_STUDY_COMPONENT_BY_PROJECT_NAME[project.name];
@@ -45,3 +51,4 @@ function CaseStudy({ project, onClose }) {
 }
 
 export default CaseStudy;
+export { hasCaseStudy };

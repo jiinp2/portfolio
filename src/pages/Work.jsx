@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { FileText, Mail } from "lucide-react";
-import CaseStudy from "../components/CaseStudy";
+import CaseStudy, { hasCaseStudy } from "../components/CaseStudy";
 import ProjectCard from "../components/ProjectCard";
 import TabSection from "../components/TabSection";
 import PageToggle from "../components/PageToggle";
@@ -131,6 +131,9 @@ function Work() {
       window.open(project.url, "_blank", "noopener,noreferrer");
       return;
     }
+    if (!hasCaseStudy(project.name)) {
+      return;
+    }
     navigate(`/${project.slug}`);
     setSelectedProject(projectIndex);
     setIsCaseStudyOpen(true);
@@ -147,10 +150,12 @@ function Work() {
   useEffect(() => {
     if (projectSlug) {
       const projectIndex = projects.findIndex((p) => p.slug === projectSlug);
-      if (projectIndex !== -1) {
+      if (projectIndex !== -1 && hasCaseStudy(projects[projectIndex].name)) {
         setSelectedProject(projectIndex);
         setIsCaseStudyOpen(true);
         setBodyScrollLocked(true);
+      } else if (projectIndex !== -1) {
+        navigate("/", { replace: true });
       }
     } else {
       setIsCaseStudyOpen(false);
@@ -160,12 +165,17 @@ function Work() {
   }, [projectSlug]);
 
   const selectedProjects = projects.filter(
-    (project) => project.category === "case-studies",
+    (project) => project.category === "case-studies" && project.listed !== false,
   );
 
   const additionalProjects = [...projects]
-    .filter((project) => project.category === "misc")
-    .sort((a, b) => (b.date < a.date ? -1 : 1));
+    .filter((project) => project.category === "misc" && project.listed !== false)
+    .sort((a, b) => {
+      if (a.date === b.date) {
+        return 0;
+      }
+      return b.date < a.date ? -1 : 1;
+    });
 
   return (
     <div

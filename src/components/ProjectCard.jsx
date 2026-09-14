@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react";
+import { hasCaseStudy } from "./CaseStudy";
 
 const TITLE_HEADING_CLASS =
   "text-lg font-semibold text-text tracking-tight m-0 leading-tight transition-colors duration-600 ease-in-out inline-flex items-center gap-2 flex-1 max-md:text-base max-sm:text-sm";
@@ -23,6 +24,7 @@ const PREVIEW_BACKGROUND_BY_SLUG = {
   kobo: "bg-kobo",
   skiin: "bg-skiin",
   maison: "bg-[#A8B8D4]",
+  wattpad: "bg-[#FF460D]",
 };
 
 const PREVIEW_FILL_SLUGS = new Set(["scrivis-tattoos"]);
@@ -142,6 +144,12 @@ function ProjectCardPreview({ project, interactive = false, className = "" }) {
           />
         ) : project.image ? (
           <img src={project.image} alt={project.name} className={mediaClass} />
+        ) : project.previewLabel ? (
+          <span
+            className={`${mediaClass} text-2xl font-medium tracking-tight text-white`}
+          >
+            {project.previewLabel}
+          </span>
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-transparent">
             <span className="preview-icon text-5xl opacity-20 text-text max-md:text-4xl max-sm:text-3xl">
@@ -164,6 +172,7 @@ function ProjectCard({
 }) {
   const isExplorative = project.category === "misc";
   const isExternalLink = Boolean(project.url);
+  const hasDestination = isExternalLink || hasCaseStudy(project.name);
   const displayDescription = useShortDescription
     ? (project.descriptionShort ?? project.description)
     : project.description;
@@ -211,19 +220,26 @@ function ProjectCard({
   const previewContent =
     isExplorative && !useStandardPreview ? explorativePreview : standardPreview;
 
+  const previewTriggerClass =
+    "project-card-preview-trigger block w-full rounded-xl border-0 bg-transparent p-0 text-left focus:outline-none";
+
   return (
     <article
       className={`flex h-full flex-col gap-4 max-md:gap-3 max-sm:gap-2 ${disabled ? "opacity-60" : PROJECT_CARD_HOVER_SYNC_CLASS}`}
     >
-      <button
-        type="button"
-        className="project-card-preview-trigger block w-full rounded-xl border-0 bg-transparent p-0 text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 dark:focus-visible:ring-neutral-600 disabled:cursor-not-allowed"
-        onClick={handlePrimaryAction}
-        disabled={disabled}
-        aria-label={previewAriaLabel}
-      >
-        {previewContent}
-      </button>
+      {hasDestination ? (
+        <button
+          type="button"
+          className={`${previewTriggerClass} cursor-pointer focus-visible:ring-2 focus-visible:ring-gray-300 dark:focus-visible:ring-neutral-600 disabled:cursor-not-allowed`}
+          onClick={handlePrimaryAction}
+          disabled={disabled}
+          aria-label={previewAriaLabel}
+        >
+          {previewContent}
+        </button>
+      ) : (
+        <div className={previewTriggerClass}>{previewContent}</div>
+      )}
 
       <div className="flex min-h-0 flex-1 flex-col gap-1">
         <CardTitleRow name={project.name} date={project.date} />
@@ -232,21 +248,23 @@ function ProjectCard({
         ) : null}
       </div>
 
-      <button
-        type="button"
-        className={`${PROJECT_CARD_CTA_CLASS} mt-auto`}
-        onClick={handlePrimaryAction}
-        disabled={disabled}
-      >
-        {isExternalLink ? (
-          <>
-            <ExternalLink size={16} className="shrink-0" aria-hidden="true" />
-            <span>Visit site</span>
-          </>
-        ) : (
-          <span>Read case study</span>
-        )}
-      </button>
+      {hasDestination ? (
+        <button
+          type="button"
+          className={`${PROJECT_CARD_CTA_CLASS} mt-auto`}
+          onClick={handlePrimaryAction}
+          disabled={disabled}
+        >
+          {isExternalLink ? (
+            <>
+              <ExternalLink size={16} className="shrink-0" aria-hidden="true" />
+              <span>Visit site</span>
+            </>
+          ) : (
+            <span>Read case study</span>
+          )}
+        </button>
+      ) : null}
     </article>
   );
 }

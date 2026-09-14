@@ -36,7 +36,7 @@ export const projects = [
     category: "misc",
     slug: "kobo",
     image: "/home/kobo_thumbnail.png",
-    description: "eBook and audiobook app redesign.",
+    description: "Conceptual redesign of the eBook app.",
   },
   {
     name: "Skiin",
@@ -46,6 +46,16 @@ export const projects = [
     slug: "skiin",
     image: "/home/skiin_thumbnail.png",
     description: "Wellness tracking through sensory textiles.",
+  },
+  {
+    name: "Wattpad",
+    label: "Scroll to Wattpad",
+    date: "2026",
+    category: "misc",
+    slug: "wattpad",
+    listed: false,
+    previewLabel: "Wattpad",
+    description: "Concept for a text scene feature.",
   },
   {
     name: "Scrivis Tattoos",
