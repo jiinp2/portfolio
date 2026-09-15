@@ -11,8 +11,9 @@ import CaseStudyHero from "./components/CaseStudyHero";
 import CaseStudySection from "./components/CaseStudySection";
 import CaseStudyFooter from "./components/CaseStudyFooter";
 import TableOfContents from "./components/TableOfContents";
+import CaseStudyLayout from "./CaseStudyLayout";
 
-function RabbuPortfolio({ onClose }) {
+function RabbuPortfolio() {
   const sectionRefs = useRef({});
 
   // Table of contents sections
@@ -25,22 +26,13 @@ function RabbuPortfolio({ onClose }) {
   ];
 
   return (
-    <div className="case-study-overlay rabbu-portfolio-case-study">
-      <div className="case-study-layout">
-        {/* Left Column - Back Button */}
-        <div className="case-study-left flex items-start pt-8">
-          <button
-            className="back-button sticky cursor-pointer"
-            onClick={onClose}
-          >
-            <span className="back-arrow">←</span> Back
-          </button>
-        </div>
-
-        {/* Middle Column - Main Content */}
-        <div className="case-study-content">
-          {/* Hero Section */}
-          <CaseStudyHero
+    <CaseStudyLayout
+      className="rabbu-portfolio-case-study"
+      toc={
+        <TableOfContents sections={tocSections} sectionRefs={sectionRefs} />
+      }
+    >
+      <CaseStudyHero
             title="Rabbu Portfolio"
             subtitle="Where short-term rental investors manage properties and track performance."
             imageSrc="/case_studies/rabbu_portofolio/hero.webp"
@@ -331,13 +323,8 @@ function RabbuPortfolio({ onClose }) {
             </div>
           </section>
 
-          <CaseStudyFooter />
-        </div>
-
-        {/* Right Column - Table of Contents */}
-        <TableOfContents sections={tocSections} sectionRefs={sectionRefs} />
-      </div>
-    </div>
+      <CaseStudyFooter />
+    </CaseStudyLayout>
   );
 }
 

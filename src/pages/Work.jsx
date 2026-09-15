@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useParams, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { FileText, Mail } from "lucide-react";
-import CaseStudy, { hasCaseStudy } from "../components/CaseStudy";
+import { hasCaseStudy } from "../components/CaseStudy";
 import ProjectCard from "../components/ProjectCard";
 import TabSection from "../components/TabSection";
 import PageToggle from "../components/PageToggle";
@@ -50,10 +50,6 @@ const EDUCATION_ENTRIES = [
 
 const SECTION_HEADING_CLASS = `text-sm font-medium text-text tracking-wide leading-tight m-0 ${SIDEBAR_TEXT_TRANSITION}`;
 
-function setBodyScrollLocked(locked) {
-  document.body.style.overflow = locked ? "hidden" : "auto";
-}
-
 function TimelineTabPanel({ entries }) {
   return (
     <div className="mb-0">
@@ -76,13 +72,10 @@ function TimelineTabPanel({ entries }) {
 
 function Work() {
   const navigate = useNavigate();
-  const { projectSlug } = useParams();
   const [activeTab, setActiveTab] = useState(() => {
     const savedTab = localStorage.getItem("activeTab");
     return (savedTab === "skills" ? "experience" : savedTab) || "experience";
   });
-  const [isCaseStudyOpen, setIsCaseStudyOpen] = useState(false);
-  const [selectedProject, setSelectedProject] = useState(null);
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const stored = localStorage.getItem("theme");
     return stored === "dark";
@@ -114,47 +107,7 @@ function Work() {
       return;
     }
     navigate(`/${project.slug}`);
-    setSelectedProject(projectIndex);
-    setIsCaseStudyOpen(true);
-    setBodyScrollLocked(true);
   };
-
-  const closeCaseStudy = () => {
-    navigate("/");
-    setIsCaseStudyOpen(false);
-    setSelectedProject(null);
-    setBodyScrollLocked(false);
-  };
-
-  useEffect(() => {
-    if (!projectSlug) {
-      setIsCaseStudyOpen(false);
-      setSelectedProject(null);
-      setBodyScrollLocked(false);
-      return;
-    }
-
-    const projectIndex = projects.findIndex((p) => p.slug === projectSlug);
-    if (projectIndex === -1) {
-      navigate("/", { replace: true });
-      return;
-    }
-
-    const project = projects[projectIndex];
-    if (project.url) {
-      window.location.replace(project.url);
-      return;
-    }
-
-    if (hasCaseStudy(project.name)) {
-      setSelectedProject(projectIndex);
-      setIsCaseStudyOpen(true);
-      setBodyScrollLocked(true);
-      return;
-    }
-
-    navigate("/", { replace: true });
-  }, [navigate, projectSlug]);
 
   const selectedProjects = projects.filter(
     (project) =>
@@ -173,18 +126,8 @@ function Work() {
     });
 
   return (
-    <div
-      className={`grid grid-cols-[minmax(320px,380px)_1fr] h-screen w-screen transition-[grid-template-columns] duration-[800ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:grid-cols-1 max-md:grid-rows-[auto_auto] max-md:h-auto max-md:grid-cols-1 ${
-        isCaseStudyOpen ? "grid-cols-1" : ""
-      }`}
-    >
-      <aside
-        className={`bg-surface p-16 border-r border-border text-text h-auto overflow-y-auto overflow-x-hidden [scrollbar-gutter:stable] transition-[background-color,border-color,color] duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:relative max-md:w-screen max-md:min-h-auto max-md:h-auto max-md:p-8 max-md:border-r-0 max-md:border-b max-md:border-b-border max-md:order-1 max-md:overflow-visible max-md:overflow-y-visible max-md:[scrollbar-gutter:auto] max-sm:p-6 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-sm hover:[&::-webkit-scrollbar-thumb]:bg-gray-200 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-700 dark:hover:[&::-webkit-scrollbar-thumb]:bg-neutral-600 ${
-          isCaseStudyOpen
-            ? "max-md:transform max-md:-translate-x-full max-md:opacity-0 max-md:transition-[transform,opacity] max-md:duration-[800ms] max-md:ease-[cubic-bezier(0.4,0,0.2,1)]"
-            : ""
-        }`}
-      >
+    <div className="grid grid-cols-[minmax(320px,380px)_1fr] h-screen w-screen max-md:grid-cols-1 max-md:grid-rows-[auto_auto] max-md:h-auto">
+      <aside className="bg-surface p-16 border-r border-border text-text h-auto overflow-y-auto overflow-x-hidden [scrollbar-gutter:stable] transition-[background-color,border-color,color] duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] max-md:relative max-md:w-screen max-md:min-h-auto max-md:h-auto max-md:p-8 max-md:border-r-0 max-md:border-b max-md:border-b-border max-md:order-1 max-md:overflow-visible max-md:overflow-y-visible max-md:[scrollbar-gutter:auto] max-sm:p-6 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-sm hover:[&::-webkit-scrollbar-thumb]:bg-gray-200 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-700 dark:hover:[&::-webkit-scrollbar-thumb]:bg-neutral-600">
         <div className="w-full max-md:max-w-none max-md:text-left">
           <div className="mb-10 max-md:mb-8">
             <div className="flex items-center justify-between gap-4 max-md:mb-6">
@@ -314,13 +257,6 @@ function Work() {
           </section>
         ) : null}
       </main>
-
-      {isCaseStudyOpen && selectedProject !== null && (
-        <CaseStudy
-          project={projects[selectedProject]}
-          onClose={closeCaseStudy}
-        />
-      )}
     </div>
   );
 }

@@ -17,38 +17,22 @@ const CASE_STUDY_COMPONENT_BY_PROJECT_NAME = {
   "Wattpad Text Scenes": Wattpad,
 };
 
+/** Keys match `project.slug` from `projects` data. */
+const CASE_STUDY_COMPONENT_BY_SLUG = {
+  maison: Maison,
+  "rabbu-marketplace": RabbuMarketplace,
+  "rabbu-portfolio": RabbuPortfolio,
+  kobo: Kobo,
+  skiin: Skiin,
+  wattpad: Wattpad,
+};
+
 function hasCaseStudy(projectName) {
   return Boolean(CASE_STUDY_COMPONENT_BY_PROJECT_NAME[projectName]);
 }
 
-function CaseStudy({ project, onClose }) {
-  const CaseStudyView = CASE_STUDY_COMPONENT_BY_PROJECT_NAME[project.name];
-  const caseStudyProps = {
-    onClose,
-  };
-
-  if (CaseStudyView) {
-    return <CaseStudyView {...caseStudyProps} />;
-  }
-
-  return (
-    <div className="case-study-overlay">
-      <div className="case-study-content">
-        <button className="back-button" onClick={onClose}>
-          ← Back
-        </button>
-        <h1 className="case-study-title">{project.name}</h1>
-        <div className="case-study-body">
-          <p>Case study content goes here...</p>
-          <p>
-            This is where the detailed project information, process, and
-            results would be displayed.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
+function getCaseStudyBySlug(slug) {
+  return CASE_STUDY_COMPONENT_BY_SLUG[slug] ?? null;
 }
 
-export default CaseStudy;
-export { hasCaseStudy };
+export { hasCaseStudy, getCaseStudyBySlug };

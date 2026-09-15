@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ExternalLink } from "lucide-react";
 import CaseStudySection from "./components/CaseStudySection";
 import CaseStudyFooter from "./components/CaseStudyFooter";
+import CaseStudyLayout from "./CaseStudyLayout";
 import Label from "../ui/Label";
 
 const PAGE_TITLE = "Wattpad Text Scenes";
@@ -128,7 +129,7 @@ function ThemeCarousel() {
   );
 }
 
-function Wattpad({ onClose }) {
+function Wattpad() {
   useEffect(() => {
     const previousTitle = document.title;
     document.title = PAGE_TITLE;
@@ -138,19 +139,7 @@ function Wattpad({ onClose }) {
   }, []);
 
   return (
-    <div className="case-study-overlay">
-      <div className="case-study-layout">
-        <div className="case-study-left">
-          <button
-            className="back-button sticky"
-            onClick={onClose}
-            type="button"
-          >
-            <span className="back-arrow">←</span> Back
-          </button>
-        </div>
-
-        <div className="case-study-content">
+    <CaseStudyLayout>
           <div className="hero-section mb-16">
             <div className="relative z-10 mx-auto mb-5 max-w-[560px]">
               <h1 className="pointer-events-none m-0 min-w-0 text-xl font-semibold tracking-tight text-default">
@@ -474,10 +463,8 @@ function Wattpad({ onClose }) {
             </div>
           </section>
 
-          <CaseStudyFooter />
-        </div>
-      </div>
-    </div>
+      <CaseStudyFooter />
+    </CaseStudyLayout>
   );
 }
 

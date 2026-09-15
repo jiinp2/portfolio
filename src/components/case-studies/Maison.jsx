@@ -3,8 +3,9 @@ import CaseStudyHero from "./components/CaseStudyHero";
 import CaseStudySection from "./components/CaseStudySection";
 import CaseStudyFooter from "./components/CaseStudyFooter";
 import TableOfContents from "./components/TableOfContents";
+import CaseStudyLayout from "./CaseStudyLayout";
 
-function Maison({ onClose }) {
+function Maison() {
   const sectionRefs = useRef({});
 
   const tocSections = [
@@ -18,16 +19,13 @@ function Maison({ onClose }) {
   ];
 
   return (
-    <div className="case-study-overlay maison-case-study">
-      <div className="case-study-layout">
-        <div className="case-study-left">
-          <button className="back-button sticky" onClick={onClose}>
-            <span className="back-arrow">←</span> Back
-          </button>
-        </div>
-
-        <div className="case-study-content">
-          <CaseStudyHero
+    <CaseStudyLayout
+      className="maison-case-study"
+      toc={
+        <TableOfContents sections={tocSections} sectionRefs={sectionRefs} />
+      }
+    >
+      <CaseStudyHero
             title="Maison"
             subtitle="A professional network for real estate agents"
             imageSrc="/case_studies/maison/maison-hero.png"
@@ -461,12 +459,8 @@ function Maison({ onClose }) {
             </CaseStudySection>
           </section>
 
-          <CaseStudyFooter />
-        </div>
-
-        <TableOfContents sections={tocSections} sectionRefs={sectionRefs} />
-      </div>
-    </div>
+      <CaseStudyFooter />
+    </CaseStudyLayout>
   );
 }
 

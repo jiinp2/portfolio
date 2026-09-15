@@ -5,8 +5,9 @@ import CaseStudyHero from "./components/CaseStudyHero";
 import CaseStudySection from "./components/CaseStudySection";
 import CaseStudyFooter from "./components/CaseStudyFooter";
 import TableOfContents from "./components/TableOfContents";
+import CaseStudyLayout from "./CaseStudyLayout";
 
-function Skiin({ onClose }) {
+function Skiin() {
   const sectionRefs = useRef({});
 
   // Table of contents sections
@@ -17,19 +18,13 @@ function Skiin({ onClose }) {
   ];
 
   return (
-    <div className="case-study-overlay skiin-case-study">
-      <div className="case-study-layout">
-        {/* Left Column - Back Button */}
-        <div className="case-study-left">
-          <button className="back-button sticky" onClick={onClose}>
-            <span className="back-arrow">←</span> Back
-          </button>
-        </div>
-
-        {/* Middle Column - Main Content */}
-        <div className="case-study-content">
-          {/* Hero Section */}
-          <CaseStudyHero
+    <CaseStudyLayout
+      className="skiin-case-study"
+      toc={
+        <TableOfContents sections={tocSections} sectionRefs={sectionRefs} />
+      }
+    >
+      <CaseStudyHero
             title="Skiin"
             subtitle="Wellness tracking through bio-sensing garments and a companion app."
             imageSrc="/case_studies/skiin/hero.avif"
@@ -242,13 +237,8 @@ function Skiin({ onClose }) {
             </CaseStudySection>
           </section>
 
-          <CaseStudyFooter />
-        </div>
-
-        {/* Right Column - Table of Contents */}
-        <TableOfContents sections={tocSections} sectionRefs={sectionRefs} />
-      </div>
-    </div>
+      <CaseStudyFooter />
+    </CaseStudyLayout>
   );
 }
 

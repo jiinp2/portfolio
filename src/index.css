@@ -186,19 +186,30 @@
   }
 
   /* Case Study Shared Styles */
-  .case-study-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+  .case-study-page {
+    min-height: 100vh;
+    width: 100%;
     background-color: white;
-    z-index: 1000;
     animation: fadeIn 0.2s ease-in-out;
   }
 
-  .dark .case-study-overlay {
+  .dark .case-study-page {
     background-color: var(--color-dark-bg);
+  }
+
+  .case-study-page .case-study-layout {
+    min-height: 100vh;
+  }
+
+  @media (min-width: 641px) {
+    .case-study-page .case-study-layout {
+      height: 100vh;
+    }
+
+    .case-study-page .case-study-content {
+      height: 100vh;
+      overflow-y: auto;
+    }
   }
 
   @keyframes fadeIn {
@@ -263,8 +274,8 @@
 
   /* Mobile: stack back button above scrollable case study */
   @media (max-width: 640px) {
-    .case-study-overlay {
-      overflow-y: auto;
+    .case-study-page {
+      overflow-y: visible;
     }
 
     .case-study-layout {
@@ -1001,12 +1012,12 @@
 /* Dark mode — scoped rules not covered by semantic tokens or dark: utilities */
 .dark {
   /* Case study cards still use bg-white utilities */
-  & .case-study-overlay .bg-white {
+  & .case-study-page .bg-white {
     background-color: var(--color-dark-bg-secondary);
   }
 
-  & .case-study-overlay .border-gray-100,
-  & .case-study-overlay .border-gray-200 {
+  & .case-study-page .border-gray-100,
+  & .case-study-page .border-gray-200 {
     border-color: var(--color-dark-border);
   }
 

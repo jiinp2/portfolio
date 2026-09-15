@@ -5,8 +5,9 @@ import CaseStudyHero from "./components/CaseStudyHero";
 import CaseStudySection from "./components/CaseStudySection";
 import CaseStudyFooter from "./components/CaseStudyFooter";
 import TableOfContents from "./components/TableOfContents";
+import CaseStudyLayout from "./CaseStudyLayout";
 
-function Kobo({ onClose }) {
+function Kobo() {
   const sectionRefs = useRef({});
 
   // Table of contents sections
@@ -18,19 +19,13 @@ function Kobo({ onClose }) {
   ];
 
   return (
-    <div className="case-study-overlay kobo-case-study">
-      <div className="case-study-layout">
-        {/* Left Column - Back Button */}
-        <div className="case-study-left">
-          <button className="back-button sticky" onClick={onClose}>
-            <span className="back-arrow">←</span> Back
-          </button>
-        </div>
-
-        {/* Middle Column - Main Content */}
-        <div className="case-study-content">
-          {/* Hero Section */}
-          <CaseStudyHero
+    <CaseStudyLayout
+      className="kobo-case-study"
+      toc={
+        <TableOfContents sections={tocSections} sectionRefs={sectionRefs} />
+      }
+    >
+      <CaseStudyHero
             title="Kobo"
             subtitle="A redesign of the Kobo eBook and audiobook app interface and flows."
             imageSrc="/case_studies/kobo/kobo-hero.avif"
@@ -432,13 +427,8 @@ function Kobo({ onClose }) {
             </CaseStudySection>
           </section>
 
-          <CaseStudyFooter />
-        </div>
-
-        {/* Right Column - Table of Contents */}
-        <TableOfContents sections={tocSections} sectionRefs={sectionRefs} />
-      </div>
-    </div>
+      <CaseStudyFooter />
+    </CaseStudyLayout>
   );
 }
 
