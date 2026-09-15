@@ -148,21 +148,34 @@ function Work() {
   };
 
   useEffect(() => {
-    if (projectSlug) {
-      const projectIndex = projects.findIndex((p) => p.slug === projectSlug);
-      if (projectIndex !== -1 && hasCaseStudy(projects[projectIndex].name)) {
-        setSelectedProject(projectIndex);
-        setIsCaseStudyOpen(true);
-        setBodyScrollLocked(true);
-      } else if (projectIndex !== -1) {
-        navigate("/", { replace: true });
-      }
-    } else {
+    if (!projectSlug) {
       setIsCaseStudyOpen(false);
       setSelectedProject(null);
       setBodyScrollLocked(false);
+      return;
     }
-  }, [projectSlug]);
+
+    const projectIndex = projects.findIndex((p) => p.slug === projectSlug);
+    if (projectIndex === -1) {
+      navigate("/", { replace: true });
+      return;
+    }
+
+    const project = projects[projectIndex];
+    if (project.url) {
+      window.location.replace(project.url);
+      return;
+    }
+
+    if (hasCaseStudy(project.name)) {
+      setSelectedProject(projectIndex);
+      setIsCaseStudyOpen(true);
+      setBodyScrollLocked(true);
+      return;
+    }
+
+    navigate("/", { replace: true });
+  }, [navigate, projectSlug]);
 
   const selectedProjects = projects.filter(
     (project) =>
