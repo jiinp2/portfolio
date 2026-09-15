@@ -606,7 +606,7 @@
   /* Case study images with light gray background */
   .subsection > img {
     background-color: #f3f4f6;
-    border-radius: 0.75rem;
+    border-radius: 0.25rem;
     padding: 1.5rem;
     display: block;
     margin-left: auto;
@@ -616,7 +616,7 @@
   .subsection > .image-container,
   .case-study-content .image-container {
     background-color: #f3f4f6;
-    border-radius: 0.75rem;
+    border-radius: 0.25rem;
     padding: 1rem;
     display: flex;
     align-items: center;

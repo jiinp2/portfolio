@@ -142,55 +142,63 @@ function Wattpad({ onClose }) {
 
           <section id="background" className="case-study-section">
             <Label>Background</Label>
-            <CaseStudySection>
-              <p>
-                This idea started from watching a{" "}
-                <a
-                  href="https://www.tiktok.com/@ethannku/video/7683541776770026766?is_from_webapp=1&sender_device=pc"
-                  className={TEXT_LINK_CLASS}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  TikTok
-                </a>{" "}
-                demonstrating a tutorial called “
-                <a
-                  href="https://archiveofourown.org/works/6434845/chapters/14729722"
-                  className={TEXT_LINK_CLASS}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  How to Make iOS Text Messages on AO3.
-                </a>
-                ” This tutorial has 4,801 bookmarks and 217k hits on AO3 which
-                showcases the popularity of this customization.
-              </p>
-              <p>
-                Messaging is a widely used narrative device that can be seen in
-                many works across all genres. Having to stitch together custom
-                code to provide a more immersive experience is a real barrier to
-                entry. Many writers opt for workarounds such as using a
-                character’s name, colon, and then the message.
-              </p>
-              <p>
-                That had me thinking.{" "}
-                <b>
-                  What would a more user-friendly solution to emmulating real
-                  life messaging look like for Wattpad?
-                </b>
-              </p>
-            </CaseStudySection>
+            <div className="flex flex-col gap-8">
+              <div>
+                <h3 className="mx-auto mb-4 block max-w-[560px] text-left text-base font-semibold leading-tight tracking-tight text-text">
+                  Where the idea started
+                </h3>
+                <div className={SIDE_BY_SIDE_PROSE_CLASS}>
+                  <p>
+                    This idea started from watching a{" "}
+                    <a
+                      href="https://www.tiktok.com/@ethannku/video/7683541776770026766?is_from_webapp=1&sender_device=pc"
+                      className={TEXT_LINK_CLASS}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      TikTok
+                    </a>{" "}
+                    demonstrating a tutorial called “
+                    <a
+                      href="https://archiveofourown.org/works/6434845/chapters/14729722"
+                      className={TEXT_LINK_CLASS}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      How to Make iOS Text Messages on AO3.
+                    </a>
+                    ” This tutorial has 4,801 bookmarks and 217k hits on AO3
+                    which showcases the popularity of this customization.
+                  </p>
+                  <p>
+                    Messaging is a widely used narrative device that can be seen
+                    in many works across all genres. Having to stitch together
+                    custom code to provide a more immersive experience is a real
+                    barrier to entry. Many writers opt for workarounds such as
+                    using a character’s name, colon, and then the message.
+                  </p>
+                </div>
+              </div>
+              <div>
+                <h3 className="mx-auto mb-4 block max-w-[560px] text-left text-base font-semibold leading-tight tracking-tight text-text">
+                  The question
+                </h3>
+                <div className={SIDE_BY_SIDE_PROSE_CLASS}>
+                  <p>
+                    That had me thinking.{" "}
+                    <b>
+                      What would a more user-friendly solution to emmulating
+                      real life messaging look like for Wattpad?
+                    </b>
+                  </p>
+                </div>
+              </div>
+            </div>
           </section>
 
           <section id="design-process" className="case-study-section">
             <Label>Design Process</Label>
-            <div className="image-container mb-8">
-              <img
-                src="/case_studies/wattpad/wattpad-current.png"
-                alt="Wattpad story editor showing a draft titled The Signal"
-              />
-            </div>
-            <CaseStudySection>
+            <CaseStudySection title="Redesigning the editor">
               <p>
                 I started with trying to write my own story using Wattpad and
                 immediately noticed the in-line photo and video link icons and
@@ -205,11 +213,19 @@ function Wattpad({ onClose }) {
                 My first step was to redesign the editor to help make my
                 interactive demo more realistic.
               </p>
-              <div className="image-container mt-8 mb-8">
-                <img
-                  src="/case_studies/wattpad/editor.png"
-                  alt="Redesigned Wattpad editor with header image and video controls above the story"
-                />
+              <div className="mt-8 flex flex-col gap-4">
+                <div className="image-container">
+                  <img
+                    src="/case_studies/wattpad/wattpad-current.png"
+                    alt="Wattpad story editor showing a draft titled The Signal"
+                  />
+                </div>
+                <div className="image-container">
+                  <img
+                    src="/case_studies/wattpad/editor.png"
+                    alt="Redesigned Wattpad editor with header image and video controls above the story"
+                  />
+                </div>
               </div>
             </CaseStudySection>
           </section>
@@ -228,8 +244,7 @@ function Wattpad({ onClose }) {
               <p>
                 Text scene sits in the same row as Add image, Add video, and
                 Poll. It should feel like another thing you can drop into the
-                story, not a separate mode. The NEW label is there so writers
-                notice it the first time.
+                story, not a separate mode.
               </p>
             </CaseStudySection>
           </section>
@@ -251,21 +266,63 @@ function Wattpad({ onClose }) {
             </div>
           </section>
 
-          <section id="future-considerations" className="case-study-section">
-            <Label>Future Considerations</Label>
-            <CaseStudySection>
-              <p>
-                There were a lot of chat options that were left out in the demo
-                like timestamps, a chatroom title, what if the characters send
-                photos to each other, that could be implemented in future
-                iterations.
-              </p>
-              <p>
-                I think the concept of having an arsenal of different tools to
-                help Wattpadders have more creative control is a interesting
-                idea to explore.
-              </p>
-            </CaseStudySection>
+          <section id="reorder-scenes" className="case-study-section">
+            <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
+              <div>
+                <h3 className="mb-4 text-base font-semibold leading-tight tracking-tight text-text">
+                  Reorder scenes
+                </h3>
+                <div className={SIDE_BY_SIDE_PROSE_CLASS}>
+                  <p>
+                    Writers can move text scenes after they've been added.
+                  </p>
+                </div>
+              </div>
+              <div className="mx-auto w-[78%]">
+                <div className="flex w-full items-center justify-center rounded-xl bg-[#f3f4f6] p-3">
+                  <video
+                    src="/case_studies/wattpad/scene-reorder.mp4"
+                    className="w-full rounded-xl object-contain"
+                    loop
+                    muted
+                    playsInline
+                    autoPlay
+                    aria-label="Reordering text scenes in the editor"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="next-steps" className="case-study-section">
+            <Label>Next Steps</Label>
+            <div className="flex flex-col gap-8">
+              <div>
+                <h3 className="mx-auto mb-4 block max-w-[560px] text-left text-base font-semibold leading-tight tracking-tight text-text">
+                  Richer chat features
+                </h3>
+                <div className={SIDE_BY_SIDE_PROSE_CLASS}>
+                  <p>
+                    There were a lot of chat options that were left out in the
+                    demo like timestamps, a chatroom title, what if the
+                    characters send photos to each other, that could be
+                    implemented in future iterations.
+                  </p>
+                </div>
+              </div>
+              <div>
+                <h3 className="mx-auto mb-4 block max-w-[560px] text-left text-base font-semibold leading-tight tracking-tight text-text">
+                  More creative tools
+                </h3>
+                <div className={SIDE_BY_SIDE_PROSE_CLASS}>
+                  <p>
+                    I think the concept of having an arsenal of different tools
+                    to help Wattpadders have more creative control is a
+                    interesting idea to enahnce the storytelling expeirence.
+                  </p>
+                </div>
+              </div>
+            </div>
           </section>
         </div>
       </div>
