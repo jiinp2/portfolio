@@ -31,6 +31,8 @@ const WATTPAD_MEDIA_GRADIENT =
 
 const WATTPAD_MEDIA_FRAME_STYLE = { background: WATTPAD_MEDIA_GRADIENT };
 
+const WATTPAD_MEDIA_WIDTH_CLASS = "w-full md:mx-auto md:w-[78%]";
+
 const JOURNEY_STEPS = [
   {
     number: 1,
@@ -81,7 +83,7 @@ function ThemeCarousel() {
   }, []);
 
   return (
-    <div className="mx-auto w-[78%]">
+    <div className={WATTPAD_MEDIA_WIDTH_CLASS}>
       <div
         className="relative aspect-[672/562] w-full overflow-hidden rounded-lg bg-[#f3f4f6] p-3"
         aria-live="polite"
@@ -150,27 +152,25 @@ function Wattpad({ onClose }) {
         <div className="case-study-content">
           <div className="hero-section mb-16">
             <div className="relative z-10 mx-auto mb-5 max-w-[560px]">
-              <div className="flex items-center justify-between gap-4">
-                <h1 className="pointer-events-none m-0 min-w-0 text-xl font-semibold tracking-tight text-default">
-                  {PAGE_TITLE}
-                </h1>
-                <a
-                  href="https://w-prototype.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative z-10 inline-flex shrink-0 cursor-pointer items-center gap-2 rounded-lg border border-border bg-surface px-3 py-1.5 text-sm font-medium text-text transition-colors hover:bg-gray-100 hover:border-gray-300 dark:hover:bg-dark-bg-elevated dark:hover:border-neutral-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 dark:focus-visible:ring-neutral-600"
-                >
-                  <ExternalLink
-                    size={16}
-                    className="shrink-0"
-                    aria-hidden="true"
-                  />
-                  Live demo
-                </a>
-              </div>
+              <h1 className="pointer-events-none m-0 min-w-0 text-xl font-semibold tracking-tight text-default">
+                {PAGE_TITLE}
+              </h1>
               <p className="case-study-subtitle m-0 mt-1 text-base font-normal leading-relaxed text-light">
                 A conceptual feature for Wattpad
               </p>
+              <a
+                href="https://w-prototype.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative z-10 mt-4 inline-flex cursor-pointer items-center gap-2 rounded-lg border border-border bg-surface px-3 py-1.5 text-sm font-medium text-text transition-colors hover:bg-gray-100 hover:border-gray-300 dark:hover:bg-dark-bg-elevated dark:hover:border-neutral-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 dark:focus-visible:ring-neutral-600"
+              >
+                <ExternalLink
+                  size={16}
+                  className="shrink-0"
+                  aria-hidden="true"
+                />
+                Live demo
+              </a>
             </div>
             <div className="hero-image-container w-full">
               <div
@@ -295,7 +295,7 @@ function Wattpad({ onClose }) {
                 tool dropped on top.
               </p>
               <div className="mt-8 flex flex-col gap-4">
-                <div className="mx-auto w-[78%]">
+                <div className={WATTPAD_MEDIA_WIDTH_CLASS}>
                   <div className="image-container">
                     <img
                       src="/case_studies/wattpad/wattpad-current.png"
@@ -304,7 +304,7 @@ function Wattpad({ onClose }) {
                     />
                   </div>
                 </div>
-                <div className="mx-auto w-[78%]">
+                <div className={WATTPAD_MEDIA_WIDTH_CLASS}>
                   <div
                     className="image-container"
                     style={WATTPAD_MEDIA_FRAME_STYLE}
@@ -351,7 +351,7 @@ function Wattpad({ onClose }) {
                 characters, pick a theme, write messages as each person, and
                 check a live preview before inserting it into the story.
               </p>
-              <div className="mx-auto mt-8 w-[78%]">
+              <div className={`mt-8 ${WATTPAD_MEDIA_WIDTH_CLASS}`}>
                 <div
                   className="image-container"
                   style={WATTPAD_MEDIA_FRAME_STYLE}
@@ -398,7 +398,7 @@ function Wattpad({ onClose }) {
                   </p>
                 </div>
               </div>
-              <div className="mx-auto w-[78%]">
+              <div className={WATTPAD_MEDIA_WIDTH_CLASS}>
                 <div className="flex w-full items-center justify-center rounded-lg bg-[#f3f4f6] p-3">
                   <video
                     src="/case_studies/wattpad/scene-reorder.mp4"
@@ -423,7 +423,7 @@ function Wattpad({ onClose }) {
                 panels onto one screen, and inserted scenes still read clearly
                 in the part.
               </p>
-              <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
+              <div className="mt-8 grid w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
                 <div className="flex w-full items-center justify-center rounded-lg bg-[#f3f4f6] p-3">
                   <img
                     src="/case_studies/wattpad/mobile-1.png"
@@ -466,20 +466,7 @@ function Wattpad({ onClose }) {
                   <p>
                     The demo left out a lot of chat details, like timestamps, a
                     chatroom title, sending photos between characters, and being
-                    able to edit the scene later. Those could come in a later
-                    pass.
-                  </p>
-                </div>
-              </div>
-              <div>
-                <h3 className="mx-auto mb-4 block max-w-[560px] text-left text-base font-semibold leading-tight tracking-tight text-text">
-                  New workflow
-                </h3>
-                <div className={SIDE_BY_SIDE_PROSE_CLASS}>
-                  <p>
-                    While building this project I connected Cursor and Figma
-                    MCP. That helped me create animations and UI frames to
-                    iterate on. It’s a workflow I want to keep exploring.
+                    able to edit the scene later.
                   </p>
                 </div>
               </div>
