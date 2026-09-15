@@ -19,6 +19,7 @@ import InfoCard from "../ui/InfoCard";
 import Label from "../ui/Label";
 import CaseStudyHero from "./components/CaseStudyHero";
 import CaseStudySection from "./components/CaseStudySection";
+import CaseStudyFooter from "./components/CaseStudyFooter";
 import TableOfContents from "./components/TableOfContents";
 
 function RabbuMarketplace({ onClose }) {
@@ -470,6 +471,7 @@ function RabbuMarketplace({ onClose }) {
             </CaseStudySection>
           </section>
 
+          <CaseStudyFooter />
         </div>
 
         {/* Right Column - Table of Contents */}

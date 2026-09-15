@@ -9,6 +9,7 @@ import {
 import Label from "../ui/Label";
 import CaseStudyHero from "./components/CaseStudyHero";
 import CaseStudySection from "./components/CaseStudySection";
+import CaseStudyFooter from "./components/CaseStudyFooter";
 import TableOfContents from "./components/TableOfContents";
 
 function Rabbu({ onClose }) {
@@ -346,6 +347,7 @@ function Rabbu({ onClose }) {
             </CaseStudySection>
           </section>
 
+          <CaseStudyFooter />
         </div>
 
         <TableOfContents sections={tocSections} sectionRefs={sectionRefs} />

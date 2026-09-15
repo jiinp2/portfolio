@@ -3,6 +3,7 @@ import { Check } from "lucide-react";
 import Label from "../ui/Label";
 import CaseStudyHero from "./components/CaseStudyHero";
 import CaseStudySection from "./components/CaseStudySection";
+import CaseStudyFooter from "./components/CaseStudyFooter";
 import TableOfContents from "./components/TableOfContents";
 
 function Skiin({ onClose }) {
@@ -241,6 +242,7 @@ function Skiin({ onClose }) {
             </CaseStudySection>
           </section>
 
+          <CaseStudyFooter />
         </div>
 
         {/* Right Column - Table of Contents */}

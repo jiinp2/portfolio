@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import CaseStudyHero from "./components/CaseStudyHero";
 import CaseStudySection from "./components/CaseStudySection";
+import CaseStudyFooter from "./components/CaseStudyFooter";
 import TableOfContents from "./components/TableOfContents";
 
 function Maison({ onClose }) {
@@ -460,6 +461,7 @@ function Maison({ onClose }) {
             </CaseStudySection>
           </section>
 
+          <CaseStudyFooter />
         </div>
 
         <TableOfContents sections={tocSections} sectionRefs={sectionRefs} />

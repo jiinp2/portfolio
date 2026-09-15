@@ -6,6 +6,7 @@ import ProjectCard from "../components/ProjectCard";
 import TabSection from "../components/TabSection";
 import PageToggle from "../components/PageToggle";
 import { projects } from "../data/projects";
+import { SOCIAL_LINKS, SOCIAL_PILL_CLASS } from "../data/socialLinks";
 
 const SIDEBAR_TEXT_TRANSITION =
   "transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]";
@@ -18,9 +19,6 @@ const TIMELINE_YEAR_CLASS = `text-sm text-text-light font-normal ${SIDEBAR_TEXT_
 const TIMELINE_TITLE_CLASS = `text-sm font-medium text-text ${SIDEBAR_TEXT_TRANSITION}`;
 
 const TIMELINE_ORG_CLASS = `text-sm text-text-light font-normal ${SIDEBAR_TEXT_TRANSITION}`;
-
-const SOCIAL_PILL_CLASS =
-  "inline-flex items-center gap-2 py-2 px-4 bg-gray-100 text-text-muted rounded-full no-underline text-sm font-medium transition-all duration-200 hover:bg-gray-200 hover:text-text";
 
 const EXPERIENCE_ENTRIES = [
   { period: "2025/26", title: "Founding Product Designer", place: "Maison" },
@@ -48,25 +46,6 @@ const EDUCATION_ENTRIES = [
     title: "Industrial Design",
     place: "OCADU",
   },
-];
-
-const SOCIAL_LINKS = [
-  { href: "/JiinPark_Resume.pdf", label: "Resume", kind: "file" },
-  {
-    href: "https://www.linkedin.com/in/jiinnoh/",
-    label: "LinkedIn",
-    kind: "image",
-    imageSrc: "/home/linkedin.png",
-    imageAlt: "LinkedIn",
-  },
-  {
-    href: "https://github.com/jiinp2",
-    label: "GitHub",
-    kind: "image",
-    imageSrc: "/home/github.png",
-    imageAlt: "GitHub",
-  },
-  { href: "mailto:jiinpark.work@gmail.com", label: "Email", kind: "mail" },
 ];
 
 const SECTION_HEADING_CLASS = `text-sm font-medium text-text tracking-wide leading-tight m-0 ${SIDEBAR_TEXT_TRANSITION}`;

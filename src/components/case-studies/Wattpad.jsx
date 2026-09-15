@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ExternalLink } from "lucide-react";
 import CaseStudySection from "./components/CaseStudySection";
+import CaseStudyFooter from "./components/CaseStudyFooter";
 import Label from "../ui/Label";
 
 const PAGE_TITLE = "Wattpad Text Scenes";
@@ -472,6 +473,8 @@ function Wattpad({ onClose }) {
               </div>
             </div>
           </section>
+
+          <CaseStudyFooter />
         </div>
       </div>
     </div>

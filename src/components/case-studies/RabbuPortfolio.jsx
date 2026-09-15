@@ -9,6 +9,7 @@ import InfoCard from "../ui/InfoCard";
 import Label from "../ui/Label";
 import CaseStudyHero from "./components/CaseStudyHero";
 import CaseStudySection from "./components/CaseStudySection";
+import CaseStudyFooter from "./components/CaseStudyFooter";
 import TableOfContents from "./components/TableOfContents";
 
 function RabbuPortfolio({ onClose }) {
@@ -330,6 +331,7 @@ function RabbuPortfolio({ onClose }) {
             </div>
           </section>
 
+          <CaseStudyFooter />
         </div>
 
         {/* Right Column - Table of Contents */}
