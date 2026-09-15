@@ -172,10 +172,19 @@ function Wattpad({ onClose }) {
                   </p>
                   <p>
                     Messaging is a widely used narrative device that can be seen
-                    in many works across all genres. Having to stitch together
-                    custom code to provide a more immersive experience is a real
-                    barrier to entry. Many writers opt for workarounds such as
-                    using a character’s name, colon, and then the message.
+                    in many works across genres. Having to stitch together
+                    custom code to provide a more immersive experience is a
+                    barrier to entry. Many{" "}
+                    <a
+                      href="https://www.wattpad.com/209376890-formatting-for-text-conversation-texting"
+                      className={TEXT_LINK_CLASS}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Wattpadders
+                    </a>{" "}
+                    opt for workarounds such as using a character’s name, colon,
+                    and then the message.
                   </p>
                 </div>
               </div>
@@ -201,13 +210,12 @@ function Wattpad({ onClose }) {
             <CaseStudySection title="Redesigning the editor">
               <p>
                 I started with trying to write my own story using Wattpad and
-                immediately noticed the in-line photo and video link icons and
-                the end of story poll.
+                noticed the in-line photo and video link icons and the end of
+                story poll.
               </p>
               <p>
-                I can see that it's already intuitive to add photos within the
-                story and can see how similarily text scenes could be inserted
-                the same way.
+                It's already a feature to add media within the story and can see
+                how similarily text scenes could be inserted as well.
               </p>
               <p>
                 My first step was to redesign the editor to help make my
@@ -230,9 +238,9 @@ function Wattpad({ onClose }) {
             </CaseStudySection>
           </section>
 
-          <section id="inserting-a-text-scene" className="case-study-section">
+          <section id="designing-one-toolbar" className="case-study-section">
             <CaseStudySection
-              title="Inserting a text scene"
+              title="Designing one toolbar"
               sideBySide={{
                 reverse: true,
                 image: {
@@ -242,9 +250,9 @@ function Wattpad({ onClose }) {
               }}
             >
               <p>
-                Text scene sits in the same row as Add image, Add video, and
-                Poll. It should feel like another thing you can drop into the
-                story, not a separate mode.
+                Image, Video, and Poll didn't behave the same way on Wattpad. I
+                unified all of it into one consistent toolbar, Text scene
+                included.
               </p>
             </CaseStudySection>
           </section>
@@ -273,9 +281,7 @@ function Wattpad({ onClose }) {
                   Reorder scenes
                 </h3>
                 <div className={SIDE_BY_SIDE_PROSE_CLASS}>
-                  <p>
-                    Writers can move text scenes after they've been added.
-                  </p>
+                  <p>Writers can move text scenes after they've been added.</p>
                 </div>
               </div>
               <div className="mx-auto w-[78%]">
