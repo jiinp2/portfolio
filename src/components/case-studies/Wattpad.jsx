@@ -31,6 +31,39 @@ const WATTPAD_MEDIA_GRADIENT =
 
 const WATTPAD_MEDIA_FRAME_STYLE = { background: WATTPAD_MEDIA_GRADIENT };
 
+const JOURNEY_STEPS = [
+  {
+    number: 1,
+    title: "In the part",
+    description:
+      "Writer is mid-draft and wants to add a text conversation in the story.",
+  },
+  {
+    number: 2,
+    title: "Pick Text scene",
+    description:
+      "Same insert row as image, video, and poll, so it feels like another story block.",
+  },
+  {
+    number: 3,
+    title: "Build the conversation",
+    description:
+      "Theme, characters, and messages come together with a live preview before anything hits the page.",
+  },
+  {
+    number: 4,
+    title: "Drop it in",
+    description:
+      "The scene inserts into the part as content they can keep writing around.",
+  },
+  {
+    number: 5,
+    title: "Adjust while editing",
+    description:
+      "As the plot shifts, they can move scenes instead of rebuilding them.",
+  },
+];
+
 function ThemeCarousel() {
   const [index, setIndex] = useState(0);
 
@@ -116,23 +149,28 @@ function Wattpad({ onClose }) {
 
         <div className="case-study-content">
           <div className="hero-section mb-16">
-            <div className="relative z-10 mx-auto mb-5 flex max-w-[560px] items-center justify-between gap-4">
-              <h1 className="pointer-events-none m-0 min-w-0 text-xl font-semibold tracking-tight text-default">
-                {PAGE_TITLE}
-              </h1>
-              <a
-                href="https://w-prototype.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative z-10 inline-flex shrink-0 cursor-pointer items-center gap-2 rounded-lg border border-border bg-surface px-3 py-1.5 text-sm font-medium text-text transition-colors hover:bg-gray-100 hover:border-gray-300 dark:hover:bg-dark-bg-elevated dark:hover:border-neutral-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 dark:focus-visible:ring-neutral-600"
-              >
-                <ExternalLink
-                  size={16}
-                  className="shrink-0"
-                  aria-hidden="true"
-                />
-                Live demo
-              </a>
+            <div className="relative z-10 mx-auto mb-5 max-w-[560px]">
+              <div className="flex items-center justify-between gap-4">
+                <h1 className="pointer-events-none m-0 min-w-0 text-xl font-semibold tracking-tight text-default">
+                  {PAGE_TITLE}
+                </h1>
+                <a
+                  href="https://w-prototype.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative z-10 inline-flex shrink-0 cursor-pointer items-center gap-2 rounded-lg border border-border bg-surface px-3 py-1.5 text-sm font-medium text-text transition-colors hover:bg-gray-100 hover:border-gray-300 dark:hover:bg-dark-bg-elevated dark:hover:border-neutral-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 dark:focus-visible:ring-neutral-600"
+                >
+                  <ExternalLink
+                    size={16}
+                    className="shrink-0"
+                    aria-hidden="true"
+                  />
+                  Live demo
+                </a>
+              </div>
+              <p className="case-study-subtitle m-0 mt-1 text-base font-normal leading-relaxed text-light">
+                A conceptual feature for Wattpad
+              </p>
             </div>
             <div className="hero-image-container w-full">
               <div
@@ -178,7 +216,9 @@ function Wattpad({ onClose }) {
                       How to Make iOS Text Messages on AO3.
                     </a>
                     ” This tutorial has 4,801 bookmarks and 217k hits on AO3,
-                    which says a lot about how much people want this.
+                    which says a lot about how much people want this. Writers on
+                    Wattpad run into the same problem, just with fewer tools to
+                    work with.
                   </p>
                   <p>
                     Messaging is a widely used narrative device that can be seen
@@ -206,8 +246,8 @@ function Wattpad({ onClose }) {
                   <p>
                     That had me thinking.{" "}
                     <b>
-                      What would a more user-friendly solution to emulating
-                      real life messaging look like for Wattpad?
+                      What would a more user-friendly solution to emulating real
+                      life messaging look like for Wattpad?
                     </b>
                   </p>
                 </div>
@@ -217,6 +257,31 @@ function Wattpad({ onClose }) {
 
           <section id="design-process" className="case-study-section">
             <Label>Design Process</Label>
+            <div className="mb-24 w-full max-w-none">
+              <h3 className="mx-auto mb-4 block max-w-[560px] text-left text-base font-semibold leading-tight tracking-tight text-text">
+                User journey
+              </h3>
+              <div className={SIDE_BY_SIDE_PROSE_CLASS}>
+                <p>
+                  Before UI, I wrote out the flow I wanted writers to stay in:
+                  create a text scene without leaving the part editor or learning
+                  a new mode.
+                </p>
+              </div>
+              <ol className="mt-8 flex list-none flex-col gap-8 p-0 md:flex-row md:items-start md:gap-10">
+                {JOURNEY_STEPS.map((step) => (
+                  <li key={step.number} className="min-w-0 flex-1">
+                    <h4 className="m-0 mb-2 text-left text-base font-semibold leading-tight tracking-tight text-text">
+                      <span className="text-[#FF460D]">{step.number}. </span>
+                      {step.title}
+                    </h4>
+                    <p className="m-0 text-left text-sm leading-relaxed text-text-muted">
+                      {step.description}
+                    </p>
+                  </li>
+                ))}
+              </ol>
+            </div>
             <CaseStudySection title="Redesigning the editor">
               <p>
                 I started with trying to write my own story using Wattpad and
@@ -230,20 +295,26 @@ function Wattpad({ onClose }) {
                 realistic.
               </p>
               <div className="mt-8 flex flex-col gap-4">
-                <div className="image-container">
-                  <img
-                    src="/case_studies/wattpad/wattpad-current.png"
-                    alt="Wattpad story editor showing a draft titled The Signal"
-                  />
+                <div className="mx-auto w-[78%]">
+                  <div className="image-container">
+                    <img
+                      src="/case_studies/wattpad/wattpad-current.png"
+                      alt="Wattpad story editor showing a draft titled The Signal"
+                      className="max-h-[520px] w-full object-contain object-top"
+                    />
+                  </div>
                 </div>
-                <div
-                  className="image-container"
-                  style={WATTPAD_MEDIA_FRAME_STYLE}
-                >
-                  <img
-                    src="/case_studies/wattpad/editor.png"
-                    alt="Redesigned Wattpad editor with header image and video controls above the story"
-                  />
+                <div className="mx-auto w-[78%]">
+                  <div
+                    className="image-container"
+                    style={WATTPAD_MEDIA_FRAME_STYLE}
+                  >
+                    <img
+                      src="/case_studies/wattpad/editor.png"
+                      alt="Redesigned Wattpad editor with header image and video controls above the story"
+                      className="max-h-[520px] w-full object-contain object-top"
+                    />
+                  </div>
                 </div>
               </div>
             </CaseStudySection>
@@ -280,14 +351,17 @@ function Wattpad({ onClose }) {
                 characters, pick a theme, write messages as each person, and
                 check a live preview before inserting it into the story.
               </p>
-              <div
-                className="image-container mt-8"
-                style={WATTPAD_MEDIA_FRAME_STYLE}
-              >
-                <img
-                  src="/case_studies/wattpad/text-scene.png"
-                  alt="Text scene creator with compose controls and a live message preview"
-                />
+              <div className="mx-auto mt-8 w-[78%]">
+                <div
+                  className="image-container"
+                  style={WATTPAD_MEDIA_FRAME_STYLE}
+                >
+                  <img
+                    src="/case_studies/wattpad/text-scene.png"
+                    alt="Text scene creator with compose controls and a live message preview"
+                    className="max-h-[520px] w-full object-contain object-top"
+                  />
+                </div>
               </div>
             </CaseStudySection>
           </section>
@@ -345,24 +419,39 @@ function Wattpad({ onClose }) {
             <div className="flex flex-col gap-8">
               <div>
                 <h3 className="mx-auto mb-4 block max-w-[560px] text-left text-base font-semibold leading-tight tracking-tight text-text">
-                  Richer chat features
+                  Validate with writers
                 </h3>
                 <div className={SIDE_BY_SIDE_PROSE_CLASS}>
                   <p>
-                    The demo left out a lot of chat details, like timestamps, a
-                    chatroom title, and sending photos between characters.
-                    Those could come in a later pass.
+                    If I were on the Wattpad team, I’d validate this flow with
+                    writers before locking the interaction model. I’d want to
+                    know whether toolbar insert and live preview feel natural
+                    mid-draft.
                   </p>
                 </div>
               </div>
               <div>
                 <h3 className="mx-auto mb-4 block max-w-[560px] text-left text-base font-semibold leading-tight tracking-tight text-text">
-                  More creative tools
+                  Richer chat features
                 </h3>
                 <div className={SIDE_BY_SIDE_PROSE_CLASS}>
                   <p>
-                    I keep coming back to the idea of giving Wattpadders more
-                    built-in tools for creative control, not just this one.
+                    The demo left out a lot of chat details, like timestamps, a
+                    chatroom title, sending photos between characters, and being
+                    able to edit the scene later. Those could come in a later
+                    pass.
+                  </p>
+                </div>
+              </div>
+              <div>
+                <h3 className="mx-auto mb-4 block max-w-[560px] text-left text-base font-semibold leading-tight tracking-tight text-text">
+                  New workflow
+                </h3>
+                <div className={SIDE_BY_SIDE_PROSE_CLASS}>
+                  <p>
+                    While building this project I connected Cursor and Figma
+                    MCP. That helped me create animations and UI frames to
+                    iterate on. It’s a workflow I want to keep exploring.
                   </p>
                 </div>
               </div>

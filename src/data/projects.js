@@ -54,7 +54,8 @@ export const projects = [
     category: "misc",
     slug: "wattpad",
     image: "/case_studies/wattpad/text-scene.png",
-    description: "Concept for a new Wattpad feature.",
+    description:
+      "A concept for adding text-message scenes to Wattpad stories without custom code.",
   },
   {
     name: "Scrivis Tattoos",
