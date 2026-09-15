@@ -264,8 +264,8 @@ function Wattpad({ onClose }) {
               <div className={SIDE_BY_SIDE_PROSE_CLASS}>
                 <p>
                   Before UI, I wrote out the flow I wanted writers to stay in:
-                  create a text scene without leaving the part editor or learning
-                  a new mode.
+                  create a text scene without leaving the part editor or
+                  learning a new mode.
                 </p>
               </div>
               <ol className="mt-8 flex list-none flex-col gap-8 p-0 md:flex-row md:items-start md:gap-10">
@@ -282,7 +282,7 @@ function Wattpad({ onClose }) {
                 ))}
               </ol>
             </div>
-            <CaseStudySection title="Redesigning the editor">
+            <CaseStudySection title="Mocking the editor">
               <p>
                 I started with trying to write my own story using Wattpad and
                 noticed the in-line photo and video link icons and the end of
@@ -290,9 +290,9 @@ function Wattpad({ onClose }) {
               </p>
               <p>
                 It's already easy to add media in the story, and I could see how
-                text scenes could work the same way. My first step was to
-                redesign the editor to help make my interactive demo more
-                realistic.
+                text scenes could work the same way. I mocked the editor shell
+                so the prototype felt native to Wattpad, not like a separate
+                tool dropped on top.
               </p>
               <div className="mt-8 flex flex-col gap-4">
                 <div className="mx-auto w-[78%]">
@@ -412,6 +412,34 @@ function Wattpad({ onClose }) {
                 </div>
               </div>
             </div>
+          </section>
+
+          <section id="mobile" className="case-study-section">
+            <CaseStudySection title="Designed for mobile readers">
+              <p>
+                Most Wattpad reading happens on phone, so text scenes needed to
+                work there too. On smaller screens, Make and Preview split into
+                tabs so writers can build a conversation without cramming two
+                panels onto one screen, and inserted scenes still read clearly
+                in the part.
+              </p>
+              <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
+                <div className="flex w-full items-center justify-center rounded-lg bg-[#f3f4f6] p-3">
+                  <img
+                    src="/case_studies/wattpad/mobile-1.png"
+                    alt="Mobile part editor with an inserted Batman and Robin text scene"
+                    className="w-full max-h-[520px] rounded-lg object-contain object-top"
+                  />
+                </div>
+                <div className="flex w-full items-center justify-center rounded-lg bg-[#f3f4f6] p-3">
+                  <img
+                    src="/case_studies/wattpad/mobile-2.png"
+                    alt="Mobile text scene creator with Make and Preview tabs"
+                    className="w-full max-h-[520px] rounded-lg object-contain object-top"
+                  />
+                </div>
+              </div>
+            </CaseStudySection>
           </section>
 
           <section id="next-steps" className="case-study-section">
