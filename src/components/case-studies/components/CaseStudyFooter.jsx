@@ -42,7 +42,7 @@ function CaseStudyFooter() {
           </div>
           <a
             href="mailto:jiinpark.work@gmail.com"
-            className="w-full text-center text-sm text-text-muted no-underline transition-colors hover:text-text focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 dark:focus-visible:ring-neutral-600 rounded-sm"
+            className="text-left text-sm text-text-muted no-underline transition-colors hover:text-text focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 dark:focus-visible:ring-neutral-600 rounded-sm md:w-full md:text-center"
           >
             jiinpark.work@gmail.com
           </a>

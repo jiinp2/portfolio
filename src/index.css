@@ -287,9 +287,10 @@
       padding-top: 1rem;
     }
 
-    .case-study-left .back-button {
+    .case-study-left .back-button.sticky {
       position: static;
-      margin: 0 0 1rem;
+      top: auto;
+      margin: 0 0 3rem;
       padding: 0.5rem 0;
       background: transparent;
       border: 0;
@@ -383,16 +384,25 @@
 
   @media (max-width: 640px) {
     .case-study-footer {
-      grid-template-columns: 1fr;
-      gap: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
       margin-top: 5rem;
       text-align: left;
     }
 
-    .case-study-footer-name,
-    .case-study-footer-links,
+    .case-study-footer-name {
+      order: 1;
+    }
+
     .case-study-footer-home {
-      justify-self: start;
+      order: 2;
+    }
+
+    .case-study-footer-links {
+      order: 3;
+      justify-self: auto;
     }
   }
 

@@ -273,7 +273,7 @@ function Work() {
               <PageToggle onToggle={toggleTheme} />
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-10 w-full max-md:grid-cols-2 max-sm:grid-cols-1 max-md:gap-6">
+          <div className="grid grid-cols-3 gap-10 w-full max-md:grid-cols-2 max-md:gap-6 max-sm:grid-cols-1 max-sm:gap-12">
             {selectedProjects.map((project) => {
               const originalIndex = projects.findIndex(
                 (p) => p.name === project.name,
@@ -295,7 +295,7 @@ function Work() {
             <h2 className={`${SECTION_HEADING_CLASS} mb-8 max-md:mb-6`}>
               Additional Work
             </h2>
-            <div className="grid grid-cols-3 gap-10 w-full max-md:grid-cols-2 max-sm:grid-cols-1 max-md:gap-6">
+            <div className="grid grid-cols-3 gap-10 w-full max-md:grid-cols-2 max-md:gap-6 max-sm:grid-cols-1 max-sm:gap-12">
               {additionalProjects.map((project) => {
                 const originalIndex = projects.findIndex(
                   (p) => p.slug === project.slug,
