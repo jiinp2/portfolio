@@ -373,7 +373,7 @@
 
   .hero-card {
     width: 100%;
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
     padding: 1rem;
   }
 
@@ -399,7 +399,7 @@
   .hero-image {
     width: 100%;
     height: auto;
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
     object-fit: cover;
     display: block;
   }
@@ -606,7 +606,7 @@
   /* Case study images with light gray background */
   .subsection > img {
     background-color: #f3f4f6;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     padding: 1.5rem;
     display: block;
     margin-left: auto;
@@ -616,7 +616,7 @@
   .subsection > .image-container,
   .case-study-content .image-container {
     background-color: #f3f4f6;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     padding: 1rem;
     display: flex;
     align-items: center;
@@ -654,7 +654,7 @@
 
   .subsection-image {
     background-color: #f3f4f6;
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
     padding: 1.5rem;
   }
 
@@ -696,7 +696,7 @@
   .subsection-image {
     width: 100%;
     background-color: #f3f4f6;
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
     padding: 1.5rem;
     display: flex;
     align-items: center;

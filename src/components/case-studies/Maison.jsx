@@ -144,11 +144,11 @@ function Maison({ onClose }) {
               </div>
 
               <div className="mt-8 w-full">
-                <div className="w-full bg-[#f3f4f6] rounded-xl p-4 flex items-center justify-center">
+                <div className="w-full bg-[#f3f4f6] rounded-lg p-4 flex items-center justify-center">
                   <img
                     src="/case_studies/maison/maison-phase-1.png"
                     alt="Maison Phase 1 referral marketplace interface"
-                    className="w-full rounded-xl"
+                    className="w-full rounded-lg"
                   />
                 </div>
                 <p className="case-study-image-caption">

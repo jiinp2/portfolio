@@ -15,7 +15,7 @@ function CaseStudyHero({ title, subtitle, imageSrc, imageAlt, infoItems }) {
             <img
               src={imageSrc}
               alt={imageAlt || `${title} Hero`}
-              className="hero-image w-full rounded-xl"
+              className="hero-image w-full rounded-lg"
             />
           </div>
         </div>

@@ -155,7 +155,7 @@ function RabbuMarketplace({ onClose }) {
                     key={img.src}
                     src={img.src}
                     alt={img.alt}
-                    className="w-full rounded-xl"
+                    className="w-full rounded-lg"
                   />
                 ))}
               </div>

@@ -26,6 +26,11 @@ const THEME_SLIDES = [
 const SIDE_BY_SIDE_PROSE_CLASS =
   "[&>p]:text-sm [&>p]:text-text-muted [&>p]:leading-relaxed [&>p]:mb-4 [&>p]:max-w-[560px] [&>p]:mx-auto [&>p]:block [&>p]:text-left";
 
+const WATTPAD_MEDIA_GRADIENT =
+  "linear-gradient(160deg, #FF9358 0%, #FF7A3A 36%, #FF460D 72%, #C23006 100%)";
+
+const WATTPAD_MEDIA_FRAME_STYLE = { background: WATTPAD_MEDIA_GRADIENT };
+
 function ThemeCarousel() {
   const [index, setIndex] = useState(0);
 
@@ -45,7 +50,7 @@ function ThemeCarousel() {
   return (
     <div className="mx-auto w-[78%]">
       <div
-        className="relative aspect-[672/562] w-full overflow-hidden rounded-xl bg-[#f3f4f6] p-3"
+        className="relative aspect-[672/562] w-full overflow-hidden rounded-lg bg-[#f3f4f6] p-3"
         aria-live="polite"
       >
         {THEME_SLIDES.map((slide, slideIndex) => (
@@ -53,7 +58,7 @@ function ThemeCarousel() {
             key={slide.src}
             src={slide.src}
             alt={slide.alt}
-            className={`absolute inset-3 h-[calc(100%-1.5rem)] w-[calc(100%-1.5rem)] rounded-xl object-contain transition-opacity duration-500 ${
+            className={`absolute inset-3 h-[calc(100%-1.5rem)] w-[calc(100%-1.5rem)] rounded-lg object-contain transition-opacity duration-500 ${
               slideIndex === index
                 ? "opacity-100"
                 : "pointer-events-none opacity-0"
@@ -130,12 +135,17 @@ function Wattpad({ onClose }) {
               </a>
             </div>
             <div className="hero-image-container w-full">
-              <div className="hero-card relative aspect-video overflow-hidden bg-[linear-gradient(160deg,#FF9358_0%,#FF7A3A_36%,#FF460D_72%,#C23006_100%)]">
-                <img
-                  src="/case_studies/wattpad/text-scene.png"
-                  alt="Create a text scene editor with a live message preview"
-                  className="pointer-events-none absolute inset-0 h-full w-full origin-top-left scale-100 object-cover object-left-top"
-                />
+              <div
+                className="w-full overflow-hidden rounded-lg pt-4 px-3 pb-0"
+                style={WATTPAD_MEDIA_FRAME_STYLE}
+              >
+                <div className="aspect-video w-full overflow-hidden rounded-t-lg">
+                  <img
+                    src="/case_studies/wattpad/text-scene.png"
+                    alt="Create a text scene editor with a live message preview"
+                    className="h-full w-full object-cover object-top"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -167,8 +177,8 @@ function Wattpad({ onClose }) {
                     >
                       How to Make iOS Text Messages on AO3.
                     </a>
-                    ” This tutorial has 4,801 bookmarks and 217k hits on AO3
-                    which showcases the popularity of this customization.
+                    ” This tutorial has 4,801 bookmarks and 217k hits on AO3,
+                    which says a lot about how much people want this.
                   </p>
                   <p>
                     Messaging is a widely used narrative device that can be seen
@@ -196,7 +206,7 @@ function Wattpad({ onClose }) {
                   <p>
                     That had me thinking.{" "}
                     <b>
-                      What would a more user-friendly solution to emmulating
+                      What would a more user-friendly solution to emulating
                       real life messaging look like for Wattpad?
                     </b>
                   </p>
@@ -214,12 +224,10 @@ function Wattpad({ onClose }) {
                 story poll.
               </p>
               <p>
-                It's already a feature to add media within the story and can see
-                how similarily text scenes could be inserted as well.
-              </p>
-              <p>
-                My first step was to redesign the editor to help make my
-                interactive demo more realistic.
+                It's already easy to add media in the story, and I could see how
+                text scenes could work the same way. My first step was to
+                redesign the editor to help make my interactive demo more
+                realistic.
               </p>
               <div className="mt-8 flex flex-col gap-4">
                 <div className="image-container">
@@ -228,7 +236,10 @@ function Wattpad({ onClose }) {
                     alt="Wattpad story editor showing a draft titled The Signal"
                   />
                 </div>
-                <div className="image-container">
+                <div
+                  className="image-container"
+                  style={WATTPAD_MEDIA_FRAME_STYLE}
+                >
                   <img
                     src="/case_studies/wattpad/editor.png"
                     alt="Redesigned Wattpad editor with header image and video controls above the story"
@@ -239,21 +250,45 @@ function Wattpad({ onClose }) {
           </section>
 
           <section id="designing-one-toolbar" className="case-study-section">
-            <CaseStudySection
-              title="Designing one toolbar"
-              sideBySide={{
-                reverse: true,
-                image: {
-                  src: "/case_studies/wattpad/toolbar.png",
-                  alt: "Editor toolbar with Add image, Add video, Text scene, and Poll",
-                },
-              }}
-            >
+            <div className="mb-8 grid grid-cols-1 items-center gap-12 md:grid-cols-2">
+              <div>
+                <h3 className="mb-4 text-base font-semibold leading-tight tracking-tight text-text">
+                  Designing one toolbar
+                </h3>
+                <div className={SIDE_BY_SIDE_PROSE_CLASS}>
+                  <p>
+                    Image, Video, and Poll didn't behave the same way on
+                    Wattpad. I unified all of it into one consistent toolbar,
+                    Text scene included.
+                  </p>
+                </div>
+              </div>
+              <div className="flex w-full items-center justify-center rounded-lg bg-[#f3f4f6] p-4">
+                <img
+                  src="/case_studies/wattpad/toolbar.png"
+                  alt="Editor toolbar with Add image, Add video, Text scene, and Poll"
+                  className="max-h-[500px] w-full rounded-lg object-contain"
+                />
+              </div>
+            </div>
+          </section>
+
+          <section id="text-scene-creator" className="case-study-section">
+            <CaseStudySection title="Text scene creator">
               <p>
-                Image, Video, and Poll didn't behave the same way on Wattpad. I
-                unified all of it into one consistent toolbar, Text scene
-                included.
+                This is where writers build the conversation. They set up
+                characters, pick a theme, write messages as each person, and
+                check a live preview before inserting it into the story.
               </p>
+              <div
+                className="image-container mt-8"
+                style={WATTPAD_MEDIA_FRAME_STYLE}
+              >
+                <img
+                  src="/case_studies/wattpad/text-scene.png"
+                  alt="Text scene creator with compose controls and a live message preview"
+                />
+              </div>
             </CaseStudySection>
           </section>
 
@@ -265,8 +300,9 @@ function Wattpad({ onClose }) {
                 </h3>
                 <div className={SIDE_BY_SIDE_PROSE_CLASS}>
                   <p>
-                    I added themes for the messages, Blue is iOS, green is SMS,
-                    and purple is similar to Discord.
+                    Writers can match the scene to how the characters would
+                    actually text. Blue for iOS, green for SMS, purple for
+                    something closer to Discord.
                   </p>
                 </div>
               </div>
@@ -281,14 +317,18 @@ function Wattpad({ onClose }) {
                   Reorder scenes
                 </h3>
                 <div className={SIDE_BY_SIDE_PROSE_CLASS}>
-                  <p>Writers can move text scenes after they've been added.</p>
+                  <p>
+                    Once a text scene is in the story, writers can drag it
+                    around like any other block instead of deleting and
+                    rebuilding it.
+                  </p>
                 </div>
               </div>
               <div className="mx-auto w-[78%]">
-                <div className="flex w-full items-center justify-center rounded-xl bg-[#f3f4f6] p-3">
+                <div className="flex w-full items-center justify-center rounded-lg bg-[#f3f4f6] p-3">
                   <video
                     src="/case_studies/wattpad/scene-reorder.mp4"
-                    className="w-full rounded-xl object-contain"
+                    className="w-full rounded-lg object-contain"
                     loop
                     muted
                     playsInline
@@ -309,10 +349,9 @@ function Wattpad({ onClose }) {
                 </h3>
                 <div className={SIDE_BY_SIDE_PROSE_CLASS}>
                   <p>
-                    There were a lot of chat options that were left out in the
-                    demo like timestamps, a chatroom title, what if the
-                    characters send photos to each other, that could be
-                    implemented in future iterations.
+                    The demo left out a lot of chat details, like timestamps, a
+                    chatroom title, and sending photos between characters.
+                    Those could come in a later pass.
                   </p>
                 </div>
               </div>
@@ -322,9 +361,8 @@ function Wattpad({ onClose }) {
                 </h3>
                 <div className={SIDE_BY_SIDE_PROSE_CLASS}>
                   <p>
-                    I think the concept of having an arsenal of different tools
-                    to help Wattpadders have more creative control is a
-                    interesting idea to enahnce the storytelling expeirence.
+                    I keep coming back to the idea of giving Wattpadders more
+                    built-in tools for creative control, not just this one.
                   </p>
                 </div>
               </div>

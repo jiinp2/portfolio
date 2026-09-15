@@ -12,12 +12,12 @@ const STACKED_CHILDREN_PROSE_CLASS =
   `${SIDE_BY_SIDE_CHILD_PROSE_CLASS} [&>ul]:text-sm [&>ul]:text-text-muted [&>ul]:leading-relaxed [&>ul]:mb-4 [&>ul]:max-w-[560px] [&>ul]:mx-auto [&>ul]:block [&>ul]:text-left [&>ul]:list-disc [&>ul]:pl-6 [&>ol]:text-sm [&>ol]:text-text-muted [&>ol]:leading-relaxed [&>ol]:mb-4 [&>ol]:max-w-[560px] [&>ol]:mx-auto [&>ol]:block [&>ol]:text-left [&>ol]:list-decimal [&>ol]:pl-6 [&>li]:mb-2`;
 
 const GRAY_MEDIA_FRAME_CLASS =
-  "w-full bg-[#f3f4f6] rounded-xl p-4 flex items-center justify-center";
+  "w-full bg-[#f3f4f6] rounded-lg p-4 flex items-center justify-center";
 
 const SIDE_BY_SIDE_IMAGE_IMG_CLASS =
-  "w-full rounded-xl max-h-[500px] object-contain";
+  "w-full rounded-lg max-h-[500px] object-contain";
 
-const STACKED_PRIMARY_IMAGE_IMG_CLASS = "w-full rounded-xl";
+const STACKED_PRIMARY_IMAGE_IMG_CLASS = "w-full rounded-lg";
 
 const INFO_CARDS_GRID_FOUR_CLASS =
   "grid grid-cols-4 gap-4 max-md:grid-cols-2 max-sm:grid-cols-1";
@@ -191,7 +191,7 @@ function CaseStudySection({
               <img
                 src={img.src}
                 alt={img.alt}
-                className="w-full rounded-xl"
+                className="w-full rounded-lg"
               />
             </div>
           ))}

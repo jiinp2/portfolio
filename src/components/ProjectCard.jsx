@@ -56,7 +56,7 @@ function buildStandardImageClasses(slug) {
   }
 
   if (isWattpadPreview(slug)) {
-    return "h-auto w-full max-w-none shrink-0 object-cover object-top";
+    return "h-auto w-[92%] max-w-none shrink-0 object-cover object-top";
   }
 
   switch (slug) {
@@ -75,7 +75,7 @@ function buildStandardImageClasses(slug) {
 
 function buildPreviewContainerClasses(slug) {
   if (isWattpadPreview(slug)) {
-    return "box-border flex aspect-4/3 w-full items-start justify-center overflow-hidden pt-4 px-3 pb-0";
+    return "box-border flex aspect-4/3 w-full items-start justify-center overflow-hidden pt-6 px-4 pb-0";
   }
 
   if (isFillPreview(slug)) {
@@ -138,7 +138,7 @@ function ProjectCardPreview({ project, interactive = false, className = "" }) {
 
   return (
     <div
-      className={`project-card-preview-frame bg-surface rounded-xl overflow-hidden border border-border${interactive ? " transition-colors" : ""} ${className}`.trimEnd()}
+      className={`project-card-preview-frame bg-surface rounded-lg overflow-hidden border border-border${interactive ? " transition-colors" : ""} ${className}`.trimEnd()}
     >
       <div
         className={`project-preview ${previewInnerClassName}`}
@@ -213,7 +213,7 @@ function ProjectCard({
 
   const explorativePreview = (
     <div
-      className={`project-card-preview-frame w-full aspect-4/3 rounded-xl overflow-hidden flex items-center justify-center bg-transparent border border-border${!disabled ? " transition-colors" : ""}`}
+      className={`project-card-preview-frame w-full aspect-4/3 rounded-lg overflow-hidden flex items-center justify-center bg-transparent border border-border${!disabled ? " transition-colors" : ""}`}
       data-slug={project.slug}
     >
       {project.video ? (
@@ -240,7 +240,7 @@ function ProjectCard({
     isExplorative && !useStandardPreview ? explorativePreview : standardPreview;
 
   const previewTriggerClass =
-    "project-card-preview-trigger block w-full rounded-xl border-0 bg-transparent p-0 text-left focus:outline-none";
+    "project-card-preview-trigger block w-full rounded-lg border-0 bg-transparent p-0 text-left focus:outline-none";
 
   return (
     <article
