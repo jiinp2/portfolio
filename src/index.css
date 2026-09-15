@@ -261,10 +261,17 @@
     display: none;
   }
 
-  /* Mobile: Show only middle column */
+  /* Mobile: stack back button above scrollable case study */
   @media (max-width: 640px) {
+    .case-study-overlay {
+      overflow-y: auto;
+    }
+
     .case-study-layout {
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      min-height: 100vh;
       gap: 0;
       padding-left: 1rem;
       padding-right: 1rem;
@@ -276,44 +283,28 @@
 
     .case-study-left {
       display: block;
-      grid-row: 1;
-      grid-column: 1;
-      z-index: 1100;
-      height: 0;
-      overflow: visible;
-      padding: 0;
-      pointer-events: none;
+      flex-shrink: 0;
+      padding-top: 1rem;
     }
 
     .case-study-left .back-button {
-      display: flex;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      margin: 0;
-      padding: 0.75rem 1rem;
-      padding-top: max(0.75rem, env(safe-area-inset-top));
-      border-radius: 0;
+      position: static;
+      margin: 0 0 1rem;
+      padding: 0.5rem 0;
+      background: transparent;
       border: 0;
-      border-bottom: 1px solid #e5e7eb;
-      width: auto;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      pointer-events: auto;
-    }
-
-    .dark .case-study-left .back-button {
-      background: rgba(26, 26, 26, 0.95);
-      border-bottom-color: var(--color-dark-border);
+      backdrop-filter: none;
+      width: fit-content;
     }
 
     .case-study-content {
-      grid-row: 1;
-      grid-column: 1;
+      height: auto;
+      overflow-y: visible;
+      flex: 1;
+      padding-top: 0;
       padding-left: 1rem;
       padding-right: 1rem;
-      padding-top: 5.5rem;
+      padding-bottom: 4rem;
     }
   }
 
